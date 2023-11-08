@@ -1,0 +1,76 @@
+package Less00_DinamicArrays._1DinamicIntArray;
+import java.util.Arrays;
+
+public class DIntArray {
+	
+	int[] array = new int[0];
+	
+	public DIntArray(){};
+	
+	void copyData(int[] src, int[] dst) {
+		for(int i = 0; i < src.length; i++) {
+			dst[i] = src[i];
+		}
+	}
+	
+	public int get(int index) {
+		return array[index];
+	}
+	
+	public int size() {
+		return array.length;
+	}
+	
+	public void add(int item) {
+		int[] newArray = new int[array.length + 1];
+		copyData(array, newArray);
+		newArray[array.length] = item;
+		array = newArray;
+	}
+	
+//	public void add(int item) {
+//		int[] newArray = new int[array.length + 1];
+//
+//		System.out.println("1-array: " + Arrays.toString(array));
+//		System.out.println("1-newArray: " + Arrays.toString(newArray));
+//
+//		copyData(array, newArray);
+//
+//		System.out.println("2-array: " + Arrays.toString(array));
+//		System.out.println("2-newArray: " + Arrays.toString(newArray));
+//
+//		newArray[array.length] = item;
+//
+//		System.out.println("3-array: " + Arrays.toString(array));
+//		System.out.println("3-newArray: " + Arrays.toString(newArray));
+//
+//		array = newArray;
+//
+//		System.out.println("4-array: " + Arrays.toString(array));
+//		System.out.println("4-newArray: " + Arrays.toString(newArray));
+//	}
+	
+	public static void main(String[] args) {
+		DIntArray dia = new DIntArray();
+		System.out.println("1-----------------------------------");
+		dia.add(9);
+		System.out.println("2-----------------------------------");
+		dia.add(5);
+		
+		System.out.println("-------------------------------------");
+		int[] arr2 = {1, 2, 3};		int[] arr3 = {4};
+		System.out.println("arr2: " + Arrays.toString(arr2));
+		System.out.println("arr3: " + Arrays.toString(arr3));
+		arr2[0] = 10;
+		System.out.println("arr2: " + Arrays.toString(arr2));
+		int[] copyArr3 = arr2;
+		arr2 = arr3;
+		arr3 = copyArr3;
+		System.out.println("arr2: " + Arrays.toString(arr2));
+		System.out.println("arr3: " + Arrays.toString(arr3));
+		
+	}
+}
+
+
+

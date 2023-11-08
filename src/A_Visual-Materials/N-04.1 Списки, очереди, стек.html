@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04.1 Списки, очереди, стек</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}		
+		#header {
+			text-align: center;
+			padding: 20px 32px;					
+		}
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 4px;			
+		}
+		.column {
+			flex: 50%;
+			padding: 0 4px;
+			position: relative;
+		}
+		.column img {
+			margin-top: 8px;
+			vertical-align: middle;
+			width: 100%;
+			border: 5px solid #cbcbe7;
+		}
+		p {				  
+			background: #e2edfd;
+			padding-left: 5px;
+		}
+		p.clear {
+			color: transparent;					
+		}
+		button:focus:not(:focus-visible) {
+			border: 2px solid #666666;
+			outline: none;
+		}
+		.btn {
+			border: 2px solid #666666;
+			position: relative; 
+			outline: none;
+			padding: 6px 10px;
+			background-color: #f1f1f1;
+			cursor: pointer;
+			font-size: 18px;
+			overflow: hidden;			
+		}		
+		.btn:hover {
+			background-color: #ddd;
+		}
+		.btn[lang="ru"]:hover {
+			background-color: #f1f1f1;
+		}
+		.but50-wrap .btn.active:hover {
+			background-color: #666;
+		}
+		.btn.active:hover {
+			background-color: #5d5a5a;
+		}
+		.btn:focus {
+			outline: 0;
+			box-shadow: none;
+		}
+		.btn.active {			
+			outline: none;
+			background-color: #666;
+			color: white;
+			overflow: visible;
+		}
+		.but-wrap {
+			position: static;
+			display: flex;
+			justify-content: center;
+		}
+		.zoomBut {
+			display: inline-flex;			
+		}
+		.zoomBut .btn {
+			border-radius: 0;
+			display: inline-flex;
+			align-items: center;
+		}
+		.zoomBut .btn:nth-child(1) {			
+			border-right-width: 1px;
+			border-bottom-left-radius: 0.25rem;
+		}
+		.zoomBut .btn:nth-child(2) {			
+			border-left-width: 1px;
+			border-bottom-right-radius: 0.25rem;
+		}
+		.but100-wrap.left .btn {			
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;			
+		}
+		.but100-wrap.right .btn {			
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;			
+		}
+		.but50-wrap {			
+			margin: 0 15px;			
+		}
+		i.material-icons.sign {
+			color: inherit;			
+			font-size: 1.7em;
+			font-weight: normal;
+		}
+		.zoomBut .btn:nth-child(2) i.material-icons.sign {
+			transform: rotate(90deg);
+		}
+		.divider {
+			left: 49%;
+			position: absolute;
+			height: 120%;
+			width: 0.1rem;
+			background-color: #666666;
+			top: -5%;			
+		}
+		.btn.active .divider {
+			background-color: #f1f1f1;
+		}
+		.fix {
+			position: fixed;
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+		button.but {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    display: flex;
+	    justify-content: center;
+	    padding: 0;
+	    outline: none;
+	    align-items: center;
+	    border-radius: 50%;
+	    border: 5px solid #8d8dd2;
+		}
+		i.material-icons {
+			color: #fff;
+			font-weight: bold;
+			font-size: 1.1em;
+			margin-left: 0px;
+		}
+		.badge {
+			display: inline-flex;
+			padding-right: 0.34em;
+		}
+		.but50-wrap .btn.active,
+		.btn[lang="ru"]{
+			cursor: default;
+		}		
+	</style>
+</head>
+<body onload="insertLabel();two();">
+<div class="container-fluid p-3">
+	<div class="header" id="header">		
+		<p>Click on the buttons to change the grid view.</p>
+		<div class="but-wrap">
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>			
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" ></button>
+				<button class="btn" onclick="zoomRight();" ></button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>			
+		</div>		
+	</div>	
+	<div class="row">
+		<div id="1" class="column">			
+			<span class="badge bg-primary">Рис.1&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.1.png">
+			<p></p>
+		</div>
+		<div  class="column">
+			<span class="badge bg-primary">Рис.2&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.2.png">
+			<p>
+				
+			</p>
+		</div>
+		<div id="2" class="column">
+			<span class="badge bg-primary">Рис.3&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.3.png">
+			<p>
+				* Показана схема блочного динамического массива - он самый удобный, простой и хорошо работающий.</br>								
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.4&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.4.png">
+			<p>
+			</p>
+		</div>
+		<div id="3" class="column">
+			<span class="badge bg-primary">Рис.5&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.5.png">	
+			<p>
+				
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.6.png">
+			<p>
+			* Реализация однонаправленного списка.</br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.7&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.7.png">
+			<p>
+			* Демонстрация добавления в однонаправленный список элементов на примере объектов различного типа.</br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.8&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.8.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.9&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.9.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.10&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.10.png">
+			<p>
+			* <b>Минусы списков</b>:</br>
+			- Недостатком списков является отсутствие возможности доступа к произвольному элементу по индексу, как это возможно в массивах.
+			Получить нужный элемент в списке можно только перебором.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.11.png">
+			<p>
+			* <b>Дополнительные расходы</b> на поддержание структуры данных в списках:</br>
+			- В однонаправленном списке:</br>
+			1. Дополнительный класс</br> <i>class ListItem< T ></i></br>
+			2. Дополнительный указатель на следующий элемент списка</br> <i>ListItem< T > next</i></br>
+			- В двунаправленном списке:</br>
+			3. Помимо 1. и 2. появляется дополнительный указатель на предыдущий элемент списка</br> <i>ListItem< T > prev</i></br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.12&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.12.png">
+			<p>
+			* <b>Оптимизация дополнительных расходов</b> на поддержание структуры данных в списках:</br>
+			Этот вариант существовал до появления дженериков.</br>			
+			Экономия проявляется в отсутствии указателя на следующий элемент списка</br> <i>ListItem< T > next</i></br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.13&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.13.png">
+			<p>
+			* Использование такого варианта списка менее удобно, чтобы добавить в список данные определенного типа нужно расширять класс 
+			<i>ListItem</i> под этот тип.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.14&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.14.png">
+			<p>
+			* Данный тест показывает, что массив намного эффективнее списка при добавлении, а особенно при доступе к элементу.</br>
+			* <b>В разработке нет мелочей!</b> Экономия даже на одном лишнем указателе, как в случае с <i>EList</i>, 
+			приносит выигрыш во времени почти в два раза, что часто важнее неудобства применения.</br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.15&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.15.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.16.png">
+			<p>
+			* С помощью какой структуры данных реализовывать стек, зависит от ситуации, учитывая достоинства и недостатки связного списка и массива.</br>
+			* В <i>JVM</i> стек реализован в виде обычного статического массива, под который выделяется определенный объем памяти.</br>
+			* Если размера стека не хватило - получаем ошибку <i>StackOverflow</i> (например, в случае с бесконечной рекурсией).</br>								
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.17&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.17.png">
+			<p>
+			* Почему внутри <i>JVM</i> используется именно стек?</br>
+			* Потому что команды выполняющие арифметических действия - <i>add</i>, <i>mul</i>, <i>sub</i>, <i>div</i> не имеют операндов,
+			что позволяет очень существенно сэкономить на размере программного кода.</br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.18&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.18.png">
+			<p>
+			* Запустив отладчик мы можем наблюдать <b>стек-фреймы</b> - это участки стека, которые отводятся под каждую функцию.</br>
+			* В данном случае можно видеть стек-фреймы функций <i>main</i> и <i>factorial</i>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.19&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.19.png" >			
+			<p>
+			* <a href="https://habr.com/ru/articles/739338/#1-%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B8">
+			Статья о внутренней архитектуре JVM и о стек-фреймах внутри этой архитектуры (habr.com)
+			</a>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.20&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.20.png">
+			<p>
+			* <a href="Архитектура и работа JVM (статья).html ">
+			Статья о внутренней архитектуре JVM и о стек-фреймах внутри этой архитектуры (более удобный для изучения внутренний вариант)
+			</a>
+			</p>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.21.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.22&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.22.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.23.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.24.png">
+			<p>	
+			* Если заполнение массива <i>ArrayDeque</i> дойдет до конца, то массив продолжит циклически заполняться с начала.</br>
+			* При этом не происходит лишних копирований данных.</br>
+			* <i>ArrayDeque</i> - очень эффективная реализация.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.25.png">
+			<p>
+			* В тесте сравниваются стандартная реализация <i>ArrayDeque</i> и максимально эффективная реализация однозвязного списка <i>EList</i>.</br>
+			* И при добавлении и при захвате элемента <i>ArrayDeque</i> более эффективен.</br>
+			* Несмотря на то что при реализации <i>ArrayDeque</i> больше накладных расходов, чем при реализация <i>EList</i>, большая эффективность
+			может быть связана с тем, что в <i>Java</i> работа с массивами оптимизирована в команды процессора.
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.26&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.26.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.27&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.27.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.28&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.28.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.29.png">
+			<p>
+			* Пример реализации очереди с приоритетом как массива очередей.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.30.png">
+			<p>
+			* Самописная реализация <i>PQueue</i> явно эффективнее стандартной реализации <i>PriorityQueue</i>.</br>
+			* <i>PriorityQueue</i> будет выигрывать по времени у <i>PQueue</i> только если приоритет будет более 1000000.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.31&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.31.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.32&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.32.png">
+			<p>						
+			</p>
+		</div>		
+		<!--<div class="column">
+			<span class="badge bg-primary">Рис.33&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.33.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.34&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.34.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.35&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.35.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.36&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.36.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.37&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.37.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.38&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.38.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.39&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_04.1/04.1.39.png">
+			<p></p>
+		</div>-->
+	</div>
+</div>
+<script>
+hljs.highlightAll();
+
+let header = document.getElementById("header");
+let btns = header.getElementsByClassName("btn");
+let left100 = btns[0];
+let leftZ = btns[1];
+let rightZ = btns[2];
+let right100 = btns[3];
+let zoom50 = btns[4];
+let zoomStep = 10;
+let elements = document.getElementsByClassName("column");
+let bool = false;
+let i;
+
+for (i = 0; i < btns.length; i++) {  
+	btns[i].addEventListener("click", addActive);	
+}
+
+function addActive() {		
+	let current = document.getElementsByClassName("active");				
+	if(bool == false) {
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	} else {
+		this.className = this.className.replace(" active", "");
+		bool = false;
+	}    	
+}
+
+for (i = 0; i < btns.length; i++) {			
+	btns[i].addEventListener("click", changeCursor);	
+}
+
+function setButsAttr(text) {    
+	for (i = 0; i < btns.length; i++) {			
+		if(btns[i].innerText.indexOf(text) != -1)
+			btns[i].setAttribute("lang", "ru");
+	}		
+}
+
+function removeAttr(attr) {
+	for (i = 0; i < btns.length; i++) {		
+		btns[i].removeAttribute(attr);		
+	}
+}
+
+function changeCursor() {   
+	removeAttr("lang");
+	if(this.innerText.indexOf("100R") != -1) {
+		setButsAttr("100R");
+	} else if(this.innerText.indexOf("100L") != -1) {
+		setButsAttr("100L");
+	}		
+}
+
+function zoomLeft() {	
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	
+	if(zoomUp <= 100) {
+		if(zoomUp == 100) {
+			zoomUp += 0;
+		} else {
+			zoomUp += zoomStep;			
+			zoomDown -= zoomStep;
+		}
+		for(i = 0; i < elements.length; i++) {
+			if(i % 2 == 0)
+				elements[i].style.flex = zoomUp +"%";
+			else
+				elements[i].style.flex = zoomDown + "%";
+		}	
+		if(zoomUp == 100) {
+			bool = true;		
+			if(rightZ.className != "btn active")
+				rightZ.className += " active";
+			zoomUp += 0; 		
+		} 
+	}	
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function zoomRight() {
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());	
+	
+	if(zoomDown <= 100) {
+		if(zoomDown == 100) {
+			zoomDown += 0;					
+		} else {
+			zoomDown += zoomStep;			
+			zoomUp -= zoomStep;
+		}		
+		for(i = 0; i < elements.length; i++) {
+			if(i % 2 == 0)
+				elements[i].style.flex = zoomUp +"%";
+			else
+				elements[i].style.flex = zoomDown + "%";
+		}
+		if(zoomDown == 100) {
+			bool = true;		
+			if(leftZ.className != "btn active")
+				leftZ.className += " active";
+			zoomDown += 0;		
+		}
+	} 	
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function removeActive(elem) {	
+	for (i = 0; i < btns.length; i++) {		
+		btns[i].className = btns[i].className.replace(" active", "");
+	}
+	bool = true;	
+	if(elem.className != "btn active")
+		elem.className += " active";	
+} 
+
+function oneLeft() {
+  for(i = 0; i < elements.length; i++) {
+		if(i % 2 == 0)
+			elements[i].style.flex = "100%";
+		else
+			elements[i].style.flex = "0%";
+	}
+			
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";
+	removeActive(rightZ);
+}
+
+function oneRight() {
+  for(i = 0; i < elements.length; i++) {
+		if(i % 2 == 0)
+			elements[i].style.flex = "0%";
+		else
+			elements[i].style.flex = "100%";
+	}
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";
+	removeActive(leftZ);
+}
+
+function two() { 
+	for (i = 0; i < elements.length; i++) {    
+		elements[i].style.flex = "50%";
+	}	  
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function insertLabel() { 
+  let len = elements.length;
+  let html = "<div class=\"column\"><img src=\"images/empty.png\"></div>";
+  if(len % 2 != 0) {
+  	elements[len - 1].insertAdjacentHTML("afterend", html);
+  }
+  for( i = 0; i < elements.length;i++){
+  	let label = "<span class=\"badge bg-primary\">Рис."+ (i + 1) + "&nbsp;<i class=\"material-icons\">&#xe5db;</i></span>";
+    if(elements[i].firstElementChild.tagName != "SPAN")
+    	elements[i].insertAdjacentHTML("afterbegin", label);    
+  }  
+}
+
+$(document).ready(function(){
+	let butWrap = $(".but-wrap");
+	
+	$(window).scroll(function(){
+		if($(document).scrollTop() > 100){
+			butWrap.addClass("fix");
+		} else {
+			butWrap.removeClass("fix");
+		}
+	});	
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

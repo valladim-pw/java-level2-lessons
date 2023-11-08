@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01.3 Эмулятор Random Access Machine</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}		
+		#header {
+			text-align: center;
+			padding: 20px 32px;					
+		}
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 4px;			
+		}
+		.column {
+			flex: 50%;
+			padding: 0 4px;
+			position: relative;
+		}
+		.column img {
+			margin-top: 8px;
+			vertical-align: middle;
+			width: 100%;
+			border: 5px solid #cbcbe7;
+		}
+		p {				  
+			background: #e2edfd;
+			padding-left: 5px;
+		}
+		p.clear {
+			color: transparent;					
+		}
+		button:focus:not(:focus-visible) {
+			border: 2px solid #666666;
+			outline: none;
+		}
+		.btn {
+			border: 2px solid #666666;
+			position: relative; 
+			outline: none;
+			padding: 6px 10px;
+			background-color: #f1f1f1;
+			cursor: pointer;
+			font-size: 18px;
+			overflow: hidden;			
+		}		
+		.btn:hover {
+			background-color: #ddd;
+		}
+		.btn[lang="ru"]:hover {
+			background-color: #f1f1f1;
+		}
+		.but50-wrap .btn.active:hover {
+			background-color: #666;
+		}
+		.btn.active:hover {
+			background-color: #5d5a5a;
+		}
+		.btn:focus {
+			outline: 0;
+			box-shadow: none;
+		}
+		.btn.active {			
+			outline: none;
+			background-color: #666;
+			color: white;
+			overflow: visible;
+		}
+		.but-wrap {
+			position: static;
+			display: flex;
+			justify-content: center;
+		}
+		.zoomBut {
+			display: inline-flex;			
+		}
+		.zoomBut .btn {
+			border-radius: 0;
+			display: inline-flex;
+			align-items: center;
+		}
+		.zoomBut .btn:nth-child(1) {			
+			border-right-width: 1px;
+			border-bottom-left-radius: 0.25rem;
+		}
+		.zoomBut .btn:nth-child(2) {			
+			border-left-width: 1px;
+			border-bottom-right-radius: 0.25rem;
+		}
+		.but100-wrap.left .btn {			
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;			
+		}
+		.but100-wrap.right .btn {			
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;			
+		}
+		.but50-wrap {			
+			margin: 0 15px;			
+		}
+		i.material-icons.sign {
+			color: inherit;			
+			font-size: 1.7em;
+			font-weight: normal;
+		}
+		.zoomBut .btn:nth-child(2) i.material-icons.sign {
+			transform: rotate(90deg);
+		}
+		.divider {
+			left: 49%;
+			position: absolute;
+			height: 120%;
+			width: 0.1rem;
+			background-color: #666666;
+			top: -5%;			
+		}
+		.btn.active .divider {
+			background-color: #f1f1f1;
+		}
+		.fix {
+			position: fixed;
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+		button.but {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    display: flex;
+	    justify-content: center;
+	    padding: 0;
+	    outline: none;
+	    align-items: center;
+	    border-radius: 50%;
+	    border: 5px solid #8d8dd2;
+		}
+		i.material-icons {
+			color: #fff;
+			font-weight: bold;
+			font-size: 1.1em;
+			margin-left: 0px;
+		}
+		.badge {
+			display: inline-flex;
+			padding-right: 0.34em;
+		}
+		.but50-wrap .btn.active,
+		.btn[lang="ru"]{
+			cursor: default;
+		}		
+	</style>
+</head>
+<body onload="insertLabel();two();">
+<div class="container-fluid p-3">
+	<div class="header" id="header">		
+		<p>Click on the buttons to change the grid view.</p>
+		<div class="but-wrap">
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>			
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" ></button>
+				<button class="btn" onclick="zoomRight();" ></button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>			
+		</div>		
+	</div>	
+	<div class="row">
+		<div class="column">
+			<img src="images/images_01.3/01.3.1.png">
+			<p></p>
+		</div>
+		<div class="column ">
+			<img src="images/images_01.3/01.3.2.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.3.png">
+			<p>
+				<a href="https://ru.wikipedia.org/wiki/RAM-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0">RAM-машина</a></br>
+				<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0_%D0%A2%D1%8C%D1%8E%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">
+					Машина Тьюринга (Википедия)</a></br>
+				<a href="https://skillbox.ru/media/code/mashina-tyuringa-chto-eto-roskosh-ili-sredstvo-vychisleniya/">
+					Машина Тьюринга</a></br>
+				<a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80_(%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0)">
+					Регистр</a></br>
+				* В минимальной машине все операции проводятся только в нулевом регистре.</br>
+				* Остальные регистры служат только для чтения и записи.
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.4.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.5.png">
+			<p>
+				<a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">
+					Логический элемент</a></br>
+				<a href="https://yandex.ru/search/?text=%D1%82%D0%B0%D0%BA%D1%82+%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%B0+%D1%8D%D1%82%D0%BE+%D0%B2+%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B5&lr=6&src=suggest_T">
+					Такт процессора</a></br>
+				* Схема на рисунке состоит из логических элементов.</br>
+				* При попадании сигнала на определенный вход идет автоматический перенос сигнала на другие блоки.</br>
+				* Сигнал - это один такт процессора.</br>
+			  * За один такт процессора все биты сдвигаются на единицу вправо.
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.6.png">
+			<p>
+			<a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80_(%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0)">
+				Регистр</a>
+			</p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.7.png">
+			<p>
+				* Repne scans - пример команды процессора Intel.</br>
+				* Такие команды пишутся в микрокоде ядра процессора.</br>
+				* Команда представляет из себя подпрограмму со своей логикой и выполняется конечно не за один такт процессора.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.8.png">
+			<p>
+				* Знак "*1" - это значит "содержимое регистра 1" .</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.9.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.10.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.11.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.12.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.13.png">
+			<p>Объяснение инструкций в коде</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.14.png">
+			<p>Загрузка и компиляция кода по шагам</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.15.png">
+			<p>Загрузка и компиляция кода по шагам</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.16.png">
+			<p>Трэкинг</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.17.png">
+			<p>Завершение работы кода</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.18.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.19.png">
+			<p>
+				<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%80%D0%B0%D1%86%D1%83%D0%B1%D1%8B">
+				Алгоритм Карацубы</a></br>
+				<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A2%D0%BE%D0%BE%D0%BC%D0%B0_%E2%80%94_%D0%9A%D1%83%D0%BA%D0%B0">
+					Алгоритм Тоома-Кука</a></br>
+				<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A8%D1%91%D0%BD%D1%85%D0%B0%D0%B3%D0%B5_%E2%80%94_%D0%A8%D1%82%D1%80%D0%B0%D1%81%D1%81%D0%B5%D0%BD%D0%B0">
+					Алгоритм Шёнхаге-Штрассена</a></br>
+				<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A4%D1%8E%D1%80%D0%B5%D1%80%D0%B0">
+					Алгоритм Фюрера</a></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.20.png">
+			<p>
+			<a href="https://www.geeksforgeeks.org/multiply-two-polynomials-2/">
+			Multiply two polynomials</a></br>
+			<a href="https://translated.turbopages.org/proxy_u/en-ru.ru.45ae410a-644666d3-141d6796-74722d776562/https/www.geeksforgeeks.org/multiply-two-polynomials-2/">
+				Умножьте два многочлена</a></br>
+			<a href="https://www.geeksforgeeks.org/fast-fourier-transformation-poynomial-multiplication/">
+				Fast Fourier Transformation for polynomial multiplication</a></br>
+			<a href="https://translated.turbopages.org/proxy_u/en-ru.ru.45ae410a-644666d3-141d6796-74722d776562/https/www.geeksforgeeks.org/fast-fourier-transformation-poynomial-multiplication/">
+				Быстрое преобразование Фурье для полиномиального умножения</a></br>
+			<a href="https://www.geeksforgeeks.org/iterative-fast-fourier-transformation-polynomial-multiplication/">
+			Iterative Fast Fourier Transformation for polynomial multiplication</a></br>
+			<a href="https://translated.turbopages.org/proxy_u/en-ru.ru.45ae410a-644666d3-141d6796-74722d776562/https/www.geeksforgeeks.org/iterative-fast-fourier-transformation-polynomial-multiplication/">
+			Итеративное быстрое преобразование Фурье для полиномиального умножения</a></br>
+			<a href="https://introcs.cs.princeton.edu/java/97data/Complex.java.html">
+				Complex.java</a></br>
+			<a href="https://introcs.cs.princeton.edu/java/97data/FFT.java.html">
+				FFT.java</a></br>
+			<a href="https://introcs.cs.princeton.edu/java/97data/InplaceFFT.java.html">
+				InplaceFFT.java</a></br>
+			<a href="https://acm.math.spbu.ru/~gassa/bachelor-2020/210225_m20_slides.ru.pdf">
+				Дискретное преобразование Фурье</a></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.21.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.22.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.23.png">
+			<p>
+				*1 Вне зависимости от размера входного массива время выполнения всегда одиноково.</br>
+				*2 Не делается полный перебор, а используются промежуточные вычисления для уменьшения размерности задачи
+				(динамическое программирование). Например алгоритм быстрого возведения в степень:<br>
+				<a href="https://translated.turbopages.org/proxy_u/en-ru.ru.45ae410a-644666d3-141d6796-74722d776562/https/www.geeksforgeeks.org/iterative-fast-fourier-transformation-polynomial-multiplication/">
+					Алгоритмы быстрого возведения в степень
+				</a><br>
+				<a href="d:/JAVAProgwards/2.00_JavaAdvanced0421A_lessons/Less01_JVM-JRE-JDK-JIT_Decompilation-ByteCode/src/_3_EmulatorRAM/FastPow.java">
+					FastPow.java
+				</a><br>
+				*3 Например задача просуммировать все элементы массива.</br>
+				*7 <a href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D1%81%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">
+					Экспонента</a></br>
+				*8 <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB">
+					Факториал</a>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.24.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.25.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.26.png">
+			<p></p>
+		</div>
+		<!--<div class="column">
+			<img src="images/images_01.3/01.3.27.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.28.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.29.png">
+			<p></p>
+		</div>-->
+	</div>
+</div>
+<script>
+hljs.highlightAll();
+
+let header = document.getElementById("header");
+let btns = header.getElementsByClassName("btn");
+let left100 = btns[0];
+let leftZ = btns[1];
+let rightZ = btns[2];
+let right100 = btns[3];
+let zoom50 = btns[4];
+let zoomStep = 10;
+let elements = document.getElementsByClassName("column");
+let bool = false;
+let i;
+
+for (i = 0; i < btns.length; i++) {  
+	btns[i].addEventListener("click", addActive);	
+}
+
+function addActive() {		
+	let current = document.getElementsByClassName("active");				
+	if(bool == false) {
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	} else {
+		this.className = this.className.replace(" active", "");
+		bool = false;
+	}    	
+}
+
+for (i = 0; i < btns.length; i++) {			
+	btns[i].addEventListener("click", changeCursor);	
+}
+
+function setButsAttr(text) {    
+	for (i = 0; i < btns.length; i++) {			
+		if(btns[i].innerText.indexOf(text) != -1)
+			btns[i].setAttribute("lang", "ru");
+	}		
+}
+
+function removeAttr(attr) {
+	for (i = 0; i < btns.length; i++) {		
+		btns[i].removeAttribute(attr);		
+	}
+}
+
+function changeCursor() {   
+	removeAttr("lang");
+	if(this.innerText.indexOf("100R") != -1) {
+		setButsAttr("100R");
+	} else if(this.innerText.indexOf("100L") != -1) {
+		setButsAttr("100L");
+	}		
+}
+
+function zoomLeft() {	
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	
+	if(zoomUp <= 100) {
+		if(zoomUp == 100) {
+			zoomUp += 0;
+		} else {
+			zoomUp += zoomStep;			
+			zoomDown -= zoomStep;
+		}
+		for(i = 0; i < elements.length; i++) {
+			if(i % 2 == 0)
+				elements[i].style.flex = zoomUp +"%";
+			else
+				elements[i].style.flex = zoomDown + "%";
+		}	
+		if(zoomUp == 100) {
+			bool = true;		
+			if(rightZ.className != "btn active")
+				rightZ.className += " active";
+			zoomUp += 0; 		
+		} 
+	}	
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function zoomRight() {
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());	
+	
+	if(zoomDown <= 100) {
+		if(zoomDown == 100) {
+			zoomDown += 0;					
+		} else {
+			zoomDown += zoomStep;			
+			zoomUp -= zoomStep;
+		}		
+		for(i = 0; i < elements.length; i++) {
+			if(i % 2 == 0)
+				elements[i].style.flex = zoomUp +"%";
+			else
+				elements[i].style.flex = zoomDown + "%";
+		}
+		if(zoomDown == 100) {
+			bool = true;		
+			if(leftZ.className != "btn active")
+				leftZ.className += " active";
+			zoomDown += 0;		
+		}
+	} 	
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function removeActive(elem) {	
+	for (i = 0; i < btns.length; i++) {		
+		btns[i].className = btns[i].className.replace(" active", "");
+	}
+	bool = true;	
+	if(elem.className != "btn active")
+		elem.className += " active";	
+} 
+
+function oneLeft() {
+  for(i = 0; i < elements.length; i++) {
+		if(i % 2 == 0)
+			elements[i].style.flex = "100%";
+		else
+			elements[i].style.flex = "0%";
+	}
+			
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";
+	removeActive(rightZ);
+}
+
+function oneRight() {
+  for(i = 0; i < elements.length; i++) {
+		if(i % 2 == 0)
+			elements[i].style.flex = "0%";
+		else
+			elements[i].style.flex = "100%";
+	}
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";
+	removeActive(leftZ);
+}
+
+function two() { 
+	for (i = 0; i < elements.length; i++) {    
+		elements[i].style.flex = "50%";
+	}	  
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function insertLabel() { 
+  let len = elements.length;
+  let html = "<div class=\"column\"><img src=\"images/empty.png\"></div>";
+  if(len % 2 != 0) {
+  	elements[len - 1].insertAdjacentHTML("afterend", html);
+  }
+  for( i = 0; i < elements.length;i++){
+  	let label = "<span class=\"badge bg-primary\">Рис."+ (i + 1) + "&nbsp;<i class=\"material-icons\">&#xe5db;</i></span>";
+    if(elements[i].firstElementChild.tagName != "SPAN")
+    	elements[i].insertAdjacentHTML("afterbegin", label);    
+  }  
+}
+
+$(document).ready(function(){
+	let butWrap = $(".but-wrap");
+	
+	$(window).scroll(function(){
+		if($(document).scrollTop() > 100){
+			butWrap.addClass("fix");
+		} else {
+			butWrap.removeClass("fix");
+		}
+	});	
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

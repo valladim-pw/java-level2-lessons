@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>00.1 Динамические массивы</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}		
+		#header {
+			text-align: center;
+			padding: 20px 32px;					
+		}
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 4px;			
+		}
+		.column {
+			flex: 50%;
+			padding: 0 4px;
+			position: relative;
+		}
+		.column img {
+			margin-top: 8px;
+			vertical-align: middle;
+			width: 100%;
+			border: 5px solid #cbcbe7;
+		}
+		p {				  
+			background: #e2edfd;
+			padding-left: 5px;
+		}
+		p.clear {
+			color: transparent;					
+		}
+		button:focus:not(:focus-visible) {
+			border: 2px solid #666666;
+			outline: none;
+		}
+		.btn {
+			border: 2px solid #666666;
+			position: relative; 
+			outline: none;
+			padding: 6px 10px;
+			background-color: #f1f1f1;
+			cursor: pointer;
+			font-size: 18px;
+			overflow: hidden;			
+		}		
+		.btn:hover {
+			background-color: #ddd;
+		}
+		.btn[lang="ru"]:hover {
+			background-color: #f1f1f1;
+		}
+		.but50-wrap .btn.active:hover {
+			background-color: #666;
+		}
+		.btn.active:hover {
+			background-color: #5d5a5a;
+		}
+		.btn:focus {
+			outline: 0;
+			box-shadow: none;
+		}
+		.btn.active {			
+			outline: none;
+			background-color: #666;
+			color: white;
+			overflow: visible;
+		}
+		.but-wrap {
+			position: static;
+			display: flex;
+			justify-content: center;
+		}
+		.zoomBut {
+			display: inline-flex;			
+		}
+		.zoomBut .btn {
+			border-radius: 0;
+			display: inline-flex;
+			align-items: center;
+		}
+		.zoomBut .btn:nth-child(1) {			
+			border-right-width: 1px;
+			border-bottom-left-radius: 0.25rem;
+		}
+		.zoomBut .btn:nth-child(2) {			
+			border-left-width: 1px;
+			border-bottom-right-radius: 0.25rem;
+		}
+		.but100-wrap.left .btn {			
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;			
+		}
+		.but100-wrap.right .btn {			
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;			
+		}
+		.but50-wrap {			
+			margin: 0 15px;			
+		}
+		i.material-icons.sign {
+			color: inherit;			
+			font-size: 1.7em;
+			font-weight: normal;
+		}
+		.zoomBut .btn:nth-child(2) i.material-icons.sign {
+			transform: rotate(90deg);
+		}
+		.divider {
+			left: 49%;
+			position: absolute;
+			height: 120%;
+			width: 0.1rem;
+			background-color: #666666;
+			top: -5%;			
+		}
+		.btn.active .divider {
+			background-color: #f1f1f1;
+		}
+		.fix {
+			position: fixed;
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+		button.but {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    display: flex;
+	    justify-content: center;
+	    padding: 0;
+	    outline: none;
+	    align-items: center;
+	    border-radius: 50%;
+	    border: 5px solid #8d8dd2;
+		}
+		i.material-icons {
+			color: #fff;
+			font-weight: bold;
+			font-size: 1.1em;
+			margin-left: 0px;
+		}
+		.badge {
+			display: inline-flex;
+			padding-right: 0.34em;
+		}
+		.but50-wrap .btn.active,
+		.btn[lang="ru"]{
+			cursor: default;
+		}		
+	</style>
+</head>
+<body onload="insertLabel();two();">
+<div class="container-fluid p-3">
+	<div class="header" id="header">		
+		<p>Click on the buttons to change the grid view.</p>
+		<div class="but-wrap">
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>			
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" ></button>
+				<button class="btn" onclick="zoomRight();" ></button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>			
+		</div>		
+	</div>	
+	<div class="row">
+		<div class="column">
+			<img src="images/images_00.1/00.1.1.png">
+			<p></p>
+		</div>
+		<div class="column ">
+			<img src="images/images_00.1/00.1.2.png">
+			<p>
+				
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.3.png">
+			<p>							
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.4.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.5.png">
+			
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.6.png">	
+			<p>
+			* В чем преимущество такой структуры данных как массив:</br>
+			* При создании массива система выделяет под него <b>одну сплошную часть памяти</b>.</br>		
+			* Это ускоряет доступ к элементу массива по индексу, потому что условные ячейки с даннными об элементах 
+			массива располагаются в части памяти выделенной под массив последовательно.</br>
+			* Если массив предназначен для примитивных типов, то данные элементов хранятся непосредственно в массиве 
+			(если, например, это <b>int</b> - то в каждой условной ячейке части памяти, выделенной под этот массив хранится по 4 байта, <b>byte</b> - по 1ому байту, <b>short</b> - по 2 байта и т.п.)
+			и чтобы найти элемент по индексу система перемножает количество байт типа элемента на индекс (т.е. чтобы найти элемент в массиве c int по индексу 2 - 2 * 4 = 8).</br>
+			* При этом подсчет индексов массива начинается с 0, потому что в начале массива нет смещения и первый элемент лежит там, куда указывает указатель массива.</br>
+			* Если массив предназначен для ссылочных типов (объектов), работает тот же принцип, что для примитивов, разница в том что в массиве хранятся уже ссылки (указатели) на объекты.
+			Если система 64-битная, то указатель в массиве занимает 8 байт, если 32-битная - 4 байта, а поиск по индексу осуществляется подсчетом как и с примитивами.</br>
+			* Чаще даже поиск элемента по индексу осуществляется не умножением а операцией сдвига, что ускоряет поиск.</br>
+			* <b>Поэтому не только массивы, но и все структуры данных основанные на массивах хорошо и быстро работают</b>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.7.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.8.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.9.png">
+			<p>
+			* Наглядная демонстрация присваивания нового значения элемента массива по индексу и присваивания значения одного массива другому массиву (фактически копирование).</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.10.png">
+			<p>
+			* Добавление элементов в динамическом массиве осуществляется в методе</br>
+			<b>add(int item)</b>:</br>
+			1 - создается новый массив, размер которого больше исходного на 1:</br> 
+			int[] newArray = new int[array.length + 1];</br> 
+			2 - данные исходного массива копируются в новый массив:</br> 
+			copyData(array, newArray);</br>
+			3 - в новый массив добавляется элемент:</br> 
+			newArray[array.length] = item;</br>
+			4 - исходному массиву присвается значение нового массива:</br>
+			array = newArray;</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.11.png">
+			<p>
+			* Здесь, на примере, демонстрируется поэтапная схема работы метода добавления элемента в массив через копию.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.12.png">
+			<p>
+			* Существуют динамические массивы, в которых вместимость (capacity) при заполнении увеличивается заданными блоками.</br>
+			* К таким структурам данных относится	<b>ArrayList</b>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.13.png">
+			<p>
+			* В блочном динамическом массиве в методе	<b>add(int item)</b> добавление элементов происходит с небольшими изменениями:</br>
+			1 - проверяется соответствие свойства size фактической длине массива:</br> 
+			if(size == array.length)</br> 
+			2 - добавление осуществляется также как в динамическом массиве через копию, только длина копии массива увеличивается на заданное свойство block:</br>
+			int[] newArray = new int[array.length + block];</br>
+			3 - в случае если size меньше длины массива, элемент добавляется в массив на позицию инкремента size:</br>
+			array[size++] = item;</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.14.png">
+			<p>
+			* Иллюстрация поэтапной работы добавления элементов в блочном динамическом массиве.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.15.png">
+			<p>
+			* По времени добавления элементов блочный динамический массив гораздо эффективнее динамического.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.16.png">
+			<p>
+			* Страничный массив имеет смысл если:</br>
+			- надо добавлять элементы всегда в конец,</br>
+			- нужен прямой доступ к элементам по индексу.</br>
+			* Преимущества страничного массива в сравнении с динамическим массивом:</br>
+			- страничный массив <b>не копирует данные</b>,</br>
+			- при добавлении элементов системе нет необходимости искать фрагмент памяти под весь массив (а при достаточно большом массиве для него может потребоваться большой фрагмент)
+			потому что страничный массив состоит из частей - страниц, представляющих из себя отдельные массивы, которые в свою очередь привязаны к размеру фрагмента памяти на жестком диске.</br>
+			* Фактически страничный массив это <b>массив массивов</b>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.17.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.18.png">
+			<p>
+			* Реализация и результат добавления элементов в страничный массив.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.19.png">
+			<p>
+			* По времени страничный массив гораздо эффективнее блочного.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.20.png">			
+			<p>
+			* Для вставки элемента в любое место массива более эффективно использовать массив с частиным заполнением.</br>
+			* Фактически это страничный массив, но страницы (массивы) в нем заполнены данными неодинаково.</br>
+			* Для вставки элемента в любом месте мы копируем только нужную страницу по этому индексу, а не весь массив.</br>
+			* Доступ по индексу неэффективен именно из-за разной заполненности страниц.</br>
+			</p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.21.png">
+			<p>
+			* <b>Очередь</b> - еще одна структура данных, особенность которой в том что новые элементы добавляются только в конец, а берутся только из начала .</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.22.png">			
+			<p>
+			* <b>ArrayDeque</b> - класс, реализующий кольцевой буфер на массиве.</br>
+			* Но в данном случае это не физически кольцевой буфер, он реализуется здесь логически.</br>
+			* Такая структура одинаково эффективна в обе стороны (можно класть элементы в начало - забирать с конца, или класть в конец забирать с начала).</br>
+			* Поэтому <b>ArrayDeque</b> определяется как двунаправленная очередь.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.23.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.24.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.25.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.26.png">
+			<p>
+			* <b>Обычный массив</b>:</br>
+			- Это набор значений одного типа</br>
+			- Быстрый доступ к элементу по индексу</br>
+			- Нельзя менять размер созданного массива</br>
+			- Эффективно работает добавление и удаление элементов в конце массива</br>
+			- Неффективно работает добавление и удаление элементов в начало либо в середину массива</br>
+			* <b>Динамические массивы</b>:</br>
+			- Это набор значений одного типа</br>
+			- Быстрый доступ к элементу по индексу</br>
+			- Размер массива растет по мере необходимости</br>
+			- Эффективно работает добавление и удаление элементов в конце массива</br>
+			- Неффективно работает добавление и удаление элементов в начало либо в середину массива</br>
+			- Добавление элементов гораздо эффективнее в блочном динамическом массиве</br>
+			* <b>Страничный массив</b>:</br>
+			- Очень эффективен толко для добавления и удаления элементов в конец</br>
+			* <b>Страничный массив с частичным заполнением</b>:</br>
+			- Специфическая структура данных для определенного класса задач</br>
+			- Одинаково эффективен для добавления и удаления элементов в любое место массива</br>
+			* <b>Кольцевой буфер (ArrayDeque)</b>:</br>
+			- Такая структура одинаково эффективна в обе стороны (можно класть элементы в начало - забирать с конца, или класть в конец забирать с начала)
+			</p>
+		</div>
+		<!--<div class="column">
+			<img src="images/images_00.1/00.1.27.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.28.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.29.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.30.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.31.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.32.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.33.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.34.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.35.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.36.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.37.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.38.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_00.1/00.1.39.png">
+			<p></p>
+		</div>-->
+	</div>
+</div>
+<script>
+hljs.highlightAll();
+
+let header = document.getElementById("header");
+let btns = header.getElementsByClassName("btn");
+let left100 = btns[0];
+let leftZ = btns[1];
+let rightZ = btns[2];
+let right100 = btns[3];
+let zoom50 = btns[4];
+let zoomStep = 10;
+let elements = document.getElementsByClassName("column");
+let bool = false;
+let i;
+
+for (i = 0; i < btns.length; i++) {  
+	btns[i].addEventListener("click", addActive);	
+}
+
+function addActive() {		
+	let current = document.getElementsByClassName("active");				
+	if(bool == false) {
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	} else {
+		this.className = this.className.replace(" active", "");
+		bool = false;
+	}    	
+}
+
+for (i = 0; i < btns.length; i++) {			
+	btns[i].addEventListener("click", changeCursor);	
+}
+
+function setButsAttr(text) {    
+	for (i = 0; i < btns.length; i++) {			
+		if(btns[i].innerText.indexOf(text) != -1)
+			btns[i].setAttribute("lang", "ru");
+	}		
+}
+
+function removeAttr(attr) {
+	for (i = 0; i < btns.length; i++) {		
+		btns[i].removeAttribute(attr);		
+	}
+}
+
+function changeCursor() {   
+	removeAttr("lang");
+	if(this.innerText.indexOf("100R") != -1) {
+		setButsAttr("100R");
+	} else if(this.innerText.indexOf("100L") != -1) {
+		setButsAttr("100L");
+	}		
+}
+
+function zoomLeft() {	
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	
+	if(zoomUp <= 100) {
+		if(zoomUp == 100) {
+			zoomUp += 0;
+		} else {
+			zoomUp += zoomStep;			
+			zoomDown -= zoomStep;
+		}
+		for(i = 0; i < elements.length; i++) {
+			if(i % 2 == 0)
+				elements[i].style.flex = zoomUp +"%";
+			else
+				elements[i].style.flex = zoomDown + "%";
+		}	
+		if(zoomUp == 100) {
+			bool = true;		
+			if(rightZ.className != "btn active")
+				rightZ.className += " active";
+			zoomUp += 0; 		
+		} 
+	}	
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function zoomRight() {
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());	
+	
+	if(zoomDown <= 100) {
+		if(zoomDown == 100) {
+			zoomDown += 0;					
+		} else {
+			zoomDown += zoomStep;			
+			zoomUp -= zoomStep;
+		}		
+		for(i = 0; i < elements.length; i++) {
+			if(i % 2 == 0)
+				elements[i].style.flex = zoomUp +"%";
+			else
+				elements[i].style.flex = zoomDown + "%";
+		}
+		if(zoomDown == 100) {
+			bool = true;		
+			if(leftZ.className != "btn active")
+				leftZ.className += " active";
+			zoomDown += 0;		
+		}
+	} 	
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function removeActive(elem) {	
+	for (i = 0; i < btns.length; i++) {		
+		btns[i].className = btns[i].className.replace(" active", "");
+	}
+	bool = true;	
+	if(elem.className != "btn active")
+		elem.className += " active";	
+} 
+
+function oneLeft() {
+  for(i = 0; i < elements.length; i++) {
+		if(i % 2 == 0)
+			elements[i].style.flex = "100%";
+		else
+			elements[i].style.flex = "0%";
+	}
+			
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";
+	removeActive(rightZ);
+}
+
+function oneRight() {
+  for(i = 0; i < elements.length; i++) {
+		if(i % 2 == 0)
+			elements[i].style.flex = "0%";
+		else
+			elements[i].style.flex = "100%";
+	}
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";
+	removeActive(leftZ);
+}
+
+function two() { 
+	for (i = 0; i < elements.length; i++) {    
+		elements[i].style.flex = "50%";
+	}	  
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function insertLabel() { 
+  let len = elements.length;
+  let html = "<div class=\"column\"><img src=\"images/empty.png\"></div>";
+  if(len % 2 != 0) {
+  	elements[len - 1].insertAdjacentHTML("afterend", html);
+  }
+  for( i = 0; i < elements.length;i++){
+  	let label = "<span class=\"badge bg-primary\">Рис."+ (i + 1) + "&nbsp;<i class=\"material-icons\">&#xe5db;</i></span>";
+    if(elements[i].firstElementChild.tagName != "SPAN")
+    	elements[i].insertAdjacentHTML("afterbegin", label);    
+  }  
+}
+
+$(document).ready(function(){
+	let butWrap = $(".but-wrap");
+	
+	$(window).scroll(function(){
+		if($(document).scrollTop() > 100){
+			butWrap.addClass("fix");
+		} else {
+			butWrap.removeClass("fix");
+		}
+	});	
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

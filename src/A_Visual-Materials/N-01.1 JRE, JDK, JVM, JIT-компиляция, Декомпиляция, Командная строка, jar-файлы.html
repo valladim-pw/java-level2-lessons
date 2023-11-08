@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01.1 JRE, JDK, JVM, JIT-компиляция, Декомпиляция, Командная строка, jar-файлы</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}		
+		#header {
+			text-align: center;
+			padding: 20px 32px;					
+		}
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 4px;			
+		}
+		.column {
+			flex: 50%;
+			padding: 0 4px;
+			position: relative;
+		}
+		.column img {
+			margin-top: 8px;
+			vertical-align: middle;
+			width: 100%;
+			border: 5px solid #cbcbe7;
+		}
+		p {				  
+			background: #e2edfd;
+			padding-left: 5px;
+		}
+		p.clear {
+			color: transparent;					
+		}
+		button:focus:not(:focus-visible) {
+			border: 2px solid #666666;
+			outline: none;
+		}
+		.btn {
+			border: 2px solid #666666;
+			position: relative; 
+			outline: none;
+			padding: 6px 10px;
+			background-color: #f1f1f1;
+			cursor: pointer;
+			font-size: 18px;
+			overflow: hidden;			
+		}		
+		.btn:hover {
+			background-color: #ddd;
+		}
+		.btn[lang="ru"]:hover {
+			background-color: #f1f1f1;
+		}
+		.but50-wrap .btn.active:hover {
+			background-color: #666;
+		}
+		.btn.active:hover {
+			background-color: #5d5a5a;
+		}
+		.btn:focus {
+			outline: 0;
+			box-shadow: none;
+		}
+		.btn.active {			
+			outline: none;
+			background-color: #666;
+			color: white;
+			overflow: visible;
+		}
+		.but-wrap {
+			position: static;
+			display: flex;
+			justify-content: center;
+		}
+		.zoomBut {
+			display: inline-flex;			
+		}
+		.zoomBut .btn {
+			border-radius: 0;
+			display: inline-flex;
+			align-items: center;
+		}
+		.zoomBut .btn:nth-child(1) {			
+			border-right-width: 1px;
+			border-bottom-left-radius: 0.25rem;
+		}
+		.zoomBut .btn:nth-child(2) {			
+			border-left-width: 1px;
+			border-bottom-right-radius: 0.25rem;
+		}
+		.but100-wrap.left .btn {			
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;			
+		}
+		.but100-wrap.right .btn {			
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;			
+		}
+		.but50-wrap {			
+			margin: 0 15px;			
+		}
+		i.material-icons.sign {
+			color: inherit;			
+			font-size: 1.7em;
+			font-weight: normal;
+		}
+		.zoomBut .btn:nth-child(2) i.material-icons.sign {
+			transform: rotate(90deg);
+		}
+		.divider {
+			left: 49%;
+			position: absolute;
+			height: 120%;
+			width: 0.1rem;
+			background-color: #666666;
+			top: -5%;			
+		}
+		.btn.active .divider {
+			background-color: #f1f1f1;
+		}
+		.fix {
+			position: fixed;
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+		button.but {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    display: flex;
+	    justify-content: center;
+	    padding: 0;
+	    outline: none;
+	    align-items: center;
+	    border-radius: 50%;
+	    border: 5px solid #8d8dd2;
+		}
+		i.material-icons {
+			color: #fff;
+			font-weight: bold;
+			font-size: 1.1em;
+			margin-left: 0px;
+		}
+		.badge {
+			display: inline-flex;
+			padding-right: 0.34em;
+		}
+		.but50-wrap .btn.active,
+		.btn[lang="ru"]{
+			cursor: default;
+		}		
+	</style>
+</head>
+<body onload="insertLabel();two();">
+<div class="container-fluid p-3">
+	<div class="header" id="header">		
+		<p>Click on the buttons to change the grid view.</p>
+		<div class="but-wrap">
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>			
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" ></button>
+				<button class="btn" onclick="zoomRight();" ></button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>			
+		</div>		
+	</div>	
+	<div class="row">
+		<div class="column">
+			<img src="images/images_01.1/01.1.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.2.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.3.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.4.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.5.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.6.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.7.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.8.png">
+			<p>
+				* JIT это компиляция часто повторяющихся фрагментов кода.</br>
+				* Такой код компилируется один раз и в дальнейшем для ускорения выполнения запускается в процессе интерпретации байт-кода.</br>
+				* Есть 4 уровня JIT-компиляции.</br>
+				* JIT-компилятор самостоятельно решает какой уровень задать в зависимости от частоты повторения кода.</br>
+				* С1 и С2 - два вида JIT-компиляторов.</br>
+				* C1 (клиентский) - способен компилировать до 3-его уровня сложности.</br>
+				* C2 - компилирует самый сложный 4-ый уровень.
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.9.png">
+			<p></p>
+		</div>		
+		<div class="column">
+			<img src="images/images_01.1/01.10.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.11.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.12.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.13.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.14.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.15.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.16.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.17.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.18.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.19.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.20.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.21.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.22.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.23.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.24.png">
+			<p>
+				* Создание библиотеки в Java - это создание архива.</br>
+				* Ecть специальные архивы с расширением jar, в которые можно поместить байт-код.</br>
+				* Если в библиотеке есть исполняемый файл (с методом main), то командой java мы можем эту библиотеку запустить
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.25.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.26.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.27.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.28.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.1/01.29.png">
+			<p></p>
+		</div>			
+	</div>
+</div>
+<div id="demo"></div>
+<script>
+hljs.highlightAll();
+
+let header = document.getElementById("header");
+let btns = header.getElementsByClassName("btn");
+let left100 = btns[0];
+let leftZ = btns[1];
+let rightZ = btns[2];
+let right100 = btns[3];
+let zoom50 = btns[4];
+let zoomStep = 10;
+let elements = document.getElementsByClassName("column");
+let bool = false;
+let i;
+
+for (i = 0; i < btns.length; i++) {  
+	btns[i].addEventListener("click", addActive);	
+}
+
+function addActive() {		
+	let current = document.getElementsByClassName("active");				
+	if(bool == false) {
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	} else {
+		this.className = this.className.replace(" active", "");
+		bool = false;
+	}    	
+}
+
+for (i = 0; i < btns.length; i++) {			
+	btns[i].addEventListener("click", changeCursor);	
+}
+
+function setButsAttr(text) {    
+	for (i = 0; i < btns.length; i++) {			
+		if(btns[i].innerText.indexOf(text) != -1)
+			btns[i].setAttribute("lang", "ru");
+	}		
+}
+
+function removeAttr(attr) {
+	for (i = 0; i < btns.length; i++) {		
+		btns[i].removeAttribute(attr);		
+	}
+}
+
+function changeCursor() {   
+	removeAttr("lang");
+	if(this.innerText.indexOf("100R") != -1) {
+		setButsAttr("100R");
+	} else if(this.innerText.indexOf("100L") != -1) {
+		setButsAttr("100L");
+	}		
+}
+
+function zoomLeft() {	
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	
+	if(zoomUp <= 100) {
+		if(zoomUp == 100) {
+			zoomUp += 0;
+		} else {
+			zoomUp += zoomStep;			
+			zoomDown -= zoomStep;
+		}
+		for(i = 0; i < elements.length; i++) {
+			if(i % 2 == 0)
+				elements[i].style.flex = zoomUp +"%";
+			else
+				elements[i].style.flex = zoomDown + "%";
+		}	
+		if(zoomUp == 100) {
+			bool = true;		
+			if(rightZ.className != "btn active")
+				rightZ.className += " active";
+			zoomUp += 0; 		
+		} 
+	}	
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function zoomRight() {
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());	
+	
+	if(zoomDown <= 100) {
+		if(zoomDown == 100) {
+			zoomDown += 0;					
+		} else {
+			zoomDown += zoomStep;			
+			zoomUp -= zoomStep;
+		}		
+		for(i = 0; i < elements.length; i++) {
+			if(i % 2 == 0)
+				elements[i].style.flex = zoomUp +"%";
+			else
+				elements[i].style.flex = zoomDown + "%";
+		}
+		if(zoomDown == 100) {
+			bool = true;		
+			if(leftZ.className != "btn active")
+				leftZ.className += " active";
+			zoomDown += 0;		
+		}
+	} 	
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function removeActive(elem) {	
+	for (i = 0; i < btns.length; i++) {		
+		btns[i].className = btns[i].className.replace(" active", "");
+	}
+	bool = true;	
+	if(elem.className != "btn active")
+		elem.className += " active";	
+} 
+
+function oneLeft() {
+  for(i = 0; i < elements.length; i++) {
+		if(i % 2 == 0)
+			elements[i].style.flex = "100%";
+		else
+			elements[i].style.flex = "0%";
+	}
+			
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";
+	removeActive(rightZ);
+}
+
+function oneRight() {
+  for(i = 0; i < elements.length; i++) {
+		if(i % 2 == 0)
+			elements[i].style.flex = "0%";
+		else
+			elements[i].style.flex = "100%";
+	}
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";
+	removeActive(leftZ);
+}
+
+function two() { 
+	for (i = 0; i < elements.length; i++) {    
+		elements[i].style.flex = "50%";
+	}	  
+	let zoomUp = parseInt(elements[0].style.flex.substring(3, 7).trim());
+	let zoomDown = parseInt(elements[1].style.flex.substring(3, 7).trim());
+	leftZ.innerHTML = "<i class=\"material-icons sign\">zoom_in</i> " + zoomUp + "L";
+	rightZ.innerHTML = zoomDown + "R <i class=\"material-icons sign\">zoom_in</i>";	
+}
+
+function insertLabel() { 
+  let len = elements.length;
+  let html = "<div class=\"column\"><img src=\"images/empty.png\"></div>";
+  if(len % 2 != 0) {
+  	elements[len - 1].insertAdjacentHTML("afterend", html);
+  }
+  for( i = 0; i < elements.length;i++){
+  	let label = "<span class=\"badge bg-primary\">Рис."+ (i + 1) + "&nbsp;<i class=\"material-icons\">&#xe5db;</i></span>";
+    if(elements[i].firstElementChild.tagName != "SPAN")
+    	elements[i].insertAdjacentHTML("afterbegin", label);    
+  }  
+}
+
+$(document).ready(function(){
+	let butWrap = $(".but-wrap");
+	
+	$(window).scroll(function(){
+		if($(document).scrollTop() > 100){
+			butWrap.addClass("fix");
+		} else {
+			butWrap.removeClass("fix");
+		}
+	});	
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
