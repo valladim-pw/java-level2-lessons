@@ -11,7 +11,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-	<style>
+	<style >
 		* {
 			box-sizing: border-box;
 		}
@@ -93,7 +93,7 @@
 		.zoomBut .btn {
 			border-radius: 0;
 			display: inline-flex;
-			align-items: center;
+			align-items: center;			
 		}
 		.zoomBut .btn:nth-child(1) {			
 			border-right-width: 1px;
@@ -182,7 +182,7 @@
 		
 	</style>
 </head>
-<body onload="insertLabel();two();">
+<body onload="insertLabel(); two();">
 <div class="container-fluid p-3">
 	<div class="header" id="header">		
 		<p>Click on the buttons to change the grid view.</p>
@@ -192,8 +192,8 @@
 				<button class="btn" onclick="oneLeft();">100L</button>
 			</div>			
 		  <div class="zoomBut">
-				<button class="btn" onclick="zoomLeft();" ></button>
-				<button class="btn" onclick="zoomRight();" ></button>
+				<button class="btn" onclick="zoomLeft();" >50L</button>
+				<button class="btn" onclick="zoomRight();" >50R</button>
 			</div>
 			<div class="but100-wrap right">
 				<button class="btn" onclick="oneRight();">100R</button>
@@ -206,7 +206,7 @@
 	<div class="row">
 		<div id="1" class="column">			
 			<span class="badge bg-primary">Рис.1&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_04.3/04.3.1.png">
+			<img src="images/images_04.3/04.3.1.png" >
 			<p></p>
 		</div>
 		<div  class="column">
@@ -253,7 +253,9 @@
 			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_04.3/04.3.6.png">
 			<p>
-			* Выше показана реализация <i>max-heap</i>.</br>			
+			* Выше показана реализация <i>max-heap</i>.</br>
+			* <a href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_3_BinaryHeap/BinaryHeapMax.java">
+			BinaryHeapMax.java</a>
 			</p>
 		</div>
 		<div class="column">

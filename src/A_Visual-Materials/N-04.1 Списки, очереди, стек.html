@@ -166,19 +166,34 @@
 		.btn[lang="ru"]{
 			cursor: default;
 		}		
+	.back-fix {
+			position: fixed;
+			display: inline-flex;
+			width: 0;
+			height: 2.9em;
+			top: 0;
+			left: 0;
+			background-color: #e8e8f8;
+			opacity: 0.95;
+		}
+		.but-wrap.fix .back-fix {			
+			width: 100%;			
+		}
+		
 	</style>
 </head>
-<body onload="insertLabel();two();">
+<body onload="insertLabel(); two();">
 <div class="container-fluid p-3">
 	<div class="header" id="header">		
 		<p>Click on the buttons to change the grid view.</p>
 		<div class="but-wrap">
+			<div class="back-fix"></div>
 		  <div class="but100-wrap left">
 				<button class="btn" onclick="oneLeft();">100L</button>
 			</div>			
 		  <div class="zoomBut">
-				<button class="btn" onclick="zoomLeft();" ></button>
-				<button class="btn" onclick="zoomRight();" ></button>
+				<button class="btn" onclick="zoomLeft();" >50L</button>
+				<button class="btn" onclick="zoomRight();" >50R</button>
 			</div>
 			<div class="but100-wrap right">
 				<button class="btn" onclick="oneRight();">100R</button>
