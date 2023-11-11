@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
+public class BinaryHeapMaxSort2<T extends Comparable<T>> {
 	public enum Type {
 		MAX_HEAP, MIN_HEAP
 	};
@@ -15,7 +15,7 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 	public LinkedList<Integer> plist;
 	private Type type;
 	
-	BinaryHeapMaxWithDel2() {
+	BinaryHeapMaxSort2() {
 		list = new ArrayList<>();
 		plist = new LinkedList<>();
 		count = 0;
@@ -23,7 +23,7 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 		type = Type.MAX_HEAP;
 	}
 	
-	BinaryHeapMaxWithDel2(Type type) {
+	BinaryHeapMaxSort2(Type type) {
 		this();
 		this.type = type;
 	}
@@ -116,7 +116,7 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 				i = max;
 			}
 			if(loop) {
-				System.out.println(list);
+				//System.out.println(list);
 				print(2, 4);
 			}
 		} while(loop);
@@ -124,6 +124,15 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 	@Override
 	public String toString() {
 		return list.toString();
+	}
+	
+	public List<T> sort() {
+		List<T> sorted = new ArrayList<>();
+		for (int i = 0; size() > 0; i++) {
+			sorted.add(poll());
+			System.out.println("Sorted list: " + sorted);
+		}
+		return sorted;
 	}
 	
 	/* Дополнительные методы для печати */
