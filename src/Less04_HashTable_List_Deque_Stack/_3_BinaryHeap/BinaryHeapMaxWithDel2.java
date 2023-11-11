@@ -149,8 +149,7 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 	public String dashValue(int w, int offset, T value) {
 		String a = ws(1) + ("").concat("_").repeat(offset - 1);
 		int len = value.toString().length();
-		String b = ("").concat("_").repeat(((w + 2) -
-						                                    (a.length() + len)) - 1) + ws(1);
+		String b = ("").concat("_").repeat(((w + 2) - (a.length() + len)) - 1) + ws(1);
 		return a + value + b + ws(w);
 	}
 	
