@@ -66,7 +66,7 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 	}
 	
 	public T poll() {
-		print(2, 4);
+		print(2);
 		if(count == pow(2, pow))
 			pow--;
 		count--;
@@ -78,7 +78,7 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 			System.out.println("Replace-> max value \"" +
 				result + "\" with last value \"" + item  +
         "\":\n" + list);
-			print(2, 4);
+			print(2);
 			shiftDown();
 		}
 		return result;
@@ -117,7 +117,7 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 			}
 			if(loop) {
 				System.out.println(list);
-				print(2, 4);
+				print(2);
 			}
 		} while(loop);
 	}
@@ -128,26 +128,33 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 	
 	/* Дополнительные методы для печати */
 	
+	public int maxLen() {
+		T max = list.stream().reduce(list.get(0),
+						(a, x) -> a.toString().length() < x.toString().length() ? x : a);
+		return max.toString().length();
+	}
 	public static int pow(int value, int powValue) {
 		return (int) Math.pow(value, powValue);
 	}
 	static String ws(int n) {
 		return ("").concat(" ").repeat(n);
 	}
-	static String vdash(int w) {
-		return "|" + ws(w);
+	static String vdash(int maxLen) {
+		return "|" + ws(maxLen - 1);
 	}
-	public String wsValue(int w, T value) {
-		return value + ws(w);
+	public String wsValue(int maxLen, int offset, T value) {
+		int len = value.toString().length();
+		return value + ws(maxLen - len);
 	}
-	public String dashValue(int w, int offset, T value) {
+	public String dashValue(int maxLen, int offset, T value) {
 		String a = ws(1) + ("").concat("_").repeat(offset - 1);
 		int len = value.toString().length();
-		String b = ("").concat("_").repeat(((w + 2) - (a.length() + len)) - 1) + ws(1);
-		return a + value + b + ws(w);
+		String b = ("").concat("_").repeat(maxLen - (a.length() + len)) + ws(1);
+		return a + value + b + ws(maxLen - 1);
 	}
 	
-	public void print(int offset, int width) {
+	public void print(int offset) {
+		int width = maxLen() + (offset * 2);
 		int dwidth = 0;
 		int ind = 0;
 		int num = count;
@@ -159,18 +166,18 @@ public class BinaryHeapMaxWithDel2<T extends Comparable<T>> {
 		for(int i = size() - 1; i >= 0; i--) {
 			int ipow = plist.get(i);
 			if(ipow == lastpow && num < pow(2, ipow)) {
-				sb.insert(0, wsValue(width, list.get(i)));
+				sb.insert(0, wsValue(width, offset, list.get(i)));
 				sval = sb.toString();
 				svdash += vdash(width);
 			}
 			if(ipow < lastpow && num <= pow(2, ipow)) {
 				sb.insert(0, dashValue(width, offset, list.get(i)));
 				sval = ws(ind - offset) + sb.toString();
-				svdash += vdash(dwidth);
+				svdash += vdash(dwidth - 1);
 			}
 			if(num == pow(2, ipow - 1)) {
 				if(dwidth > 0)
-					width = dwidth;
+					width = dwidth - 1;
 				dwidth = width*2 + 1;
 				if(num == 1)
 					ls.add(0, sval);
