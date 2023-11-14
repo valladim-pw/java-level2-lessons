@@ -1,4 +1,4 @@
-package Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._6PriorityQueue;
+package Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._7PriorityQueue;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._5ADeque_EList_TimeTest;
+package Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._6ADeque_EList_TimeTest;
 
 public class EList {
 	static class ListItem {

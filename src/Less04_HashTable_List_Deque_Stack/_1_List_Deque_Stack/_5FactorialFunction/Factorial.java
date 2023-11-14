@@ -1,4 +1,4 @@
-package Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._4FactorialFunction;
+package Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._5FactorialFunction;
 
 public class Factorial {
 	static int factorial(int n) {
