@@ -144,7 +144,7 @@
 			<p>
 			* Использование такого варианта списка менее удобно, чтобы добавить в список данные определенного типа нужно расширять класс 
 			<i>ListItem</i> под этот тип.</br>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_1ObjectsList/Test_EList.java">
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_2ElementsList/Test_EList.java">
 			Test_EList.java</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
@@ -154,7 +154,11 @@
 			<p>
 			* Данный тест показывает, что массив намного эффективнее списка при добавлении, а особенно при доступе к элементу.</br>
 			* <b>В разработке нет мелочей!</b> Экономия даже на одном лишнем указателе, как в случае с <i>EList</i>, 
-			приносит выигрыш во времени почти в два раза, что часто важнее неудобства применения.</br>			
+			приносит выигрыш во времени почти в два раза, что часто важнее неудобства применения.</br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_3BlockArray/BArray.java">
+			BArray.java</a><i class="fa fa-github"></i></i></br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_4OList_EList_BArray_TimeTest/TimeTest.java">
+			TimeTest.java</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
@@ -186,6 +190,8 @@
 			<p>
 			* Запустив отладчик мы можем наблюдать <b>стек-фреймы</b> - это участки стека, которые отводятся под каждую функцию.</br>
 			* В данном случае можно видеть стек-фреймы функций <i>main</i> и <i>factorial</i>.</br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_5FactorialFunction/Factorial.java">
+			Factorial.java</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
@@ -239,7 +245,11 @@
 			* В тесте сравниваются стандартная реализация <i>ArrayDeque</i> и максимально эффективная реализация однозвязного списка <i>EList</i>.</br>
 			* И при добавлении и при захвате элемента <i>ArrayDeque</i> более эффективен.</br>
 			* Несмотря на то что при реализации <i>ArrayDeque</i> больше накладных расходов, чем при реализация <i>EList</i>, большая эффективность
-			может быть связана с тем, что в <i>Java</i> работа с массивами оптимизирована в команды процессора.
+			может быть связана с тем, что в <i>Java</i> работа с массивами оптимизирована в команды процессора.</br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_6ADeque_EList_TimeTest/EList.java">
+			EList.java</a><i class="fa fa-github"></i></i></br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_6ADeque_EList_TimeTest/TimeTest.java">
+			TimeTest.java</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
@@ -264,6 +274,8 @@
 			<img src="images/images_04.1/04.1.29.png">
 			<p>
 			* Пример реализации очереди с приоритетом как массива очередей.</br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_7PriorityQueue/PQueue.java">
+			PQueue.java</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
@@ -272,6 +284,8 @@
 			<p>
 			* Самописная реализация <i>PQueue</i> явно эффективнее стандартной реализации <i>PriorityQueue</i>.</br>
 			* <i>PriorityQueue</i> будет выигрывать по времени у <i>PQueue</i> только если приоритет будет более 1000000.</br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_8PQueue_PriorityQueue_TimeTest/TimeTest.java">
+			TimeTest.java</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
