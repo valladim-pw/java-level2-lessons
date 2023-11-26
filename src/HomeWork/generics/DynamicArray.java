@@ -53,12 +53,12 @@ public class DynamicArray<T> {
 			T[] copyArray = (T[])new Object[size()];
 			System.arraycopy(array, pos + 1, copyArray, pos, size() - 1);
 			System.arraycopy(copyArray, pos, array, pos, copyArray.length);
-			array  = Arrays. copyOf(array, copyArray.length - 2);
+			array  = Arrays.copyOf(array, copyArray.length - 2);
 		} else {
 			T[] copyArray = (T[])new Object[size() - 1];
 			System.arraycopy(array, pos, copyArray, pos - 1, size() - pos);
 			System.arraycopy(copyArray, pos, array, pos, copyArray.length - pos);
-			array  = Arrays. copyOf(array, copyArray.length - 1);
+			array  = Arrays.copyOf(array, copyArray.length - 1);
 		}
 	}
 	

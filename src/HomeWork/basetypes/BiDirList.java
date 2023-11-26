@@ -53,6 +53,7 @@ public class BiDirList<T> implements Iterable<T> {
 	}
 	private ListItem<T> start;
 	private ListItem<T> end;
+	private T[] arr;
 	int size = 0;
 	
 	public Iterator<T> iterator() {
@@ -76,7 +77,6 @@ public class BiDirList<T> implements Iterable<T> {
 			end.setNext(el);
 			end = el;
 		}
-		size++;
 	}
 	
 	public void addFirst(T item) {
@@ -89,10 +89,12 @@ public class BiDirList<T> implements Iterable<T> {
 			el.setNext(start);
 			start = el;
 		}
-		size++;
 	}
 	
 	public int size() {
+		size = 0;
+		for(T item : this)
+			size++;
 		return size;
 	}
 	
@@ -117,6 +119,40 @@ public class BiDirList<T> implements Iterable<T> {
 		}
 		for(T value : copyList)
 			list.addLast(value);
+	}
+	
+	public static<T> BiDirList<T> from(T[] array) {
+		BiDirList<T> list = new BiDirList<T>();
+		for(T elem: array) {
+			list.addLast(elem);
+		}
+		return list;
+	}
+	
+	public static<T> BiDirList<T> of(T...array) {
+		return from(array);
+	}
+	
+	public void toArray(T[] array) {
+		int sz = size();
+		int arrLen = array.length;
+		arr = (T[])new Object[arrLen + sz];
+		ListItem<T> current = this.getStart();
+		int i = 0;
+		for(T elem : arr) {
+			if(i < arrLen)
+				arr[i] = array[i];
+			else {
+				arr[i] = current.getItem();
+				current = current.getNext();
+			}
+			i++;
+		}
+	}
+	
+	public T[] copyInArr(T[] array) {
+		this.toArray(array);
+		return arr;
 	}
 	
 	static<T> void print(BiDirList<T> list) {
@@ -148,8 +184,16 @@ public class BiDirList<T> implements Iterable<T> {
 		bdl2.addFirst("twenty two");
 		bdl2.addLast("eleven");
 		
-		print(bdl2);
+		//print(bdl2);
 		bdl2.remove("second");
-		print(bdl2);
+		//print(bdl2);
+		
+		Integer[] ints = {16, 15, 19, 18};
+		//print(from(ints));
+		System.out.println("array1: " + Arrays.toString(ints));
+		//ints = new Integer[5];
+		//System.out.println("array2: " + Arrays.toString(ints));
+		bdl.toArray(ints);
+		System.out.println("array2: " + Arrays.toString(bdl.copyInArr(ints)));
 	}
 }

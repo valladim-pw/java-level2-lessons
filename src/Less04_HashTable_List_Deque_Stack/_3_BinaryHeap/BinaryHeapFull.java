@@ -1,5 +1,6 @@
 package Less04_HashTable_List_Deque_Stack._3_BinaryHeap;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BinaryHeapFull<T extends Comparable<T>> {
@@ -103,7 +104,6 @@ public class BinaryHeapFull<T extends Comparable<T>> {
 		}
 		return heap;
 	}
-	
 	public static <T extends Comparable<T>> BinaryHeapFull<T> from(Type type, T[] array) {
 		BinaryHeapFull<T> heap = new BinaryHeapFull<>(type);
 		for(T item: array) {
@@ -111,15 +111,29 @@ public class BinaryHeapFull<T extends Comparable<T>> {
 		}
 		return heap;
 	}
-	
 	public static <T extends Comparable<T>> BinaryHeapFull<T> of(Type type, T...array) {
 		return from(type, array);
 	}
 	
 	public static <T extends Comparable<T>> void sort(Type type, T[] array) {
-		BinaryHeapFull<T> heap = from(type, array);
-		for (int i=0; heap.size() > 0; i++) {
-			array[i] = heap.poll();
+			BinaryHeapFull<T> heap = from(type, array);
+			for (int i=0; heap.size() > 0; i++) {
+				array[i] = heap.poll();
+			}
 		}
+	
+	public static void main(String[] args) {
+		BinaryHeapFull<Integer> heap = new BinaryHeapFull<>();
+		heap.add(4);
+		heap.add(2);
+		heap.add(8);
+		heap.add(6);
+		heap.add(10);
+		System.out.println("heap: " + heap.toString());
+		Integer[] ints = {9, 1, 7, 3};
+		System.out.println("arr: " + Arrays.toString(ints));
+		sort(Type.MAX_HEAP, ints);
+		System.out.println("heap2: " + heap.toString());
+		System.out.println("arr2: " + Arrays.toString(ints));
 	}
 }

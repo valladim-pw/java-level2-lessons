@@ -47,8 +47,6 @@ Vsrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/TestC
 Tsrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/Hello.java,b\2\b25a0422fbc5407591410221609d489e4ea019a5
 v
 Fsrc/Less01_JVM_JDK_Decompilation_ByteCode/_2_JVMParameters/launch.html,f\2\f20fa468fe8995e5c4431184c6d30b735419e582
-U
-%src/HomeWork/basetypes/BiDirTest.java,d\9\d95ff65b8a348a5cdc0ac54b4600a8758cc0301a
 �
 Rsrc/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_3BlockArray/BArray.java,b\6\b60b07e7a272bcb40f512be813cab78b100a3c99
 o
@@ -69,3 +67,7 @@ Fsrc/Less04_HashTable_List_Deque_Stack/_3_BinaryHeap/BinaryHeapMax.java,0\0\004
 Msrc/Less04_HashTable_List_Deque_Stack/_3_BinaryHeap/BinaryHeapMaxWithDel.java,6\6\66224607c8dfa293c817b4123f5dec4385bed92a
 U
 %src/HomeWork/basetypes/BiDirList.java,0\4\041d42e32baa4d5c8179658f332c0e5a35f702d6
+g
+7src/A_Visual-Materials/N-03.1 Generic классы.html,c\d\cd72adba0c3be670488dda6c909259c727e97ed9
+W
+'src/HomeWork/generics/DynamicArray.java,f\7\f779a9c846c4572a5e82261fa69281c833ae5b8c
