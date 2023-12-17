@@ -28,9 +28,20 @@ public class CHashTable<T> {
 		CHashItem<T> getNext() {
 			return next;
 		}
+		
+//		@Override
+//		public String toString() {
+//			return "key: " + key + ", item: " + item;
+//		}
 	}
 	CHashItem<T>[] table;
+	
 	int number;
+	
+//	@Override
+//	public String toString() {
+//		return Arrays.toString(table);
+//	}
 	
 	CHashTable(int n) {
 		this.number = n;
@@ -46,7 +57,7 @@ public class CHashTable<T> {
 		CHashItem<T> li = new CHashItem<>(key, item);
 		CHashItem<T> head = table[index];
 		table[index] = li;
-		System.out.println("key: "+index+" item: "+li.getItem());
+		//System.out.println("key: "+index+" item: "+li.getItem());
 		if(head != null)
 			li.setNext(head);
 	}
@@ -62,4 +73,13 @@ public class CHashTable<T> {
 		} while(current != null);
 		return null;
 	}
+	public static void main(String[] args) {
+			CHashTable<String> table = new CHashTable<>(5);
+			for(int i = 0; i < 20; i++) {
+				table.add(i, "i=" + i);
+			}
+		//System.out.println(table.toString());
+			for(int i = 0; i < 20; i++)
+				System.out.println(table.get(i));
+		}
 }

@@ -71,3 +71,21 @@ g
 7src/A_Visual-Materials/N-03.1 Generic классы.html,c\d\cd72adba0c3be670488dda6c909259c727e97ed9
 W
 'src/HomeWork/generics/DynamicArray.java,f\7\f779a9c846c4572a5e82261fa69281c833ae5b8c
+[
++src/HomeWork/basetypes/DoubleHashTable.java,3\1\31496e5a781e08489fe2c875dcf286333da5b1ec
+�
+Qsrc/Less04_HashTable_List_Deque_Stack/_2_HashTables/_4StringsHash/StringHash.java,9\7\970769be79b17e8c37cd8bc86a093e87f6f8d690
+�
+Tsrc/Less04_HashTable_List_Deque_Stack/_2_HashTables/_2ChainHashTable/CHashTable.java,9\3\93d27657a3b891631168e1f8e8133eb35e035a2a
+P
+ src/HomeWork/basetypes/Test.java,d\8\d8c157efa81359122466683e175287bd5bb7ab67
+�
+Usrc/Less04_HashTable_List_Deque_Stack/_2_HashTables/_2ChainHashTable/CHashTable2.java,4\4\44c3d6a2c6a57c0823a69158c080e26f42b5acbb
+�
+Wsrc/A_Visual-Materials/N-02.1 Введение в лямбда-выражения .html,f\2\f2a2a6b613285f89a45862d437b516a03deb9387
+Q
+!src/HomeWork/basetypes/Test2.java,3\a\3a908b0b5260df97ef64c419ea137fbab44cbd6f
+O
+src/HomeWork/basetypes/HomeTask,b\2\b2b9599bef6769fb383eadcc8152ac419b0eb405
+V
+&src/HomeWork/basetypes/CHashTable.java,e\4\e40c3a37e115c13ffa552adfe619812695af74bb

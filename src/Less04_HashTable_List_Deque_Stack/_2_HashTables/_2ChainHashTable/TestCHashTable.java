@@ -8,6 +8,7 @@ public class TestCHashTable {
 		for(int i = 0; i < 20; i++) {
 			table.add(i, "i=" + i);
 		}
+		//System.out.println(Arrays.toString(table));
 		for(int i = 0; i < 20; i++)
 			table.get(i);
 	}
