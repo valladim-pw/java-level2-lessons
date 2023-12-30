@@ -71,8 +71,6 @@ g
 7src/A_Visual-Materials/N-03.1 Generic классы.html,c\d\cd72adba0c3be670488dda6c909259c727e97ed9
 W
 'src/HomeWork/generics/DynamicArray.java,f\7\f779a9c846c4572a5e82261fa69281c833ae5b8c
-[
-+src/HomeWork/basetypes/DoubleHashTable.java,3\1\31496e5a781e08489fe2c875dcf286333da5b1ec
 �
 Qsrc/Less04_HashTable_List_Deque_Stack/_2_HashTables/_4StringsHash/StringHash.java,9\7\970769be79b17e8c37cd8bc86a093e87f6f8d690
 �
@@ -89,3 +87,15 @@ O
 src/HomeWork/basetypes/HomeTask,b\2\b2b9599bef6769fb383eadcc8152ac419b0eb405
 V
 &src/HomeWork/basetypes/CHashTable.java,e\4\e40c3a37e115c13ffa552adfe619812695af74bb
+U
+%src/HomeWork/basetypes/HashValue.java,7\3\73f1bc308a9f555ef9c37c198d40202dbce6c01d
+W
+'src/HomeWork/basetypes/CHashTable2.java,5\6\569e6c3367709bffca53c0d185a8b0e793a2c23d
+\
+,src/HomeWork/basetypes/DoubleHashTable1.java,0\b\0bb1ad6587ed2567797db29722a8b996a18a3d87
+\
+,src/HomeWork/basetypes/DoubleHashTable2.java,4\a\4a0a9679512ccbd3798b410b091d460772613e83
+\
+,src/HomeWork/basetypes/UtilityFunctions.java,8\a\8ae1ad19042a3c9e776883fe265f6e10ec77da9c
+[
++src/HomeWork/basetypes/DoubleHashTable.java,3\1\31496e5a781e08489fe2c875dcf286333da5b1ec

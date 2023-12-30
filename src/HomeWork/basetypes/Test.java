@@ -79,10 +79,16 @@ public class Test {
 		//System.out.println((16 - 1) & hash);
 		int size = 11;
 		int num  = 5;
-		for(int key = 0; key < 100; key++) {
-			System.out.println(remainder(key, size, num));
+		LinkedList<Integer> li = new LinkedList<>();
+		for(int i = 0; i < 20; i++) {
+			//System.out.println(remainder(key, size, num));
+			Integer key = 1;
+			if(i % 2 == 0)
+				li.add(key + i);
+			else
+				li.add(null);
 		}
-		
+		System.out.println(li);
 	}
 }
 /* Prime numbers

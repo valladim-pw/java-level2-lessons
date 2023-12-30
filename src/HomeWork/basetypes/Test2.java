@@ -29,26 +29,49 @@ public class Test2 {
 		return s1 + s2;
 	}
 	public static int hash(int key, int N) {
-			double A = 0.6180339887;
-			double d = A * key;
-			int result = (int) (N * (d - Math.floor(d)));
-			return result;
+		double A = 0.6180339887;
+		double d = A * key;
+		int result = (int) (N * (d - Math.floor(d)));
+		return result;
+	}
+	
+	public int getPrime(int capacity) {
+		for (int i = capacity - 1; i >= 1; i--) {
+			int cnt = 0;
+			for (int j = 2; j * j <= i; j++)
+				if (i % j == 0)
+					cnt++;
+			if (cnt == 0)
+				return i;
 		}
+		return 3;
+	}
+	static int getThreshold(int capacity, double loadFactor) {
+		double c = Integer.valueOf(capacity).doubleValue();
+		Double th = Math.ceil(c + (c * loadFactor));
+		return th.intValue();
+  }
 	
 	public static void main(String[] args) {
+		Test2 test = new Test2();
 		int size = 11;
 		int num  = 5;
 		for(int key = 0; key < 33; key++) {
-			System.out.println(remainder(key, size, num));
+			//System.out.println(remainder(key, size, num));
 		}
 		List<Integer> list = new ArrayList<>();
-		for(int key = 0; key < 11; key++) {
-			//System.out.println(hash1(key, size));
-			//System.out.println(hash2(key, size));
-			list.add(hash(key, size));
+		int[] arr = new Random().ints(12, 0, 25).toArray();
+		for(int i = 0; i < arr.length; i++) {
+			//System.out.println("arr[i]: " + arr[i]);
+			//System.out.println("hash: " + hash(arr[i], size));
+			list.add(hash(arr[i], size));
 		}
 		Collections.sort(list);
 		System.out.println(list);
+		Integer[] ints = new Integer[5];
+		//System.out.println(Arrays.toString(ints));
+		//System.out.println(test.getPrime(307));
+		System.out.println(getThreshold(4, 0.5));
 	}
 }
 /* Prime numbers

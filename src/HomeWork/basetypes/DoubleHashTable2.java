@@ -1,8 +1,11 @@
 package HomeWork.basetypes;
 
 import java.util.*;
+//import java.util.Iterator;
+//import java.util.LinkedList;
+//import java.util.Random;
 
-class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
+class DoubleHashTable2<K, V> implements UtilityFunctions, Iterable<V> {
 	class IntKey<K> implements HashValue {
 		K key;
 		public IntKey(K key) {
@@ -131,18 +134,32 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 	public HashItem<K, V>[] table;
 	private int primeSize;
 	private LinkedList<HashItem<K, V>> copyList;
+	int plus = 0;
 	
-	public DoubleHashTable() {
+	public DoubleHashTable2() {
 		this(101);
 	}
 	
-	public DoubleHashTable(int n) {
+	public DoubleHashTable2(int n) {
 		size = 0;
 		capacity = n;
 		table = new HashItem[capacity];
 		threshold = UtilityFunctions.getThreshold(capacity, loadFactor);
 		primeSize = UtilityFunctions.prevPrime(capacity);
 		copyList = new LinkedList<>();
+	}
+	public void iterate() {
+		System.out.println("Iterator---------------------");
+		TableIterator<HashItem<K, V>> iter = new TableIterator<>(table);
+		int i = 0;
+		while(iter.hasNext()) {
+			HashItem<K, V> item = iter.next();
+			if(item != null)
+				System.out.println("hash: " + item.getHashIndex() + " " + item.toString());
+			else
+				System.out.println("hash: " + i + " " + table[i]);
+			i++;
+		}
 	}
 	
 	public int size() {
@@ -173,14 +190,22 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 	}
 	
 	public void add(K key, V value) {
+		System.out.println("-------------------------");
+		boolean remove = false;
 		rehash = false;
 		size++;
 		int index = hashFunc1(key);
 		int stepSize = hashFunc2(key);
 		int templ = index;
-		DoubleHashTable<K, V> newDHTable;
-		HashItem<K, V> li = new HashItem<>(key, value);
+		System.out.println("size: " + size);
+		System.out.println("threshold: " + threshold);
+		System.out.println("capacity: " + capacity);
+		System.out.println("index: " + index);
+		System.out.println("stepSize: " + stepSize);
 		
+		DoubleHashTable2<K, V> newDHTable;
+		HashItem<K, V> li = new HashItem<>(key, value);
+		System.out.println("templ: " + templ);
 		if(removeCount > 0) {
 			insertRemove(key, value);
 		} else {
@@ -190,7 +215,10 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 				if(templ == index) {
 					templ += 1;
 					index += 1;
+					plus++;
+					System.out.println("+1");
 				}
+				System.out.println("index2: " + index);
 			}
 			HashItem<K, V> head = table[index];
 			li.setIndex(index);
@@ -199,10 +227,11 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 				li.setNext(head);
 			copyList.add(li);
 		}
+		System.out.println("hashIndex: " + li.getHashIndex());
 		if(size == threshold) {
 			rehash = true;
 			int newCapacity = UtilityFunctions.nextPrime(capacity * 2);
-			newDHTable = new DoubleHashTable<>(newCapacity);
+			newDHTable = new DoubleHashTable2<>(newCapacity);
 			capacity = newCapacity;
 			threshold = newDHTable.threshold;
 			table = newDHTable.table;
@@ -220,6 +249,7 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 			if(item != null && k.equals((K)Integer.valueOf("-1"))) {
 				item.setOtherValue(value);
 				item.setOtherKey(key);
+				//size++;
 				removeCount--;
 				break;
 			}
@@ -237,8 +267,8 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 			this.add(key, value);
 		}
 	}
-	
 	public V get(K key) {
+		System.out.println("Get---------------------");
 		TableIterator<HashItem<K, V>> iter = new TableIterator<>(table);
 		while(iter.hasNext()) {
 			HashItem<K, V> item = iter.next();
@@ -249,7 +279,6 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 		}
 		return null;
 	}
-	
 	public void remove(K key) {
 		TableIterator<HashItem<K, V>> iter = new TableIterator<>(table);
 		while(iter.hasNext()) {
@@ -273,6 +302,8 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 					item.setOtherKey(key2);
 			}
 		}
+		System.out.println("After change..............................");
+		displayTable();
 	}
 	
 	public void displayTable() {
@@ -316,28 +347,42 @@ class DoubleHashTable<K, V> implements UtilityFunctions, Iterable<V> {
 						             "rhoncus nisl, feugiat commodo odio. Proin interdum sapien rutrum ipsum lobortis vulputate." +
 						             " Integer in.";
 		String[] strs = txt.split(" ");
-		DoubleHashTable dht = new DoubleHashTable(99);
+		String[] strs2 = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+						"eleven", "twelve", "thirteen", "fourteen", "fivteen", "sixteen", "seventeen", "eighteen"};
+		String[] strs3 = {"one", "two", "three", "four", "five", "six"};
+		DoubleHashTable2 dht = new DoubleHashTable2(99);
 		for(int i = 0; i < strs.length; i++) {
 			dht.add(strs[i], i * 2);
+			//System.out.println(strs[i]);
 		}
 		
 		dht.displayTable();
+		System.out.println("plus count: " + dht.plus);
 		dht.remove("sapien.");
 		dht.remove("arcu");
 		dht.remove("pretium.");
 		dht.remove("vitae");
 		
 		System.out.println("after remove.........................");
+		System.out.println("size: " + dht.size);
 		dht.displayTable();
+//		dht.add("sapien.", 1000);
+//		dht.add("arcu", 1000);
+//		dht.add("pretium.", 1000);
 		dht.add("vitae", 1000);
 		dht.add("sapien.", 1000);
 		dht.add("arcu", 1000);
 		dht.add("pretium.", 1000);
 		dht.add("pretium2.", 3000);
 		dht.displayTable();
-		dht.change("pretium2.", "change");
-		System.out.println("after change.........................");
-		dht.displayTable();
+		System.out.println("remove count: " + dht.removeCount);
+//		System.out.println(dht.get("one"));
+//		dht.add("eleven", 11 * 2);
+//		dht.displayTable();
+//		dht.iterate();
+//		System.out.println(dht.get("eleven"));
+//		System.out.println(dht.get("twelve"));
+//		dht.change("five", "twenty");
 		int[] ints = new Random().ints(18, 0, 125).toArray();
 //		for(int i = 0; i < ints.length; i++) {
 //			dht.add(ints[i], strs[i]);
