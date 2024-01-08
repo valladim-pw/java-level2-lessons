@@ -13,6 +13,7 @@ public class Calculator {
 				String bracesSub = bracesSubstr(expression);
 				String sub = substr(expression);
 				bracesResult.push(calculate(sub)) ;
+				System.out.println(bracesResult);
 				expression = expression.replace(bracesSub, "R");
 			}
 		}
@@ -72,8 +73,8 @@ public class Calculator {
 		return priority;
 	}
 	public static void main(String[] args) {
-		calculate("(2-8)*(2*(4+1))/(3-7)");
-		int res = (2-8)*(2*(4+1))/(3-7);
+		calculate("2+2*2");
+		int res = (2-8)*(2*((4+1*2)/3+2))/(3-7);
 		System.out.println(res);
 		String s = "-13";
 		int i = Integer.valueOf(s);
