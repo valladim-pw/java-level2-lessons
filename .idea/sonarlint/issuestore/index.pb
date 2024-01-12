@@ -83,8 +83,6 @@ Usrc/Less04_HashTable_List_Deque_Stack/_2_HashTables/_2ChainHashTable/CHashTable
 Wsrc/A_Visual-Materials/N-02.1 Введение в лямбда-выражения .html,f\2\f2a2a6b613285f89a45862d437b516a03deb9387
 Q
 !src/HomeWork/basetypes/Test2.java,3\a\3a908b0b5260df97ef64c419ea137fbab44cbd6f
-O
-src/HomeWork/basetypes/HomeTask,b\2\b2b9599bef6769fb383eadcc8152ac419b0eb405
 V
 &src/HomeWork/basetypes/CHashTable.java,e\4\e40c3a37e115c13ffa552adfe619812695af74bb
 U
@@ -99,3 +97,25 @@ W
 ,src/HomeWork/basetypes/UtilityFunctions.java,8\a\8ae1ad19042a3c9e776883fe265f6e10ec77da9c
 [
 +src/HomeWork/basetypes/DoubleHashTable.java,3\1\31496e5a781e08489fe2c875dcf286333da5b1ec
+�
+Usrc/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_7PriorityQueue/PQueue.java,9\4\943d6ddd1724e256859566b22b59c16e99dbd32e
+\
+,src/B_Webinars/A4_Calculator/Calculator.java,c\f\cf2adcc95f5a0f30ef0976709896f9bf96219472
+X
+(src/HomeWork/recursion/AsNumbersSum.java,7\a\7a84851180ad621b2fa86c66ad48ba1716b4ecc2
+j
+:src/B_Webinars/A4_Calculator/calc2/AsNumbersSumSergey.java,b\7\b7f80c139de1ee6c5ffed9845a2fbf67116ac251
+j
+:src/B_Webinars/A4_Calculator/calc2/AsNumbersSumValery.java,1\0\104deb6dcc3f2e77038313a7c2c77228b967e9c9
+e
+5src/B_Webinars/A4_Calculator/calc2/AsNumbersSumA.java,d\f\df1b8102808472c596917a48f26872bd49737d9d
+g
+7src/B_Webinars/A4_Calculator/calc2/AsNumbersSumWeb.java,8\3\83f3677f5c3a9806dcfa1919d75fe284e30f26c7
+h
+8src/B_Webinars/A4_Calculator/calc2/CalculatorValery.java,5\8\587cff20a8201ab2d830bd0abf25be58dcbb9ec1
+i
+9src/A_Visual-Materials/N-01.2 Параметры JVM.html,8\b\8bdd7c6c616ffe14e28f899a62f960fb62237192
+g
+7src/A_Visual-Materials/N-01.3 Эмулятор RAM.html,1\4\141d99e4cf25fa16567498f71a4b9f4d13109b84
+{
+Ksrc/A_Visual-Materials/N-05.1 Тестирование кода, JUnit.html,5\d\5dc0e795ff5b8edb16b95558d3fe779d9ea918c1

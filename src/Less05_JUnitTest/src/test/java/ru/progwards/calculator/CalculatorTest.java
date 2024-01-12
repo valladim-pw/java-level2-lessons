@@ -13,7 +13,7 @@ public class CalculatorTest {
 	@Test
 	public void sum() {
 		assertTrue(calc.sum(3, 5) == 8);
-		assertTrue(calc.sum(-1, 1) == 0);
+		assertTrue(calc.sum(-1, 1) == 1);
 		assertTrue(calc.sum(Integer.MAX_VALUE, -1) == Integer.MAX_VALUE - 1);
 	}
 	
