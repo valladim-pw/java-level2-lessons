@@ -3,6 +3,7 @@ import org.junit.*;
 import static junit.framework.TestCase.*;
 
 public class CalculatorTest {
+	
 	static Calculator calc;
 	
 	@BeforeClass
