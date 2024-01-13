@@ -1,5 +1,8 @@
 package ru.progwards.calculator;
 import org.junit.*;
+
+import java.math.BigInteger;
+
 import static junit.framework.TestCase.*;
 
 public class CalculatorTest {
@@ -26,6 +29,15 @@ public class CalculatorTest {
 	@Test(timeout = 1000)
 	public void diff() {
 		calc.diff(0, 0);
+	}
+	
+	@Test
+	public void sameObjects() {
+		BigInteger bi1 = new BigInteger("1000");
+		BigInteger bi2 = new BigInteger("1000");
+		bi1 = bi2;
+		//assertEquals(bi1, bi2);
+		assertSame(bi1, bi2);
 	}
 	
 	@AfterClass
