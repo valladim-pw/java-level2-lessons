@@ -13,9 +13,9 @@ public class CalculatorTest {
 	
 	@Test
 	public void sum() {
-		assertTrue(calc.sum(3, 5) == 8);
-		assertTrue(calc.sum(-1, 1) == 1);
-		assertTrue(calc.sum(Integer.MAX_VALUE, -1) == Integer.MAX_VALUE - 1);
+		assertEquals(8, calc.sum(3, 5));
+		assertEquals(1, calc.sum(-1, 1));
+		assertEquals(calc.sum(Integer.MAX_VALUE, -1), Integer.MAX_VALUE - 1);
 	}
 	
 	@Test(expected = ArithmeticException.class)
