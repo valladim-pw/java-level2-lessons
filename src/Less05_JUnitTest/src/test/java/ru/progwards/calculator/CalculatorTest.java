@@ -3,7 +3,8 @@ import org.junit.*;
 
 import java.math.BigInteger;
 
-import static junit.framework.TestCase.*;
+//import static junit.framework.TestCase.*;
+import static org.junit.Assert.*;
 
 public class CalculatorTest {
 	
@@ -38,6 +39,15 @@ public class CalculatorTest {
 		bi1 = bi2;
 		//assertEquals(bi1, bi2);
 		assertSame(bi1, bi2);
+	}
+	
+	@Test
+	public void arrayDeepEquals() {
+		int[] arr1 = {1, 2, 3, 4, 5};
+		int[] arr2 = {1, 2, 3, 4, 5};
+		
+		//assertEquals(arr1, arr2);
+		assertArrayEquals(arr1, arr2);
 	}
 	
 	@AfterClass
