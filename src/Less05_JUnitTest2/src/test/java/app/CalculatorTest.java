@@ -7,16 +7,28 @@ import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class) // Запуск раннера Parametrized
 public class CalculatorTest {
-	/*
-	Здесь рассматривается случай, когда работа идет
-	не с конструкторами, а с аннотациями перед самими параметрами
-	 */
-	@Parameterized.Parameter(0) // В скобках индексы в массиве
-	public int val1; // Передаваемое значение 1
-	@Parameterized.Parameter(1)
-		public int val2; // Передаваемое значение 2
-	@Parameterized.Parameter(2)
-		public int expected; // Ожидаемый результат
+	  /*
+		-----------------------------
+		Вариант без конструктора
+		-----------------------------
+		 */
+	  /*
+		@Parameterized.Parameter(0) // В скобках индексы в массиве
+			public int val1; // Передаваемое значение 1
+		@Parameterized.Parameter(1)
+			public int val2; // Передаваемое значение 2
+		@Parameterized.Parameter(2)
+			public int expected; // Ожидаемый результат
+		*/
+  public int val1;
+  public int val2;
+  public int expected;
+	
+	public CalculatorTest(int val1, int val2, int expected) {
+		this.val1 = val1;
+		this.val2 = val2;
+		this.expected = expected;
+	}
 	
 	@Parameterized.Parameters(name = "Тест{index} : {0} + {1} = {2}")
 	public static Iterable<Object[]> dataForTest() {
