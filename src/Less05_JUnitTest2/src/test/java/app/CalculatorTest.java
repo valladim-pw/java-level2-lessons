@@ -30,10 +30,16 @@ public class CalculatorTest {
 							{-34, -55, -89}
 			});
 		}
-		
 		@Test
 		public void testWithParams() {
 			assertEquals(expected, Calculator.sum(val1, val2));
+		}
+	}
+	public static class CheckExceptionTest {
+		@Test(expected = IntOverflowException.class)
+		
+		public void sumWithException() {
+			Calculator.sum(Integer.MAX_VALUE, 1);
 		}
 	}
 }
