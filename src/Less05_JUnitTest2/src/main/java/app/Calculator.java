@@ -4,7 +4,7 @@ public class Calculator {
 	public static int sum(int a, int b) {
 		long longRes = ((long)a) + b;
 		if(longRes > Integer.MAX_VALUE || longRes < Integer.MIN_VALUE)
-			throw new IntOverflowException(a, b, "Переполнение диапазона при int сложении " + longRes);
+			throw new IntOverflowException(a, b, "Переполнение диапазона int при сложении " + longRes);
 		return a + b;
 	}
 	
