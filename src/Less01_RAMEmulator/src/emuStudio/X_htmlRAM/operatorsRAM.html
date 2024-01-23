@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+	body {
+	    font-family: Consolas;
+	    font-weight: bold;
+	    padding: 20px 50px;
+	}
+	h2 {
+		    margin-bottom: 0.2em;
+	}
+	p {
+	    margin-bottom: 0.1em;
+	    margin-top: 0.1em;
+	}
+	.b {
+	    color: blue;
+	    font-size: 18px;
+	}
+	.b.l {
+	    color: #7d7df3;
+	}
+	</style>
+</head>
+<body>
+<h1>Операторы RAM</h1>
+<p><span class="b">READ operand</span> - загрузить данные из входной ленты в операнд</p>
+<p><span class="b">WRITE op</span> - вывести операнд в выходную ленту</p>
+<p><span class="b">LOAD op</span> - загрузить операнд в сумматор (R0)</p>
+<p><span class="b">STORE op</span> - сохранить сумматор (R0) в операнд</p>
+<p><span class="b">ADD op</span> - прибавить операнд к сумматору (R0)</p>
+<p><span class="b">SUB op</span> - вычесть операнд из сумматора (R0)</p>
+<p><span class="b">JMP mk</span> - безусловный переход по метке mk</p>
+<p><span class="b">JGTZ mk</span> - переход по метке, если сумматор > 0</p>
+<p><span class="b">JZ mk</span> - переход по метке, если сумматор = 0</p>
+<p><span class="b">HALT</span> - остановка выполнения программы</p>
+
+
+
+</body>
+</html>

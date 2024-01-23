@@ -119,3 +119,33 @@ g
 7src/A_Visual-Materials/N-01.3 Эмулятор RAM.html,1\4\141d99e4cf25fa16567498f71a4b9f4d13109b84
 {
 Ksrc/A_Visual-Materials/N-05.1 Тестирование кода, JUnit.html,5\d\5dc0e795ff5b8edb16b95558d3fe779d9ea918c1
+x
+Hsrc/A_Visual-Materials/N-05.2 JUnit4 продолжение, JUnit5.html,0\5\052fdee8794105d9349c6025ca91a004a82f78c8
+|
+Lsrc/Less05_JUnitTest1/src/main/java/ru/progwards/calculator/ICalculator.java,d\3\d322b442e1f5aefa69c7538951af44dcea305aae
+{
+Ksrc/Less05_JUnitTest1/src/main/java/ru/progwards/calculator/Calculator.java,a\6\a69c6dad681ac2dcd782e0c7bc915d4f1410ebd1
+
+Osrc/Less05_JUnitTest1/src/test/java/ru/progwards/calculator/CalculatorTest.java,2\f\2f71217ddcfe60d23305284cb0cf67446fec25ce
+k
+;src/Less05_JUnitTest2/src/test/java/app/CalculatorTest.java,5\c\5c969f4f57927398c4c1ec9ea09f8e66b52edacb
+q
+Asrc/Less05_JUnitTest2/src/main/java/app/IntOverflowException.java,b\7\b77704d7be2b1de4032d5564b610a5c975b45d73
+g
+7src/Less05_JUnitTest2/src/main/java/app/Calculator.java,7\9\79da8c2f860f646649fc5e270f655666e5b9f5b1
+o
+?src/Less05_JUnitTest2/src/test/java/app/CheckExceptionTest.java,8\6\866315e399bccc5add8ca8f428359df567cafed9
+n
+>src/Less05_JUnitTest2/src/test/java/app/CreateTmpFileTest.java,c\f\cf9f100cda5707e306873445b720ccdca226e557
+i
+9src/Less00_DinamicArrays/_1DinamicIntArray/DIntArray.java,6\e\6e330e4af29b3561b6cd27d555d34f75ba625b01
+L
+src/Less01_RAM_tasks/mul.ram,b\9\b92a3320be5eed6364cf0e7283314b2aaf3d74c1
+M
+src/Less01_RAM_tasks/sort.ram,2\3\23ba5ca51346479f0e16c47be261ee68e55adae3
+L
+src/Less01_RAM_tasks/div.ram,7\1\71cb92e45e110e82eef389751939ee362c914dee
+�
+^src/0_Памятки/Памятка по созданию проекта в проекте.txt,4\f\4f5e811f13c315263f45caa4f85484fc41a717a0
+O
+src/A_Visual-Materials/add.html,d\f\df0438d2772eef589e7d26e276dee22e2fd2f83a

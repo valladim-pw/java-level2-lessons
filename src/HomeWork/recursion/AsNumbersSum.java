@@ -35,7 +35,7 @@ public class AsNumbersSum {
 	}
 	public static void main(String[] args) {
 		
-		//System.out.println(asNumbersSum(5));
+		System.out.println(asNumbersSum(5));
 		int[] a = new int[] {1, 2, 3, 4};
 		System.out.println(Arrays.toString(a));
 	}

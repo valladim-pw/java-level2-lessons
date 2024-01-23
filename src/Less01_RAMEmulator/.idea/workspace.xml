@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bcfe685c-a602-4e3b-aaf1-aa18f37f233b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/N-00.1 Динамические массивы.html" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/N-00.1 Динамические массивы.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/N-01.1 JRE, JDK, JVM, JIT-компиляция, Декомпиляция, Командная строка, jar-файлы.html" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/N-01.1 JRE, JDK, JVM, JIT-компиляция, Декомпиляция, Командная строка, jar-файлы.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/N-01.2 Параметры JVM.html" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/N-01.2 Параметры JVM.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/N-05.2 JUnit4 продолжение, JUnit5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/N-05.2 JUnit4 продолжение, JUnit5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.11.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.15.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.17.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.20.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.21.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.22.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.23.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.24.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.25.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.27.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.1/01.27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.2/01.2.15.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.2/01.2.15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.3/01.3.7.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.3/01.3.7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.3/01.3.8.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_01.3/01.3.8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HomeWork/recursion/AsNumbersSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HomeWork/recursion/AsNumbersSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/div.ram" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/div.ram" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/div.ro" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/div.ro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/div.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/div.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/mul.ram" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/mul.ram" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/mul.ro" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/mul.ro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/mul.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/mul.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/sort — копия.ram" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/sort — копия.ram" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/sort.ram" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/sort.ram" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/sort.ro" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/sort.ro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_algoritms/КомандыRAM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAM_tasks/КомандыRAM.txt" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="368" />
+    <option name="y" value="15" />
+    <option name="width" value="1499" />
+    <option name="height" value="1019" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../.." value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bcfe685c-a602-4e3b-aaf1-aa18f37f233b" name="Default Changelist" comment="" />
+      <created>1705746690037</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705746690037</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="368" y="15" width="1499" height="1019" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24982457" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="SonarLint" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="make" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>15</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

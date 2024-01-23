@@ -156,7 +156,7 @@
 			* На рисунке показан вариант параметризованного теста без конструктора, с аннотациями перед переменными.</br>
 			* Здесь присутствуют все обязательные элементы параметризованного теста (рис.10):</br>
 			&nbsp;&nbsp;<b>1</b> - Переменные.</br>
-			&nbsp;&nbsp;<b>2.1</b> - Аннотации перед перменными вместо конструктора.</br>
+			&nbsp;&nbsp;<b>2.1</b> - Аннотации перед переменными вместо конструктора.</br>
 			&nbsp;&nbsp;<b>3</b> - Статический метод - источник данных, которые представлены в виде двумерного массива преобразованного в список.</br>
 			&nbsp;&nbsp;<b>4</b> - Метод, который вызывается на каждый элемент списка из статического метода 3.</br>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/0b419c716832713e2dbb81a58ef4e021380cb732/src/Less05_JUnitTest2/src/test/java/app/CalculatorTest.java">
@@ -251,7 +251,14 @@
 		<div class="column">
 			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_05.2/05.2.21.png">
-			<p>			
+			<p>	
+			* Для примера применения аннотации <i>@Rule</i> со специальным объектом <i>TemporaryFolder</i> в директории <i>test</i> создадим класс <i>CreateTmpFileTest</i>.</br>
+			* С помощью <i>TemporaryFolder</i> в тестах создаются временные директории и файлы, по окончании теста они уничтожаются.</br>
+			* Поскольку в нашем тесте ожидается исключение <i>IOExcepton</i>, то в первом случае, где ошибки в имени файла нет, директория и файл будут созданы, но тест провалится.</br>
+			* Во втором случае, при ошибке в имени файла, тест будет успешен.</br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less05_JUnitTest2/src/test/java/app/CreateTmpFileTest.java">
+			CreateTmpFileTest.java</a><i class="fa fa-github"></i>
+			</i></br>
 			</p>
 		</div>
 		<div class="column">
@@ -270,13 +277,14 @@
 			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_05.2/05.2.24.png">
 			<p>
-			
+			* Одна из особенностей <i>JUnit5</i> в том, что в нем широко применяются лямбда-выражения.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_05.2/05.2.25.png">
 			<p>
+			* Пример применения метода <i>assertAll</i> с методами внутри запускаемыми через лямбда-выражения.</br>
 			</p>
 		</div>
 		<div class="column">
@@ -304,10 +312,10 @@
 			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_05.2/05.2.29.png">
 			<p>
-			* В случае с исключением можно создать специальный тест, кторый будет ожидать именно исключения.</br>
+			
 			</p>
 		</div>
-		<div class="column">
+		<!--<div class="column">
 			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_05.2/05.2.30.png">
 			<p>
@@ -344,7 +352,7 @@
 
 			</p>
 		</div>
-		<!--<div class="column">
+		<div class="column">
 			<span class="badge bg-primary">Рис.35&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_05.2/05.2.35.png">
 			<p>

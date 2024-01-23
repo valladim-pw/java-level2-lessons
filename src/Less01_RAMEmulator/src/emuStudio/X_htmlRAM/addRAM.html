@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+	body {
+	    font-family: Consolas;
+	    font-weight: bold;
+	    padding: 20px 50px;
+	}
+	h2 {
+		    margin-bottom: 0.2em;
+	}
+	p {
+	    margin-bottom: 0.1em;
+	    margin-top: 0.1em;
+	}
+	.b {
+	    color: blue;
+	    font-size: 18px;
+	}
+	.b.l {
+	    color: #7d7df3;
+	}
+	</style>
+</head>
+<body>
+<h2>Сложение чисел из входной ленты</h2>
+<p>Ввод, первое число - количество чисел,<br>
+далее - числа во входной ленте, которые складываются в цикле<br>
+и выводятся в выходящий поток</p>
+<p class="b">&lt;input&gt;5 5 4 6 11 4</p>
+<p>загружаем счетчик в регистр 1</p>
+<p class="b">read 1</p>
+<p>инициализация<br>
+	присваиваем 0 в сумматор и размещаем в регистре 2<br>
+	в регистре 2 будет накапливаться сумма чисел</p>
+<p class="b">load =0<br>
+store 2</p>
+<p>цикл</p>
+<p class="b l">loop:</p>
+<p>читаем число из входного потока непосредственно сумматором</p>
+<p class="b">&nbsp;&nbsp;read 0</p>
+<p>добавляем к нему содержимое регистра 2</p>
+<p class="b">&nbsp;&nbsp;add 2</p>
+<p>записываем в регистр 2</p>
+<p class="b">&nbsp;&nbsp;store 2</p>
+<p>загружаем в сумматор содержимое регистра 1</p>
+<p class="b">&nbsp;&nbsp;load 1</p>
+<p>вычитаем 1</p>
+<p class="b">&nbsp;&nbsp;sub =1</p>
+<p>записываем в регистр</p>
+<p class="b">&nbsp;&nbsp;store 1</p>
+<p>если дошли до 0 в счетчике - выход, если нет - возврат в метку loop</p>
+<p class="b l">jgtz loop</p>
+<p>если счетчик дошел до 0, сумма из регистра 2 записывается и выход</p>
+<p class="b">write 2</p>
+
+</body>
+</html>

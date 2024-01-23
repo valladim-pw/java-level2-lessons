@@ -1,0 +1,15 @@
+﻿; Это комментарий
+<input>5 5 4 6 11 4
+read 1
+load =0
+store 2
+loop:
+ read 0
+ add 2
+ store 2
+ load 1
+ sub =1
+ store 1
+; Это комментарий 
+jgtz loop
+write 2

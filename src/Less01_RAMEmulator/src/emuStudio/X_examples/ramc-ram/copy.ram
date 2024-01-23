@@ -1,0 +1,26 @@
+; Copy R(X) to R(Y)
+;
+; input tape:
+;   destination register: X
+;   source register: Y
+;
+; output:
+;   R(X) = R(Y)
+;   R(Y) = R(Y)
+
+
+<input> 3 4 'hello' 'world'
+
+; load X,Y
+read 1
+read 2
+
+; load r.X, r.Y
+read *1
+read *2
+
+; copy
+load *2
+store *1
+
+halt

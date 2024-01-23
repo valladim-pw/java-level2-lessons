@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class FastPow {
+	
 	public static BigDecimal fastPow(BigDecimal num, int pow) {
 		BigDecimal z = num;
 		System.out.println("z = num: " + z);
