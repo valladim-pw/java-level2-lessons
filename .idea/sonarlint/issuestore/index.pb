@@ -139,13 +139,25 @@ n
 >src/Less05_JUnitTest2/src/test/java/app/CreateTmpFileTest.java,c\f\cf9f100cda5707e306873445b720ccdca226e557
 i
 9src/Less00_DinamicArrays/_1DinamicIntArray/DIntArray.java,6\e\6e330e4af29b3561b6cd27d555d34f75ba625b01
-L
-src/Less01_RAM_tasks/mul.ram,b\9\b92a3320be5eed6364cf0e7283314b2aaf3d74c1
-M
-src/Less01_RAM_tasks/sort.ram,2\3\23ba5ca51346479f0e16c47be261ee68e55adae3
-L
-src/Less01_RAM_tasks/div.ram,7\1\71cb92e45e110e82eef389751939ee362c914dee
 �
 ^src/0_Памятки/Памятка по созданию проекта в проекте.txt,4\f\4f5e811f13c315263f45caa4f85484fc41a717a0
 O
-src/A_Visual-Materials/add.html,d\f\df0438d2772eef589e7d26e276dee22e2fd2f83a
+src/Less01_RAM_hometask/mul.ram,8\e\8e9862e0c386558e98081a8e647f87daa21c7d2f
+P
+ src/Less01_RAM_hometask/sort.ram,c\a\ca0c1234a67c18e552ce0452c2d7dd7670a6c3e5
+s
+Csrc/Less01_RAMEmulator/src/emuStudio/X_htmlRAM/instructionsRAM.html,a\6\a6d690c9f71956629e37a0e238d3af9986c21653
+j
+:src/Less01_RAMEmulator/src/emuStudio/X_myExercises/add.ram,8\8\883d6e128e40466fbcf5649be53663bebe2cdc00
+u
+Esrc/Less01_RAMEmulator/src/emuStudio/X_myExercises/команды.txt,a\b\abec1964581902b334170f2f8dda5e49d8e0226b
+u
+Esrc/Less01_JVM_JDK_Decompilation_ByteCode/_3_EmulatorRAM/FastPow.java,e\3\e3919534e537fce534cb1f2ece42a92958e27845
+s
+Csrc/Less01_RAMEmulator/src/emuStudio/X_myExercises/add_comments.txt,f\b\fb1fd53e9a8cf7130c2dae1ca1eb335fd0aa5d9d
+p
+@src/Less01_RAMEmulator/src/emuStudio/X_htmlRAM/operatorsRAM.html,b\5\b59dca514d4658f1e005a1d46e7a467bd585be09
+Q
+!src/A_Visual-Materials/empty.html,a\6\a6656db2bf2ac930cca90e2e3f435ba27d304e46
+L
+src/HomeWork/tests/test.java,5\c\5c0f895807e41ef8ec08de3cace6136415aa415f
