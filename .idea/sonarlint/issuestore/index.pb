@@ -181,3 +181,7 @@ Y
 +src/Less05_JUnitTest2/Less05_JUnitTest2.iml,4\4\44922b2db7e1243ab62fc89dc36ddf45d5c2dd16
 a
 1src/Less06_BuildingProject/Ant3/src/Main4Ant.java,5\e\5e0cdd9d63e047a09f66ca6a8893066afb4b2a55
+z
+Jsrc/A_Visual-Materials/N-00.1 Динамические массивы.html,8\5\85df78b787e1b109aab47a5fd6cbb62ec75637df
+Q
+!src/A_Visual-Materials/index.html,5\9\59779abb1046ce97c7e1dcf0721ac94e75339b48
