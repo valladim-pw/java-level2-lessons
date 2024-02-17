@@ -167,6 +167,8 @@ $(document).ready(function() {
 			let label = "<span class=\"badge bg-primary\">Рис."+ (i + 1) + "&nbsp;<i class=\"material-icons\">&#xe5db;</i></span>";
 			if(elements[i].firstElementChild.tagName != "SPAN")
 				elements[i].insertAdjacentHTML("afterbegin", label);
+			let col_id = "<b class=\"column-id\" id=\"" + (i + 1) + "\"></b>";	
+			elements[i].insertAdjacentHTML("afterbegin", col_id);	
 		}
 	}
 
@@ -179,17 +181,7 @@ $(document).ready(function() {
 		} else {
 			butWrap.removeClass("fix");
 		}
-	});
-	$("#switch2").click(function(){
-    $(this).addClass("invisible");
-    $(".menu").addClass("menu-hidden");
-    $(".frame").addClass("frame-full");
-  });
-  $("#switch1").click(function(){
-    $("#switch2").removeClass("invisible");
-    $(".menu").removeClass("menu-hidden");
-    $(".frame").removeClass("frame-full");
-  });
+	});	
 
   $("a.github").click(function(event){
     event.preventDefault();
