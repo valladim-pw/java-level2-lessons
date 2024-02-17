@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
 	hljs.highlightAll();
 
 	let header = document.getElementById("header");
@@ -172,7 +172,7 @@ $(document).ready(function() {
 		}
 	}
 
-
+$(document).ready(function() {
 	let butWrap = $(".but-wrap");
 
 	$(window).scroll(function(){
