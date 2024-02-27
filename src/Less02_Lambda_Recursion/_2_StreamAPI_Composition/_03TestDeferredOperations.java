@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 
-public class _4TestDeferredOperationsWithSomeFilters {
+public class _03TestDeferredOperations {
 	
 	
 	public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class _4TestDeferredOperationsWithSomeFilters {
 			return x.author.contains("о");
 		};
 		System.out.println("До stream().filter");
-		Stream<Book> test = list.stream().filter(preLambda).filter(x -> x.price < 590);
+		Stream<Book> test = list.stream().filter(preLambda);
 		System.out.println("После stream().filter");
 		
 		long num = test.count();

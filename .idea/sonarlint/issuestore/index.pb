@@ -185,3 +185,11 @@ z
 Jsrc/A_Visual-Materials/N-00.1 Динамические массивы.html,8\5\85df78b787e1b109aab47a5fd6cbb62ec75637df
 Q
 !src/A_Visual-Materials/index.html,5\9\59779abb1046ce97c7e1dcf0721ac94e75339b48
+[
++src/A_Visual-Materials/javascript/script.js,e\f\efd67248d5909f4e034fc9640d87b86ed54f5fd4
+�
+Ssrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/Calc.java,d\e\de63b0136b734b0b1195d4e032727544946e1f3a
+�
+Ysrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/Calculator.java,f\7\f75201ad0fb1c04bb0660ccc4635d7af46a7bf08
+�
+Ysrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/HelloWorld.java,3\3\33dcd10f0e24295b4290cdd507f417a706e1d531

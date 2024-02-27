@@ -2,7 +2,7 @@ package Less02_Lambda_Recursion._2_StreamAPI_Composition;
 
 import java.util.function.*;
 
-public class _7LambdaWithBinaryOperator {
+public class _07LambdaWithBinaryOperator {
 	public static void main(String[] args) {
 		BinaryOperator<Integer> mod = (x1, x2) -> x1 % x2;
 		mod.apply(5, 16);

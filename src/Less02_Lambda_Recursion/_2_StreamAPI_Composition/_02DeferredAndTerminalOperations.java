@@ -1,12 +1,11 @@
 package Less02_Lambda_Recursion._2_StreamAPI_Composition;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 
-public class _6StreamMaxWithOptional {
+public class _02DeferredAndTerminalOperations {
 	
 	
 	public static void main(String[] args) {
@@ -17,10 +16,7 @@ public class _6StreamMaxWithOptional {
 				new Book("Мертвые души", "Гоголь", 842),
 				new Book("Облако в штанах", "Маяковский", 495)
 		));
-		
-		Optional<Book> oMax = list.stream().max(Comparator.comparingDouble(x -> x.price));
-		Book max = oMax.get();
-		
-		System.out.println(max);
+		long num = list.stream().filter(x -> x.author.contains("о")).count();
+		System.out.println("Отобрано книг: " + num);
 	}
 }

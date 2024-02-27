@@ -2,10 +2,11 @@ package Less02_Lambda_Recursion._2_StreamAPI_Composition;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 
-public class _2DeferredAndTerminalOperations {
+public class _04TestDeferredOperationsWithSomeFilters {
 	
 	
 	public static void main(String[] args) {
@@ -16,7 +17,15 @@ public class _2DeferredAndTerminalOperations {
 				new Book("Мертвые души", "Гоголь", 842),
 				new Book("Облако в штанах", "Маяковский", 495)
 		));
-		long num = list.stream().filter(x -> x.author.contains("о")).count();
+		Predicate<Book> preLambda = x -> {
+			System.out.println(x);
+			return x.author.contains("о");
+		};
+		System.out.println("До stream().filter");
+		Stream<Book> test = list.stream().filter(preLambda).filter(x -> x.price < 590);
+		System.out.println("После stream().filter");
+		
+		long num = test.count();
 		System.out.println("Отобрано книг: " + num);
 	}
 }
