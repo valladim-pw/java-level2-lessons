@@ -25,8 +25,7 @@ public class _01FilterBookWithStream {
 		filtered.forEach(System.out::println);
 		System.out.println("-------------------------------");
 		// обработка используя Stream API
-		List<Book> filtered2 =
-						list.stream().filter(x -> x.name.contains("о")).collect(Collectors.toList());
+		List<Book> filtered2 = list.stream().filter(x -> x.name.contains("о")).collect(Collectors.toList());
 		filtered2.forEach(System.out::println);
 	}
 }

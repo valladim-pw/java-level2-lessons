@@ -1,6 +1,21 @@
 package Less02_Lambda_Recursion._3_Recursion;
 
 public class _3OptimizedPowerSteps {
+/*
+	public static double power(double val, int pow) {
+		switch(pow) {
+			case 0 : return 1;
+			case 1 : return val;
+			default : {
+				double val_halfPower = power(val, pow / 2);
+				if(pow % 2 == 1)
+					return val * val_halfPower * val_halfPower;
+				else
+					return val_halfPower * val_halfPower;
+			}
+		}
+	}
+*/
 	public static double power(double val, int pow) {
 		System.out.println("Прямой ход, power = " + pow);
 		double result = 0;
