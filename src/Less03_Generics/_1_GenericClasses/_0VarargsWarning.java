@@ -3,6 +3,7 @@ package Less03_Generics._1_GenericClasses;
 import java.util.*;
 
 public class _0VarargsWarning {
+	@SuppressWarnings("unchecked")
 	public static <T> void addAll(Collection<T> coll, T... args) {
 		for(T t : args) {
 			coll.add(t);
