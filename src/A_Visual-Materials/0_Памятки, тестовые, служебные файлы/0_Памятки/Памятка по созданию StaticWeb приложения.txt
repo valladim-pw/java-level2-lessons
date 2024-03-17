@@ -1,0 +1,5 @@
+1.Создаем вэб-приложение:
+File -> New -> Project -> *Static Web -> Next -> Выбираем название, директорию -> Finish
+*Если нет значка Static Web:
+File -> Settings -> Plugins -> Marketplace -> В поиске находим PhoneGap -> Install, В поиске находим Cordova -> Install -> Перезагружаем IntelliJ IDEA 
+-> Выполняем шаги пункта 1.

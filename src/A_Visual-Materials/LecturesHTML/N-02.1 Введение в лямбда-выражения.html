@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02.1 Введение в лямбда-выражения</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
+	<link rel="stylesheet" href="styles/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style >
+	</style>
+</head>
+<body onload="insertLabel(); two();">
+<div class="container-fluid p-3">
+	<div class="header" id="header">		
+		<p>Click on the buttons to change the grid view.</p>
+		<div class="but-wrap">
+			<div class="back-fix"></div>
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>			
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" >50L</button>
+				<button class="btn" onclick="zoomRight();" >50R</button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>			
+		</div>		
+	</div>	
+	<div class="row">
+		<div class="column">
+			<img src="images/images_02.1/02.1.1.png">
+			<p></p>
+			<p onclick="openWin1()">
+			<script>
+			function openWin1() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions">
+			Файлы по теме</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></br>
+			</p>
+		</div>
+		<div class="column ">
+			<img src="images/images_02.1/02.1.2.png">
+			<p onclick="openWin1a()">
+			<script>
+			function openWin1a() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_1LoopExample.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_1LoopExample.java">
+			LoopExample.java</a><i class="fa fa-github"></i></i></br>	
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.3.png">
+			<p>
+				* В традиционном программировании мы оперируем с данными внутри цикла.</br>
+				* Возможность использовать лямбда-выражения появилась начиная с JDK-8.</br>
+				* При использовании лямбда-выражений применяется другой подход.</br>
+				* В данном случае у нас есть набор данных (список) и мы в него с помощью метода (forEach) передаем поведение.</br>
+				* Поведение передается в виде функции, которая работает внутри структуры данных и выдает необходимый результат
+				(element -> System.out.println("element = " + element)).</p>
+			<p onclick="openWin2()">
+			<script>
+			function openWin2() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_2LambdaExample.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>	
+				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_2LambdaExample.java">
+			LambdaExample.java</a><i class="fa fa-github"></i></i></br>	
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.4.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.5.png">
+			<p>				
+				* До лямбда-выражений уже был способ передачи поведения через анонимные классы как в примере выше.</p>
+			<p onclick="openWin3()">
+			<script>
+			function openWin3() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_3TreeSetWithCustomComparator.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>	
+				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_3TreeSetWithCustomComparator.java">
+			TreeSetWithCustomComparator.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.6.png">
+			<p>
+				* С появлением лямбда-выражений способ передачи поведения стал гораздо компактнее .</p>
+			<p onclick="openWin4()">
+			<script>
+			function openWin4() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_4TreeSetWithCustomComparatorLambda.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_4TreeSetWithCustomComparatorLambda.java">
+			TreeSetWithCustomComparatorLambda.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.7.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.8.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.9.png">
+			<p onclick="openWin5()">
+			<script>
+			function openWin5() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
+			Book.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.10.png">
+			<p onclick="openWin6()">
+			<script>
+			function openWin6() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
+			Book.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.11.png">
+			<p onclick="openWin7()">
+			<script>
+			function openWin7() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
+			Book.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.12.png">
+			<p onclick="openWin8()">
+			<script>
+			function openWin8() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
+			Book.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.13.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.14.png">
+			<p onclick="openWin9()">
+			<script>
+			function openWin9() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
+			Book.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.15.png">
+			<p onclick="openWin10()">
+			<script>
+			function openWin10() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
+			Book.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.16.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.17.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.18.png">
+			<p onclick="openWin11()">
+			<script>
+			function openWin11() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_5LambdaWithPredicate.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_5LambdaWithPredicate.java">
+			LambdaWithPredicate.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.19.png">
+			<p onclick="openWin12()">
+			<script>
+			function openWin12() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_6LambdaWithConsumer.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_6LambdaWithConsumer.java">
+			LambdaWithConsumer.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.20.png">
+			<p onclick="openWin13()">
+			<script>
+			function openWin13() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_6LambdaWithConsumer.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_6LambdaWithConsumer.java">
+			LambdaWithConsumer.java</a><i class="fa fa-github"></i></i></br>
+			</p>		
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.21.png">
+			<p onclick="openWin14()">
+			<script>
+			function openWin14() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_7LambdaWithFunction.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_7LambdaWithFunction.java">
+			LambdaWithFunction.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.22.png">
+			<p onclick="openWin15()">
+			<script>
+			function openWin15() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_8LambdaWithSupplier.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_8LambdaWithSupplier.java">
+			LambdaWithSupplier.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.23.png">
+			<p onclick="openWin16()">
+			<script>
+			function openWin16() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_9LambdaWithUnaryOperator.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_9LambdaWithUnaryOperator.java">
+			LambdaWithUnaryOperator.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.24.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.25.png">
+			<p onclick="openWin17()">
+			<script>
+			function openWin17() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_10OperatorDoubleColon.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_10OperatorDoubleColon.java">
+			OperatorDoubleColon.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.26.png">
+			<p onclick="openWin18()">
+			<script>
+			function openWin18() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_10OperatorDoubleColon.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_10OperatorDoubleColon.java">
+			OperatorDoubleColon.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.27.png">
+			<p></p>
+		</div>
+		<!--<div class="column">
+			<img src="images/images_02.1/02.1.28.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_02.1/02.1.29.png">
+			<p></p>
+		</div>-->
+	</div>
+</div>
+<!--<script src="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/javascript/script.js"></script>-->
+<script src="javascript/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

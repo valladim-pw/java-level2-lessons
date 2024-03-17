@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="02b6c599-95fb-4e2f-82e2-f7dd7a3ad75a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../0_Памятки, тестовые, служебные файлы/0_Памятки/Памятка по размерам.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../0_Памятки, тестовые, служебные файлы/0_Памятки/Памятка по созданию проекта внутри проекта через модуль.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../0_Памятки, тестовые, служебные файлы/1_Lessons-PDF/04.2 Хэш-таблицы.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../0_Памятки, тестовые, служебные файлы/2_Тестовые файлы/N-00 Архитектура и работа JVM (статья) .html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../0_Памятки, тестовые, служебные файлы/2_Тестовые файлы/N-04.3 Двоичная куча-test-zoom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../0_Памятки, тестовые, служебные файлы/2_Тестовые файлы/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../0_Памятки, тестовые, служебные файлы/2_Тестовые файлы/Директории для копирования в CMD.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Библиотека профессионала том 1 изд 11 2019 Кей Хорстман (рус).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java Библиотека профессионала том 2 изд 11 2020 Кей Хорстман (рус).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LecturesHTML.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-00.1 Динамические массивы.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-01.1 JRE, JDK, JVM, JIT-компиляция, Декомпиляция, Командная строка, jar-файлы.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-01.2 Параметры JVM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-01.3 Эмулятор RAM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-02.1 Введение в лямбда-выражения.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-02.2 Лямбда - Stream API, композиция.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-02.3 Рекурсия.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-03.1 Generic классы.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-04.1 Списки, очереди, стек.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-04.2 Хэш-таблицы.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-04.3 Двоичная куча.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-05.1 Тестирование кода, JUnit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-05.2 JUnit4 продолжение, JUnit5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/N-06.1 Сборка проекта, введение. Ant.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/00.1.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00.1/portrait00.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00/00.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_00/00.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/01.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.1/portrait01.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/01.2.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/cmd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/portrait01.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.2/powershell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/01.3.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/emu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/emu2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/emu3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/emulator0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/emulator2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/emulator3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/loop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_01.3/portrait01.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/02.1.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.1/portrait02.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/02.2.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.2/portrait02.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/02.3.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_02.3/portrait02.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/03.1.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_03.1/portrait03.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/04.1.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.1/portrait04.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/04.2.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.2/portrait04.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/04.3.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_04.3/portrait04.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/05.1.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.1/portrait05.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_05.2/05.2.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/06.1.9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/images_06.1/portrait06.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/progwards-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javascript/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Архитектура и работа JVM (статья).html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../0_Памятки/Памятка по размерам.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Lessons-PDF/04.2 Хэш-таблицы.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../B_Памятка по размерам/Памятка по размерам.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C_Тестовые файлы/N-00 Архитектура и работа JVM (статья) .html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C_Тестовые файлы/N-04.3 Двоичная куча-test-zoom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C_Тестовые файлы/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-00.1 Динамические массивы.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-01.1 JRE, JDK, JVM, JIT-компиляция, Декомпиляция, Командная строка, jar-файлы.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-01.2 Параметры JVM.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-01.3 Эмулятор RAM.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-02.1 Введение в лямбда-выражения.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-02.2 Лямбда - Stream API, композиция.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-02.3 Рекурсия.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-03.1 Generic классы.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-04.1 Списки, очереди, стек.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-04.2 Хэш-таблицы.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-04.3 Двоичная куча.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-05.1 Тестирование кода, JUnit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-05.2 JUnit4 продолжение, JUnit5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../N-06.1 Сборка проекта, введение. Ant.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../empty.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00.1/00.1.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00/00.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_00/00.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.1/01.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/01.2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/cmd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.2/powershell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/01.3.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/emu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/emu2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/emu3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/emulator0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/emulator2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/emulator3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_01.3/loop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.1/02.1.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.2/02.2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_02.3/02.3.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_03.1/03.1.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.1/04.1.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.2/04.2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_04.3/04.3.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.1/05.1.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_05.2/05.2.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/images_06.1/06.1.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../images/progwards-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javascript/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../styles/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Архитектура и работа JVM (статья).html" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="189" />
+    <option name="y" value="62" />
+    <option name="width" value="1521" />
+    <option name="height" value="871" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../../.." value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02b6c599-95fb-4e2f-82e2-f7dd7a3ad75a" name="Default Changelist" comment="" />
+      <created>1710262467276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710262467276</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="189" y="62" width="1521" height="871" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494817" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="SonarLint" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="make" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>15</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

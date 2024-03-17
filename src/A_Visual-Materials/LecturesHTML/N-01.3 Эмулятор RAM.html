@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01.3 Эмулятор Random Access Machine</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
+	<link rel="stylesheet" href="styles/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style>		
+	</style>
+</head>
+<body onload="insertLabel(); two();">
+<div class="container-fluid p-3">
+	<div class="header" id="header">		
+		<p>Click on the buttons to change the grid view.</p>
+		<div class="but-wrap">
+			<div class="back-fix"></div>
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>			
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" >50L</button>
+				<button class="btn" onclick="zoomRight();" >50R</button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>			
+		</div>		
+	</div>	
+	<div class="row">
+		<div class="column">
+			<img src="images/images_01.3/01.3.1.png">
+			<p></p>
+			<p onclick="openWin1()">
+			<script>
+			function openWin1() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less01_RAMEmulator/src","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>			
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less01_RAMEmulator/src">
+			Файлы по теме</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></br>
+			</p>
+		</div>
+		<div class="column ">
+			<img src="images/images_01.3/01.3.2.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.3.png">
+			<p onclick="openWin2()">
+			<script>
+			function openWin2() {
+			  window.open("https://ru.wikipedia.org/wiki/RAM-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>	
+			* <a class="github" href="https://ru.wikipedia.org/wiki/RAM-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0">RAM-машина</a></p>
+			<p onclick="openWin3()">
+			<script>
+			function openWin3() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0_%D0%A2%D1%8C%D1%8E%D1%80%D0%B8%D0%BD%D0%B3%D0%B0","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>	
+			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0_%D0%A2%D1%8C%D1%8E%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">
+					Машина Тьюринга (Википедия)</a></p>
+			<p onclick="openWin4()">
+			<script>
+			function openWin4() {
+			  window.open("https://skillbox.ru/media/code/mashina-tyuringa-chto-eto-roskosh-ili-sredstvo-vychisleniya/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>	
+			* <a class="github" href="https://skillbox.ru/media/code/mashina-tyuringa-chto-eto-roskosh-ili-sredstvo-vychisleniya/">
+					Машина Тьюринга</a></p>
+			<p onclick="openWin5()">
+			<script>
+			function openWin5() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80_(%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0)","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>	
+			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80_(%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0)">
+					Регистр</a></p>
+			<p>	* В минимальной машине все операции проводятся только в нулевом регистре.</br>
+				* Остальные регистры служат только для чтения и записи.
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.4.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.5.png">
+			<p onclick="openWin6()">
+			<script>
+			function openWin6() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+				* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">
+					Логический элемент</a></p>
+			<p onclick="openWin7()">
+			<script>
+			function openWin7() {
+			  window.open("https://yandex.ru/search/?text=%D1%82%D0%B0%D0%BA%D1%82+%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%B0+%D1%8D%D1%82%D0%BE+%D0%B2+%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B5&lr=6&src=suggest_T","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://yandex.ru/search/?text=%D1%82%D0%B0%D0%BA%D1%82+%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%B0+%D1%8D%D1%82%D0%BE+%D0%B2+%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B5&lr=6&src=suggest_T">
+					Такт процессора</a></p>
+				* Схема на рисунке состоит из логических элементов.</br>
+				* При попадании сигнала на определенный вход идет автоматический перенос сигнала на другие блоки.</br>
+				* Сигнал - это один такт процессора.</br>
+			  * За один такт процессора все биты сдвигаются на единицу вправо.
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.6.png">
+			<p onclick="openWin8()">
+			<script>
+			function openWin8() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80_(%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0)","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>	
+			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80_(%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0)">
+				Регистр</a>
+			</p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.7.png">
+			<p>
+				* <i>Repne scans</i> - пример команды процессора <i>Intel</i>.</br>
+				* Такие команды пишутся в микрокоде ядра процессора.</br>
+				* Команда представляет из себя подпрограмму со своей логикой и выполняется конечно не за один такт процессора.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.8.png">
+			<p>
+				* Знак "*1" - это значит "содержимое регистра 1" .</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.9.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.10.png">
+			<p onclick="openWin9()">
+			<script>
+			function openWin9() {
+			  window.open("https://github.com/emustudio/emuStudio","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/emustudio/emuStudio">
+			emuStudio</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.11.png">
+			<p>
+			* Извлекаем папку <i>emuStudio</i> с файлами программы из скачанного <i>zip</i>-файла в нужную директорию.</br>
+			* <b>Запуск <i>emuStudio</i> (способ 1):</b></br>
+			&nbsp;&nbsp;- В <b>Командной строке</b> переходим в директорию с файлами программы, где лежит файл <i>emuStudio.bat</i>, </br>
+			&nbsp;&nbsp;- В этой директории командой <b>emuStudio.bat</b> запускаем программу. </br>
+			* <b>Запуск <i>emuStudio</i> (способ 2):</b></br>
+			&nbsp;&nbsp;- В папке с файлами программы нажимаем правой кнопкой мыши на файл <i>emuStudio.bat</i>, </br>
+			&nbsp;&nbsp;- В контекстном меню нажимаем <b>Создать ярлык</b>, </br>
+			&nbsp;&nbsp;- В папке с файлами программы нажимаем правой кнопкой мыши на созданный файл <i>emuStudio - ярлык</i>, </br>
+			&nbsp;&nbsp;- В контекстном меню выбираем <b>Отправить</b> -> <b>Рабочий стол (создать ярлык)</b>, </br>
+			&nbsp;&nbsp;- Кликнув по ярлыку на рабочем столе запускаем программу. </br>
+			* После запуска в появившемся окне выбираем <b>Random Access Machine(RAM)</b> и нажимаем <b>Open computer</b> </br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.12.png">
+			<p>
+			* Таким образом можно посмотреть дополнительные сведения о компьютере <i>Random Access Machine (RAM)</i>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.13.png">
+			<p>Инструкции (синим) алгоритма сложения чисел из входной ленты в <i>RAM</i> с пояснениями (черным).</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.14.png">
+			<p>
+			* Работа с файлами в компьютере <i>RAM</i>:</br>
+			1. В меню <i>File</i> выбираем <i>Open</i>,</br>
+			2. Выбираем в директории нужный файл, кликаем <i>Open</i>,</br>
+			3. Файл открывается в <i>RAM</i>.	Файл должен быть с расширением <i>.ram</i>, в файле только инструкции (рис.13), 
+			каждая с новой строки, комментарии предваряются знаком <b>точка с запятой</b>.</br>
+			При некорректном отражении кириллицы в комментариях, возможно надо поменять кодировку файла на <i>UTF-8</i> c <i>BOM</i>.</p>
+			<p onclick="openWin10()">
+			<script>
+			function openWin10() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less01_RAMEmulator/src/emuStudio/X_myExercises/add.ram","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less01_RAMEmulator/src/emuStudio/X_myExercises/add.ram">
+			add.ram</a><i class="fa fa-github"></i>
+			</i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.15.png">
+			<p>
+			* Работа с файлами в компьютере <i>RAM</i> (продолжение):</br>
+			4. В меню <i>Project</i> жмем <i>Compile</i>,</br>
+			5. Наш файл компилируется и в директории файла создается бинарный файл с тем же названием но с расширением <i>.bram</i>.</br>			
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.16.png">
+			<p>
+			* Перейдя на вкладку <i>Emulator</i> можно <b>двойным кликом</b> открыть дополнительные окна <i>Storage</i>, <i>Input Tape</i>, <i>Output Tape</i>.</br>
+			* В основном окне отражаются инструкции скомпилированного файла.</br>
+			* Каждый клик по зеленой стрелке - шаг в алгоритме рабочего файла, вплоть до итогового результата.</br>
+			* При этом результат выполнения инструкций на каждом шаге отражается в окне <i>Storage</i>, входная лента в <i>Input Tape</i>, итоговый результат в <i>Output Tape</i>.</br>
+			* Для получения результата сразу - клик по синей стрелке.</br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.17.png">
+			<p>Завершение работы кода</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.18.png">
+			<p>
+			* На рисунке на примере класса <i>Test</i>, выполнящего простейшую арифметическую операцию показано сходство инструкций в скомпилированном байт-коде с инструкциями компьютера <i>RAM</i> (рис.9), так как 
+			действие выполняется по тому же алгоритму.</br>
+			(чтобы посмотреть байт-код в <i>IntelliJ IDEA</i>, нужно, как показано на рисунке, в директории проекта <i>out</i> найти скомпилированный файл с расширением <i>class</i>, выделить его, 
+			затем во вкладке <i>View</i> кликнуть по пункту <i>Show Bytecode</i>) </br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.19.png">
+			<p onclick="openWin11()">
+			<script>
+			function openWin11() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%80%D0%B0%D1%86%D1%83%D0%B1%D1%8B","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+				* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9A%D0%B0%D1%80%D0%B0%D1%86%D1%83%D0%B1%D1%8B">
+				Алгоритм Карацубы</a></p>
+			<p onclick="openWin12()">
+			<script>
+			function openWin12() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A2%D0%BE%D0%BE%D0%BC%D0%B0_%E2%80%94_%D0%9A%D1%83%D0%BA%D0%B0","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A2%D0%BE%D0%BE%D0%BC%D0%B0_%E2%80%94_%D0%9A%D1%83%D0%BA%D0%B0">
+					Алгоритм Тоома-Кука</a></p>
+			<p onclick="openWin13()">
+			<script>
+			function openWin13() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A8%D1%91%D0%BD%D1%85%D0%B0%D0%B3%D0%B5_%E2%80%94_%D0%A8%D1%82%D1%80%D0%B0%D1%81%D1%81%D0%B5%D0%BD%D0%B0","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A8%D1%91%D0%BD%D1%85%D0%B0%D0%B3%D0%B5_%E2%80%94_%D0%A8%D1%82%D1%80%D0%B0%D1%81%D1%81%D0%B5%D0%BD%D0%B0">
+					Алгоритм Шёнхаге-Штрассена</a></p>
+			<p onclick="openWin14()">
+			<script>
+			function openWin14() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A4%D1%8E%D1%80%D0%B5%D1%80%D0%B0","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%A4%D1%8E%D1%80%D0%B5%D1%80%D0%B0">
+					Алгоритм Фюрера</a></p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.20.png">
+			<p onclick="openWin15()">
+			<script>
+			function openWin15() {
+			  window.open("https://www.geeksforgeeks.org/multiply-two-polynomials-2/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://www.geeksforgeeks.org/multiply-two-polynomials-2/">
+			Multiply two polynomials (Умножьте два многочлена)</a></p>			
+			<p onclick="openWin16()">
+			<script>
+			function openWin16() {
+			  window.open("https://www.geeksforgeeks.org/fast-fourier-transformation-poynomial-multiplication/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://www.geeksforgeeks.org/fast-fourier-transformation-poynomial-multiplication/">
+				Fast Fourier Transformation for polynomial multiplication (Быстрое преобразование Фурье для полиномиального умножения)</a></p>			
+			<p onclick="openWin17()">
+			<script>
+			function openWin17() {
+			  window.open("https://www.geeksforgeeks.org/iterative-fast-fourier-transformation-polynomial-multiplication/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://www.geeksforgeeks.org/iterative-fast-fourier-transformation-polynomial-multiplication/">
+			Iterative Fast Fourier Transformation for polynomial multiplication (Итеративное быстрое преобразование Фурье для полиномиального умножения)</a></p>			
+			<p onclick="openWin18()">
+			<script>
+			function openWin18() {
+			  window.open("https://introcs.cs.princeton.edu/java/97data/Complex.java.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://introcs.cs.princeton.edu/java/97data/Complex.java.html">
+				Complex.java</a></p>
+			<p onclick="openWin19()">
+			<script>
+			function openWin19() {
+			  window.open("https://introcs.cs.princeton.edu/java/97data/FFT.java.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://introcs.cs.princeton.edu/java/97data/FFT.java.html">
+				FFT.java</a></p>
+			<p onclick="openWin20()">
+			<script>
+			function openWin20() {
+			  window.open("https://introcs.cs.princeton.edu/java/97data/InplaceFFT.java.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://introcs.cs.princeton.edu/java/97data/InplaceFFT.java.html">
+				InplaceFFT.java</a></p>
+			<p onclick="openWin21()">
+			<script>
+			function openWin21() {
+			  window.open("https://acm.math.spbu.ru/~gassa/bachelor-2020/210225_m20_slides.ru.pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://acm.math.spbu.ru/~gassa/bachelor-2020/210225_m20_slides.ru.pdf">
+				Дискретное преобразование Фурье</a></p>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.21.png">
+			<p onclick="openWin22()">
+			<script>
+			function openWin22() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less01_RAMEmulator/src/emuStudio/X_myExercises/mul.ram","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less01_RAMEmulator/src/emuStudio/X_myExercises/mul.ram">
+			mul.ram</a><i class="fa fa-github"></i>
+			</i></br>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.22.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.23.png">
+			<p>
+			* <b>Временна́я сложность алгоритма (O) определяется как функция от длины строки (n), представляющей входные данные, равная времени работы алгоритма на данном входе.</b></br>
+				1. Вне зависимости от размера входного массива время выполнения всегда одиноково.</br>
+				2. Не делается полный перебор, а используются промежуточные вычисления для уменьшения размерности задачи
+				(динамическое программирование). Например алгоритм быстрого возведения в степень:</p>
+			<p onclick="openWin23()">
+			<script>
+			function openWin23() {
+			  window.open("https://www.geeksforgeeks.org/iterative-fast-fourier-transformation-polynomial-multiplication/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://www.geeksforgeeks.org/iterative-fast-fourier-transformation-polynomial-multiplication/">
+					Алгоритмы быстрого возведения в степень
+				</a></p>
+			<p onclick="openWin24()">
+			<script>
+			function openWin24() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less01_JVM_JDK_Decompilation_ByteCode/_3_EmulatorRAM/FastPow.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less01_JVM_JDK_Decompilation_ByteCode/_3_EmulatorRAM/FastPow.java">
+			FastPow.java</a><i class="fa fa-github"></i>
+			</i></p>
+			<p>	3. Например задача просуммировать все элементы массива.</p>
+			<p onclick="openWin25()">
+			<script>
+			function openWin25() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D1%81%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			7. * <a class="github" href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D1%81%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0">
+					Экспонента</a></p>
+			<p onclick="openWin26()">
+			<script>
+			function openWin26() {
+			  window.open("https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			8. * <a class="github" href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB">
+					Факториал</a>
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.24.png">
+			<p>				
+			</p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.25.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.26.png">
+			<p></p>
+		</div>
+		<!--<div class="column">
+			<img src="images/images_01.3/01.3.27.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.28.png">
+			<p></p>
+		</div>
+		<div class="column">
+			<img src="images/images_01.3/01.3.29.png">
+			<p></p>
+		</div>-->
+	</div>
+</div>
+<!--<script src="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/javascript/script.js"></script>-->
+<script src="javascript/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

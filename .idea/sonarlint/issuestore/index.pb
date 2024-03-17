@@ -27,18 +27,10 @@ x
 Hsrc/Less04_HashTable_List_Deque_Stack/_3_BinaryHeap/BinaryHeapFull2.java,3\a\3a6dc5b4a815e00eeacfcdf3dbce3da246be5548
 r
 Bsrc/Less04_HashTable_List_Deque_Stack/_3_BinaryHeap/TestHeap8.java,d\4\d4e8b11525816adc0b8b0a7a545b245426b66aa8
-l
-<src/A_Visual-Materials/N-04.3 Двоичная куча.html,4\f\4f9171b1ac9f3db305cac193ae6579c436286d54
-h
-8src/A_Visual-Materials/N-04.2 Хэш-таблицы.html,8\6\8617fe52534d3cd9f935ba9d3d0f229157e2ac87
 �
 \src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_6ADeque_EList_TimeTest/EList.java,5\f\5fb36a262df8d3a64dd624dcdebc7c38d473e602
 �
 _src/Less04_HashTable_List_Deque_Stack/_1_List_Deque_Stack/_6ADeque_EList_TimeTest/TimeTest.java,b\f\bf0c39c3216e3d0f34c982ffb95cc218788b0981
-y
-Isrc/A_Visual-Materials/N-04.1 Списки, очереди, стек.html,e\1\e10f67d5af6d8f2954eadc57d83f8b95706c0c2b
-�
-�src/A_Visual-Materials/N-01.1 JRE, JDK, JVM, JIT-компиляция, Декомпиляция, Командная строка, jar-файлы.html,9\6\96fea4eefa5b9531d4881375949dd14f5712694e
 �
 Vsrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/TestCMD.java,d\1\d13c0d654840968145d0e6640cac752393938bb6
 �
@@ -67,8 +59,6 @@ Fsrc/Less04_HashTable_List_Deque_Stack/_3_BinaryHeap/BinaryHeapMax.java,0\0\004
 Msrc/Less04_HashTable_List_Deque_Stack/_3_BinaryHeap/BinaryHeapMaxWithDel.java,6\6\66224607c8dfa293c817b4123f5dec4385bed92a
 U
 %src/HomeWork/basetypes/BiDirList.java,0\4\041d42e32baa4d5c8179658f332c0e5a35f702d6
-g
-7src/A_Visual-Materials/N-03.1 Generic классы.html,c\d\cd72adba0c3be670488dda6c909259c727e97ed9
 W
 'src/HomeWork/generics/DynamicArray.java,f\7\f779a9c846c4572a5e82261fa69281c833ae5b8c
 �
@@ -79,8 +69,6 @@ P
  src/HomeWork/basetypes/Test.java,d\8\d8c157efa81359122466683e175287bd5bb7ab67
 �
 Usrc/Less04_HashTable_List_Deque_Stack/_2_HashTables/_2ChainHashTable/CHashTable2.java,4\4\44c3d6a2c6a57c0823a69158c080e26f42b5acbb
-�
-Wsrc/A_Visual-Materials/N-02.1 Введение в лямбда-выражения .html,f\2\f2a2a6b613285f89a45862d437b516a03deb9387
 Q
 !src/HomeWork/basetypes/Test2.java,3\a\3a908b0b5260df97ef64c419ea137fbab44cbd6f
 V
@@ -113,14 +101,6 @@ g
 7src/B_Webinars/A4_Calculator/calc2/AsNumbersSumWeb.java,8\3\83f3677f5c3a9806dcfa1919d75fe284e30f26c7
 h
 8src/B_Webinars/A4_Calculator/calc2/CalculatorValery.java,5\8\587cff20a8201ab2d830bd0abf25be58dcbb9ec1
-i
-9src/A_Visual-Materials/N-01.2 Параметры JVM.html,8\b\8bdd7c6c616ffe14e28f899a62f960fb62237192
-g
-7src/A_Visual-Materials/N-01.3 Эмулятор RAM.html,1\4\141d99e4cf25fa16567498f71a4b9f4d13109b84
-{
-Ksrc/A_Visual-Materials/N-05.1 Тестирование кода, JUnit.html,5\d\5dc0e795ff5b8edb16b95558d3fe779d9ea918c1
-x
-Hsrc/A_Visual-Materials/N-05.2 JUnit4 продолжение, JUnit5.html,0\5\052fdee8794105d9349c6025ca91a004a82f78c8
 |
 Lsrc/Less05_JUnitTest1/src/main/java/ru/progwards/calculator/ICalculator.java,d\3\d322b442e1f5aefa69c7538951af44dcea305aae
 {
@@ -155,8 +135,6 @@ s
 Csrc/Less01_RAMEmulator/src/emuStudio/X_myExercises/add_comments.txt,f\b\fb1fd53e9a8cf7130c2dae1ca1eb335fd0aa5d9d
 p
 @src/Less01_RAMEmulator/src/emuStudio/X_htmlRAM/operatorsRAM.html,b\5\b59dca514d4658f1e005a1d46e7a467bd585be09
-Q
-!src/A_Visual-Materials/empty.html,a\6\a6656db2bf2ac930cca90e2e3f435ba27d304e46
 �
 Tsrc/HomeWork/tests/src/main/java/ru/progwards/java2/lessons/tests/calc/Examples.java,d\4\d421a8294ebfe996cd4a259736195574a44aa8e8
 �
@@ -181,15 +159,27 @@ Y
 +src/Less05_JUnitTest2/Less05_JUnitTest2.iml,4\4\44922b2db7e1243ab62fc89dc36ddf45d5c2dd16
 a
 1src/Less06_BuildingProject/Ant3/src/Main4Ant.java,5\e\5e0cdd9d63e047a09f66ca6a8893066afb4b2a55
-z
-Jsrc/A_Visual-Materials/N-00.1 Динамические массивы.html,8\5\85df78b787e1b109aab47a5fd6cbb62ec75637df
-Q
-!src/A_Visual-Materials/index.html,5\9\59779abb1046ce97c7e1dcf0721ac94e75339b48
-[
-+src/A_Visual-Materials/javascript/script.js,e\f\efd67248d5909f4e034fc9640d87b86ed54f5fd4
 �
 Ssrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/Calc.java,d\e\de63b0136b734b0b1195d4e032727544946e1f3a
 �
 Ysrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/Calculator.java,f\7\f75201ad0fb1c04bb0660ccc4635d7af46a7bf08
 �
 Ysrc/Less01_JVM_JDK_Decompilation_ByteCode/_1_Intro_Decompilation_ByteCode/HelloWorld.java,3\3\33dcd10f0e24295b4290cdd507f417a706e1d531
+S
+#src/Less04_CodeExamples/BArray.java,9\9\992973e6090efb4e2a87a19f5be62c08d8e7ef4b
+�
+Zsrc/Less02_Lambda_Recursion/_2_StreamAPI_Composition/_02DeferredAndTerminalOperations.java,e\4\e47cf658e05ff4eed6496c9141e4e5abe09a1f7e
+r
+Bsrc/Less01_JVM_JDK_Decompilation_ByteCode/_3_EmulatorRAM/Test.java,4\d\4dfc628edb6a1faaf3bcd557e13b1e03b40400a8
+k
+;src/Less03_Generics/_1_GenericClasses/_0VarargsWarning.java,f\5\f5e7129281baa3b69f5118f0cd6aaa5e85f32ae3
+s
+Csrc/Less02_Lambda_Recursion/_3_Recursion/_3OptimizedPowerSteps.java,4\5\45cd1d5160ff0e931e7abc312e8bc30ccb08952b
+�
+Zsrc/Less02_Lambda_Recursion/_2_StreamAPI_Composition/_08StreamReduceBinaryOperatorMax.java,7\1\71054c021873fe9e9a314aac9ed01955d16fb875
+�
+Qsrc/Less02_Lambda_Recursion/_2_StreamAPI_Composition/_01FilterBookWithStream.java,6\5\655dc416c24a877be406bcb4f1e38e1bab4b1c14
+^
+.src/A_Visual-Materials/LecturesHTML/index.html,6\6\6632d7351dd5b1396c6df1d0d391660d7f43b9d3
+�
+�src/A_Visual-Materials/0_Памятки, тестовые, служебные файлы/0_Памятки/Памятка по размерам.txt,c\9\c9a113d4f3bb641621e2d0a1ecc7c2113122a8e1
