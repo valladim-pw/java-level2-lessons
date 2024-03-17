@@ -399,10 +399,10 @@
 			<p onclick="openWin18()">
 			<script>
 			function openWin18() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/94e00d9916eb8d4b010028b5bec33d36b512faf5/src/Less06_BuildingProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/build.xml">
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/94e00d9916eb8d4b010028b5bec33d36b512faf5/src/Less06_BuildingProject/Ant3/build.xml">
 			build.xml</a><i class="fa fa-github"></i></i></br>
 			</p>
 			<p>
@@ -442,35 +442,53 @@
 				* В цели по запуску <i>jar</i>-файла пишем задание на запуск <i>java</i>, в котором определяем файл для запуска <i>jar="${build}/${ant.project.name}.jar"</i> и то,
 				что запуск будет в отдельной копии виртуальной машины <i>Java</i> (<i>fork="true"</i>).</br>
 			</p>
+			<p onclick="openWin19()">
+			<script>
+			function openWin19() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/build.xml">
+			build.xml</a><i class="fa fa-github"></i></i></br>
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.28&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.28.png">
+			<img src="images/images_06.1/06.1.28.png">			
+			<p onclick="openWin20()">
+				<script>
+				function openWin20() {
+					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+				}
+				</script>
+				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/build.xml">
+				build.xml</a><i class="fa fa-github"></i></i></br>
+			</p>
 			<p>
-		
+			* Если мы запустим проект с конечным вариантом <i>build.xml</i> сначала будет запрошена дефолтная цель <i>build-jar</i>, а далее в соответствии
+			с зависимостями указанными в целях (на рис. синие стрелки), исполнение будет происходить в обратном порядке, начиная с цели <i>clean</i> (зеленые стрелки).</br>
+			* После этого, если нет ошибок в тесте, происходит выполнение цели <i>run-jar</i>, т.е. запуск <i>jar</i>-файла.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.1/06.1.29.png">
 			<p>
-			
+			* Запускаем проект в <i>OS Ubuntu</i> сначала с командой <i>ant build-jar</i>, потом командой <i>ant run-jar</i>.</br>
 			</p>
 		</div>
-		<!--<div class="column">
+		<div class="column">
 			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.1/06.1.30.png">
 			<p>
-			* На рисунке показаны примеры применения аннотаций <i>@BeforeClass</i> и <i>@AfterClass</i>.</br>
-			* <i>@BeforeClass</i> помогает один раз инициализировать ссылку на объект <i>calc</i>, чтобы не делать это в каждом методе класса.</br>
-			* <i>@AfterClass</i> нужна для того, чтобы после использования класса, ссылка не зависла в памяти и ее мог убрать сборщик мусора (так как она не будет ссылаться ни на один объект).</br>
+			* Тестируем запуск проекта в <i>OS Windows</i>, здесь важно перед тестированием изменить кодировку консоли для корректного вывода результата на кириллице (см. рис.12).</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.31&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.1/06.1.31.png">
-			<p>
-			* Пример такого тестирования показан на рис.29.</br>
+			<p>	
+			* Если мы намеренно допустим ошибку в основном классе проекта, тест будет провален и исполнение проекта остановлено, что и закладывалось в проект изначально.</br>
 			</p>
 		</div>
 		<div class="column">
@@ -520,7 +538,7 @@
 			<span class="badge bg-primary">Рис.39&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.1/06.1.39.png">
 			<p></p>
-		</div>-->
+		</div>
 		
 	</div>
 </div>
