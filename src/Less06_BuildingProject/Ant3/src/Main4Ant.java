@@ -14,6 +14,6 @@ public class Main4Ant {
 	
 	public static void main(String[] args) {
 		int n = 55;
-		System.out.println(n + "-РѕРµ С‡РёСЃР»Рѕ Р¤РёР±РѕРЅР°С‡С‡Рё: " + fibonacci(n));
+		System.out.println(n + "-ое число Фибоначчи: " + fibonacci(n));
 	}
 }

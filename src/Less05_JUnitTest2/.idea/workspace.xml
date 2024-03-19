@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="29844759-9795-4c92-ad74-6489af8c57db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/ant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/libraries/2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/libraries/hamcrest_core_1_34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/libraries/hamcrest_core_1_35.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/libraries/junit_4_124.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/libraries/junit_4_125.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant/.idea/ant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant/.idea/dictionaries/.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant/Ant.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant2/Ant2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant2/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant2/build2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant2/src/Main4Ant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant3/Ant3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant3/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant3/lib/hamcrest-core-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant3/lib/junit-4.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant3/src/Main4Ant2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Less06_BuildingProject/Ant3/src/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.00_JavaAdvance0421A_lessons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2.00_JavaAdvance0421A_lessons.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../0_Памятки/Памятка по созданию проекта в проекте.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/N-02.1 Введение в лямбда-выражения .html" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/N-02.1 Введение в лямбда-выражения .html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A_Visual-Materials/images/images_02.1/02.1.15.png" beforeDir="false" afterPath="$PROJECT_DIR$/../A_Visual-Materials/images/images_02.1/02.1.15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less01_RAMEmulator/Less01_RAMEmulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Less01_RAMEmulator/Less01_RAMEmulator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Less05_JUnitTest1/Less05_JUnitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Less05_JUnitTest1/Less05_JUnitTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Less05_JUnitTest2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Less05_JUnitTest2.iml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="291" />
+    <option name="y" value="72" />
+    <option name="width" value="1378" />
+    <option name="height" value="906" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Less05_JUnitTest2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Less05_JUnitTest2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Less05_JUnitTest2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Less05_JUnitTest2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Less05_JUnitTest2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Less05_JUnitTest2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Less05_JUnitTest2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Less05_JUnitTest2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../.." value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29844759-9795-4c92-ad74-6489af8c57db" name="Default Changelist" comment="" />
+      <created>1707250211623</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707250211623</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="291" y="72" width="1378" height="906" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="SonarLint" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="make" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>15</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

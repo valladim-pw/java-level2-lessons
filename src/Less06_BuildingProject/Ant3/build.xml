@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <project name="Main4Ant" default="all">
   <!--Определяем свойства - имена каталогов-->
   <property name="src" location="src"/>
