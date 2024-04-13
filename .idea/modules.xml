@@ -3,14 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/2.00_JavaAdvance0421A_lessons.iml" filepath="$PROJECT_DIR$/2.00_JavaAdvance0421A_lessons.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingProject/Ant/Ant.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingProject/Ant/Ant.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingProject/Ant2/Ant2.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingProject/Ant2/Ant2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingProject/Ant3/Ant3.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingProject/Ant3/Ant3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingAntProject/Ant/Ant.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingAntProject/Ant/Ant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingAntProject/Ant2/Ant2.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingAntProject/Ant2/Ant2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingAntProject/Ant3/Ant3.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingAntProject/Ant3/Ant3.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/A_Visual-Materials/LecturesHTML/LecturesHTML.iml" filepath="$PROJECT_DIR$/src/A_Visual-Materials/LecturesHTML/LecturesHTML.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/Less01_RAMEmulator/Less01_RAMEmulator.iml" filepath="$PROJECT_DIR$/src/Less01_RAMEmulator/Less01_RAMEmulator.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/Less05_JUnitTest1/Less05_JUnitTest.iml" filepath="$PROJECT_DIR$/src/Less05_JUnitTest1/Less05_JUnitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/Less05_JUnitTest2/Less05_JUnitTest2.iml" filepath="$PROJECT_DIR$/src/Less05_JUnitTest2/Less05_JUnitTest2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingProject/Less06_BuildingProject.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingProject/Less06_BuildingProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven1/Maven1.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven1/Maven1.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/HomeWork/tests/tests.iml" filepath="$PROJECT_DIR$/src/HomeWork/tests/tests.iml" />
     </modules>
   </component>

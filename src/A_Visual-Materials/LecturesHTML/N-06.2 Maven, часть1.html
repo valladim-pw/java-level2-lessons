@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>06.1 Сборка проекта, введение. Ant</title>
+	<title>06.2 Maven, часть1</title>
 	<base target="_blank">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
@@ -41,7 +41,7 @@
 	<div class="row">
 		<div class="column">
 			<span class="badge bg-primary">Рис.1&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.1.png" >
+			<img src="images/images_06.2/06.2.1.png" >
 			<p></p>
 			<p onclick="openWin1()">
 			<script>
@@ -63,22 +63,7 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.2&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.2.png">
-			<p>
-			* Для понимания, для чего нужны <b>системы автоматической сборки</b> нужно посмотреть на архитектуру более-менее серьезного приложения (рис. выше).</br>
-			* При развертывании новой версии приложения могут быть изменены все четыре элемента, но могут быть изменения только в одном из элементов.</br>
-			* Для каждого из вариантов новой версии для автоматизации развертывания нужен разный скрипт.</br>
-			* Если эта процедура будет каждый раз проводиться вручную, то высока вероятность ошибки (человеческий фактор).</br>
-			* Здесь и приходят на помощь системы автоматической сборки, которые позволяют автоматизировать процесс развертывания новой версии приложения при любом из вариантов внесенных в него изменений.</br>
-			</p>
-		</div>
-		<div class="column">
-			<span class="badge bg-primary">Рис.3&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.3.png">
-			<p>
-			* Система <i>Ant</i> считается устаревшей, и сейчас редко используется.</br>
-			При этом система достаточно проста.</br>
-			* Сценарии написанные на <i>Ant</i> могут использоваться как в <i>Maven</i> так и в <i>Gradle</i>.</p>
+			<img src="images/images_06.2/06.2.2.png">
 			<p onclick="openWin3()">
 			<script>
 			function openWin3() {
@@ -107,53 +92,54 @@
 			</p>
 		</div>
 		<div class="column">
+			<span class="badge bg-primary">Рис.3&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.2/06.2.3.png">			
+			<p onclick="openWin6()">
+			<script>
+			function openWin6() {
+			  window.open("https://ru.wikipedia.org/wiki/Apache_Maven","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://ru.wikipedia.org/wiki/Apache_Maven">
+			Apache Maven</a></p>				
+		</div>
+		<div class="column">
 			<span class="badge bg-primary">Рис.4&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.4.png">
-			<p>			
-			</p>
+			<img src="images/images_06.2/06.2.4.png">
+			<p onclick="openWin7()">
+			<script>
+			function openWin7() {
+			  window.open("https://ru.wikipedia.org/wiki/Apache_Maven","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://ru.wikipedia.org/wiki/Apache_Maven">
+			Apache Maven</a></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.5&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.5.png">
-			<p onclick="openWin5a()">
-			<script>
-			function openWin5a() {
-			  window.open("https://www.w3schools.com/xml/xml_whatis.asp","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <a class="github" href="https://www.w3schools.com/xml/xml_whatis.asp">
-			Подробнее о XML</a></br>
+			<img src="images/images_06.2/06.2.5.png">
+			<p >			
+			* В <b>архетипе</b> указывается какие каталоги будут лежать в проекте и что будет в них.</br>
+			* <b>Артефакт</b> - ключевая сущность <i>Maven</i>. Наш учебный проект тоже будет являться артефактом.</br>
+			* Вся работа в <i>Maven</i> осуществляется за счет функциональности прописанной в <b>плагинах</b>.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.6.png">
-			<p>
-			* <b>Установка Ant в Windows:</b><br>
-			* <i>Ant</i> как правило уже предустановлен в <i>IntelliJ IDEA</i>, но для понимания пойдем традиционным путем и установим <i>Ant</i> с нуля в нашу ОС.</br>
-			* Для этого переходим по ссылкам показанным на рисунке и скачиваем <i>zip</i> файл с версией 1.10.7</p>
-			<p onclick="openWin6()">
+			<img src="images/images_06.2/06.2.6.png">			
+			<p onclick="openWin8()">
 			<script>
-			function openWin6() {
-			  window.open("https://ant.apache.org/bindownload.cgi","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			function openWin8() {
+			  window.open("https://maven.apache.org/download.cgi","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* Ссылка на страницу (1): <a class="github" class="github" href="https://ant.apache.org/bindownload.cgi">
-			ant.apache.org</a>
-			</p>
-			<p onclick="openWin6a()">
-			<script>
-			function openWin6a() {
-			  window.open("https://archive.apache.org/dist/ant/binaries/?C=M;O=A","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* Ссылка на страницу (2): <a class="github" class="github" href="https://archive.apache.org/dist/ant/binaries/?C=M;O=A">
-			ant.apache.org (архив версий)</a>
-			</p>
+			* <a class="github" class="github" href="https://maven.apache.org/download.cgi">
+			maven.apache.org</a>
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.7&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.7.png">
+			<img src="images/images_06.2/06.2.7.png">
 			<p>
 			* Подробная схема установки <b>Path</b> на рис.8.<br>
 
@@ -161,184 +147,123 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.8&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.8.png">
+			<img src="images/images_06.2/06.2.8.png">
 			<p>
 			* Если переменной <i>Path</i> нет, нажимаем "Создать" и в поле "Имя" записываем <i>Path</i>, в поле значение - каталог с файлом <i>bin</i> (см. рис.7).</br>
-			* Если переменная <i>Path</i> уже имеет значение, нужно нажимать кнопку "Изменить" , потом "Создать", в открывшееся поле записываем каталог с файлом <i>bin</i>.</br>			
-
+			* Если переменная <i>Path</i> уже имеет значение, нужно нажимать кнопку "Изменить" , потом "Создать", в открывшееся поле записываем каталог с файлом <i>bin</i>.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.9&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.9.png">
+			<img src="images/images_06.2/06.2.9.png">
 			<p>			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.10&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.10.png">
+			<img src="images/images_06.2/06.2.10.png">
 			<p>
-			* Для <i>Windows</i> проверочную команду <b>ant -version</b> надо запускать из каталога который мы установили как значение для системной переменной <i>Path</i> (рис.8).</br>
-			В нашем случае это <b>D:\Builders\apache-ant-1.10.7\bin</b>.</br>	
+			* Для <i>Windows</i> проверочную команду <b>mvn -version</b> надо запускать из каталога который мы установили как значение для системной переменной <i>Path</i> (рис.8).</br>
+			В нашем случае это <b>D:\BuildersMaven\apache-maven-3.9.6\bin</b>.</br>	
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.11.png">
+			<img src="images/images_06.2/06.2.11.png">
 			<p>
-			* Создаем новый проект в <i>IntelliJ IDEA</i> с названием <i>Ant</i>.<br>
-			В проекте размещаем файл <i>build.xml</i>, с приветствием.
+			* На схеме показно как в <i>IntelliJ IDEA</i> создать проект <i>Maven</i> в уже существующем проекте, в нужном каталоге.<br>
+			* В начале (шаг 1), в нужном каталоге ( у меня - <i>Less06_BuildingMavenProject</i> ) создаем пэкедж с выбранным для <i>Maven</i> проекта названием ( у меня - <i>Maven1</i>).<br>
+			* Далее по шагам показанным на схеме создаем модуль <i>Maven</i> не выбирая пока архетип из предложенных (шаг 3).<br>
+			* На шаге 4 появляются поля, названия которых отражаются аббревиатурой <b>GAV</b> 
+			(<i><b>G</b>roupId</i> - пэкедж проекта, <i><b>A</b>rtifactId</i> - наше название проекта, <i><b>V</b>ersion</i> - оставляем по умолчанию).<br>			
+			* Должна получиться структура модуля, показанная на шаге 6.<br>
+			* Дальнейшие шаги на рис.12.<br>
 			</p>
-			<p onclick="openWin7()">
-			<script>
-			function openWin7() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject/Ant","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingProject/Ant">			
-			Проект Ant</a><i class="fa fa-github"></i></i></p>
-			<p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.12&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.12.png">
+			<img src="images/images_06.2/06.2.12.png">
 			<p>
-			* Для <i>Windows</i>, чтобы правильно отразилось приветствие в нашем <i>build.xml</i> файле нужно поменять кодировку в командной строке.</br>
-			* Для этого надо перейти в каталог <b>C:\Windows\System32</b> с файлом <i>cmd.exe</i>.</br>
-			* Кодировки <i>cmd.exe</i>:</br>
-			&nbsp;&nbsp;- <i>MS-DOS</i> (по умолчанию) - <b>866</b>,</br>
-			&nbsp;&nbsp;- <i>UTF-8</i> - <b>65001</b>,</br>
-			&nbsp;&nbsp;- <i>Кириллица</i> - <b>1251</b></br>
-			* Узнать кодировку можно командой <b>chcp</b></br>
-			* Изменить кодировку можно командой <b>chcp <нужная кодировка></b>, в нашем случае - <b>chcp 1251</b> (рис. выше (1))</br>
-			* <b>После закрытия "Командной строки" кодировка возвращается к значению по умолчанию!</b></br>
-			* Поэтому меняем кодировку перед запуском нашего проекта, затем переходим в каталог с нашим проектом и запускаем его командой <b>ant</b> (рис. выше (2)).</br>
+			* Созданный модуль <i>Maven</i> (рис.11) преобразуем в проект <i>Maven</i> с тем же названием, действуя по шагам показанным на рисунке.<br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.13&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.13.png">
+			<img src="images/images_06.2/06.2.13.png">
 			<p>
-			* Порядок запуска проекта <i>Ant</i> из <i>IntelliJ IDEA</i>:</br>
-			1. Кликаем <i>Ant Build</i> на правой стороне окна <i>IDEA</i>,</br>
-			2. В открывшейся вкладке жмем кнопку "+",</br>
-			3. В открывшемся окне <i>Select Ant Build File</i> выбираем наш <i>build.xml</i> и жмем OK,</br>
-			4. Во вкладке <i>Ant Build</i> появляется наш проект <i>HelloWorld</i> и в нем наша цель <i>(target) - hello</i>,</br>
-			кликаем на цель <i>hello</i> и активируется стрелка запуска проекта.</br>
-			Запустить проект можно либо кликом по стрелке запуска, либо двойным кликом по цели.</br>
-			5. Запустив проект, во вкладке <i>Messages</i> мы видим результат работы нашей сборки <i>Ant</i> - cообщение "Привет, Мир!" и сообщение "<i>Ant bulild completed...</i>".</br>
+			* Структура каталогов (на рисунке выделена пунктирной линией) созданного проекта (рис.11-12) сформирована согласно <i>Соглашению по конфигурации</i>, хотя при создании проекта
+			мы не использовали архетип (шаблон) (рис.11, шаг 3). </br>
+			* При создании проекта появится окно <b>Maven projects need to be imported</b> (на рисунке в правом нижнем углу). </br>
+			Здесь рекомендуется нажать <i>Enable Auto-Import</i>, что позволит <i>Maven</i> при необходимости импортировать какие-либо ресурсы автоматически, без уведомления. </br>
+			* Помимо структуры каталогов в проекте появился файл <b>pom.xml</b> - это и есть файл <i>Maven</i>-сценария. </br>
+			* В этом файле, помимо стандартных заголовков появился <i>GAV</i> (рис.11, шаг 4), который мы определяли при создании нашего проекта. </br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.14&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.14.png">
+			<img src="images/images_06.2/06.2.14.png">
 			<p>
-			* Весь список заданий можно посмотреть в документации:<p>
-			<p onclick="openWin8()">
-			<script>
-			function openWin8() {
-			  window.open("https://ant.apache.org/manual/index.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <a class="github" href="https://ant.apache.org/manual/index.html">			
-			Документация Apache Ant</a></p>
-			<p>
-			На странице пройти по ссылкам <b>Ant Tasks</b> -> <b>Overview of Ant Tasks</b>.<br>
-			</p>
+			* На рисунке показаны примеры записи артефактов (библиотек, проектов и т.п.) с параметрами <i>GAV</i> (выделены разным цветом) через двоеточие. <p>
+			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.15&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.15.png">
-			<p>			
+			<img src="images/images_06.2/06.2.15.png">
+			<p>
+			* Версию в зависимости в принципе указывать не обязательно, но это правило "хорошего тона", а для серьезных проектов отсутствие версии неприемлемо. <p>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.16.png">
+			<img src="images/images_06.2/06.2.16.png">
 			<p>
-			* Для <b>Пример 1</b> создадим отдельный проект <b>Ant2</b> (рис. выше (1)).</p>
-			<p onclick="openWin9()">
-			<script>
-			function openWin9() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject/Ant2","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingProject/Ant2">			
-			Проект Ant2</a><i class="fa fa-github"></i></i></p>
-			<p>
-			* Основной класс проекта <i>Main4Ant</i> будет рассчитывать <i>n</i>-ое число Фибоначчи (рис. выше (2)).</p>
-			<p onclick="openWin10()">
-			<script>
-			function openWin10() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/src/Main4Ant.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant2/src/Main4Ant.java">			
-			Main4Ant.java</a><i class="fa fa-github"></i></i></p>
-			<p>
-			* Файл <i>build.xml</i> определяет сценарий сборки проекта, который мы назовем как и основной <i>java</i> файл (рис. выше (3)):</p>
-			<p onclick="openWin11()">
-			<script>
-			function openWin11() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant2/build.xml">			
-			build.xml</a><i class="fa fa-github"></i></i></p>
-			<p>
-			- Сначала с помощью свойств определяется каталог, где будет размещен скомпилированный файл проекта <i>Main4Ant.class</i> - <b>build/classes</b>,</br>
-			- Назначение целей определяется их именами (например, назначение <i>target name="compile"</i> - компиляция файла, и т.п.),</br>
-			- В целях возможно определить зависимости (<i>depends</i>), указывающие на взаимосвязь и порядок выполнения целей.</br>
-			В нашем случае компиляция (<i>compile</i>) будет происходить после <i>clean</i> (удаления каталога <i>build/classes</i>), а выполнение (<i>run</i>), соответственно после компиляции,</br>
-			- Внутри каждой цели размещены задания (<i>tasks</i> (рис.14): <i>mkdir</i>, <i>javac</i>, <i>java</i>, <i>delete</i>, которые определяют действия необходимые для выполнения целей.</br>
+			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.17&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.17.png">
+			<img src="images/images_06.2/06.2.17.png">
 			<p>
-			* При запуске нашего проекта из командной строки, вначале (для корректного отражения сообщения) поменяем кодировку <i>cmd</i> на <i>chcp 65001</i> (<i>UTF-8</i>) (рис.12).</br>
-			* Затем переходим в каталог проекта и запускаем его командой <i>ant</i>.</br>
-			В командной строке и в каталоге проекта в <i>IntelliJ IDEA</i> мы можем наблюдать как происходит выполнения сценария из нашего файла <i>build.xml</i>.</br
+			* В <i>IntelliJ IDEA</i> есть возможность избегать в зависимостях неправильных версий подключаемых библиотек.</br>
+			* Если умышленно поставить неправильную версию она подсветится красным. То же самое произойдет, если версия правильная, но не обновлены индексы <i>Maven</i>.</br>
+			* Для обновления индексов в <i>IDEA</i> надо либо кликнуть на иконку красной лампочки, либо наведя курсор на версию нажать <b>Alt + Enter</b> и в выпадающем списке выбрать
+			<i>Update Maven Indices</i>.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.18&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.18.png">
+			<img src="images/images_06.2/06.2.18.png">
 			<p>
-			* Запуск проекта из командной строки в ОС <i>Ubuntu</i>.</br>
+			* В зависимостях также можно определить <b>scope</b> - область применения артефакта.</br>
+			* Выше указаны пять вариантов <i>scope</i>.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.19&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.19.png" usemap="#map">
+			<img src="images/images_06.2/06.2.19.png" usemap="#map">
 			<p>
-			* Для запуска проекта в <i>IntelliJ IDEA</i> повторяем порядок, показанный на рис.13 (шаги 1 - 4).</br>
-			* Цель <b>run</b> выделена жирным, поскольку в нашем <i>build.xml</i> она определена как дефолтная (рис.16(3)).</br>
-			* Мы можем запустить проект во вкладке <i>Ant Build</i> на любом этапе, двойным кликом по соответствующей цели,
-			получив при этом во вкладке <i>Messages</i> результат работы сборки на данном этапе.</br>			
+			* В <i>IntelliJ IDEA</i> нет необходимости писать зависимости вручную. Чтобы их добавить нужно:</br>
+			1. В файле <i>pom.xml</i>, наведя курсор на код правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
+			2. В открывшемся списке нажать на <i>Dependency</i>.</br>
+			3. В открывшемся окне выбрать нужный артефакт и кликнуть <i>Add</i>.</br>
+			4. Нужная зависимость появится в коде.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.20&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.20.png">
+			<img src="images/images_06.2/06.2.20.png">
 			<p>
-			* Для демонстрации следующего примера добавим в наш проект файл <i>build2.xml</i>.</p>
-			<p onclick="openWin12()">
-			<script>
-			function openWin12() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/build2.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant2/build2.xml">			
-			build2.xml</a><i class="fa fa-github"></i></i></p>
-			<p>
-			* В этом файле изменим сценарий, сделав дефолтной цель <i>clean</i>, а из цели <i>run</i> уберем зависимость.</br>
+			* В <i>IntelliJ IDEA</i> также есть возможность генерировать теги, для этого надо:</br>
+			1. В файле <i>pom.xml</i>, наведя курсор на <b>пустое место (!), куда мы собираемся подставить тег</b> правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> 
+			либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
+			2. В открывшемся списке нажать на <i>XML Tag</i>.</br>
+			3. В открывшемся списке кликнуть по нужному тегу.</br>
+			4. В списке значений (если тег, например <i>scope</i>) выбрать нужное значение.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.21.png">
+			<img src="images/images_06.2/06.2.21.png">
 			<p>	
 			* На рисунке выше показаны результаты запуска в командной строке с флагом <i>-f</i>, явно указывающим на файл со сценарием <i>build2.xml</i>.</br>
 			В данном случае по сценарию срабатывают только две цели.</br>
@@ -348,13 +273,13 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.22&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.22.png">
+			<img src="images/images_06.2/06.2.22.png">
 			<p>			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.23.png">
+			<img src="images/images_06.2/06.2.23.png">
 			<p>
 			* Для <b>Пример 2</b> также создадим отдельный проект <b>Ant3</b> (рис. выше (1)).</p>
 			<p onclick="openWin13()">
@@ -407,7 +332,7 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.24.png">
+			<img src="images/images_06.2/06.2.24.png">
 			<p>
 			* Для проекта напишем <i>build.xml</i>.</p>
 			<p onclick="openWin18()">
@@ -432,7 +357,7 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.25.png">
+			<img src="images/images_06.2/06.2.25.png">
 			<p>
 			* Запускаем проект в консоли командой <i>ant test</i>, поскольку в проекте установлено <i>default="compile"</i>.</br>
 			* Получаем результат успешного прохождения теста.</br>
@@ -440,14 +365,14 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.26&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.26.png">
+			<img src="images/images_06.2/06.2.26.png">
 			<p>
 			* Аналогичный результат теста получаем при запуске в <i>IDEA</i>.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.27&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.27.png">
+			<img src="images/images_06.2/06.2.27.png">
 			<p>
 				* Пишем цели по созданию и запуску <i>jar</i>-файла.</br>
 				* Название файла будет такое же как у проекта <i>${ant.project.name}</i>,</br>
@@ -468,7 +393,7 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.28&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.28.png">			
+			<img src="images/images_06.2/06.2.28.png">			
 			<p onclick="openWin20()">
 				<script>
 				function openWin20() {
@@ -486,35 +411,35 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.29.png">
+			<img src="images/images_06.2/06.2.29.png">
 			<p>
 			* Запускаем проект в <i>OS Ubuntu</i> сначала с командой <i>ant build-jar</i>, потом командой <i>ant run-jar</i>.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.30.png">
+			<img src="images/images_06.2/06.2.30.png">
 			<p>
 			* Тестируем запуск проекта в <i>OS Windows</i>, здесь важно перед тестированием изменить кодировку консоли для корректного вывода результата на кириллице (см. рис.12).</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.31&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.31.png">
+			<img src="images/images_06.2/06.2.31.png">
 			<p>	
 			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.32&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.32.png">
+			<img src="images/images_06.2/06.2.32.png">
 			<p>
 			* Если мы намеренно допустим ошибку в основном классе проекта, тест будет провален и исполнение проекта остановлено, что и закладывалось в проект изначально.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.33&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.33.png">
+			<img src="images/images_06.2/06.2.33.png">
 			<p>
 			* Существует также возможность запустить все цели сразу.<br>
 			* Для этого есть цель с <i>name="all"</i>, где мы прописываем зависимость, в которой через запятую перечисляем все цели в порядке их исполнения.<br>
@@ -536,36 +461,36 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.34&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.34.png">
+			<img src="images/images_06.2/06.2.34.png">
 			<p>
 
 			</p>
 		</div>
 		<!--<div class="column">
 			<span class="badge bg-primary">Рис.35&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.35.png">
+			<img src="images/images_06.2/06.2.35.png">
 			<p>
 
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.36&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.36.png">
+			<img src="images/images_06.2/06.2.36.png">
 			<p></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.37&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.37.png">
+			<img src="images/images_06.2/06.2.37.png">
 			<p></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.38&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.38.png">
+			<img src="images/images_06.2/06.2.38.png">
 			<p></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.39&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.1/06.1.39.png">
+			<img src="images/images_06.2/06.2.39.png">
 			<p></p>
 		</div>-->
 		
