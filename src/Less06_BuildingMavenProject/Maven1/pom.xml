@@ -8,14 +8,20 @@
 	<artifactId>Maven1</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+	<properties>
+		<junit.version>4.12</junit.version>
+		<var0>5555</var0>
+		<var1>something var</var1>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 </project>
 
