@@ -198,6 +198,14 @@
 			* Помимо структуры каталогов в проекте появился файл <b>pom.xml</b> - это и есть файл <i>Maven</i>-сценария. </br>
 			* В этом файле, помимо стандартных заголовков появился <i>GAV</i> (рис.11, шаг 4), который мы определяли при создании нашего проекта. </br>
 			</p>
+			<p onclick="openWin9()">
+			<script>
+			function openWin9() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/f456d516775df26b5975403f298b5ed4c485f716/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/f456d516775df26b5975403f298b5ed4c485f716/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.14&nbsp;<i class="material-icons">&#xe5db;</i></span>
@@ -215,10 +223,16 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.2/06.2.16.png">
-			<p>
+			<img src="images/images_06.2/06.2.16.png">			
+			<p onclick="openWin10()">
+			<script>
+			function openWin10() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 			
-			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.17&nbsp;<i class="material-icons">&#xe5db;</i></span>
@@ -265,95 +279,55 @@
 			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.21.png">
 			<p>	
-			* На рисунке выше показаны результаты запуска в командной строке с флагом <i>-f</i>, явно указывающим на файл со сценарием <i>build2.xml</i>.</br>
-			В данном случае по сценарию срабатывают только две цели.</br>
-			* Если в команду добавить дополнительные аргументы с указанием целей <i>compile run</i>, то сработают все цели в нашем сценарии.</br>
-			
+			* В результате мы добавили зависимость от <i>junit 4.12</i> и указали, что область применения у нее будет только в тестах.</br>			
 			</p>
+			<p onclick="openWin11()">
+			<script>
+			function openWin11() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.22&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.22.png">
-			<p>			
+			<p>
+			* Еще одна возможность <i>Maven</i> - свойства (<i>properties</i>).</br>
+			* Свойства - это фактически переменные. В данном случае меняем версию <i>JUnit</i> - 4.12 на переменную <i>junit.version</i>, определенную в <i>properties</i>. </br>
 			</p>
+			<p onclick="openWin12()">
+			<script>
+			function openWin12() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/87f1ee7f78ac7da135a7d4b0ea2c0c74ed11e895/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/87f1ee7f78ac7da135a7d4b0ea2c0c74ed11e895/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.23.png">
 			<p>
-			* Для <b>Пример 2</b> также создадим отдельный проект <b>Ant3</b> (рис. выше (1)).</p>
-			<p onclick="openWin13()">
-			<script>
-			function openWin13() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3">			
-			Проект Ant3</a><i class="fa fa-github"></i></i></p>
-			<p>
-			* Основной класс проекта <i>Main4Ant</i> также будет рассчитывать <i>n</i>-ое число Фибоначчи (рис. выше (2)).</p>
-			<p onclick="openWin14()">
-			<script>
-			function openWin14() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/src/Main4Ant.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/src/Main4Ant.java">			
-			Main4Ant.java</a><i class="fa fa-github"></i></i></p>
-			<p>
-			* Дополнительно создадим тестовый класс <i>Test1</i> (рис. выше (3)).</p>
-			<p onclick="openWin15()">
-			<script>
-			function openWin15() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/src/Test1.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/src/Test1.java">			
-			Test1.java</a><i class="fa fa-github"></i></i></p>
-			<p>
-			* Для корректной работы тестового класса к проекту надо подключить внешние библиотеки <i>junit</i> и <i>hamcrest-core</i> (см. ссылки ниже).</p>
-			<p onclick="openWin16()">
-			<script>
-			function openWin16() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/A_Visual-Materials/LecturesHTML/images/images_05.1/05.1.23.png","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=1000, height=700");
-			}
-			</script>			
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/A_Visual-Materials/LecturesHTML/images/images_05.1/05.1.23.png">
-			Подключение в проект внешних библиотек для работы JUnit (рис)</a><i class="fa fa-github"></i></i></p>
-			<p onclick="openWin17()">
-			<script>
-			function openWin17() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/A_Visual-Materials/LecturesHTML/images/images_05.1/05.1.24.png","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/A_Visual-Materials/LecturesHTML/images/images_05.1/05.1.24.png">
-			Расположение в проекте внешних библиотек для работы JUnit (рис)</a><i class="fa fa-github"></i></i></br>
-			</p>
+			* В командной строке есть возможность построить дерево зависимостей, указанных в нашем проекте (на рисунке выделено желтым) .</p>
+			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.24.png">
 			<p>
-			* Для проекта напишем <i>build.xml</i>.</p>
-			<p onclick="openWin18()">
+			* В зависимостях есть возможность исключить определенные артефакты. В данном случае мы исключаем библиотеку <i>hamcrest-core</i>, для того чтобы, для примера, заменить нынешнюю
+			версию 1.3 на более новую - 2.2 (рис.25).</p>
+			<p onclick="openWin13()">
 			<script>
-			function openWin18() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/94e00d9916eb8d4b010028b5bec33d36b512faf5/src/Less06_BuildingAntProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			function openWin13() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/94e00d9916eb8d4b010028b5bec33d36b512faf5/src/Less06_BuildingProject/Ant3/build.xml">
-			build.xml</a><i class="fa fa-github"></i></i></br>
-			</p>
-			<p>
-			* Поскольку для <i>IDEA</i> есть своя система <i>classpath</i>-ов, мы подключили внешние библиотеки <i>junit</i> и <i>hamcrest-core</i>, но
-			для <i>Ant</i> нужно расположить и указать расположение отдельно, для чего размещаем их в папке <i>lib</i> (рис.23) и прописываем локацию <i>junit</i> в <i>properties</i> (1), 
-			а также дописываем <i>classpath</i> с <i>junit</i> в задании <i>javac</i>.</br>
-			* Для теста пишем цель <i>test</i> (2), в которой указываем зависимость от успешной компиляции <i>depends="compile"</i>.</br>
-			* В цели будет единственное задание <i>junit</i>, в котором указываем атрибуты <i>haltonerror="yes"</i> и <i>haltonfailure="yes"</i>, которые обеспечат прерывание сценария
-			выполнения если тест не пройдет.</br>
-			Атрибут <i>fork="true"</i>, означает, что будет запущена отдельная копия виртуальной машины <i>Java</i>, в которой будет исполняться тест. Если его не указать, то вылетит ошибка.<br>
-			<i>formatter</i> обеспечивает формат вывода результатов теста, атрибут <i>type="brief"</i> - информация должна быть краткой, <i>usefile="false"</i> - результат выводится не в файл а на консоль.<br>
-			</p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/pom.xml">
+			pom.xml</a><i class="fa fa-github"></i></i></br>
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
