@@ -10,8 +10,8 @@
 
 	<properties>
 		<junit.version>4.12</junit.version>
-		<var0>5555</var0>
-		<var1>something var</var1>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -22,19 +22,19 @@
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
-					<groupId>org.namcrest</groupId>
+					<groupId>org.hamcrest</groupId>
 					<artifactId>hamcrest-core</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>org.namcrest</groupId>
+			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-core</artifactId>
 			<version>2.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.namcrest</groupId>
+			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-library</artifactId>
 			<version>2.2</version>
 			<scope>test</scope>
