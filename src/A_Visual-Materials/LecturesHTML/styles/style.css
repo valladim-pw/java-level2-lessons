@@ -206,3 +206,7 @@ span.fwrap i.fa:nth-child(2) {
 	/*background-color: green;
 	color: white;*/
 }
+code {
+	color:#330e76;
+	font-size: 1em;
+}

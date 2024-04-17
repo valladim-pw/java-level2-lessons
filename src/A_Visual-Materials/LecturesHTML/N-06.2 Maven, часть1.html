@@ -349,7 +349,8 @@
 			<span class="badge bg-primary">Рис.26&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.26.png">
 			<p>
-			* Для примера в папке <i>main/java</i> проекта создадим класс <i>Fibo</i>, вычисляющий 55-е число Фибоначчи.<br>			
+			* Для примера в папке <i>main/java</i> проекта создадим класс <i>Fibo</i>, вычисляющий 55-е число Фибоначчи.<br>
+			</p>
 			<p onclick="openWin15()">
 			<script>
 			function openWin15() {
@@ -364,53 +365,55 @@
 			<span class="badge bg-primary">Рис.27&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.27.png">
 			<p>
-				* Пишем цели по созданию и запуску <i>jar</i>-файла.</br>
-				* Название файла будет такое же как у проекта <i>${ant.project.name}</i>,</br>
-				в атрибуте <i>excludes="Test*.class"</i> указываем, что исключаем из архива тестовый файл, поскольку он нужен только для тестирования кода,</br>
-				в директиве <i>manifest</i> указываем, что необходимо создать манифест.</br>
-				* В цели по запуску <i>jar</i>-файла пишем задание на запуск <i>java</i>, в котором определяем файл для запуска <i>jar="${build}/${ant.project.name}.jar"</i> и то,
-				что запуск будет в отдельной копии виртуальной машины <i>Java</i> (<i>fork="true"</i>).</br>
-			</p>
-			<p onclick="openWin19()">
-			<script>
-			function openWin19() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/54bf350a2ecf8a89a6fe55a5742c324a997d2767/src/Less06_BuildingAntProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/54bf350a2ecf8a89a6fe55a5742c324a997d2767/src/Less06_BuildingProject/Ant3/build.xml">
-			build.xml</a><i class="fa fa-github"></i></i></br>
-			</p>
+				* Для управления проектом в <i>IDEA</i> открываем окно <i>Maven</i> нажатием на кнопку в правом верхнем углу окна <i>IDEA</i> и компилируем <i>Fibo.java</i>
+				(либо двойной клик по кнопке <i>compile</i>, либо выделить кнопку кликом и кликнуть по зеленой стрелке запуска).</br>
+				* Сообщение во вкладке <i>Maven [compile]</i>, в нижней части окна <i>IDEA</i> содержит ошибку <b>[ERROR]</b>, где предлагается имеющуюся версию <i>JDK</i> - 1.5
+				заменить на версию не ниже 1.7.</br>				
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.28&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.28.png">			
-			<p onclick="openWin20()">
-				<script>
-				function openWin20() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/54bf350a2ecf8a89a6fe55a5742c324a997d2767/src/Less06_BuildingAntProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-				}
-				</script>
-				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/54bf350a2ecf8a89a6fe55a5742c324a997d2767/src/Less06_BuildingProject/Ant3/build.xml">
-				build.xml</a><i class="fa fa-github"></i></i></br>
-			</p>
 			<p>
-			* Если мы запустим проект с конечным вариантом <i>build.xml</i> сначала будет запрошена дефолтная цель <i>build-jar</i>, а далее в соответствии
-			с зависимостями указанными в целях (на рис. синие стрелки), исполнение будет происходить в обратном порядке, начиная с цели <i>clean</i> (зеленые стрелки).</br>
-			* После этого, если нет ошибок в тесте, происходит выполнение цели <i>run-jar</i>, т.е. запуск <i>jar</i>-файла.</br>
+			* Установить другую версию <i>JDK</i> мы можем в файле <i>pom.xml</i>, определив в свойствах переменные с новой версией (возьмем сразу последнюю - 1.8) (выделено синим).<br>
+			* Теперь компиляция проходит успешно (выделено красным), а в структуре проекта появляется каталог <i>target</i> (выделено зеленым) с папкой <i>classes</i> и бинарным файлом <i>fibo.class</i> внутри.<br>
+			</p>
+			<p onclick="openWin16()">
+			<script>
+			function openWin16() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/c79f5519fdf2f93f627c23d99467fc8b45afd338/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/c79f5519fdf2f93f627c23d99467fc8b45afd338/src/Less06_BuildingMavenProject/Maven1/pom.xml">
+			pom.xml</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.29.png">
 			<p>
-			* Запускаем проект в <i>OS Ubuntu</i> сначала с командой <i>ant build-jar</i>, потом командой <i>ant run-jar</i>.</br>
+		
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.30.png">
 			<p>
-			* Тестируем запуск проекта в <i>OS Windows</i>, здесь важно перед тестированием изменить кодировку консоли для корректного вывода результата на кириллице (см. рис.12).</br>
+			* Если в <i>IntelliJ IDEA</i> пройти по ссылкам:<br>
+			<code>File -> Settings -> Build, Execution, Deployment -> Build Tools -> Maven -> Repositories</code><br>
+			мы попадем в таблицу <i>Indexed Maven Repositories</i>, в которой указаны адреса локального (<i>local</i>) и удаленного (<i>remote</i>) репозиториев.<br>
+			* Первое место, где <i>Maven</i> ищет артефакты - локальный репозиторий (для <i>Windows</i> он создается для каждого пользователя свой), который находится 
+			на нашем компьютере, как правило в папке <b>\.m2\repository\</b>. Здесь находится большое количество каталогов с <i>jar</i>-файлами - это и есть артефакты, скопированные сюда <i>Maven</i>.<br>
+			* Если нужный артефакт не находится в локальном репозитории, поиск продолжается уже в центральном репозитории, где находится огромное количество артефактов (достаточно посмотреть на размер хранилища!).<br>
+			</p>
+			<p onclick="openWin17()">
+			<script>
+			function openWin17() {
+			  window.open("https://mvnrepository.com/repos/central","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/repos/central">
+			MVN Repository</a></i></br>
 			</p>
 		</div>
 		<div class="column">
@@ -424,36 +427,30 @@
 			<span class="badge bg-primary">Рис.32&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.32.png">
 			<p>
-			* Если мы намеренно допустим ошибку в основном классе проекта, тест будет провален и исполнение проекта остановлено, что и закладывалось в проект изначально.</br>
+			* В <i>Maven</i> есть возможность располагать файл локального репозитория в месте, которое мы захотим.</br>
+			* Делается это в конфигурационном файле <b>settings.xml</b> (выделено красным), в каталоге, куда мы устанавливаем <i>Maven</i> (рис.7).</br>
+			* Если мы откроем файл <b>settings.xml</b> в редакторе, можно найти строку с указанием дефолтного адреса для локального репозитория (выделено синим).</br>
+			* Раскомментировав строку с тегом <i>localRepository</i> (выделено зеленым), мы можем вписать туда нужный адрес и репозиторий будет создан в этом месте.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.33&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.33.png">
 			<p>
-			* Существует также возможность запустить все цели сразу.<br>
-			* Для этого есть цель с <i>name="all"</i>, где мы прописываем зависимость, в которой через запятую перечисляем все цели в порядке их исполнения.<br>
-			* <b>Если возникает проблема с отражением русских букв</b> в <i>Target: run-jar</i> (выделено зеленым) можно сделать следующее:<br>
-			- В меню <i>Project</i> кликаем по названию нашего проекта, выделяя его синим,<br>
-			- Далее <i>File</i> -> <i>Settings</i> -> <i>Editor</i> -> <i>File Encodings</i>,<br>
-			- На этой странице находим выпадающее меню <i>Project Encoding</i> и в нем выбираем <i>windows-1251</i>,<br>
-			- Кликаем здесь же <i>OK</i>.<br>
-			</p>
-			<p onclick="openWin21()">
-				<script>
-				function openWin21() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/Less06_BuildingAntProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-				}
-				</script>
-				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/Less06_BuildingProject/Ant3/build.xml">
-				build.xml</a><i class="fa fa-github"></i></i></br>
-			</p>
+			* <i>Maven</i> предоставляет возможность наследования <i>pom.xml</i>.<br>
+			* Такая необходимость возникает, когда есть много проектов с повторяющимися элементами. Появляется смысл сделать один родительский <i>pom.xml</i>,
+			 от которого будут наследоваться <i>pom.xml</i> остальных проектов (т.е. они будут использовать все его свойства, также добавляя какие-то свои).<br>
+			* Я создавал родительский <i>pom.xml</i> (выделено красным) файл в нужном мне пэкедже <i>Less06_BuildingMavenParentPOM</i> по соседству с проектом-примером.<br>
+			* Помимо <i>GAV</i> (выделено синим) в этом файле надо указать способ упаковки в теге <i>packaging</i> (выделено зеленым).
+			Свойства и зависимости будут фактически такие же как в нашем проекте-примере. <br>
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.34&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.34.png">
 			<p>
-
+			* Теперь надо разместить родительский <i>pom.xml</i> в локальном репозитории.<br>
+			* Для этого в командной строке из каталога, в котором располагается файл запускаем команду <b>mvn install</b>.<br>
 			</p>
 		</div>
 		<!--<div class="column">

@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven1/pom.xml" />
         <option value="$PROJECT_DIR$/Maven2/pom.xml" />
         <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven2/pom.xml" />
+        <option value="$PROJECT_DIR$/MavenParent/pom.xml" />
+        <option value="$PROJECT_DIR$/src/Less06_BuildingMavenParentPOM/MavenParent/pom.xml" />
       </list>
     </option>
   </component>

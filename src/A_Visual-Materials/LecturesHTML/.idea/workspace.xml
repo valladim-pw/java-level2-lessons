@@ -457,7 +457,7 @@
       <change afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Архитектура и работа JVM (статья).html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <!--<change beforePath="$PROJECT_DIR$/../../../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/sonarlint/issuestore/index.pb" afterDir="false" />-->
       <change beforePath="$PROJECT_DIR$/../../0_Памятки/Памятка по размерам.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../A_Lessons-PDF/04.2 Хэш-таблицы.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../B_Памятка по размерам/Памятка по размерам.txt" beforeDir="false" />
