@@ -8,38 +8,11 @@
 	<artifactId>Maven1</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-	<properties>
-		<junit.version>4.12</junit.version>
-		<maven.compiler.source>8</maven.compiler.source>
-		<maven.compiler.target>8</maven.compiler.target>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.hamcrest</groupId>
-					<artifactId>hamcrest-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-core</artifactId>
-			<version>2.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-library</artifactId>
-			<version>2.2</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<parent>
+		<groupId>Less06_BuildingMavenParentPOM</groupId>
+		<artifactId>MavenParent</artifactId>
+		<version>1.0</version>
+	</parent>
 
 </project>
 
