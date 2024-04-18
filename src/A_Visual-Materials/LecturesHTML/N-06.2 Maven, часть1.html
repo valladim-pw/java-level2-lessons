@@ -443,43 +443,82 @@
 			* Я создавал родительский <i>pom.xml</i> (выделено красным) файл в нужном мне пэкедже <i>Less06_BuildingMavenParentPOM</i> по соседству с проектом-примером.<br>
 			* Помимо <i>GAV</i> (выделено синим) в этом файле надо указать способ упаковки в теге <i>packaging</i> (выделено зеленым).
 			Свойства и зависимости будут фактически такие же как в нашем проекте-примере. <br>
-			</p>			
+			</p>
+			<p onclick="openWin18()">
+			<script>
+			function openWin18() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenParentPOM/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenParentPOM/pom.xml">
+			MavenParent(pom.xml)</a><i class="fa fa-github"></i></i></br>
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.34&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.34.png">
 			<p>
 			* Теперь надо разместить родительский <i>pom.xml</i> в локальном репозитории.<br>
-			* Для этого в командной строке из каталога, в котором располагается файл запускаем команду <b>mvn install</b>.<br>
+			* Для этого в командной строке из каталога, в котором располагается файл запускаем команду<br> <b>mvn install</b>.<br>
 			</p>
 		</div>
-		<!--<div class="column">
+		<div class="column">
 			<span class="badge bg-primary">Рис.35&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.35.png">
 			<p>
-
+			* Чтобы сделать <i>pom.xml</i> нашего проекта-примера <i>Maven1</i> наследником внесем изменения в файл.<br>
+			* Мы убираем из него все свойства и зависимости, которые уже определены в родительском файле и вписываем только тег <i>parent</i> 
+			с <i>GAV</i> родительского <i>pom.xml</i> (выделено синим).<br>
+			</p>
+			<p onclick="openWin19()">
+			<script>
+			function openWin19() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml">
+			pom.xml</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.36&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.36.png">
-			<p></p>
+			<p>
+			* Чтобы убедиться, что наследование работает во-первых запустим в нашем проекте <i>Maven1</i> команду <b>clean</b>.<br>
+			* Мы видим, что команда прошла успешно и в нашем проекте удалена директория <i>target</i> <br>(продолжение - рис.37).<br> 
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.37&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.37.png">
-			<p></p>
+			<p>
+			* Во-вторых (начало - рис.36) запустим в проекте <i>Maven1</i> команду <b>compile</b>.<br>
+			* Команда отрабатывает успешно (<i>BUILD SUCCESS</i>) и в нашем проекте вновь появляется директория <i>target</i> с бинарным файлом <i>fibo.class</i>.<br>
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.38&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.38.png">
-			<p></p>
+			<p>
+			* Чтобы сделать <i>pom.xml</i> нашего проекта-примера <i>Maven1</i> наследником внесем изменения в файл.<br>
+			* Мы убираем из него все свойства и зависимости, которые уже определены в родительском файле и вписываем только тег <i>parent</i> 
+			с <i>GAV</i> родительского <i>pom.xml</i> (выделено синим).<br>
+			</p>
+			<p onclick="openWin20()">
+			<script>
+			function openWin20() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml">
+			pom.xml</a><i class="fa fa-github"></i></i></br>
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.39&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.39.png">
 			<p></p>
-		</div>-->
+		</div>
 		
 	</div>
 </div>
