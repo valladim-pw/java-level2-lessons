@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06.3 Maven, часть2</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
+	<link rel="stylesheet" href="styles/style.css">	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style >
+	</style>
+</head>
+<body onload="insertLabel(); two();">
+<div class="container-fluid p-3">
+	<div class="header" id="header">
+		<p>Click on the buttons to change the grid view.</p>
+		<div class="but-wrap">
+			<div class="back-fix"></div>
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" >50L</button>
+				<button class="btn" onclick="zoomRight();" >50R</button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column">
+			<span class="badge bg-primary">Рис.1&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.1.png" >
+			<p></p>
+			<p onclick="openWin1()">
+			<script>
+			function openWin1() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1">
+			Файлы по теме(1)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
+			<p onclick="openWin1a()">
+			<script>
+			function openWin1a() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenParentPOM","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenParentPOM">
+			Файлы по теме(2)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
+			<p onclick="openWin2()">
+			<script>
+			function openWin2() {
+			  window.open("https://maven.apache.org/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://maven.apache.org/">
+			Документация Apache Maven</a>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.2&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.2.png">
+			<p>
+			* <b>Плагины</b> - это своеобразный мотор <i>Maven</i>.</br>
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.3&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.3.png">			
+			<p onclick="openWin3()">
+			<script>
+			function openWin3() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1">			
+			Maven1 (проект)</a><i class="fa fa-github"></i></i></p>
+			<p >			
+			* В командной строке запустим команду <b>mvn compiler : compile</b>, в каталоге проекта <i>Maven1</i>, который мы делали на лекции "Maven, часть1"
+			(предварительно надо очистить проект, открыв вкладку <i>Maven</i> в <i>IntelliJ IDEA</i> и в <i>Lifecycle</i> проекта <i>Maven1</i> запустив команду <b>clean</b>).</br>
+			* В данном случае мы запускаем цель <b>compile</b> плагина <b>compiler</b>.</br>
+			* В синтаксисе работы с плагинами определено, что сначала идет имя плагина, потом <b>обязательно - двоеточие</b>, далее имя цели.</br>
+			* Имя плагина может быть кратким (выделено красным), а может быть полным, через <b>GAV</b> (выделено желтым).</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.4&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.4.png">
+			<p onclick="openWin7()">
+			<script>
+			function openWin7() {
+			  window.open("https://ru.wikipedia.org/wiki/Apache_Maven","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://ru.wikipedia.org/wiki/Apache_Maven">
+			Apache Maven</a></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.5&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.5.png">
+			<p >			
+			* В <b>архетипе</b> указывается какие каталоги будут лежать в проекте и что будет в них.</br>
+			* <b>Артефакт</b> - ключевая сущность <i>Maven</i>. Наш учебный проект тоже будет являться артефактом.</br>
+			* Вся работа в <i>Maven</i> осуществляется за счет функциональности прописанной в <b>плагинах</b>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.6.png">			
+			<p onclick="openWin8()">
+			<script>
+			function openWin8() {
+			  window.open("https://maven.apache.org/download.cgi","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" class="github" href="https://maven.apache.org/download.cgi">
+			maven.apache.org (download)</a>
+			</p>
+			<p >			
+			* На странице по ссылке ищем раздел <b>Files</b>, а в нем, в таблице файлов скачиваем <b>Binary zip archive</b>.</br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.7&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.7.png">
+			<p>
+			* Подробная схема установки <b>Path</b> на рис.8.<br>
+
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.8&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.8.png">
+			<p>
+			* Если переменной <i>Path</i> нет, нажимаем "Создать" и в поле "Имя" записываем <i>Path</i>, в поле значение - каталог с файлом <i>bin</i> (см. рис.7).</br>
+			* Если переменная <i>Path</i> уже имеет значение, нужно нажимать кнопку "Изменить" , потом "Создать", в открывшееся поле записываем каталог с файлом <i>bin</i>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.9&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.9.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.10&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.10.png">
+			<p>
+			* Для <i>Windows</i> проверочную команду <b>mvn -version</b> надо запускать из каталога который мы установили как значение для системной переменной <i>Path</i> (рис.8).</br>
+			В нашем случае это <b>D:\BuildersMaven\apache-maven-3.9.6\bin</b>.</br>	
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.11.png">
+			<p>
+			* На схеме показно как в <i>IntelliJ IDEA</i> создать проект <i>Maven</i> в уже существующем проекте, в нужном каталоге.<br>
+			* В начале (шаг 1), в нужном каталоге ( у меня - <i>Less06_BuildingMavenProject</i> ) создаем пэкедж с выбранным для <i>Maven</i> проекта названием ( у меня - <i>Maven1</i>).<br>
+			* Далее по шагам показанным на схеме создаем модуль <i>Maven</i> не выбирая пока архетип из предложенных (шаг 3).<br>
+			* На шаге 4 появляются поля, названия которых отражаются аббревиатурой <b>GAV</b> 
+			(<i><b>G</b>roupId</i> - пэкедж проекта, <i><b>A</b>rtifactId</i> - наше название проекта, <i><b>V</b>ersion</i> - оставляем по умолчанию).<br>			
+			* Должна получиться структура модуля, показанная на шаге 6.<br>
+			* Дальнейшие шаги на рис.12.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.12&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.12.png">
+			<p>
+			* Созданный модуль <i>Maven</i> (рис.11) преобразуем в проект <i>Maven</i> с тем же названием, действуя по шагам показанным на рисунке.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.13&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.13.png">
+			<p>
+			* Структура каталогов (на рисунке выделена пунктирной линией) созданного проекта (рис.11-12) сформирована согласно <i>Соглашению по конфигурации</i>, хотя при создании проекта
+			мы не использовали архетип (шаблон) (рис.11, шаг 3). </br>
+			* При создании проекта появится окно <b>Maven projects need to be imported</b> (на рисунке в правом нижнем углу). </br>
+			Здесь рекомендуется нажать <i>Enable Auto-Import</i> (выделено красным), что позволит <i>Maven</i> при необходимости импортировать какие-либо ресурсы автоматически, без уведомления. </br>
+			* Помимо структуры каталогов в проекте появился файл <b>pom.xml</b> - это и есть файл <i>Maven</i>-сценария. </br>
+			* В этом файле, помимо стандартных заголовков появился <i>GAV</i> (рис.11, шаг 4), который мы определяли при создании нашего проекта. </br>
+			</p>
+			<p onclick="openWin9()">
+			<script>
+			function openWin9() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/f456d516775df26b5975403f298b5ed4c485f716/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/f456d516775df26b5975403f298b5ed4c485f716/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.14&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.14.png">
+			<p>
+			* На рисунке показаны примеры записи артефактов (библиотек, проектов и т.п.) с параметрами <i>GAV</i> (выделены разным цветом) через двоеточие. <p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.15&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.15.png">
+			<p>
+			* Версию в зависимости в принципе указывать не обязательно, но это правило "хорошего тона", а для серьезных проектов отсутствие версии неприемлемо. <p>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.16.png">			
+			<p onclick="openWin10()">
+			<script>
+			function openWin10() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.17&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.17.png">
+			<p>
+			* В <i>IntelliJ IDEA</i> есть возможность избегать в зависимостях неправильных версий подключаемых библиотек.</br>
+			* Если умышленно поставить неправильную версию она подсветится красным. То же самое произойдет, если версия правильная, но не обновлены индексы <i>Maven</i>.</br>
+			* Для обновления индексов в <i>IDEA</i> надо либо кликнуть на иконку красной лампочки, либо наведя курсор на версию нажать <b>Alt + Enter</b> и в выпадающем списке выбрать
+			<i>Update Maven Indices</i>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.18&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.18.png">
+			<p>
+			* В зависимостях также можно определить <b>scope</b> - область применения артефакта.</br>
+			* Выше указаны пять вариантов <i>scope</i>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.19&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.19.png" usemap="#map">
+			<p>
+			* В <i>IntelliJ IDEA</i> нет необходимости писать зависимости вручную. Чтобы их добавить нужно:</br>
+			1. В файле <i>pom.xml</i>, наведя курсор на код 
+			<br>либо правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> 
+			<br>либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
+			2. В открывшемся списке нажать на <i>Dependency</i>.</br>
+			3. В открывшемся окне выбрать нужный артефакт и кликнуть <i>Add</i>.</br>
+			4. Нужная зависимость появится в коде.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.20&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.20.png">
+			<p>
+			* В <i>IntelliJ IDEA</i> также есть возможность генерировать теги, для этого надо:</br>
+			1. В файле <i>pom.xml</i>, наведя курсор на <b>пустое место (!), куда мы собираемся подставить тег</b> 
+			<br>либо правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> 
+			<br>либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
+			2. В открывшемся списке нажать на <i>XML Tag</i>.</br>
+			3. В открывшемся списке кликнуть по нужному тегу.</br>
+			4. В списке значений (если тег, например <i>scope</i>) выбрать нужное значение.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.21.png">
+			<p>	
+			* В результате мы добавили зависимость от <i>junit 4.12</i> и указали, что область применения у нее будет только в тестах.</br>			
+			</p>
+			<p onclick="openWin11()">
+			<script>
+			function openWin11() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.22&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.22.png">
+			<p>
+			* Еще одна возможность <i>Maven</i> - свойства (<i>properties</i>).</br>
+			* Свойства - это фактически переменные. В данном случае меняем версию <i>JUnit</i> - 4.12 на переменную <i>junit.version</i>, определенную в <i>properties</i>. </br>
+			</p>
+			<p onclick="openWin12()">
+			<script>
+			function openWin12() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/87f1ee7f78ac7da135a7d4b0ea2c0c74ed11e895/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/87f1ee7f78ac7da135a7d4b0ea2c0c74ed11e895/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.23.png">
+			<p>
+			* В командной строке есть возможность построить дерево зависимостей, указанных в нашем проекте (на рисунке выделено желтым) .</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.24.png">
+			<p>
+			* В зависимостях есть возможность исключить определенные артефакты. В данном случае мы исключаем библиотеку <i>hamcrest-core</i>, для того чтобы, для примера, заменить нынешнюю
+			версию 1.3 на более новую - 2.2 (далее - рис.25).</p>
+			<p onclick="openWin13()">
+			<script>
+			function openWin13() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/pom.xml">
+			pom.xml</a><i class="fa fa-github"></i></i></br>
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.25.png">
+			<p>
+			* Чтобы добавить новую версию <i>hamcrest-core</i> нам понадобится две зависимости (выделено синим) из-за особенностей библиотеки.<br>
+			* В командной строке мы можем увидеть (выделено желтым) новую структуру зависимостей в нашем проекте.</p>
+			<p onclick="openWin14()">
+			<script>
+			function openWin14() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/c98c18909a0ec2e9bcef9c43b3e433ae96776414/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/c98c18909a0ec2e9bcef9c43b3e433ae96776414/src/Less06_BuildingMavenProject/Maven1/pom.xml">
+			pom.xml</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.26&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.26.png">
+			<p>
+			* Для примера в папке <b>main / java</b> проекта создадим класс <i>Fibo</i>, вычисляющий 55-е число Фибоначчи.<br>
+			</p>
+			<p onclick="openWin15()">
+			<script>
+			function openWin15() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/fff4090840afdfd71774298839236f3c93f27fdc/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/fff4090840afdfd71774298839236f3c93f27fdc/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java">
+			Fibo.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.27&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.27.png">
+			<p>
+				* Для управления проектом в <i>IDEA</i> открываем окно <i>Maven</i> нажатием на кнопку в правом верхнем углу окна <i>IDEA</i> и компилируем <i>Fibo.java</i>
+				(либо двойной клик по кнопке <i>compile</i>, либо выделить кнопку кликом и кликнуть по зеленой стрелке запуска).</br>
+				* Сообщение во вкладке <i>Maven [compile]</i>, в нижней части окна <i>IDEA</i> содержит ошибку <b>[ERROR]</b>, где предлагается имеющуюся версию <i>JDK</i> - 1.5
+				заменить на версию не ниже 1.7.</br>				
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.28&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.28.png">			
+			<p>
+			* Установить другую версию <i>JDK</i> мы можем в файле <i>pom.xml</i>, определив в свойствах переменные с новой версией (возьмем сразу последнюю - 1.8) (выделено синим).<br>
+			* Теперь компиляция проходит успешно (выделено красным), а в структуре проекта появляется каталог <i>target</i> (выделено зеленым) с папкой <i>classes</i> и бинарным файлом <i>fibo.class</i> внутри.<br>
+			</p>
+			<p onclick="openWin16()">
+			<script>
+			function openWin16() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/c79f5519fdf2f93f627c23d99467fc8b45afd338/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/c79f5519fdf2f93f627c23d99467fc8b45afd338/src/Less06_BuildingMavenProject/Maven1/pom.xml">
+			pom.xml</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.29.png">
+			<p>
+		
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.30.png">
+			<p>
+			* Если в <i>IntelliJ IDEA</i> пройти по ссылкам:<br>
+			<code>File -> Settings -> Build, Execution, Deployment -> Build Tools -> Maven -> Repositories</code><br>
+			мы попадем в таблицу <i>Indexed Maven Repositories</i>, в которой указаны адреса локального (<i>local</i>) и удаленного (<i>remote</i>) репозиториев.<br>
+			* Первое место, где <i>Maven</i> ищет артефакты - локальный репозиторий (для <i>Windows</i> он создается для каждого пользователя свой), который находится 
+			на нашем компьютере, как правило в папке<br>
+			<b><Диск>:\<Каталог>\.m2\repository\</b>. <br>
+			Здесь находится большое количество каталогов с <i>jar</i>-файлами - это и есть артефакты, скопированные сюда <i>Maven</i>.<br>
+			* Если нужный артефакт не находится в локальном репозитории, поиск продолжается уже в центральном репозитории, где находится огромное количество артефактов (достаточно посмотреть на размер хранилища!).<br>
+			</p>
+			<p onclick="openWin17()">
+			<script>
+			function openWin17() {
+			  window.open("https://mvnrepository.com/repos/central","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/repos/central">
+			MVN Repository</a></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.31&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.31.png">
+			<p>	
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.32&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.32.png">
+			<p>
+			* В <i>Maven</i> есть возможность располагать файл локального репозитория в месте, которое мы захотим.</br>
+			* Делается это в конфигурационном файле <b>settings.xml</b> (выделено красным), в каталоге, куда мы устанавливаем <i>Maven</i> (рис.7)
+			в нашем случае <b>d:\BuildersMaven\apache-maven-3.9.6\conf\</b>.</br>
+			* Если мы откроем файл <b>settings.xml</b> в редакторе, можно найти строку с указанием дефолтного адреса для локального репозитория (выделено синим).</br>
+			* Раскомментировав строку с тегом <i>localRepository</i> (выделено зеленым), мы можем вписать туда нужный адрес и репозиторий будет создан в этом месте.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.33&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.33.png">
+			<p>
+			* <i>Maven</i> предоставляет возможность наследования <i>pom.xml</i>.<br>
+			* Такая необходимость возникает, когда есть много проектов с повторяющимися элементами. Появляется смысл сделать один родительский <i>pom.xml</i>,
+			 от которого будут наследоваться <i>pom.xml</i> остальных проектов (т.е. они будут использовать все его свойства, также добавляя какие-то свои).<br>
+			* Я создавал родительский <i>pom.xml</i> (выделено красным) файл в нужном мне пэкедже <i>Less06_BuildingMavenParentPOM</i> по соседству с проектом-примером.<br>
+			* Помимо <i>GAV</i> (выделено синим) в этом файле надо указать способ упаковки в теге <i>packaging</i> (выделено зеленым).
+			Свойства и зависимости будут фактически такие же как в нашем проекте-примере. <br>
+			</p>
+			<p onclick="openWin18()">
+			<script>
+			function openWin18() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenParentPOM/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenParentPOM/pom.xml">
+			MavenParent(pom.xml)</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.34&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.34.png">
+			<p>
+			* Теперь надо разместить родительский <i>pom.xml</i> в локальном репозитории.<br>
+			* Для этого в командной строке из каталога, в котором располагается файл запускаем команду<br> <b>mvn install</b>.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.35&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.35.png">
+			<p>
+			* Чтобы сделать <i>pom.xml</i> нашего проекта-примера <i>Maven1</i> наследником внесем изменения в файл.<br>
+			* Мы убираем из него все свойства и зависимости, которые уже определены в родительском файле и вписываем только тег <i>parent</i> 
+			с <i>GAV</i> родительского <i>pom.xml</i> (выделено синим).<br>
+			</p>
+			<p onclick="openWin19()">
+			<script>
+			function openWin19() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml">
+			pom.xml</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.36&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.36.png">
+			<p>
+			* Чтобы убедиться, что наследование работает во-первых запустим в нашем проекте <i>Maven1</i> команду <b>clean</b>.<br>
+			* Мы видим, что команда прошла успешно и в нашем проекте удалена директория <i>target</i> <br>(продолжение - рис.37).<br> 
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.37&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.37.png">
+			<p>
+			* Во-вторых (начало - рис.36) запустим в проекте <i>Maven1</i> команду <b>compile</b>.<br>
+			* Команда отрабатывает успешно (<i>BUILD SUCCESS</i>) и в нашем проекте вновь появляется директория <i>target</i> с бинарным файлом <i>fibo.class</i>.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.38&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.38.png">
+			<p>
+			* Добавим в наш проект тестовый класс <i>FiboTest.java</i> в каталог <b>test / java</b>.<br>			
+			<p onclick="openWin20()">
+			<script>
+			function openWin20() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/src/test/java/FiboTest.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/src/test/java/FiboTest.java">
+			FiboTest.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.39&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.39.png">
+			<p>
+			* А теперь соберем наш проект командой <i>install</i>.<br>
+			* Сборка предполагает тест (подробнее о жизненном цикле проекта материал будет в лекции "Maven, часть 2"), в данном случае тест отработал успешно (выделено красным).<br>
+			* В процессе сборки был создан <i>jar</i> (выделено синим).<br>
+			* В структуре проекта в каталоге <i>target</i> (выделен пунктиром) появилось много других каталогов, в том числе отчет о тестах (выделено красным) и итоговый <i>jar</i> (выделено синим).<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.40&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.40.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.41&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.41.png">
+			<p>
+			* Намеренно испортим наш файл <i>Fibo.java</i>, что бы проверить как отреагирует <i>Maven</i> на ошибку в тестах.<br>
+			* Очистим проект командой <i>clean</i> и затем запустим сборку <i>install</i>.<br>
+			* В отчете видно, что все три теста провалены (выделено красным).<br>
+			* В структуре проекта появился каталог <i>target</i> с теми же каталогами, которые генерировались при успешном прохождении тестов (рис.39), НО <b>итогового jar-файла нет</b>.<br>
+			* И это правильный результат, потому что раз тесты не прошли то и проекта быть не должно.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.42&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.42.png">
+			<p>
+			
+			</p>
+		</div>
+		
+	</div>
+</div>
+<!--<script src="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/javascript/script.js"></script>-->
+<script src="javascript/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

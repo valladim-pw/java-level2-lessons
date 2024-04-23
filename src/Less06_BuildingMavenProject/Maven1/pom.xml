@@ -13,6 +13,9 @@
 		<artifactId>MavenParent</artifactId>
 		<version>1.0</version>
 	</parent>
+	<properties>
+		<project.build.sourceEncoding>WINDOWS-1251</project.build.sourceEncoding>
+	</properties>
 
 </project>
 

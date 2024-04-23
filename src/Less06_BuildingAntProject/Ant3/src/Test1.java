@@ -11,9 +11,9 @@ public class Test1 {
 	public void test3() { test(55, BigInteger.valueOf(139583862445L));}
 	
 	private void test(int num, BigInteger val) {
-		BigInteger res = Main4Ant.fibonacci(num);
+		BigInteger res = Main4Ant3.fibonacci(num);
 		assertEquals(
-						"–û—à–∏–±–∫–∞. fibonacci(" + num + ") = " + val + ", –∞ –Ω–µ " + res,
+						"Œ¯Ë·Í‡. fibonacci(" + num + ") = " + val + ", ‡ ÌÂ " + res,
 						res,
 						val
 		);

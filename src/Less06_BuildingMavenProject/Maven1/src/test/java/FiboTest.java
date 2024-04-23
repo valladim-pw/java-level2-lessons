@@ -13,7 +13,7 @@ public class FiboTest {
 	private void test(int num, BigInteger val) {
 		BigInteger res = Fibo.fibonacci(num);
 		assertEquals(
-						"Error. fibonacci(" + num + ") = " + val + ", not " + res,
+						"ќшибка. fibonacci(" + num + ") = " + val + ", а не " + res,
 						res,
 						val
 		);

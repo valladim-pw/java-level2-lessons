@@ -11,8 +11,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Maven1" target="8" />
-      <module name="Maven2" target="1.5" />
-      <module name="MavenParent" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

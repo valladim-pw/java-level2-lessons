@@ -1,6 +1,6 @@
 import java.math.BigInteger;
 
-public class Main4Ant {
+public class Main4Ant3 {
 	public static BigInteger fibonacci(int n) {
 		BigInteger prev = BigInteger.ONE;
 		BigInteger fibo = BigInteger.ZERO;
