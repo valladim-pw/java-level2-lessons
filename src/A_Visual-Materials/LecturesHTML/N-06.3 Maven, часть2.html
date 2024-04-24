@@ -160,22 +160,34 @@
 			<span class="badge bg-primary">Рис.7&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.7.png">
 			<p>
-			* Подробная схема установки <b>Path</b> на рис.8.<br>
-
+			* Если мы хотим, например, задать версию плагина по умолчанию в нашем проекте можно использовать секцию <i>build</i> (выделена синим), которая служит для настройки плагинов.<br>
+			* В данном случае мы задаем версию по умолчанию <b>3.8.1</b> для плагина <i>compiler</i> (до этого была версия 3.1).<br>
 			</p>
+			<p onclick="openWin7()">
+			<script>
+			function openWin7() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/1c32983efcb0ca1c456d9ccff58f8c6e2c1109aa/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/1c32983efcb0ca1c456d9ccff58f8c6e2c1109aa/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.8&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.8.png">
 			<p>
-			* Если переменной <i>Path</i> нет, нажимаем "Создать" и в поле "Имя" записываем <i>Path</i>, в поле значение - каталог с файлом <i>bin</i> (см. рис.7).</br>
-			* Если переменная <i>Path</i> уже имеет значение, нужно нажимать кнопку "Изменить" , потом "Создать", в открывшееся поле записываем каталог с файлом <i>bin</i>.</br>
+			* Запускаем компиляцию в командной строке и видим, что версия плагина <b>3.8.1</b> соответствует версии указанной в <i>pom</i>-файле нашего проекта (рис.7).</br>			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.9&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.9.png">
-			<p>			
+			<p>	
+			* Разберемся с настройками основных плагинов <i>Maven</i>:</br>
+			- <i>maven-assembly-plugin</i>,</br>
+			- <i>maven-compiler-plugin</i>,</br>
+			- <i>maven-jar-plugin</i>,</br>
+			- <i>maven-surefire-plugin</i>.</br>
 			</p>
 		</div>
 		<div class="column">
