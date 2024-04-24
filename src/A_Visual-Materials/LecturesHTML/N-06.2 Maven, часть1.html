@@ -46,19 +46,27 @@
 			<p onclick="openWin1()">
 			<script>
 			function openWin1() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingProject">
-			Файлы по теме</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1">
+			Файлы по теме(1)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
+			<p onclick="openWin1a()">
+			<script>
+			function openWin1a() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenParentPOM","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenParentPOM">
+			Файлы по теме(2)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
 			<p onclick="openWin2()">
 			<script>
 			function openWin2() {
-			  window.open("https://ant.apache.org/manual/index.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			  window.open("https://maven.apache.org/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* <a class="github" href="https://ant.apache.org/manual/index.html">
-			Документация Apache Ant</a>
+			* <a class="github" href="https://maven.apache.org/">
+			Документация Apache Maven</a>
 			</p>
 		</div>
 		<div class="column">
@@ -134,8 +142,11 @@
 			}
 			</script>
 			* <a class="github" class="github" href="https://maven.apache.org/download.cgi">
-			maven.apache.org</a>
-			</p>			
+			maven.apache.org (download)</a>
+			</p>
+			<p >			
+			* На странице по ссылке ищем раздел <b>Files</b>, а в нем, в таблице файлов скачиваем <b>Binary zip archive</b>.</br>			
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.7&nbsp;<i class="material-icons">&#xe5db;</i></span>
@@ -194,7 +205,7 @@
 			* Структура каталогов (на рисунке выделена пунктирной линией) созданного проекта (рис.11-12) сформирована согласно <i>Соглашению по конфигурации</i>, хотя при создании проекта
 			мы не использовали архетип (шаблон) (рис.11, шаг 3). </br>
 			* При создании проекта появится окно <b>Maven projects need to be imported</b> (на рисунке в правом нижнем углу). </br>
-			Здесь рекомендуется нажать <i>Enable Auto-Import</i>, что позволит <i>Maven</i> при необходимости импортировать какие-либо ресурсы автоматически, без уведомления. </br>
+			Здесь рекомендуется нажать <i>Enable Auto-Import</i> (выделено красным), что позволит <i>Maven</i> при необходимости импортировать какие-либо ресурсы автоматически, без уведомления. </br>
 			* Помимо структуры каталогов в проекте появился файл <b>pom.xml</b> - это и есть файл <i>Maven</i>-сценария. </br>
 			* В этом файле, помимо стандартных заголовков появился <i>GAV</i> (рис.11, шаг 4), который мы определяли при создании нашего проекта. </br>
 			</p>
@@ -257,7 +268,9 @@
 			<img src="images/images_06.2/06.2.19.png" usemap="#map">
 			<p>
 			* В <i>IntelliJ IDEA</i> нет необходимости писать зависимости вручную. Чтобы их добавить нужно:</br>
-			1. В файле <i>pom.xml</i>, наведя курсор на код правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
+			1. В файле <i>pom.xml</i>, наведя курсор на код 
+			<br>либо правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> 
+			<br>либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
 			2. В открывшемся списке нажать на <i>Dependency</i>.</br>
 			3. В открывшемся окне выбрать нужный артефакт и кликнуть <i>Add</i>.</br>
 			4. Нужная зависимость появится в коде.</br>
@@ -268,8 +281,9 @@
 			<img src="images/images_06.2/06.2.20.png">
 			<p>
 			* В <i>IntelliJ IDEA</i> также есть возможность генерировать теги, для этого надо:</br>
-			1. В файле <i>pom.xml</i>, наведя курсор на <b>пустое место (!), куда мы собираемся подставить тег</b> правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> 
-			либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
+			1. В файле <i>pom.xml</i>, наведя курсор на <b>пустое место (!), куда мы собираемся подставить тег</b> 
+			<br>либо правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> 
+			<br>либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
 			2. В открывшемся списке нажать на <i>XML Tag</i>.</br>
 			3. В открывшемся списке кликнуть по нужному тегу.</br>
 			4. В списке значений (если тег, например <i>scope</i>) выбрать нужное значение.</br>
@@ -318,7 +332,7 @@
 			<img src="images/images_06.2/06.2.24.png">
 			<p>
 			* В зависимостях есть возможность исключить определенные артефакты. В данном случае мы исключаем библиотеку <i>hamcrest-core</i>, для того чтобы, для примера, заменить нынешнюю
-			версию 1.3 на более новую - 2.2 (рис.25).</p>
+			версию 1.3 на более новую - 2.2 (далее - рис.25).</p>
 			<p onclick="openWin13()">
 			<script>
 			function openWin13() {
@@ -349,7 +363,7 @@
 			<span class="badge bg-primary">Рис.26&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.26.png">
 			<p>
-			* Для примера в папке <i>main/java</i> проекта создадим класс <i>Fibo</i>, вычисляющий 55-е число Фибоначчи.<br>
+			* Для примера в папке <b>main / java</b> проекта создадим класс <i>Fibo</i>, вычисляющий 55-е число Фибоначчи.<br>
 			</p>
 			<p onclick="openWin15()">
 			<script>
@@ -403,7 +417,9 @@
 			<code>File -> Settings -> Build, Execution, Deployment -> Build Tools -> Maven -> Repositories</code><br>
 			мы попадем в таблицу <i>Indexed Maven Repositories</i>, в которой указаны адреса локального (<i>local</i>) и удаленного (<i>remote</i>) репозиториев.<br>
 			* Первое место, где <i>Maven</i> ищет артефакты - локальный репозиторий (для <i>Windows</i> он создается для каждого пользователя свой), который находится 
-			на нашем компьютере, как правило в папке <b>\.m2\repository\</b>. Здесь находится большое количество каталогов с <i>jar</i>-файлами - это и есть артефакты, скопированные сюда <i>Maven</i>.<br>
+			на нашем компьютере, как правило в папке<br>
+			<b><Диск>:\<Каталог>\.m2\repository\</b>. <br>
+			Здесь находится большое количество каталогов с <i>jar</i>-файлами - это и есть артефакты, скопированные сюда <i>Maven</i>.<br>
 			* Если нужный артефакт не находится в локальном репозитории, поиск продолжается уже в центральном репозитории, где находится огромное количество артефактов (достаточно посмотреть на размер хранилища!).<br>
 			</p>
 			<p onclick="openWin17()">
@@ -428,7 +444,8 @@
 			<img src="images/images_06.2/06.2.32.png">
 			<p>
 			* В <i>Maven</i> есть возможность располагать файл локального репозитория в месте, которое мы захотим.</br>
-			* Делается это в конфигурационном файле <b>settings.xml</b> (выделено красным), в каталоге, куда мы устанавливаем <i>Maven</i> (рис.7).</br>
+			* Делается это в конфигурационном файле <b>settings.xml</b> (выделено красным), в каталоге, куда мы устанавливаем <i>Maven</i> (рис.7)
+			в нашем случае <b>d:\BuildersMaven\apache-maven-3.9.6\conf\</b>.</br>
 			* Если мы откроем файл <b>settings.xml</b> в редакторе, можно найти строку с указанием дефолтного адреса для локального репозитория (выделено синим).</br>
 			* Раскомментировав строку с тегом <i>localRepository</i> (выделено зеленым), мы можем вписать туда нужный адрес и репозиторий будет создан в этом месте.</br>
 			</p>
@@ -500,24 +517,50 @@
 			<span class="badge bg-primary">Рис.38&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.38.png">
 			<p>
-			* Чтобы сделать <i>pom.xml</i> нашего проекта-примера <i>Maven1</i> наследником внесем изменения в файл.<br>
-			* Мы убираем из него все свойства и зависимости, которые уже определены в родительском файле и вписываем только тег <i>parent</i> 
-			с <i>GAV</i> родительского <i>pom.xml</i> (выделено синим).<br>
-			</p>
+			* Добавим в наш проект тестовый класс <i>FiboTest.java</i> в каталог <b>test / java</b>.<br>			
 			<p onclick="openWin20()">
 			<script>
 			function openWin20() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/src/test/java/FiboTest.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml">
-			pom.xml</a><i class="fa fa-github"></i></i></br>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/src/test/java/FiboTest.java">
+			FiboTest.java</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.39&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.2/06.2.39.png">
-			<p></p>
+			<p>
+			* А теперь соберем наш проект командой <i>install</i>.<br>
+			* Сборка предполагает тест (подробнее о жизненном цикле проекта материал будет в лекции "Maven, часть 2"), в данном случае тест отработал успешно (выделено красным).<br>
+			* В процессе сборки был создан <i>jar</i> (выделено синим).<br>
+			* В структуре проекта в каталоге <i>target</i> (выделен пунктиром) появилось много других каталогов, в том числе отчет о тестах (выделено красным) и итоговый <i>jar</i> (выделено синим).<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.40&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.2/06.2.40.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.41&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.2/06.2.41.png">
+			<p>
+			* Намеренно испортим наш файл <i>Fibo.java</i>, что бы проверить как отреагирует <i>Maven</i> на ошибку в тестах.<br>
+			* Очистим проект командой <i>clean</i> и затем запустим сборку <i>install</i>.<br>
+			* В отчете видно, что все три теста провалены (выделено красным).<br>
+			* В структуре проекта появился каталог <i>target</i> с теми же каталогами, которые генерировались при успешном прохождении тестов (рис.39), НО <b>итогового jar-файла нет</b>.<br>
+			* И это правильный результат, потому что раз тесты не прошли то и проекта быть не должно.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.42&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.2/06.2.42.png">
+			<p>
+			
+			</p>
 		</div>
 		
 	</div>

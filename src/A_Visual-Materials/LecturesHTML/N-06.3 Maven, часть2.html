@@ -92,45 +92,69 @@
 			(предварительно надо очистить проект, открыв вкладку <i>Maven</i> в <i>IntelliJ IDEA</i> и в <i>Lifecycle</i> проекта <i>Maven1</i> запустив команду <b>clean</b>).</br>
 			* В данном случае мы запускаем цель <b>compile</b> плагина <b>compiler</b>.</br>
 			* В синтаксисе работы с плагинами определено, что сначала идет имя плагина, потом <b>обязательно - двоеточие</b>, далее имя цели.</br>
-			* Имя плагина может быть кратким (выделено красным), а может быть полным, через <b>GAV</b> (выделено желтым).</br>
+			* В данном случае мы используем краткое имя плагина (выделено красным), но оно может быть полным, через <b>GAV</b> (выделено желтым).</br>
+			* При запуске компиляции мы получаем два предупреждения:<br>
+			1-е связано с неправильной кодировкой,</br>
+			2-е предупреждение говорит о том, что путь начальной загрузки класса не сочетается с версией <i>JDK</i> - 8.</br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.4&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.4.png">
-			<p onclick="openWin7()">
+			<p >			
+			* Кодировку файла мы можем изменить через свойства. Сделаем это в файле <i>pom.xml</i> нашего проекта <i>Maven1</i> (выделено синим).</br>
+			* Чтобы установить правильную кодировку нужно в <i>IntelliJ IDEA</i> пройти по ссылкам:<br>
+			<code>File -> Settings -> Editor -> Code Style -> File Encodings</code> и посмотреть установленную кодировку в окне <i>Project Encoding</i>.</br>
+			* Если установлено <i>UTF-8</i>, то в свойствах ставим <b>UTF-8</b>.</br>
+			* У меня установлено <i>windows-1251</i>, и она влияет на другие проекты, поэтому я в свойствах ставлю <b>WINDOWS-1251</b>.</br>
+			</p>
+			<p onclick="openWin4()">
 			<script>
-			function openWin7() {
-			  window.open("https://ru.wikipedia.org/wiki/Apache_Maven","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			function openWin4() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/f8db7cd0a7d7c6d7c6a2ae3894f7ce9f8edc96fb/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* <a class="github" href="https://ru.wikipedia.org/wiki/Apache_Maven">
-			Apache Maven</a></p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/f8db7cd0a7d7c6d7c6a2ae3894f7ce9f8edc96fb/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* Теперь, если мы запустим компиляцию с кратким именем плагина <b>mvn compiler : compile</b> - предупреждение о кодировке исчезает, но остается предупреждение о 
+			неправильном пути начальной загрузки класса (выделено желтым).</br>
+			* Если же мы запустим компиляцию с полным именем плагина (выделено зеленым) <b>org.apache.maven.plugins:maven-compiler-plugin:3.1</b> - предупреждение исчезает.</br>
+			* Это связано с правильным конфигурированием в <i>Maven</i> <i>GAV</i> плагина, указанного в его полном имени с версией <i>JDK</i>.</br>
+			</p>
+			<p onclick="openWin5()">
+			<script>
+			function openWin5() {
+			  window.open("https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html">			
+			Apache Maven Compiler Plugin</a></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.5&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.5.png">
 			<p >			
-			* В <b>архетипе</b> указывается какие каталоги будут лежать в проекте и что будет в них.</br>
-			* <b>Артефакт</b> - ключевая сущность <i>Maven</i>. Наш учебный проект тоже будет являться артефактом.</br>
-			* Вся работа в <i>Maven</i> осуществляется за счет функциональности прописанной в <b>плагинах</b>.</br>
+			* Если мы запустим любой плагин с целью <b>help</b> - мы получим все возможные цели плагина.</br>
+			* Это стандартная опция для всех плагинов.</br>
+			* Например, в данном случае запустив <b>compiler:help</b> мы узнаем, что у плагина <i>compiler</i> существует 3 цели (выделено зеленым).</br>			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.6.png">			
-			<p onclick="openWin8()">
+			<p >			
+			* Все плагины находятся в центральном репозитории <i>Maven</i>.</br>
+			* По мере их использования перемещаются в локальный репозиторий (выделено красным).</br> 
+			(cм. "Maven, часть1", рис.30)			
+			</p>
+			<p onclick="openWin6()">
 			<script>
-			function openWin8() {
-			  window.open("https://maven.apache.org/download.cgi","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			function openWin6() {
+			  window.open("https://mvnrepository.com/search?q=plugin&c=maven-plugins&p=1","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* <a class="github" class="github" href="https://maven.apache.org/download.cgi">
-			maven.apache.org (download)</a>
-			</p>
-			<p >			
-			* На странице по ссылке ищем раздел <b>Files</b>, а в нем, в таблице файлов скачиваем <b>Binary zip archive</b>.</br>			
-			</p>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/search?q=plugin&c=maven-plugins&p=1">			
+			Maven Plugins</a></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.7&nbsp;<i class="material-icons">&#xe5db;</i></span>
