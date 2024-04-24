@@ -194,9 +194,27 @@
 			<span class="badge bg-primary">Рис.10&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.10.png">
 			<p>
-			* Для <i>Windows</i> проверочную команду <b>mvn -version</b> надо запускать из каталога который мы установили как значение для системной переменной <i>Path</i> (рис.8).</br>
-			В нашем случае это <b>D:\BuildersMaven\apache-maven-3.9.6\bin</b>.</br>	
+			* В секции <i>configuration</i> (выделено синим) мы можем задать настройки плагина.</br>
+			* Например тегами <i>source, target</i> задать версию <i>JDK</i> (у нас она уже задана в родительском файле, поэтому во избежание конфликтов оставим теги пустыми).</br>
+			* В секции <i>compilerArgs</i> можно задать дополнительные параметры, которые используются при исполнении команды <i>javac</i>, например, в данном случае аргумент <b>- verbose</b>
+			позволит вывести дополнительную информацию о загружаемых модулях <i>java</i>.</br>
 			</p>
+			<p onclick="openWin8()">
+			<script>
+			function openWin8() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenParentPOM/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenParentPOM/pom.xml">			
+			MavenParent(pom.xml)</a><i class="fa fa-github"></i></i></p>
+			<p onclick="openWin9()">
+			<script>
+			function openWin9() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
