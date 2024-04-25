@@ -220,21 +220,25 @@
 			<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.11.png">
 			<p>
-			* На схеме показно как в <i>IntelliJ IDEA</i> создать проект <i>Maven</i> в уже существующем проекте, в нужном каталоге.<br>
-			* В начале (шаг 1), в нужном каталоге ( у меня - <i>Less06_BuildingMavenProject</i> ) создаем пэкедж с выбранным для <i>Maven</i> проекта названием ( у меня - <i>Maven1</i>).<br>
-			* Далее по шагам показанным на схеме создаем модуль <i>Maven</i> не выбирая пока архетип из предложенных (шаг 3).<br>
-			* На шаге 4 появляются поля, названия которых отражаются аббревиатурой <b>GAV</b> 
-			(<i><b>G</b>roupId</i> - пэкедж проекта, <i><b>A</b>rtifactId</i> - наше название проекта, <i><b>V</b>ersion</i> - оставляем по умолчанию).<br>			
-			* Должна получиться структура модуля, показанная на шаге 6.<br>
-			* Дальнейшие шаги на рис.12.<br>
+			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.12&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.12.png">
 			<p>
-			* Созданный модуль <i>Maven</i> (рис.11) преобразуем в проект <i>Maven</i> с тем же названием, действуя по шагам показанным на рисунке.<br>
+			* Одна из итересных возможностей в настройках конфигурации плагина <i>maven-surefire-plugin</i> - настройка многопоточности (выделено синим).<br>
+			* В теге <i>parallel</i> мы указываем, что работаем с методами в тестовых классах, для каждого метода - отдельный поток, также можем указать количество потоков.<br>
+			* В нашем случае при выполнении команды <i>surefire:test</i> особых отличий не видно, но при большом количестве тестов, многопоточность повлияет на скорость исполнения.<br>
 			</p>
+			<p onclick="openWin10()">
+			<script>
+			function openWin10() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/5016e916753c2213cd08f7e34b794f71f07a113e/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/5016e916753c2213cd08f7e34b794f71f07a113e/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.13&nbsp;<i class="material-icons">&#xe5db;</i></span>
@@ -247,9 +251,9 @@
 			* Помимо структуры каталогов в проекте появился файл <b>pom.xml</b> - это и есть файл <i>Maven</i>-сценария. </br>
 			* В этом файле, помимо стандартных заголовков появился <i>GAV</i> (рис.11, шаг 4), который мы определяли при создании нашего проекта. </br>
 			</p>
-			<p onclick="openWin9()">
+			<p onclick="openWin9a()">
 			<script>
-			function openWin9() {
+			function openWin9a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/f456d516775df26b5975403f298b5ed4c485f716/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
@@ -273,9 +277,9 @@
 		<div class="column">
 			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.16.png">			
-			<p onclick="openWin10()">
+			<p onclick="openWin10a()">
 			<script>
-			function openWin10() {
+			function openWin10a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
@@ -333,9 +337,9 @@
 			<p>	
 			* В результате мы добавили зависимость от <i>junit 4.12</i> и указали, что область применения у нее будет только в тестах.</br>			
 			</p>
-			<p onclick="openWin11()">
+			<p onclick="openWin11a()">
 			<script>
-			function openWin11() {
+			function openWin11a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
@@ -349,9 +353,9 @@
 			* Еще одна возможность <i>Maven</i> - свойства (<i>properties</i>).</br>
 			* Свойства - это фактически переменные. В данном случае меняем версию <i>JUnit</i> - 4.12 на переменную <i>junit.version</i>, определенную в <i>properties</i>. </br>
 			</p>
-			<p onclick="openWin12()">
+			<p onclick="openWin12a()">
 			<script>
-			function openWin12() {
+			function openWin12a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/87f1ee7f78ac7da135a7d4b0ea2c0c74ed11e895/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
@@ -371,9 +375,9 @@
 			<p>
 			* В зависимостях есть возможность исключить определенные артефакты. В данном случае мы исключаем библиотеку <i>hamcrest-core</i>, для того чтобы, для примера, заменить нынешнюю
 			версию 1.3 на более новую - 2.2 (далее - рис.25).</p>
-			<p onclick="openWin13()">
+			<p onclick="openWin13a()">
 			<script>
-			function openWin13() {
+			function openWin13a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
@@ -387,9 +391,9 @@
 			<p>
 			* Чтобы добавить новую версию <i>hamcrest-core</i> нам понадобится две зависимости (выделено синим) из-за особенностей библиотеки.<br>
 			* В командной строке мы можем увидеть (выделено желтым) новую структуру зависимостей в нашем проекте.</p>
-			<p onclick="openWin14()">
+			<p onclick="openWin14a()">
 			<script>
-			function openWin14() {
+			function openWin14a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/c98c18909a0ec2e9bcef9c43b3e433ae96776414/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
@@ -403,9 +407,9 @@
 			<p>
 			* Для примера в папке <b>main / java</b> проекта создадим класс <i>Fibo</i>, вычисляющий 55-е число Фибоначчи.<br>
 			</p>
-			<p onclick="openWin15()">
+			<p onclick="openWin15a()">
 			<script>
-			function openWin15() {
+			function openWin15a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/fff4090840afdfd71774298839236f3c93f27fdc/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
@@ -430,9 +434,9 @@
 			* Установить другую версию <i>JDK</i> мы можем в файле <i>pom.xml</i>, определив в свойствах переменные с новой версией (возьмем сразу последнюю - 1.8) (выделено синим).<br>
 			* Теперь компиляция проходит успешно (выделено красным), а в структуре проекта появляется каталог <i>target</i> (выделено зеленым) с папкой <i>classes</i> и бинарным файлом <i>fibo.class</i> внутри.<br>
 			</p>
-			<p onclick="openWin16()">
+			<p onclick="openWin16a()">
 			<script>
-			function openWin16() {
+			function openWin16a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/c79f5519fdf2f93f627c23d99467fc8b45afd338/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
@@ -460,9 +464,9 @@
 			Здесь находится большое количество каталогов с <i>jar</i>-файлами - это и есть артефакты, скопированные сюда <i>Maven</i>.<br>
 			* Если нужный артефакт не находится в локальном репозитории, поиск продолжается уже в центральном репозитории, где находится огромное количество артефактов (достаточно посмотреть на размер хранилища!).<br>
 			</p>
-			<p onclick="openWin17()">
+			<p onclick="openWin17a()">
 			<script>
-			function openWin17() {
+			function openWin17a() {
 			  window.open("https://mvnrepository.com/repos/central","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
@@ -499,9 +503,9 @@
 			* Помимо <i>GAV</i> (выделено синим) в этом файле надо указать способ упаковки в теге <i>packaging</i> (выделено зеленым).
 			Свойства и зависимости будут фактически такие же как в нашем проекте-примере. <br>
 			</p>
-			<p onclick="openWin18()">
+			<p onclick="openWin18a()">
 			<script>
-			function openWin18() {
+			function openWin18a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenParentPOM/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
@@ -525,9 +529,9 @@
 			* Мы убираем из него все свойства и зависимости, которые уже определены в родительском файле и вписываем только тег <i>parent</i> 
 			с <i>GAV</i> родительского <i>pom.xml</i> (выделено синим).<br>
 			</p>
-			<p onclick="openWin19()">
+			<p onclick="openWin19a()">
 			<script>
-			function openWin19() {
+			function openWin19a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/86373711471a22e4b3a3bc5860f1a4476ef3f61d/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>
@@ -556,9 +560,9 @@
 			<img src="images/images_06.3/06.3.38.png">
 			<p>
 			* Добавим в наш проект тестовый класс <i>FiboTest.java</i> в каталог <b>test / java</b>.<br>			
-			<p onclick="openWin20()">
+			<p onclick="openWin20a()">
 			<script>
-			function openWin20() {
+			function openWin20a() {
 			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingMavenProject/Maven1/src/test/java/FiboTest.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
 			}
 			</script>

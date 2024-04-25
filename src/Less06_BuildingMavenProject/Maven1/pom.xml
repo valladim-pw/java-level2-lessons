@@ -35,6 +35,13 @@
 				<configuration>
 					<parallel>methods</parallel>
 					<threadCount>5</threadCount>
+					<excludes>
+						<exclude>AppTestApp.java</exclude>
+					</excludes>
+					<includes>
+						<include>FiboTest.java</include>
+					</includes>
+					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 		</plugins>
