@@ -267,24 +267,34 @@
 			<span class="badge bg-primary">Рис.15&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.15.png">
 			<p>
-			* Версию в зависимости в принципе указывать не обязательно, но это правило "хорошего тона", а для серьезных проектов отсутствие версии неприемлемо. <p>
-			</p>
+			* Рассмотрим автоматическое добавление зависимости в <i>IntelliJ IDEA</i> на примере библиотеки <b>Gson</b> от <i>Google</i> для работы с форматом <i>JSON</i> (ссылка ниже): <br>
+			1. Cоздаем объект <i>Gson</i> в нашем классе <i>Fibo.java</i> и среда подсвечивает его красным. <br>
+			Наводим указатель мыши на подсвеченную строчку и либо кликаем по красной лампочке, либо жмем <b>Alt + Enter</b> после чего в списке выбираем <i>Add Maven Dependency</i>.<br>
+			2. В окне <i>Maven Artifact Search</i> в поиск забиваем <i>Gson</i> и если появляются варианты выбираем <i>Gson</i> и жмем <i>Add</i>. <br>
+			3. В файле <i>pom.xml</i> (не родительском !) автоматически появляется зависимость.<br>
+			<b>Если на шаге 2 в окне поиска артефактов список пустой</b>, придется добавлять зависимость вручную.<br>
+			Для этого идем в <i>MVN Repository</i> (ссылка (1) ниже), забиваем в поиск <i>gson</i>, из вариантов выбираем <i>com.google.code.gson » gson</i> (ссылка (2) ниже)<br>
+			на этой странице выбираем нужную версию (лучше выбирать версию с наибольшим количеством пользователей) и кликаем по ней.<br>
+			На странице версии есть уже готовый код зависимости для <i>Maven</i> с данной версией. Этот код копируем в наш <i>pom.xml</i> и <i>Maven</i> автоматически загружает библиотеку.<br>
+			4. На этом шаге, после любого из вариантов добавления зависимости, остается в файле <i>Fibo.java</i> еще раз навести курсор на пока подсвеченный объект <i>Gson</i> и комбинацией клавиш <b>Alt + Enter</b>
+			импортировать класс <i>Gson</i>.
+			</p>			
 			<p onclick="openWin12()">
 			<script>
 			function openWin12() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			  window.open("https://mvnrepository.com/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/">			
+			MVN Repository(1)</a></i></p>
 			<p onclick="openWin13()">
 			<script>
 			function openWin13() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			  window.open("https://mvnrepository.com/artifact/com.google.code.gson/gson","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/com.google.code.gson/gson">			
+			MVN Repository(2)(gson)</a></i></p>
 			<p onclick="openWin14()">
 			<script>
 			function openWin14() {
@@ -292,7 +302,23 @@
 			}
 			</script>
 			* <i class="github-wrap"><a class="github" href="https://javarush.com/groups/posts/3970-kofe-breyk-175-kak-mih-mozhem-prochitatjh-fayl-json-v-java-chto-takoe-java-development-kit-jdk">			
-			Подробее о JSON</a></p>
+			Подробее о JSON</a></i></p>
+			<p onclick="openWin15()">
+			<script>
+			function openWin15() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+			<p onclick="openWin16()">
+			<script>
+			function openWin16() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java">			
+			Fibo.java</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
