@@ -14,7 +14,7 @@ public class Fibo {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("55-е число Фибоначчи равно: " + fibonacci(55));
+		System.out.println("55-Рµ С‡РёСЃР»Рѕ Р¤РёР±РѕРЅР°С‡С‡Рё СЂР°РІРЅРѕ: " + fibonacci(55));
 		
 		Gson gson = new Gson();
 		gson.toJson(123);
