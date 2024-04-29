@@ -7,13 +7,6 @@
 	<groupId>Less06_BuildingMavenProject</groupId>
 	<artifactId>Maven1</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<dependencies>
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.5</version>
-		</dependency>
-	</dependencies>
 
 	<parent>
 		<groupId>Less06_BuildingMavenParentPOM</groupId>
@@ -23,6 +16,14 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependecies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -64,8 +65,16 @@
 	</build>
 
 	<properties>
-	<project.build.sourceEncoding>WINDOWS-1251</project.build.sourceEncoding>
+	  <project.build.sourceEncoding>WINDOWS-1251</project.build.sourceEncoding>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+	</dependencies>
 
 </project>
 

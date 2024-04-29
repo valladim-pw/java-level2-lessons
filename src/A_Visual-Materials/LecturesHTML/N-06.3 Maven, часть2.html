@@ -322,14 +322,19 @@
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
-			<img src="images/images_06.3/06.3.16.png">			
-			<p onclick="openWin10a()">
+			<img src="images/images_06.3/06.3.16.png">
+			<p>
+			* В <i>jar</i> плагинах наиболее частой настройкой является задание имени формируемого <i>jar</i>-файла.</br>
+			* Сделать это можно в секции <i>configuration</i> (выделено синим).</br>
+			* При выполнении команды <b>mvn jar:jar</b> сформируется архив с назначенным именем (выделено зеленым).</br>
+			</p>
+			<p onclick="openWin17()">
 			<script>
-			function openWin10a() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			function openWin17() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/ce5c131061049c9b2ef10841980aa89b1a44819a/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/ce5c131061049c9b2ef10841980aa89b1a44819a/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 			
 		</div>
@@ -337,10 +342,9 @@
 			<span class="badge bg-primary">Рис.17&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.17.png">
 			<p>
-			* В <i>IntelliJ IDEA</i> есть возможность избегать в зависимостях неправильных версий подключаемых библиотек.</br>
-			* Если умышленно поставить неправильную версию она подсветится красным. То же самое произойдет, если версия правильная, но не обновлены индексы <i>Maven</i>.</br>
-			* Для обновления индексов в <i>IDEA</i> надо либо кликнуть на иконку красной лампочки, либо наведя курсор на версию нажать <b>Alt + Enter</b> и в выпадающем списке выбрать
-			<i>Update Maven Indices</i>.</br>
+			* Плагин <i>jar</i> достаточно примитивен по своей сути, он не собирает зависимости.</br>
+			* Если мы откроем только собранный архив <i>Progwards.jar</i> в архиваторе, то увидим, что здесь есть только файл <i>META_INF</i> (манифест) и скомпилированный <i>Fibo.class</i>
+			и никакой добавленной зависимости <i>Gson</i>.</br>			
 			</p>
 		</div>
 		<div class="column">
