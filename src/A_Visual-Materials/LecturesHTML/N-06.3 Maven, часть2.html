@@ -377,52 +377,49 @@
 			<span class="badge bg-primary">Рис.20&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.20.png">
 			<p>
-			* В <i>IntelliJ IDEA</i> также есть возможность генерировать теги, для этого надо:</br>
-			1. В файле <i>pom.xml</i>, наведя курсор на <b>пустое место (!), куда мы собираемся подставить тег</b> 
-			<br>либо правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> 
-			<br>либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
-			2. В открывшемся списке нажать на <i>XML Tag</i>.</br>
-			3. В открывшемся списке кликнуть по нужному тегу.</br>
-			4. В списке значений (если тег, например <i>scope</i>) выбрать нужное значение.</br>
+			* Соберем наш <i>jar</i> файл другим способом, на этот раз мы привяжем сборку к фазам сборочного цикла (об этом цикле - далее в лекции).</br>
+			* К фазам можно привязывать цели плагина (в данном случае к фазе <b>package</b> привязана цель <b>single</b>).</br>
 			</p>
+			<p onclick="openWin19()">
+			<script>
+			function openWin19() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.21.png">
 			<p>	
-			* В результате мы добавили зависимость от <i>junit 4.12</i> и указали, что область применения у нее будет только в тестах.</br>			
-			</p>
-			<p onclick="openWin11a()">
-			<script>
-			function openWin11a() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/de47ff3fd32071092daf4c6437ade0864989cb21/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* Во вкладке <i>Maven</i> в <i>IDEA</i> нажимаем команду <b>install</b>.</br>	
+			* В отчете видим новую запись (выделено красным) о том, что <i>maven-assembly-plugin</i> сработал с целью <i>single</i> и был создан <i>jar</i> файл с зависимостями.</br>
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.22&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.22.png">
 			<p>
-			* Еще одна возможность <i>Maven</i> - свойства (<i>properties</i>).</br>
-			* Свойства - это фактически переменные. В данном случае меняем версию <i>JUnit</i> - 4.12 на переменную <i>junit.version</i>, определенную в <i>properties</i>. </br>
-			</p>
-			<p onclick="openWin12a()">
-			<script>
-			function openWin12a() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/87f1ee7f78ac7da135a7d4b0ea2c0c74ed11e895/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/87f1ee7f78ac7da135a7d4b0ea2c0c74ed11e895/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* Посмотрим на сформированный архив в архиваторе.</br>
+			* В каталоге <b>com</b> мы видим скомпилированные файлы <i>Gson</i>, т.е. зависимость попала в наш <i>jar</i>. </br>
+			* Однако не все в этом архиве правильно, если посмотреть содержимое файла <b>MANIFEST.MF</b>, то видно, что в нем отсутствует главный класс. </br>
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.23.png">
 			<p>
-			* В командной строке есть возможность построить дерево зависимостей, указанных в нашем проекте (на рисунке выделено желтым) .</p>
-			
+			* В командной строке есть возможность построить дерево зависимостей, указанных в нашем проекте (на рисунке выделено желтым) .
+			</p>
+			<p onclick="openWin20()">
+			<script>
+			function openWin20() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>

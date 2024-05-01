@@ -27,6 +27,11 @@
 					</execution>
 				</executions>
 				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>Fibo</mainClass>
+						</manifest>
+					</archive>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
@@ -66,7 +71,7 @@
 					<includes>
 						<include>FiboTest.java</include>
 					</includes>
-					<skipTests>true</skipTests>
+					<!--<skipTests>true</skipTests>-->
 				</configuration>
 			</plugin>
 		</plugins>
