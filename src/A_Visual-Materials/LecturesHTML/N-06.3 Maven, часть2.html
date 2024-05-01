@@ -351,21 +351,26 @@
 			<span class="badge bg-primary">Рис.18&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.18.png">
 			<p>
-			* В зависимостях также можно определить <b>scope</b> - область применения артефакта.</br>
-			* Выше указаны пять вариантов <i>scope</i>.</br>
+			* Плагин <i>assembly</i> более серьезный, он предназначен для сборки со всеми зависимостями.</br>
+			* Чтобы настроить плагин в <i>pom.xml</i> достаточно внести только <i>artifactId</i>, а в секции <i>configuration</i> указать стандартный дескриптор,
+			который описывает что и где надо взять и куда положить.</br>
+			* Дескриптор <b>jar-with-dependencies</b> положит зависимости в наш <i>jar</i>-файл, он под это заточен.</br>
 			</p>
+			<p onclick="openWin18()">
+			<script>
+			function openWin18() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d16e12c6e109a6f5db1cd3836f02b840d94eb0f4/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d16e12c6e109a6f5db1cd3836f02b840d94eb0f4/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.19&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.19.png" usemap="#map">
 			<p>
-			* В <i>IntelliJ IDEA</i> нет необходимости писать зависимости вручную. Чтобы их добавить нужно:</br>
-			1. В файле <i>pom.xml</i>, наведя курсор на код 
-			<br>либо правой кнопкой мыши вызвать контекстное меню, где нажать на <i>Generate</i> 
-			<br>либо нажать сочетание клавиш <b>Alt + Ins</b>.</br>
-			2. В открывшемся списке нажать на <i>Dependency</i>.</br>
-			3. В открывшемся окне выбрать нужный артефакт и кликнуть <i>Add</i>.</br>
-			4. Нужная зависимость появится в коде.</br>
+			* При запуске в командной строке команды <b>mvn assembly:single</b> в директории <i>target</i> создается <i>jar</i> со всеми добавленными зависимостями.</br>
+			
 			</p>
 		</div>
 		<div class="column">
