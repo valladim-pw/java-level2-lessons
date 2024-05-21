@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/src/Less05_JUnitTest1/Less05_JUnitTest.iml" filepath="$PROJECT_DIR$/src/Less05_JUnitTest1/Less05_JUnitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/Less05_JUnitTest2/Less05_JUnitTest2.iml" filepath="$PROJECT_DIR$/src/Less05_JUnitTest2/Less05_JUnitTest2.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven1/Maven1.iml" filepath="$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven1/Maven1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Less06_MavenPlugin/MavenPlugin/MavenPlugin.iml" filepath="$PROJECT_DIR$/src/Less06_MavenPlugin/MavenPlugin/MavenPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/HomeWork/tests/tests.iml" filepath="$PROJECT_DIR$/src/HomeWork/tests/tests.iml" />
     </modules>
   </component>

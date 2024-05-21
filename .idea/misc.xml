@@ -4,11 +4,14 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject/pom.xml" />
-        <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven1/pom.xml" />
         <option value="$PROJECT_DIR$/Maven2/pom.xml" />
         <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven2/pom.xml" />
         <option value="$PROJECT_DIR$/MavenParent/pom.xml" />
         <option value="$PROJECT_DIR$/src/Less06_BuildingMavenParentPOM/MavenParent/pom.xml" />
+        <option value="$PROJECT_DIR$/MavenPlugin/pom.xml" />
+        <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject2/MavenPlugin1/pom.xml" />
+        <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject2/MavenPlugin/pom.xml" />
+        <option value="$PROJECT_DIR$/src/Less06_MavenPlugin/MavenPlugin/pom.xml" />
       </list>
     </option>
   </component>
