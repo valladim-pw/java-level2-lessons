@@ -151,9 +151,9 @@
 			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.6.png">			
 			<p >			
-			* Все плагины находятся в центральном репозитории <i>Maven</i>.</br>
+			* Все плагины находятся в центральном репозитории <i>Maven</i> (ссылка ниже).</br>
 			* По мере их использования перемещаются в локальный репозиторий (выделено красным).</br> 
-			(cм. "Maven, часть1", рис.30)			
+			(подробнее cм. "Maven, часть1", рис.30)			
 			</p>
 			<p onclick="openWin6()">
 			<script>
@@ -463,7 +463,7 @@
 			<p>
 			* Приведем пример для правила помеченного красным (! оно важно).<br>
 			* Если мы (рис.25) в жизненном цикле <i>default</i> запускаем выполнение фазы <i>deploy</i>, то будут исполнены фазы по порядку 
-			<b>validate</b> -> <b>compile</b> -> <b>test</b> -> <b>package</b> -> <b>verify</b> -> <b>install</b>, а потом уже <b>deploy</b>.<br>
+			<code>validate -> compile -> test -> package -> verify -> install</code>, а потом уже <code>deploy</code>.<br>
 			</p>
 			
 		</div>
@@ -514,9 +514,9 @@
 			<img src="images/images_06.3/06.3.32.png">
 			<p>
 			* Опираясь на архетип <i>Maven</i> для создания плагинов создадим в <i>IntelliJ IDEA</i> плагин.</br>
-			* При создании плагина в уже существующем проекте (как у меня) нужно создать сначала модуль <i>Maven</i>, а потом преобразовать его в проект (подробно описано в лекции <b>Maven, часть1</b>, рис.11-12, или Лекция7.2, 7).
-			Для этого открываем окно <i>New Module: </i> <b>File -> New -> Module</b>.</br>
-			Если нет необходимости встравивать структуру плагина в проект начинаем <b>File -> New -> Project</b>.</br>
+			* При создании плагина в уже существующем проекте (как у меня) нужно создать сначала модуль <i>Maven</i>, а потом преобразовать его в проект (подробно описано в лекции "Maven, часть1", рис.11-12).
+			Для этого открываем окно <i>New Module: </i> <code>File -> New -> Module</code>.</br>
+			Если нет необходимости встравивать структуру плагина в проект начинаем <code>File -> New -> Project</code>.</br>
 			* Далее действия идентичные - в окне (<i>New Module</i> или <i>New Project</i>) выбираем в меню слева <i>Maven</i>, чекаем <i>Create from Archetype</i>, в списке архетипов
 			ищем <i>maven-archetype-plugin</i>, выбираем, кликаем <i>Next</i>.</br>
 			<b>! Если в списке нет этого архетипа</b> - надо предварительно добавить его в список, для чего жмем <b>Add Archetype</b>. В окне заполняем <i>GAV</i> (данные можно взять 
@@ -544,7 +544,7 @@
 			<img src="images/images_06.3/06.3.34.png">
 			<p>	
 			* После нажатия <i>Finish</i> у меня создается структура модуля плагина.<br>
-			* Теперь я преобразую модуль в проект <b>File -> New -> Project from Existing Sources</b> (дальнейшие шаги в лекции <b>Maven, часть1</b>, рис.12, или Лекция7.2, 7).<br>
+			* Теперь я преобразую модуль в проект <code>File -> New -> Project from Existing Sources</code> (дальнейшие шаги в лекции "Maven, часть1", рис.12).<br>
 			</p>
 		</div>
 		<div class="column">
@@ -646,7 +646,6 @@
 			
 			</p>
 		</div>		
-		
 	</div>
 </div>
 <!--<script src="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/javascript/script.js"></script>-->

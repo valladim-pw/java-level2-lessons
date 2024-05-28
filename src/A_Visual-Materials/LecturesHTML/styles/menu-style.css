@@ -52,6 +52,7 @@ img {
 	background-color: white;
 	overflow: auto;
 	left: 0;
+	border-top: 1px solid #767676;	
 }
 .menu-hidden {
 	left: -26vw;
@@ -79,15 +80,18 @@ iframe {
 	position: fixed;
 	left: 1%;
 	top: 2vh;
-	z-index: 2;
+	z-index: 10;
 	transition: all 0.5s ease-in 0.2s;
 }
 .buts-wrap.shift-right {
-	left: 26%;		
+	left: 1%;		
 	top: 0;		
 }
 .head h1 {
 	margin: 0;
+}
+button {
+	box-shadow: 20px -15px 40px 5px #e8e8f8;
 }
 button.switcher {
 	position: absolute;
@@ -110,6 +114,7 @@ i.material-icons {
 	line-height: 1.3;
 }
 .panel {
+	position: relative;
 	margin-bottom: 5px;
 	background-color: #efefef;
 	border: 1px solid #767676;
@@ -203,6 +208,14 @@ a.anchor {
 .badge {
 	align-self: start;		
 }
+.badge.inums {
+	margin-left: 5px;
+	border-radius: 5px;
+	background-color: #4994d5;
+}
+a:focus .badge.inums, a:hover .badge.inums {	
+	background-color: #23527c;
+}
 .heading-wrap .badge-wrap .badge {
 	font-size: 13px;		
 }
@@ -252,3 +265,46 @@ a.anchor {
 mark {
 	display: none;
 }
+.panel-fixed {
+	position: fixed;
+	width: 25%;
+	height: 6vh;
+	background-color: #e8e8f8;
+	z-index: 3;
+}
+.panel.empty-panel {	
+	background-color: #fff;
+	border: none;
+}
+.panel.empty-panel {	
+	background-color: #fff;
+	border: none;
+}
+.panel.first-panel {	
+	margin-top: 5px;
+}
+.panel-out {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -40,6 +40,17 @@
 		<div class="block menu">
 			<div class="menu-content">
 				<!--A, B, C, D, E, F, G H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V W, X, Y, Z-->
+				<div class="panel panel-default empty-panel panel-out">
+					<div class="panel-fixed"></div>
+					<div class="panel-body-empty">
+						<p>
+							<span class="label-wrap">
+							<span class="label">&nbsp;&nbsp;</span><span class="label">&nbsp;&nbsp;</span>							
+							</span> 
+							<span class="head-wrap">&nbsp;&nbsp;</span>
+						</p>												
+					</div>
+				</div>
 				<mark id="theme00"></mark>
 				<mark id="theme01"></mark>
 				<mark id="theme02"></mark>				
@@ -156,11 +167,13 @@ $(document).ready(function(){
 	$("#switch4").click(function(){
     $(this).addClass("invisible");
 		$(".buts-wrap").addClass("shift-right");
+		$(".panel.empty-panel").removeClass("panel-out");
     $(".block-page").addClass("shift-up");    
   });
   $("#switch3").click(function(){
     $("#switch4").removeClass("invisible");
     $(".buts-wrap").removeClass("shift-right");
+		$(".panel.empty-panel").addClass("panel-out");
     $(".block-page").removeClass("shift-up");
   });
 	

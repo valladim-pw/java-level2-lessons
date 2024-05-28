@@ -125,7 +125,12 @@ i.material-icons.sign {
 	left: 0;
 	top: 0;
 	z-index: 1;
+	background-image: linear-gradient(to right, rgba(232,232,248,0.3), rgba(232,232,248,1), rgba(232,232,248,0.3));
 }
+/*#e8e8f8
+background-image: linear-gradient(to right, rgba(232,232,248,0.2), rgba(232,232,248,1), rgba(232,232,248,0.2))
+
+*/
 button.but {
 	position: absolute;
 	right: 0;
@@ -159,8 +164,8 @@ i.material-icons {
 	height: 2.9em;
 	top: 0;
 	left: 0;
-	background-color: #e8e8f8;
-	opacity: 0.95;
+	/*background-color: #e8e8f8;
+	opacity: 0.95;*/
 }
 .but-wrap.fix .back-fix {			
 	width: 100%;			
