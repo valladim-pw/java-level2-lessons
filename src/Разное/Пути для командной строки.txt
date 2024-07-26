@@ -1,0 +1,243 @@
+d:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\Less06_BuildingMavenProject\Maven1\
+
+mvn org.apache.maven.plugins:maven-compiler-plugin:3.1:compile
+mvn org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test
+mvn org.apache.maven.plugins:maven-jar-plugin:3.2.0:jar
+https://repo.maven.apache.org/maven2	Remote	Error	IDLE
+
+d:\BuildersMaven\apache-maven-3.8.8\bin\
+
+c:\Users\Вадим\.m2\repository\org\apache\maven\maven\3.1.0\
+C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2018.3.6\plugins\maven\lib\maven3\bin
+
+http://localhost:63342/2.00_JavaAdvance0421A_lessons/LecturesHTML/index.html?_ijt=7h5nulktfqalj0uuqpm6p6ne8u
+
+Maven1-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+c:\Windows\System32
+
+<!-- https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-plugin -->
+<dependency>
+    <groupId>org.apache.maven.archetypes</groupId>
+    <artifactId>maven-archetype-plugin</artifactId>
+    <version>1.4</version>
+</dependency>
+
+d:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\Less06_MavenPlugin\MavenPlugin\
+d:\JAVAProgwards\downloads\surefire-junit4-2.22.1.jar
+mvn install:install-file -DgroupId=org.apache.maven.surefire -DartifactId=surefire-junit4 -Dversion=2.22.1 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\surefire-junit4-2.22.1.jar
+
+<groupId>org.codehaus.plexus</groupId>
+    <artifactId>plexus-utils</artifactId>
+    <version>1.1</version>
+org.codehaus.plexus:plexus-utils:jar:1.1
+mvn install:install-file -DgroupId=org.codehaus.plexus -DartifactId=plexus-utils -Dversion=1.1 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\plexus-utils-1.1.jar
+
+d:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\A_Visual-Materials\LecturesHTML\themes\ 
+git rm file1.txt
+git commit -m "remove file1.txt"
+
+d:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\HomeWork\MavenCalculator\
+org.apache.maven.plugins:maven-compiler-plugin:3.1:compile
+java -jar MavenCalculator-1.0-SNAPSHOT.jar
+
+<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-changes-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-changes-plugin</artifactId>
+    <version>2.12.1</version>
+</dependency>
+
+
+d:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\HomeWork\MavenEmailPlugin
+mvn install:install-file -DgroupId=org.apache.maven.plugins -DartifactId=maven-changes-plugin -Dversion=2.12.1 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\maven-changes-plugin-2.12.1.jar
+
+<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+<dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.6.2</version>
+</dependency>
+
+mvn install:install-file -DgroupId=com.sun.mail -DartifactId=javax.mail -Dversion=1.6.2 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\javax.mail-1.6.2.jar
+
+<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
+
+
+mvn install:install-file -DgroupId=javax.activation -DartifactId=activation -Dversion=1.1.1 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\activation-1.1.1.jar
+
+https://drive.google.com/file/d/1tnsZrG4-F7UxJlcSSuU_DmE7UsSy-o8i/view?usp=sharing
+
+OAuth Client for Google Drive API
+
+Name: Web client 1
+
+Client ID:
+568884029640-ljk5jgp02u6jnl3866hsfvg4ifkd1iaf.apps.googleusercontent.com
+
+Client secret:
+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
+
+<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-drive -->
+1.
+<dependency>
+    <groupId>com.google.apis</groupId>
+    <artifactId>google-api-services-drive</artifactId>
+    <version>v3-rev197-1.25.0</version>
+</dependency>
+
+2.
+<!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client -->
+<dependency>
+    <groupId>com.google.api-client</groupId>
+    <artifactId>google-api-client</artifactId>
+    <version>2.6.0</version>
+</dependency>
+	2.1<!-- https://mvnrepository.com/artifact/com.google.http-client/google-http-client-gson -->
+		<dependency>
+				<groupId>com.google.http-client</groupId>
+				<artifactId>google-http-client-gson</artifactId>
+				<version>1.44.2</version>
+		</dependency>
+		2.1.1<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.11.0</version>
+		</dependency>
+	2.2<!-- https://mvnrepository.com/artifact/com.google.auth/google-auth-library-credentials -->
+	<dependency>
+			<groupId>com.google.auth</groupId>
+			<artifactId>google-auth-library-credentials</artifactId>
+			<version>1.23.0</version>
+	</dependency>
+	2.3	<!-- https://mvnrepository.com/artifact/com.google.auth/google-auth-library-oauth2-http -->
+	<dependency>
+			<groupId>com.google.auth</groupId>
+			<artifactId>google-auth-library-oauth2-http</artifactId>
+			<version>1.23.0</version>
+	</dependency>
+	  2.3.1<!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+		<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>3.0.2</version>
+		</dependency>
+	2.4<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client -->
+	<dependency>
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client</artifactId>
+			<version>1.36.0</version>
+	</dependency>
+	2.5<!-- https://mvnrepository.com/artifact/com.google.http-client/google-http-client-jackson2 -->
+	<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client-jackson2</artifactId>
+			<version>1.42.3</version>
+	</dependency>
+	2.6<!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client-gson -->
+	<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client-gson</artifactId>
+			<version>2.1.1</version>
+	</dependency>
+	2.7<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+	<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>32.1.3-jre</version>
+	</dependency>
+
+  2.8<!-- https://mvnrepository.com/artifact/com.google.http-client/google-http-client -->
+	<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client</artifactId>
+			<version>1.44.2</version>
+	</dependency>
+	2.9	<!-- https://mvnrepository.com/artifact/io.opencensus/opencensus-api -->
+		<dependency>
+				<groupId>io.opencensus</groupId>
+				<artifactId>opencensus-api</artifactId>
+				<version>0.28.0</version>
+		</dependency>
+		2.9.1	<!-- https://mvnrepository.com/artifact/io.grpc/grpc-context -->
+			<dependency>
+					<groupId>io.grpc</groupId>
+					<artifactId>grpc-context</artifactId>
+					<version>1.65.0</version>
+			</dependency>
+
+
+
+3.
+<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-jetty -->
+<dependency>
+    <groupId>com.google.oauth-client</groupId>
+    <artifactId>google-oauth-client-jetty</artifactId>
+    <version>1.32.1</version>
+</dependency>
+	3.1	<!-- https://mvnrepository.com/artifact/com.google.http-client/google-http-client -->
+		<dependency>
+				<groupId>com.google.http-client</groupId>
+				<artifactId>google-http-client</artifactId>
+				<version>1.44.2</version>
+		</dependency>
+	3.2	<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-java6 -->
+		<dependency>
+				<groupId>com.google.oauth-client</groupId>
+				<artifactId>google-oauth-client-java6</artifactId>
+				<version>1.36.0</version>
+		</dependency>
+
+
+http://localhost:63342/2.00_JavaAdvance0421A_lessons/LecturesHTML/index.html?_ijt=eeac2b2mf1jjupiig4htspi81g
+
+
+<dependency>
+	<groupId>com.google.apis</groupId>
+	<artifactId>google-api-services-drive</artifactId>
+	<version>v3-rev197-1.25.0</version>
+</dependency>
+mvn install:install-file -DgroupId=com.google.apis -DartifactId=google-api-services-drive -Dversion=v3-rev197-1.25.0 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\google-api-services-drive-v3-rev197-1.25.0.jar
+<dependency>
+	<groupId>com.google.api-client</groupId>
+	<artifactId>google-api-client</artifactId>
+	<version>2.2.0</version>
+</dependency>
+mvn install:install-file -DgroupId=com.google.api-client -DartifactId=google-api-client -Dversion=2.2.0 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\google-api-client-2.2.0.jar
+<dependency>
+	<groupId>com.google.oauth-client</groupId>
+	<artifactId>google-oauth-client-jetty</artifactId>
+	<version>1.32.1</version>
+</dependency>
+mvn install:install-file -DgroupId=com.google.oauth-client -DartifactId=google-oauth-client-jetty -Dversion=1.32.1 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\google-oauth-client-jetty-1.32.1.jar
+
+"application/java-archive"
+
+File ID: 1t28sjzgAieWIt-s_n8S6hGlBxcqmzXeK
+
+https://drive.google.com/file/d/1N7C3fZy8Oade6LRokUwodYh-xPhgUSIC/view?usp=drive_link
+https://drive.google.com/file/d/1IIm9oKIaER19G_42yc96IECsj0AoWFCR/view?usp=drive_link
+
+https://drive.google.com/uc?id=14-JwU2tGOGDJ7D60JoVFsYccacgS-6AT&export=download
+https://drive.google.com/file/d/14-JwU2tGOGDJ7D60JoVFsYccacgS-6AT/view?usp=drivesdk
+
+C:\Users\Вадим\AppData\Local\JetBrains\IdeaIC2023.3   D:\JAVAProgwards\2.00_JavaAdvance0421A_lessons
+
+https://accounts.google.com/signin/oauth/v2/consentsummary?authuser=0&part=AJi8hAMmbBhnSOveyMsAbNEI2j6cHblfFngrA3ThjqYJfBp6PsqezF3pd5UiAohS_5BFEvVdl6TfTfkKc3CGAkzPA5dBJ8Zv4cFapmj7U30x14wynOejlJYOxc7AUdpqtog47kEFXDQp6OMUl0V_veWwv6Hv9SvhPVps-jjb4frZod7rDLIp8XQTfTukNG8_Q8yOaLAYp1GIepWKgs7vGzdwx60vkjyGZ3VspOlys8ZGJXc-tJRQdlpXy--XNOuS5GarBD-yn0BxRBI9sb5xqKfrJsn8wF1X7sqHtP-SauReUffqAHpJ_gsSdMFAh6mtt-EnC-5d0r1PQPHrjDh1NFWy9ZIF_7nWVGTxORj02Z9fHccRyqRe9yjqAbTGVi7l2ZgZM2Xpzh9VnXsZXmPgUge42cd9iz2HvStRAwhK7ZcZ-tGZigUSCeXJN_Nq9BIXnYsqndNaJGi7C6qybCdO78HlVpVJt4DqqauKpMxYq_notAbPgHfQjVLnhMxXZJvHdrGpC1gR7UCADPNFxSRzfPO04PHwVuy9mt6vnPz9CKVHj8BRo_GTcLq8qNNfWXt4JglQ2QaQhHeEZ_5eqPZ5bfoj2eqr3lZnZw&flowName=GeneralOAuthFlow&hl=ru&as=S1526785528%3A1721320300812494&client_id=568884029640-ljk5jgp02u6jnl3866hsfvg4ifkd1iaf.apps.googleusercontent.com&rapt=AEjHL4PsBLw43FXP4z9uxHcm3TtEfy7Ll1ad3ijMxaTA39XPZuGXaNjXUNt6UGbxYr8rS0svlTPGpzrVheWmJRoURSDH7FQf4vvL21Eu2JtDp-vjotj0Xbk&pli=1
+
+http://localhost/?code=4/0AcvDMrBX6iggRLKU0lRvutsEWfog9-Jtzdukn1QmZMfSG4xJvMQsNfZxcxoO0G6asmCRQA&scope=https://www.googleapis.com/auth/drive
+
+
+
+
+
+
+
+
+

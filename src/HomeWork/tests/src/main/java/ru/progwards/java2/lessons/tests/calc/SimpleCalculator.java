@@ -32,9 +32,9 @@ public class SimpleCalculator {
 		
 	public static void main(String[] args) {
 		SimpleCalculator calc = new SimpleCalculator();
-		calc.sum(Integer.MAX_VALUE, Integer.MAX_VALUE);
-		calc.diff(Integer.MIN_VALUE,  1);
-		calc.mult(2, Integer.MAX_VALUE);
-		calc.div(Integer.MIN_VALUE, -1);
+		System.out.println(calc.sum(12, 13));
+		System.out.println(calc.diff(75,  50));
+		System.out.println(calc.mult(5, 5));
+		System.out.println(calc.div(100, 4));
 	}
 }

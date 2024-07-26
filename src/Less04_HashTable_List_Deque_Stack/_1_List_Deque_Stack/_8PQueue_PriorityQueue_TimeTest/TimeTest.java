@@ -27,7 +27,7 @@ public class TimeTest {
 	
 	public static void main(String[] args) {
 		long t1 = System.currentTimeMillis();
-		Comparator<QElement> comparator = new Comparator<>() {
+		Comparator<QElement> comparator = new Comparator<QElement>() {
 			@Override
 			public int compare(QElement o1, QElement o2) {
 				return o2.priority.compareTo(o1.priority);

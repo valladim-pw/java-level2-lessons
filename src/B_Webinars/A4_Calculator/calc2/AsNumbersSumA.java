@@ -12,7 +12,7 @@ public class AsNumbersSumA {
     if (usedNum < sum) {
       d = usedNum;
     } else d = sum;
-    String s = numbersSum(d,sum - d, (prefix.isBlank())? ""+ d : prefix +"+"+ d);
+    String s = numbersSum(d,sum - d, (prefix.isEmpty())? ""+ d : prefix +"+"+ d);
 	  //System.out.println(s);
     if (d > 1) {
 	    System.out.println(s);

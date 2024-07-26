@@ -1,6 +1,8 @@
 package Less06_MavenPlugin;
 
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 
@@ -13,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -28,11 +31,15 @@ public class MyMojo extends AbstractMojo {
      */
     @Parameter( defaultValue = "${project.build.directory}", property = "outputDir", required = true )
     private File outputDirectory;
+    @Parameter( defaultValue = "${basedir}", property = "baseDir", required = true )
+    private File baseDir;
     List<String> list;
+    
     
     public void execute() throws MojoExecutionException {
         File f = outputDirectory;
-
+        File d = baseDir;
+    
         if (!f.exists()) {
             f.mkdirs();
         }
@@ -45,9 +52,13 @@ public class MyMojo extends AbstractMojo {
             list = Files.readAllLines(path);
             int count = list.size();
             Date date = new Date();
+            String dir = String.valueOf(f);
+            String dir2 = String.valueOf(d);
             
             String time = (count + 1) + ": " + date.toString() + "\n";
+            w.write(dir);
             w.write(time);
+            w.write("\nbaseDir:" + dir2);
         } catch (IOException e) {
             
             throw new MojoExecutionException( "Error creating file " + touch, e );

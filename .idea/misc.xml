@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -11,8 +12,10 @@
         <option value="$PROJECT_DIR$/MavenPlugin/pom.xml" />
         <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject2/MavenPlugin1/pom.xml" />
         <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject2/MavenPlugin/pom.xml" />
+        <option value="$PROJECT_DIR$/src/HomeWork/MavenCalculator/pom.xml" />
+        <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven1/target/pom.xml" />
+        <option value="$PROJECT_DIR$/src/HomeWork/MavenEmailPlugin/pom.xml" />
         <option value="$PROJECT_DIR$/src/Less06_MavenPlugin/MavenPlugin/pom.xml" />
-        <option value="$PROJECT_DIR$/src/Less06_BuildingMavenProject/Maven1/pom.xml" />
       </list>
     </option>
   </component>
@@ -30,7 +33,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="15" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="15" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

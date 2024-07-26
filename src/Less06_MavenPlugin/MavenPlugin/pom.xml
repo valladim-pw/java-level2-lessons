@@ -5,12 +5,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Less06_MavenPlugin</groupId>
-  <artifactId>MavenPlugin</artifactId>
+  <groupId>MavenPlugin</groupId>
+  <artifactId>send-mail-plugin</artifactId>
   <version>1.0</version>
   <packaging>maven-plugin</packaging>
 
-  <name>MavenPlugin Maven Plugin</name>
+  <name>MavenPlugin</name>
 
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -21,8 +21,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <maven.version>3.3.9</maven.version>
   </properties>
 
@@ -69,11 +69,17 @@
       <version>3.3.0</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
   </dependencies>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
@@ -96,6 +102,7 @@
           <version>2.22.1</version>
         </plugin>
         <plugin>
+          <groupId>org.apache.maven.surefire</groupId>
           <artifactId>surefire-junit4</artifactId>
           <version>2.22.1</version>
         </plugin>
@@ -118,6 +125,18 @@
       </plugins>
     </pluginManagement>
     <plugins>
+      <!--<plugin>
+        <groupId>Less06_MavenPlugin</groupId>
+        <artifactId>send-mail-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+
+         <emailFrom>emailFrom@domen.ru</emailFrom>
+          <authServ>smtp.domen.ru</authServ>
+          <authUser>...</authUser>
+          <authPass>...</authPass>
+        </configuration>
+      </plugin>-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-plugin-plugin</artifactId>

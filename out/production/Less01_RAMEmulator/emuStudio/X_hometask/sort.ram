@@ -1,0 +1,76 @@
+<input> 5 9 7 1 4 2
+read 1
+load =0
+store 2
+load =6
+store 3 
+mark1:
+ load 3
+ add 2 
+ read *0
+ load 2
+ add =1
+ store 2 
+ load 1
+ sub 2 
+ jz mark3
+ jmp mark1
+mark2:
+ load 3
+ add =1
+ store 3
+ jmp mark3
+mark3:
+ load =0
+ store 2
+ load 1
+ sub =1
+ store 1
+ jgtz mark4
+ jz mark8
+mark4:
+ load 2
+ add =1 
+ store 2 
+ jmp mark5
+mark5:
+ load 3
+ add 2
+ store 4
+ load *3
+ sub *4
+ jgtz mark6
+ jmp mark7
+mark6:
+ load *3
+ store 5
+ load *4
+ store *3
+ load 5 
+ store *4
+ jmp mark7
+mark7:
+ load 1
+ sub 2
+ jgtz mark4
+ jz mark2
+mark8:
+ load =6
+ store 2
+ store 3
+ load 1
+ jz mark9
+mark9:
+ load 3
+ add =1 
+ write *3 
+ store 3
+ load 4
+ sub 2
+ jz exit
+ load 4
+ sub =1
+ store 4  
+ jmp mark9 
+exit:
+ halt

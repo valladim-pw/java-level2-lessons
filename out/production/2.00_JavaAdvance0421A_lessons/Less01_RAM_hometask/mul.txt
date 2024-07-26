@@ -1,0 +1,15 @@
+<input>25 10
+load =0
+read 1
+store 3
+read 2
+loop:
+ load 3
+ add 1
+ store 3
+ load 2 
+ sub =1
+ store 2
+ jgtz loop
+write 3
+halt

@@ -1,5 +1,5 @@
-
 package Less06_MavenPlugin;
+
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Display help information on MavenPlugin.<br>
- * Call <code>mvn MavenPlugin:help -Ddetail=true -Dgoal=&lt;goal-name&gt;</code> to display parameter details.
+ * Display help information on send-mail-plugin.<br>
+ * Call <code>mvn send-mail:help -Ddetail=true -Dgoal=&lt;goal-name&gt;</code> to display parameter details.
  * @author maven-plugin-tools
  */
 @Mojo( name = "help", requiresProject = false, threadSafe = true )
@@ -59,7 +59,7 @@ public class HelpMojo
 
     // groupId/artifactId/plugin-help.xml
     private static final String PLUGIN_HELP_PATH =
-                    "/META-INF/maven/Less06_MavenPlugin/MavenPlugin/plugin-help.xml";
+                    "/META-INF/maven/MavenPlugin/send-mail-plugin/plugin-help.xml";
 
     private static final int DEFAULT_LINE_LENGTH = 80;
 

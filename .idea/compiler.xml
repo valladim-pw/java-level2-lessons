@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Maven1" />
+        <module name="MavenCalculator" />
+        <module name="email-maven-plugin" />
         <module name="Maven2" />
-        <module name="MavenPlugin" />
+        <module name="MavenSendMailPlugin" />
+        <module name="send-mail-plugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Maven1" target="8" />
+      <module name="Maven1" target="1.8" />
       <module name="Maven2" target="1.5" />
-      <module name="MavenPlugin" target="1.7" />
+      <module name="MavenEmailPlugin" target="1.8" />
+      <module name="MavenEmailPlugin2" target="1.8" />
+      <module name="MavenPlugin" target="1.8" />
       <module name="MavenPlugin1" target="1.5" />
+      <module name="MavenSendMailPlugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Maven1" options="" />
+      <module name="MavenCalculator" options="" />
     </option>
   </component>
 </project>

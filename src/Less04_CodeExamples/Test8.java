@@ -26,10 +26,11 @@ public class Test8 {
 
     public static void main(String[] args) {
         long t1 = System.currentTimeMillis();
-        Comparator<QElement> comparator = new Comparator<>() {
-            @Override
-            public int compare(QElement o1, QElement o2) {
-                return o2.priority.compareTo(o1.priority);
+        Comparator<Test8.QElement> comparator = new Comparator<Test8.QElement>() {
+	        @Override
+            public int compare(Test8.QElement o1, Test8.QElement o2) {
+                //return compare(o1.priority, o2.priority);
+                return o1.priority.compareTo(o2.priority);
             }
         };
         PriorityQueue<QElement> q1 = new PriorityQueue<>(comparator);

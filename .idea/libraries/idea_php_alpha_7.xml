@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="idea-php-alpha-7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../downloads/idea-php-alpha-7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

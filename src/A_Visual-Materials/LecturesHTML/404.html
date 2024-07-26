@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>404</title>
+</head>
+<body><h1>Index</h1>
+<div id="demo"></div>
+<script>
+	const url1 =	performance.getEntriesByType("navigation")[0].name.split("?")[0];
+	const url2 =	performance.getEntriesByType("navigation")[0].name.split("?")[1];
+	document.getElementById("demo").innerHTML = url1 + "<br>" + url2;
+</script>
+</body>
+</html>

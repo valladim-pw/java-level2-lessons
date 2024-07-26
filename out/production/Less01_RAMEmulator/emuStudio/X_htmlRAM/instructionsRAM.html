@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+	body {
+	    font-family: Consolas;
+	    font-weight: bold;
+	    padding: 20px 50px;
+	}
+	h2 {
+		    margin-bottom: 0.2em;
+	}
+	p {
+	    margin-bottom: 0.1em;
+	    margin-top: 0.1em;
+	}
+	.b {
+	    color: blue;
+	    font-size: 18px;
+	}
+	.b.l {
+	    color: #7d7df3;
+	}
+	</style>
+</head>
+<body>
+<h1>Инструкции RAM</h1>
+<p class="b">&lt;input&gt;5 5 4 6 11 4</p>
+<p><span class="b">READ 0</span> - читать первое число из входной ленты сумматором (регистр 0)</p>
+<p><span class="b">READ 0</span> - читать первое число из входной ленты сумматором (регистр 0)</p>
+<p><span class="b">READ 1</span> - загрузить второе число из входной ленты в регистр 1</p>
+<p><span class="b">LOAD =0</span> - присвоить 0 в сумматор (регистр 0)</p>
+<p><span class="b">LOAD 2</span> - загрузить число из регистра 2 в сумматор (регистр 0)</p>
+<p><span class="b">STORE 3</span> - загрузить число из сумматора в регистр 3</p>
+<p><span class="b">ADD =3</span> - прибавить к сумматору число 3</p>
+<p><span class="b">ADD 3</span> - прибавить к сумматору число из регистра 3</p>
+<p><span class="b">SUB =2</span> - вычесть число 2 из сумматора</p>
+<p><span class="b">SUB 2</span> - вычесть из сумматора число из регистра 2</p>
+<p><span class="b">JMP mark</span> - безусловный переход по метке mark</p>
+<p><span class="b">JGTZ mark</span> - переход по метке mark, если число в сумматоре > 0</p>
+<p><span class="b">JZ mark</span> - переход по метке mark, если число в сумматоре = 0</p>
+<p><span class="b">WRITE 3</span> - число из регистра 3 записывается в выходную ленту</p>
+<p><span class="b">HALT</span> - остановка выполнения программы</p>
+<p><span class="b">LOAD *2</span> - означает, что в сумматор будет загружено содержимое регистра 2</br>
+Например, если в регистре 2 лежит 10, то будет загружено 10.</p>
+
+
+</body>
+</html>

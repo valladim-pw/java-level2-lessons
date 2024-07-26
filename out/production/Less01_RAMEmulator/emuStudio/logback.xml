@@ -1,0 +1,59 @@
+<!--
+  ~ This file is part of emuStudio.
+  ~
+  ~ Copyright (C) 2006-2023  Peter Jakubčo
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<configuration>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/emuStudio.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/emuStudio_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>5MB</maxFileSize>
+            <maxHistory>10</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date [%level][%logger{10}] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%level] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="AUTOMATION" class="ch.qos.logback.core.FileAppender">
+        <file>logs/automation.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>%date [%level][%logger{10}] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="automation" level="INFO">
+        <appender-ref ref="AUTOMATION"/>
+    </logger>
+
+    <root level="INFO">
+        <!-- Uncomment if you want to log to a file -->
+        <!-- <appender-ref ref="FILE"/> -->
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
