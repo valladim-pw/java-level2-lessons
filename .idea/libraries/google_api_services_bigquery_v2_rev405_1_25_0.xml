@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="google-api-services-bigquery-v2-rev405-1.25.0">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../downloads/google-api-services-bigquery-v2-rev405-1.25.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

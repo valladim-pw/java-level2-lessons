@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="opencensus-api-0.28.01">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../downloads/opencensus-api-0.28.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

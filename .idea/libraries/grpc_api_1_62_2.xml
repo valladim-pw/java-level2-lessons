@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="grpc-api-1.62.2">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../downloads/grpc-api-1.62.2.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
