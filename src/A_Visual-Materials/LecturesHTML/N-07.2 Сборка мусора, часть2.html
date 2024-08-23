@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07.2 Сборка мусора, часть2</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
+	<link rel="stylesheet" href="styles/style.css">	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style >
+	</style>
+</head>
+<body onload="insertLabel(); two();">
+<div class="container-fluid p-3">
+	<div class="header" id="header">
+		<p>Кнопками можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>
+		<div class="but-wrap">
+			<div class="back-fix"></div>
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" >50L</button>
+				<button class="btn" onclick="zoomRight();" >50R</button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column">
+			<span class="badge bg-primary">Рис.1&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.1.png" >
+			<p></p>
+			<p><b>Дополнительные материалы по теме</b>:</p>
+			<p onclick="openWin1a()">
+			<script>
+			function openWin1a() {
+			  window.open("https://java-online.ru/garbage-collection.xhtml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://java-online.ru/garbage-collection.xhtml">
+			Сборщик мусора Garbage Collection (принцип работы)</a>
+			</p>
+			<p onclick="openWin1b()">
+			<script>
+			function openWin1b() {
+			  window.open("https://javarush.com/quests/lectures?quest=QUEST_JSP_SERVLETS&level=18","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://javarush.com/quests/lectures?quest=QUEST_JSP_SERVLETS&level=18">
+			Работа с памятью в Java (цикл лекций)</a>
+			</p>
+			<p onclick="openWin1c()">
+			<script>
+			function openWin1c() {
+			  window.open("https://habr.com/ru/articles/269621/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://habr.com/ru/articles/269621/">
+			Все типы сборщиков мусора в Java (цикл статей)</a>
+			</p>
+			<p onclick="openWin1d()">
+			<script>
+			function openWin1d() {
+			  window.open("https://sannystark.github.io/java/jvm/gc/2015/12/23/gc-jvm-part2.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://sannystark.github.io/java/jvm/gc/2015/12/23/gc-jvm-part2.html">
+			Принцип работы Serial GC и Parallel GC</a>
+			</p>
+			<p onclick="openWin1e()">
+			<script>
+			function openWin1e() {
+			  window.open("https://docs.oracle.com/en/java/javase/20/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://docs.oracle.com/en/java/javase/20/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304">
+			HotSpot Virtual Machine Garbage Collection</a>
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.2&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.2.png">
+			<p>
+			* В этой лекции рассматриваются четыре сборщика - <b>ParalIel</b>, <b>CMS</b>, <b>G1</b> и <b>Shenandoah</b>.</br>
+			* Почему выбор пал именно на эти? <i>ParalIel</i>, <i>CMS</i> и <i>G1</i> существуют уже довольно давно и используются во многих работающих проектах.
+			<i>G1</i> является на данный момент сборщиком по-умолчанию и это достаточно удачный сборщик. <i>CMS</i> хоть и является <i>deprecated</i> с <i>JDK-9</i>, но в свое время использовался очень
+			активно, поэтому есть смысл с ним разобраться. <i>Shenandoah</i> в настоящее время является наиболее прогрессивным сборщиком мусора.</br>
+			
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.3&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.3.png">	
+			<p>		
+				
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.4&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.4.png">
+			<p >			
+			* Сборщик <i>Parallel</i> очень похож на сборщик <i>Serial</i>, за исключением того, что в нем используется многопоточность, но только на финальном этапе полной сборки мусора.</br>
+			* Структура кучи также похожа, кроме того что для работы со старшим поколением используется несколько потоков, для каждого из которых выделяется свой регион.</br>
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.5&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.5.png">
+			<p>
+			* Отличие <i>Parallel</i> от <i>Serial</i> в малой сборке в том, что когда объекты копируются из области <i>Survival</i> в старшее поколение они распределяются по потокам
+			и каждый поток переносит их в начало своего региона.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.6.png">			
+			<p>		
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.7&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.7.png">
+			<p>
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.8&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.8.png">
+			<p>					
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.9&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.9.png">
+			<p>
+			* Показатель <b>скорость роста поколения</b> означает следующее:</br>
+			По мере заполнения области кучи (например, для молодого поколения) <i>JVM</i> будет выделять под нее дополнительный объем памяти.
+			По умолчанию будет выделяться дополнительно <b>20%</b> от размера этой области.</br>
+			* Показатель <b>коэффициент сокращения поколения</b> означает, что если возникает необходимость для <i>JVM</i> вернуть память процессору 
+			, то она будет сокращать память уже выделенную под какую-либо область кучи (молодое поколение или старое поколение или др.) на </br>
+			объем с учетом коэффициента по умолчанию (то есть это будет 20% / <b>4</b> = <b>5%</b>).</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.10&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.10.png">
+			<p>
+			
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.11.png">
+			<p>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.12&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.12.png">
+			<p>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.13&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.13.png">
+			<p>
+			* Несмотря на то, что <b>CMS GC</b> стал <i>Deprecated</i> с <i>JDK-9</i>, в нем были применены принципиально новые решения, которые использовались
+			в последующих сборщиках мусора.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.14&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.14.png">
+			<p>
+			<p>
+			* Полная сборка мусора в <i>Parallel GC</i> производится во время одной большой паузы <i>STW</i>.</br>
+			* Совсем по другому процесс происходит в <i>CMS GS</i>. В случае <i>CMS</i> ее называют <b>старшей сборкой</b>, а не полной, так как она не затрагивает объекты младшего поколения. 
+			Пауза <i>STW</i> здесь разделена на микропаузы:</br>
+			- во время первой микропаузы <i>STW</i> происходит <b>начальная пометка живых объектов напрямую доступных из корней</b>. Таких объектов немного, потому процесс происходит быстро.</br>
+			- прорывной технологией является следующий этап - <b>пометка остальных живых объектов в конкуренции с программой</b>.
+			То есть программа возобновляет работу, а пометка объектов происходит уже параллельно с ее работой. Но, поскольку программа работает 
+			возникает проблема, что некоторые живые объекты могут стать мертвыми.</br>
+			- поэтому возникает необходимость в следующей микропаузе <i>STW</i>, во время которой осуществляется <b>окончательная пометка живых объектов</b>, процесс тоже быстрый.</br>
+			- на следующем этапе пауза уже не требуется, поскольку остались только мертвые объекты и <b>чистка от неиспользуемых объектов в конкуренции с программой</b> проходит без пересечений.</br>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.15&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.15.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.16.png">
+			<p>
+		</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.17&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.17.png">
+			<p>
+			* <i>CMS GC</i> имеет один дополнительный параметр, которым можно регулировать процент заполнения старшего поколения для запуска старшей сборки мусора.
+			То есть при показателе, например, 90, старшая сборка запустится при 90% заполнения области старшего поколения.</br>
+			* По умолчанию этот показатель <b>-1</b>, что означает что фактически старт сборки не зависит от процента заполнения.</br>
+			* Фактически запуск процесса сборки происходит на усмотрение сборщика мусора, который опирается на ведущуюся им постоянно статистику.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.18&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.18.png">
+			<p>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.19&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.19.png" usemap="#map">
+			<p>
+			* Сборщик <i>G1</i> более продвинутый. Его "фишка" в том, что он делит кучу не на три региона (<i>Eden</i>, <i>Survivor</i> и <i>Tenured</i>), а на множество регионов,
+			что позволяет ему работать с большими объемами данных (из практики известно, что работает успешно и с кучей в 1Тб).
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.20&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.20.png">
+			<p>			
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.21.png">
+			<p>	
+			* В <i>G1</i> изменен подход к организации кучи. Здесь память разбивается на множество регионов одинакового размера.</br>  
+      * Размер этих регионов зависит от общего размера кучи и по умолчанию выбирается так, чтобы их было не больше 2048, обычно получается от 1 до 32 МБ.<br>
+			* Исключение составляют только так называемые <b>громадные (humongous) регионы</b>, которые создаются объединением обычных регионов для размещения очень больших объектов.<br>
+      * Разделение регионов на <i>Eden</i>, <i>Survivor</i> и <i>Tenured</i> в данном случае логическое, регионы одного поколения не обязаны идти подряд и даже могут менять свою принадлежность
+			к тому или иному поколению.</br>			
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.22&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.22.png">
+			<p>
+			
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.23.png">
+			<p>
+					
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.24.png">
+			<p>	
+			* В <i>G1</i> существует процесс, называемый <b>циклом пометки (marking cycle)</b>, который работает параллельно с основным приложением и составляет список живых объектов.
+			Процесс во многом похож на процесс старшей сборки мусора в <i>CMS</i>, но есть и отличия:</br>
+			&nbsp;&nbsp;1. Пометка корней (с остановкой основного приложения) с использованием информации, полученной из малых сборок (<i>Initial mark</i>).</br>
+			&nbsp;&nbsp;2. Пометка всех живых объектов в куче в нескольких потоках, параллельно с работой основного приложения (<i>Concurrent marking</i>).</br>
+			&nbsp;&nbsp;3. Дополнительный поиск не учтенных ранее живых объектов (с остановкой основного приложения) (<i>Remark</i>).</br>
+			&nbsp;&nbsp;4. Очистка вспомогательных структур учета ссылок на объекты (с остановкой основного приложения) (<i>Cleanup</i>).</br>
+			&nbsp;&nbsp;5. Поиск пустых регионов, которые уже можно использовать для размещения новых объектов.</br>
+			* Следует иметь в виду, что для получения списка живых объектов <i>G1</i> использует алгоритм <i>Snapshot-At-The-Beginning (SATB)</i>, 
+			то есть в список живых попадают все объекты, которые были таковыми на момент начала работы алгоритма, плюс все объекты, созданные за время его выполнения. 
+			Это, в частности, означает, что <i>G1</i> допускает наличие плавающего мусора.<br>
+			</p>					
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.25.png">
+			<p>
+			
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.26&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.26.png">
+			<p>
+			* Схематично смешанная сборка мусора в <i>G1</i> показана на рисунке.</br>
+			* Особо стоит упомянуть <b>громадные регионы (humongous objects)</b>.</br>
+			* С точки зрения JVM любой объект размером больше половины региона считается громадным и обрабатывается специальным образом:<br>
+			- Он никогда не перемещается между регионами.<br>
+			- Он может удаляться в рамках цикла пометки или полной сборки мусора.<br>
+			- В регионе, занятом громадным объектом, больше никаких объектов не размещается, даже если в нем остается свободное место.<br>
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.27&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.27.png">
+			<p>							
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.28&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.28.png">			
+			<p>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.29.png">
+			<p>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.30.png">
+			<p>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.31&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.31.png">
+			<p>	
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.32&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.32.png">
+			<p>
+			* Более подробно один цикл сборки мусора <i>Shenandoah</i> показан на рис.32, 33. Условно процесс можно разделить на два этапа.</br>
+			* Первый этап - <b>поиск живых объектов</b> на рисунке выше, он состоит из нескольких фаз: </br>
+			1. <b>Начальное состояние кучи</b> на старте цикла сборки.</br>
+			2. <b>Фаза Init Mark</b> - выполняется в рамках паузы <i>STW</i>, и отведена для поиска объектов, достижимых из корней. После ее завершения куча имеет такой вид</br>
+			3. <b>Фаза Concurrent Marking</b> - в конкурентном режиме, при работающих основных потоках приложения производится обход всей кучи, начиная с найденных на предыдущем шаге объектов,
+			и сбор информации об остальных достижимых объектах. При этом приложение продолжает создавать новые объекты одновременно с процессом сборки мусора.
+			Чтобы в таких условиях ничего не потерять <a href="https://habr.com/ru/post/680038/#barriers" target="_blank">функции-барьеры (подробнее по ссылке)</a>
+			отслеживают изменения ссылок из одних объектов на другие, и запоминают "предыдущие" указатели в специальные коллекции. Это позволяет реализовывать режим <i>SATB</i> (рис.24, коммент.5)</br>
+			4. <b>Фаза Final Mark</b> - во время паузы <i>STW</i> анализируются данные по появившимся новым корням, по коллекциями "предыдущих" указателей и т.п. и на их основе выявляются все достижимые объекты.</br>
+			5. В этой фазе также, на основе статистики собираемой <i>GC</i> по регионам выбираются регионы для очистки в данном цикле.</br>
+			6. В этой же фазе производится перемещение достижимых из корней объектов в новые целевые регионы. При перемещении изменяются указатели перенаправления у объектов на их старом месте (пунктирные стрелки).</br>
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.33&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.33.png">
+			<p>			
+			* Второй этап можно условно назвать <b>перемещение</b>, он также состоит из нескольких фаз: </br>
+			7. <b>Фаза Concurrent Evacuation</b> - в конкурентном режиме происходит перенос оставшихся живых объектов из очищаемых регионов в целевые регионы с одновременным обновлением указателей перенаправления на них.
+			Если к началу этой фазы в каких-то из очищаемых регионов вообще не осталось живых объектов, такие регионы сразу же высвобождаются.
+			</br>
+			8. <b>Фаза Init Update Refs</b> - эта фаза представляет собой очень короткую <i>STW</i>-паузу, которая нужна для синхронизации потоков <i>GC</i> и подготовки к следующей фазе.</br>
+			9. <b>Фаза Concurrent Update Refs</b> - на данной фазе, в конкурентном режиме производится модификация указателей на живые объекты, перенесенные в целевые области.</br>
+			10. <b>Фаза Final Update Refs</b> - во время фазы происходит последняя пауза <i>STW</i> в рамках одного цикла, во время которой обновляются оставшиеся указатели на объекты, главным образом из новых корней.</br>
+			11. <b>Результат сборки мусора</b> получаем в конце цикла, после того, как очищенные регионы возвращаются в список свободных.</br>
+			</p>		
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.34&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.34.png">
+			<p>	
+			* Для того, чтобы использовать параметр <b>-XX:+UseShenandoahGC</b> нужно обязательно указать опцию <br>
+			<b>-XX:+UnlockExperimentalVMOptions</b> с плюсом (по умолчанию она <i>false</i>).<br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.35&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.35.png">
+			<p>
+			
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.36&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.36.png">
+			<p>
+			* При выборе сборщика особенно важны первые два параметра - продолжительность <b>пауз STW</b> и <b>производительность</b>.<br> 
+			* Но поскольку зависимость этих параметров обратно пропорциональная (то есть чем меньше продолжительность пауз <i>STW</i>, тем больше процент времени работы сборщика
+			от времени работы программы и наоборот) - то идеального сборщика не существует, можно найти только более-менее оптимальный вариант.<br>
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.37&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.37.png">
+			<p>
+			* На схеме визуально показано, полученное эмпирическим путем, соотношение основных параметров (рис.36) у разных типов сборщиков мусора.<br>
+			* Оптимальный вариантом является <i>G1 GC</i> .<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.38&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.38.png">
+			<p>			
+			</p>			
+		</div>
+		<!--<div class="column">
+			<span class="badge bg-primary">Рис.39&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.39.png">
+			<p>
+			* Теперь, если мы запустим в проекте <i>Maven1</i> фазу <b>verify</b> в отчете мы увидим, что плагин отработал с заданной целью (выделено красным).<br>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.40&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.40.png">
+			<p>
+			* В результате успешной сборки в проекте <i>Maven1</i> в каталоге <b>target</b> появился файл <b>touch.txt</b> (выделено зеленым), а если посмотреть его содержимое,
+			то в файле появилась очередная строка с временем и датой совпадающими с временем и датой окончания сборки (выделено красным).<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.41&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_07.2/07.2.41.png">
+			<p>
+			
+			</p>
+		</div>-->
+	</div>
+</div>
+<!--<script src="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/javascript/script.js"></script>-->
+<script src="javascript/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

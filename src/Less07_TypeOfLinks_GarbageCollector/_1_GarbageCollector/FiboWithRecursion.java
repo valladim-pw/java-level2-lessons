@@ -27,9 +27,13 @@ public class FiboWithRecursion {
 	}
 	
 	public static void main(String[] args) {
-		for (int i = 0; i < 10; i++) {
+		MemoryUtil memoryUtil = new MemoryUtil();
+		memoryUtil.startGCMonitor();
+		for (int i = 0; i < 10000; i++) {
 			FiboWithRecursion fwr = FiboWithRecursion.getFibo(i);
 			System.out.println(fwr);
-		}
+			memoryUtil.printUsage(false);		}
+		
+		memoryUtil.stopGCMonitor();
 	}
 }

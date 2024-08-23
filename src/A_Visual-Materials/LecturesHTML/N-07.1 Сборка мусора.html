@@ -51,20 +51,38 @@
 			}
 			</script>
 			* <a class="github" href="https://java-online.ru/garbage-collection.xhtml">
-			Сборщик мусора Garbage Collection</a>
+			Сборщик мусора Garbage Collection (принцип работы)</a>
 			</p>
 			<p onclick="openWin1b()">
 			<script>
 			function openWin1b() {
-			  window.open("https://javarush.com/groups/posts/4075-kofe-breyk-210-vse-tipih-sborjshikov-musora-v-java-o-kotorihkh-vih-dolzhnih-znatjh","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			  window.open("https://javarush.com/quests/lectures?quest=QUEST_JSP_SERVLETS&level=18","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
-			* <a class="github" href="https://javarush.com/groups/posts/4075-kofe-breyk-210-vse-tipih-sborjshikov-musora-v-java-o-kotorihkh-vih-dolzhnih-znatjh">
-			Все типы сборщиков мусора в Java</a>
+			* <a class="github" href="https://javarush.com/quests/lectures?quest=QUEST_JSP_SERVLETS&level=18">
+			Работа с памятью в Java (цикл лекций)</a>
 			</p>
-			<p onclick="openWin1a()">
+			<p onclick="openWin1c()">
 			<script>
-			function openWin1a() {
+			function openWin1c() {
+			  window.open("https://habr.com/ru/articles/269621/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://habr.com/ru/articles/269621/">
+			Все типы сборщиков мусора в Java (цикл статей)</a>
+			</p>
+			<p onclick="openWin1d()">
+			<script>
+			function openWin1d() {
+			  window.open("https://sannystark.github.io/java/jvm/gc/2015/12/23/gc-jvm-part2.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://sannystark.github.io/java/jvm/gc/2015/12/23/gc-jvm-part2.html">
+			Принцип работы Serial GC и Parallel GC</a>
+			</p>
+			<p onclick="openWin1e()">
+			<script>
+			function openWin1e() {
 			  window.open("https://docs.oracle.com/en/java/javase/20/gctuning/introduction-garbage-collection-tuning.html#GUID-326EB4CF-8C8C-4267-8355-21AB04F0D304","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
 			}
 			</script>
@@ -102,19 +120,22 @@
 		<div class="column">
 			<span class="badge bg-primary">Рис.5&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.5.png">
-			<p >			
-			* Если мы запустим любой плагин с целью <b>help</b> - мы получим все возможные цели плагина.</br>
-			* Это стандартная опция для всех плагинов.</br>
-			* Например, в данном случае запустив <b>compiler:help</b> мы узнаем, что у плагина <i>compiler</i> существует 3 цели (выделено зеленым).</br>			
-			</p>
+			<p onclick="openWin5()">
+			<script>
+			function openWin5() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less07_TypeOfLinks_GarbageCollector/_1_GarbageCollector/FiboWithRecursion.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less07_TypeOfLinks_GarbageCollector/_1_GarbageCollector/FiboWithRecursion.java">			
+			FiboWithRecursion.java</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.6.png">			
 			<p >			
 			* <b>Стэк-фрейм</b> - это блок, формирующийся в стэке при вызове каждой функции, в который помещаются параметры и переменные.</br>
-			* Для <i>main()</i> стэк начал формироваться еще до исполнения первого оператора, потому что был передан параметр <i>String[] args</i>,</br> 
-			и соответственно в него помещается ссылка на пустой массив <i>args = {}</i>.</br>	
+			* Для <i>main( )</i> стэк начал формироваться еще до исполнения первого оператора, потому что был передан параметр <i>String[ ] args</i>,</br> 
+			и соответственно в него помещается ссылка на пустой массив <i>args = { }</i>.</br>	
 			* Для компилятора процесс исполнения первого оператора выглядит следующим образом:</br>
 			он сначала вычисляет <i>getFibo(5)</i>, а уже потом инициализирует объект <i>FiboWithRecursion</i> и присваивает значение <i>getFibo(5)</i> ссылке <i>fwr</i>.</br>
 			Поэтому в стэк следующим помещается <i>getFibo(5)</i> и далее значения <i>getFibo(num - 1)</i> по прямому ходу рекурсии до выхода из него (4, 3, 2).</br>
@@ -128,60 +149,33 @@
 			* При этом объеты <i>preFibo</i> попадают в кучу.<br>
 			* По ходу рекурсии ссылка на вершине стэка убирается и заменяется следующей ссылкой, объект которой также попадает в кучу.<br>
 			* По окончании хода рекурсии ссылке <i>fwr</i> в методе <i>main</i> присваивается искомое значение <i>getFibo</i> объект попадает в кучу, а ссылок на <i>getFibo</i> в стэке больше не существует.<br>
-			* Таким образом объекты <i>getFibo</i> остаются в куче, хотя ссылок на эти объекты в стэке уже нет.<br>
-			</p>
-			<p onclick="openWin7()">
-			<script>
-			function openWin7() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/1c32983efcb0ca1c456d9ccff58f8c6e2c1109aa/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/1c32983efcb0ca1c456d9ccff58f8c6e2c1109aa/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* Таким образом объекты <i>getFibo</i> остаются в куче, хотя ссылок на эти объекты в стэке уже нет.<br>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.8&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.8.png">
-			<p>
-			* Запускаем компиляцию в командной строке и видим, что версия плагина <b>3.8.1</b> соответствует версии указанной в <i>pom</i>-файле нашего проекта (рис.7).</br>			
+			<p>					
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.9&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.9.png">
-			<p>	
-			* Разберемся с настройками основных плагинов <i>Maven</i>:</br>
-			- <i>maven-assembly-plugin</i>,</br>
-			- <i>maven-compiler-plugin</i>,</br>
-			- <i>maven-jar-plugin</i>,</br>
-			- <i>maven-surefire-plugin</i>.</br>
+			<p>				
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.10&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.10.png">
 			<p>
-			* В секции <i>configuration</i> (выделено синим) мы можем задать настройки плагина.</br>
-			* Например тегами <i>source, target</i> задать версию <i>JDK</i> (у нас она уже задана в родительском файле, поэтому во избежание конфликтов оставим теги пустыми).</br>
-			* В секции <i>compilerArgs</i> можно задать дополнительные параметры, которые используются при исполнении команды <i>javac</i>, например, в данном случае аргумент <b>- verbose</b>
-			позволит вывести дополнительную информацию о загружаемых модулях <i>java</i>.</br>
-			</p>
-			<p onclick="openWin8()">
-			<script>
-			function openWin8() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenParentPOM/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenParentPOM/pom.xml">			
-			MavenParent(pom.xml)</a><i class="fa fa-github"></i></i></p>
-			<p onclick="openWin9()">
-			<script>
-			function openWin9() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* Процесс <b>фрагментации</b> кучи показан на  примере кучи с двумя объектами <b>A</b> и <b>B</b> (1).</br>
+			При удалении объекта <b>B</b>, пространство выделенное под два объекта занимает теперь только объект <b>A</b>, располагаясь посередине кучи.</br>
+			* Если программа работает достаточно долго, то куча может принять примерно такой фрагментированный вид (2), где белым окрашены свободные места.</br>
+			* При вставке объекта <b>С</b> можно либо вставить его в любое свободное место, большее по размерам, но тогда образуются дополнительные свободные места, т.е. 
+			фрагментация увеличится.</br>
+			Либо можно, как показано на рисунке, найти подходящее по размеру место, но тогда тратятся дополнительные ресурсы и время на поиск.</br>
+			* Также возникает проблема при вставке условного объекта <b>D</b> большого размера, так как под него не найдется свободного места и мы получим ошибку <i>OutOfMemory</i>, при том что 
+			в куче вполне достаточно суммарного свободного места, чтобы разместить такой объект.</br>
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
@@ -194,39 +188,45 @@
 			<span class="badge bg-primary">Рис.12&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.12.png">
 			<p>
-			* Одна из итересных возможностей в настройках конфигурации плагина <i>maven-surefire-plugin</i> - настройка многопоточности (выделено синим).<br>
-			* В теге <i>parallel</i> мы указываем, что работаем с методами в тестовых классах, для каждого метода - отдельный поток, также можем указать количество потоков.<br>
-			* В нашем случае при выполнении команды <i>surefire:test</i> особых отличий не видно, но при большом количестве тестов, многопоточность повлияет на скорость исполнения.<br>
 			</p>
-			<p onclick="openWin10()">
-			<script>
-			function openWin10() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/5016e916753c2213cd08f7e34b794f71f07a113e/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/5016e916753c2213cd08f7e34b794f71f07a113e/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.13&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.13.png">
 			<p>
-			* В секции <i>configuration</i> плагина <i>surefire</i> также можно исключать (выделено красным), либо включать (выделено зеленым) определенные тестовые классы. </br>
-			* Также есть возможность проигнорировать (выделено синим) результаты тестов при сборке проекта. </br>			
+			* <ins>Сборщики мусора используют концепцию <b>GS Roots</b> - корней сборки мусора</ins>.</br>
+			Это 100% живые объекты от которых идут ссылки на другие живые объекты.</br>
+			* Примеры <b>GS Roots</b>:</br>
+			-	Классы, которые загружаются системным загрузчиком классов.</br>
+			-	Живые потоки.</br>
+			-	Параметры методов, которые выполняются в данный момент и локальные переменные.</br>
+			-	Статические переменные, которые хранятся в специальной области <i>Metaspace</i>.</br>
+			-	Объекты, которые применяются в качестве монитора для синхронизации.</br>
+			-	Объекты, которые удерживаются из сборки мусора для некоторых целей.</br>
+			* <b>Живые объекты</b> определяются сборщиком мусора в процессе обхода всего графа объектов по ссылкам, начиная с <i>GC Roots</i>.</br>
+			* <b>Мертвые объекты</b> соответственно те, на которые сборщик не нашел ссылок от живых объектов.</br>
+			* <ins>Стандартная реализация сборки мусора имеет три этапа</ins>:</br>
+			<b>1. Mark</b> - На этом этапе сборщик мусора (GC) должен идентифицировать все живые объекты в памяти путем обхода графа объектов.</br>
+			Когда он посещает объект, то помечает его как доступный и, следовательно, живой. Все объекты, недоступные из корней GC, рассматриваются как кандидаты на сбор мусора.</br>
+			<b>2. Sweep</b> - После фазы разметки пространство памяти занято либо живыми (посещенными), либо мертвыми (не посещенными) объектами. 
+			Фаза зачистки освобождает фрагменты памяти, которые содержат эти мертвые объекты.</br>
+			<b>3. Compact</b> - Не обязательно, чтобы мертвые объекты, которые были удалены на предыдущей фазе, находились рядом друг с другом. 
+			Таким образом, есть риск получить фрагментированное (полупустое) пространство памяти. Чтобы избежать этого сборщик мусора при удалении мертвых объектов уплотняет память, располагая
+			оставшиеся объекты в непрерывном блоке в начале кучи.</br>
 			</p>
-			<p onclick="openWin11()">
-			<script>
-			function openWin11() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.14&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.14.png">
 			<p>
+			* Большинство приложений имеют распределение времен жизни объектов, схематично описываемое кривой, показанной на рисунке.</br>
+			* Подавляющее большинство объектов создаются на очень короткое время, они становятся ненужными практически сразу после их первого использования. 
+			Итераторы, локальные переменные методов, результаты боксинга и прочие временные объекты, которые зачастую создаются неявно, 
+			попадают именно в эту категорию, образуя пик в самом начале графика.<br>
+			* Далее идут объекты, создаваемые для выполнения более-менее долгих вычислений. Их жизнь чуть разнообразнее — они обычно гуляют по различным методам, трансформируясь
+			и обогащаясь в процессе, но после этого становятся ненужными и превращаются в мусор. 
+			Благодаря таким объектам возникает небольшой бугорок на графике следом за пиком временных объектов.<br>
+			* И, наконец, объекты-старожилы, переживающие почти всех — это постоянные данные программы, загружаемые часто в самом начале и проживающие долгую жизнь до остановки приложения.<br>
 			</p>
 			
 		</div>
@@ -234,204 +234,100 @@
 			<span class="badge bg-primary">Рис.15&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.15.png">
 			<p>
-			* Рассмотрим автоматическое добавление зависимости в <i>IntelliJ IDEA</i> на примере библиотеки <b>Gson</b> от <i>Google</i> для работы с форматом <i>JSON</i> (ссылка ниже): <br>
-			1. Cоздаем объект <i>Gson</i> в нашем классе <i>Fibo.java</i> и среда подсвечивает его красным. <br>
-			Наводим указатель мыши на подсвеченную строчку и либо кликаем по красной лампочке, либо жмем <b>Alt + Enter</b> после чего в списке выбираем <i>Add Maven Dependency</i>.<br>
-			2. В окне <i>Maven Artifact Search</i> в поиск забиваем <i>Gson</i> и если появляются варианты выбираем <i>Gson</i> и жмем <i>Add</i>. <br>
-			3. В файле <i>pom.xml</i> (не родительском !) автоматически появляется зависимость.<br>
-			<b>Если на шаге 2 в окне поиска артефактов список пустой</b>, придется добавлять зависимость вручную.<br>
-			Для этого идем в <i>MVN Repository</i> (ссылка (1) ниже), забиваем в поиск <i>gson</i>, из вариантов выбираем <i>com.google.code.gson » gson</i> (ссылка (2) ниже)<br>
-			на этой странице выбираем нужную версию (лучше выбирать версию с наибольшим количеством пользователей) и кликаем по ней.<br>
-			На странице версии есть уже готовый код зависимости для <i>Maven</i> с данной версией. Этот код копируем в наш <i>pom.xml</i> и <i>Maven</i> автоматически загружает библиотеку.<br>
-			4. На этом шаге, после любого из вариантов добавления зависимости, остается в файле <i>Fibo.java</i> еще раз навести курсор на пока подсвеченный объект <i>Gson</i> и комбинацией клавиш <b>Alt + Enter</b>
-			импортировать класс <i>Gson</i>.
-			</p>			
-			<p onclick="openWin12()">
-			<script>
-			function openWin12() {
-			  window.open("https://mvnrepository.com/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/">			
-			MVN Repository(1)</a></i></p>
-			<p onclick="openWin13()">
-			<script>
-			function openWin13() {
-			  window.open("https://mvnrepository.com/artifact/com.google.code.gson/gson","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/com.google.code.gson/gson">			
-			MVN Repository(2)(gson)</a></i></p>
-			<p onclick="openWin14()">
-			<script>
-			function openWin14() {
-			  window.open("https://javarush.com/groups/posts/3970-kofe-breyk-175-kak-mih-mozhem-prochitatjh-fayl-json-v-java-chto-takoe-java-development-kit-jdk","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://javarush.com/groups/posts/3970-kofe-breyk-175-kak-mih-mozhem-prochitatjh-fayl-json-v-java-chto-takoe-java-development-kit-jdk">			
-			Подробее о JSON</a></i></p>
-			<p onclick="openWin15()">
-			<script>
-			function openWin15() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
-			<p onclick="openWin16()">
-			<script>
-			function openWin16() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java">			
-			Fibo.java</a><i class="fa fa-github"></i></i></p>
+			* <b>Z</b> и <b>Shenandoah</b> в настоящий момент наиболее продвинутые и быстрые, но пока они считаются больше экспериментальными. <br>
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.16.png">
 			<p>
-			* В <i>jar</i> плагинах наиболее частой настройкой является задание имени формируемого <i>jar</i>-файла.</br>
-			* Сделать это можно в секции <i>configuration</i> (выделено синим).</br>
-			* При выполнении команды <b>mvn jar:jar</b> сформируется архив с назначенным именем (выделено зеленым).</br>
-			</p>
-			<p onclick="openWin17()">
-			<script>
-			function openWin17() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/ce5c131061049c9b2ef10841980aa89b1a44819a/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/ce5c131061049c9b2ef10841980aa89b1a44819a/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</p>
 			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.17&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.17.png">
 			<p>
-			* Плагин <i>jar</i> достаточно примитивен по своей сути, он не собирает зависимости.</br>
-			* Если мы откроем только собранный архив <i>Progwards.jar</i> в архиваторе, то увидим, что здесь есть только файл <i>META_INF</i> (манифест) и скомпилированный <i>Fibo.class</i>
-			и никакой добавленной зависимости <i>Gson</i>.</br>			
+			* После <i>JDK-8</i> изменилась область <i>Heap</i>, к которой применимы показатели <b>-Xms</b> (минимальный размер) и <b>-Xmx</b> (максимальный размер).</br>
+			* Теперь в эту область входят только <i>Young Generation</i> (Молодое поколение) и <i>Tenured (Old) Generation</i> (Старое поколение), а <i>Permanent Generation</i>
+			(метаданные по классам и методам) теперь находится в <i>Metaspace</i> и выделено из <i>Heap</i>.</br>			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.18&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.18.png">
 			<p>
-			* Плагин <i>assembly</i> более серьезный, он предназначен для сборки со всеми зависимостями.</br>
-			* Чтобы настроить плагин в <i>pom.xml</i> достаточно внести только <i>artifactId</i>, а в секции <i>configuration</i> указать стандартный дескриптор,
-			который описывает что и где надо взять и куда положить.</br>
-			* Дескриптор <b>jar-with-dependencies</b> положит зависимости в наш <i>jar</i>-файл, он под это заточен.</br>
+			* Принцип сборки мусора основывается на поколениях, и к каждому участку памяти применяется свой алгоритм сборки.</br>
 			</p>
-			<p onclick="openWin18()">
-			<script>
-			function openWin18() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d16e12c6e109a6f5db1cd3836f02b840d94eb0f4/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d16e12c6e109a6f5db1cd3836f02b840d94eb0f4/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.19&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.19.png" usemap="#map">
-			<p>
-			* При запуске в командной строке команды <b>mvn assembly:single</b> в директории <i>target</i> создается <i>jar</i> со всеми добавленными зависимостями.</br>
-			
+			<p>			
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.20&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.20.png">
 			<p>
-			* Соберем наш <i>jar</i> файл другим способом, на этот раз мы привяжем сборку к фазам сборочного цикла (об этом цикле - далее в лекции).</br>
-			* К фазам можно привязывать цели плагина (в данном случае к фазе <b>package</b> привязана цель <b>single</b>).</br>
+			* Новые объекты попадают в область <i>Eden</i>.</br>
+			* При заполнении этой области запускается <i>Minor GC</i> (малая сборка мусора) - живые объекты из <i>Eden</i> копируются в <i>S0</i>
+			 (это один из двух одинаковых по размеру блоков, на которые поделена область <i>Survivor</i>).</br>
 			</p>
-			<p onclick="openWin19()">
-			<script>
-			function openWin19() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.21.png">
 			<p>	
-			* Во вкладке <i>Maven</i> в <i>IDEA</i> нажимаем команду <b>install</b>.</br>	
-			* В отчете видим новую запись (выделено красным) о том, что <i>maven-assembly-plugin</i> сработал с целью <i>single</i> и был создан <i>jar</i> файл с зависимостями.</br>
+			* При очередном заполнении <i>Eden</i> и запуске <i>Minor GC</i> живые объекты из <i>Eden</i> и <i>S0</i> копируются в <i>S1</i>, соответственно <i>S0</i>
+			очищается и становится доступна для живых объектов.</br>			
 			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.22&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.22.png">
 			<p>
-			* Посмотрим на сформированный архив в архиваторе.</br>
-			* В каталоге <b>com</b> мы видим скомпилированные файлы <i>Gson</i>, т.е. зависимость попала в наш <i>jar</i>. </br>
-			* Однако не все в этом архиве правильно, если посмотреть содержимое файла <b>MANIFEST.MF</b>, то видно, что в нем отсутствует главный класс. </br>
+			* При следующем заполнении <i>Eden</i> живые объекты из <i>Eden</i> и <i>S1</i> копируются в пустой блок <i>S0</i>.</br>
+			* Другими словами при работе <i>Minor GC</i> применяется алгоритм <b>Copying Collectors</b>.</br>
 			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.23.png">
 			<p>
-			* Исправим отсутствие главного класса в архиве.</br>
-			* Для этого в плагине <i>assembly</i> в секции <i>configuration</i> добавим код с расположением главного класса в архиве (выделено синим). </br>
-			* Во вкладке <i>Maven</i> в <i>IDEA</i> запускаем команду <b>verify</b>. </br>
-			<b>Почему команда - verify?</b> </br>
-			* В <i>Maven</i> с версии 3.0 <b>запускать verify предпочтительнее, чем clean или install</b> (более подробно ответ на вопрос далее в лекции). </br>
-			</p>
-			<p onclick="openWin20()">
-			<script>
-			function openWin20() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/923a187f9488e2f8bc853b6cb92de5b5575286e2/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/923a187f9488e2f8bc853b6cb92de5b5575286e2/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
-			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* При периодическом повторении цикла малой сборки часть живых объектов попадает в область <i>Tenured</i> (Старшего поколения):</br>
+			- минорный сборщик мусора отслеживает количество циклов переходов объектов из <i>S0</i> в <i>S1</i> и при определенном количестве таких циклов выживший объект
+			уже считается достаточно старым и переносится в <i>Tenured</i>. </br>
+			- также сборщик смотрит, хватает ли места при копировании объекта в <i>S0</i> или <i>S1</i>, если места недостаточно объект также перемещается в <i>Tenured</i>. </br>		
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.24.png">
-			<p>
-			* Теперь мы видим в файле <b>MANIFEST.MF</b> что главный класс успешно установлен (выделено красным).<br>
-			* Мы можем запустить сформированный архив в командной строке (выделено зеленым) и получим результат работы программы<br>
-			(в <i>Windows</i>, если некорректно отражается кириллица, надо поменять кодировку (выделено желтым)(по кодировке - см. Лекция 7.1, рис.12)).<br>
-			
-			</p>
-					
+			<p>			
+			</p>					
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.25.png">
 			<p>
-			* На рисунке показаны <b>жизненные (сборочные)</b> циклы <i>Maven</i>.<br>
-			* В <i>IntelliJ IDEA</i> во вкладке <i>Maven</i> отражены фазы этих жизненных циклов (! не все и не по порядку).<br>
-			* Основной жизненный цикл - <b>default</b> имеет всего 23 фазы, но в <i>IDEA</i> показаны наиболее часто используемые - их 7<br>
-			(причем фаза <i>deploy</i>, которая тоже относится к этому циклу, стоит после фазы <i>site</i> из другого жизненного цикла, но это особенность расположения в <i>IDEA</i>).<br>
-			* Жизненный цикл <b>clean</b> состоит из 1-ой фазы <i>clean</i>.<br>
-			* Жизненный цикл <b>site</b> состоит из 4-x фаз, но в <i>IDEA</i> приведена наиболее применимая <i>site</i>.<br>
+			* После того как <i>Tenured</i> заполнился до определенной критической точки, начинается полная сборка мусора <i>Major GC</i>, 
+			при которой стирается грань между поколениями (если быть точным то работает с двумя поколениями) и чистит всю память используя алгоритм <b>Mark-sweep-compact</b> (рис.13) 
+			для старого поколения и <b>Copying collectors</b> для молодого.<br>
 			</p>
 			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.26&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.26.png">
-			<p>
-			* Приведем пример для правила помеченного красным (! оно важно).<br>
-			* Если мы (рис.25) в жизненном цикле <i>default</i> запускаем выполнение фазы <i>deploy</i>, то будут исполнены фазы по порядку 
-			<code>validate -> compile -> test -> package -> verify -> install</code>, а потом уже <code>deploy</code>.<br>
-			</p>
-			
+			<p>			
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.27&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.27.png">
-			<p>
-				* Фаза <b>verify</b> важна, так как проверяются и вносятся все изменения в проекте в локальном репозитории без выполнения команд <b>clean</b> и <b>install</b>
-				(как было до версии <i>Maven</i> 3.0 (рис.23)). Этот процесс гораздо быстрее, что важно на больших проектах.</br>				
+			<p>							
 			</p>			
 		</div>
 		<div class="column">
@@ -445,60 +341,43 @@
 			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.29.png">
 			<p>
-			* На рисунке показана последовательность выполнения плагинов и их целей при выполнении в командной строке команды <b>clean dependency:copy-dependencies package</b><br>
-			* Комбинировать в командной строке плагины и фазы сборочного цикла можно как угодно.<br>
+			* Используя команду <b>java -XX:+PrintCommandLineFlags -version</b> можно узнать версию своего сборщика мусора по-умолчанию.<br>
+			* В моем случае это <b>G1</b>.<br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.30.png">
-			<p onclick="openWin21()">
-			<script>
-			function openWin21() {
-			  window.open("https://maven.apache.org/guides/introduction/introduction-to-archetypes.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://maven.apache.org/guides/introduction/introduction-to-archetypes.html">			
-			Maven.Introduction to archetypes</a></i></p>
+			<p>
+			* В <i>Windows</i> применив команду <b>java -XX:+PrintFlagsFinal -version | findstr Survivor</b> с использованием построчного поиска <b>findstr</b> (используется только в <i>Windows</i>) 
+			можно получить параметры, касающиеся только сборщика мусора.<br>
+			* Возможен результат применения команды как на рисунке (выделено красным), тогда нужно установить дополнительное значение переменной <i>Path</i> (подробнее на рис.31).<br>
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.31&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.31.png">
 			<p>	
-			* Все архетипы предназначены для создания каркаса будущего приложения с необходимыми зависимостями.<br>
+			* На рисунке показан порядок действий для установки либо добавления значений в системную переменную <i>Path</i> в <i>Windows</i>.<br>
+			* Если не работает команда <b>findstr</b> по данной схеме нужно добавить в <i>Path</i> значение <b>C:\Windows\System32</b>.<br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.32&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.32.png">
 			<p>
-			* Опираясь на архетип <i>Maven</i> для создания плагинов создадим в <i>IntelliJ IDEA</i> плагин.</br>
-			* При создании плагина в уже существующем проекте (как у меня) нужно создать сначала модуль <i>Maven</i>, а потом преобразовать его в проект (подробно описано в лекции "Maven, часть1", рис.11-12).
-			Для этого открываем окно <i>New Module: </i> <code>File -> New -> Module</code>.</br>
-			Если нет необходимости встравивать структуру плагина в проект начинаем <code>File -> New -> Project</code>.</br>
-			* Далее действия идентичные - в окне (<i>New Module</i> или <i>New Project</i>) выбираем в меню слева <i>Maven</i>, чекаем <i>Create from Archetype</i>, в списке архетипов
-			ищем <i>maven-archetype-plugin</i>, выбираем, кликаем <i>Next</i>.</br>
-			<b>! Если в списке нет этого архетипа</b> - надо предварительно добавить его в список, для чего жмем <b>Add Archetype</b>. В окне заполняем <i>GAV</i> (данные можно взять 
-			в центральном репозитории <i>MVNRepository</i>, в разделе архетипов, по ссылке ниже), жмем <i>OK</i>. </br>
+			* После изменения <i>Path</i> (рис.31) поиск по строке <i>Survivor</i> позволяет получить выборочно параметры сборщика мусора.</br>
+			* Для <i>OS Ubuntu</i> для этих целей используется команда </br><b>java -XX:+PrintFlagsFinal -version | grep Survivor</b>. </br>
 			</p>
-			<p onclick="openWin22()">
-			<script>
-			function openWin22() {
-			  window.open("https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-plugin/1.4","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-plugin/1.4">			
-			MVNRepository.Maven Plugin Archetype 1.4</a></i></p>
+			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.33&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.33.png">
-			<p>
-			* Вводим <i>GAV</i> для нашего плагина.<br>
-			* Версию <i>Maven</i> можно оставить по умолчанию.<br>			
+			<p>					
 			</p>		
 		</div>
-		<div class="column">
+		<!--<div class="column">
 			<span class="badge bg-primary">Рис.34&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_07.1/07.1.34.png">
 			<p>	
@@ -604,7 +483,7 @@
 			<p>
 			
 			</p>
-		</div>		
+		</div>-->		
 	</div>
 </div>
 <!--<script src="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/javascript/script.js"></script>-->

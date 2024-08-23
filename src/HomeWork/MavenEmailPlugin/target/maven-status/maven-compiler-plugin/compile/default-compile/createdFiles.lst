@@ -1,5 +1,4 @@
-HelpMojo.class
 MavenEmailPlugin\SendmailMojo$1.class
+MavenEmailPlugin\SendmailMojo.class
 MavenEmailPlugin\GoogleDriveAccess.class
 MavenEmailPlugin\SendmailMojo$2.class
-MavenEmailPlugin\SendmailMojo.class

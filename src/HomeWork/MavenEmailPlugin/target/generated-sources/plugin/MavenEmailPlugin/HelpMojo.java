@@ -1,5 +1,5 @@
-package MavenEmailPlugin;
 
+package MavenEmailPlugin;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;

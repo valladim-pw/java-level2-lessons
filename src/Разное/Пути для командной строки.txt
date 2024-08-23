@@ -233,9 +233,13 @@ https://accounts.google.com/signin/oauth/v2/consentsummary?authuser=0&part=AJi8h
 
 http://localhost/?code=4/0AcvDMrBX6iggRLKU0lRvutsEWfog9-Jtzdukn1QmZMfSG4xJvMQsNfZxcxoO0G6asmCRQA&scope=https://www.googleapis.com/auth/drive
 
+https://console.cloud.google.com/apis/credentials/oauthclient/568884029640-ljk5jgp02u6jnl3866hsfvg4ifkd1iaf.apps.googleusercontent.com?project=mymavenproject-428614&supportedpurview=project
 
 
 
+d:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\Less07_TypeOfLinks_GarbageCollector\_1_GarbageCollector\javac FiboWithRecursion.java
+java -XX:+PrintFlagsFinal -version | findstr uintx
+C:\Windows\System32
 
 
 

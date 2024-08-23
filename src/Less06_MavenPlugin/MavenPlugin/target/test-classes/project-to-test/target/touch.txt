@@ -1,3 +1,5 @@
 D:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\Less06_MavenPlugin\MavenPlugin\target\test-classes\project-to-test\target1: Wed Jul 17 10:59:54 MSK 2024
 
+baseDir:D:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\Less06_MavenPlugin\MavenPlugin\target\test-classes\project-to-testD:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\Less06_MavenPlugin\MavenPlugin\target\test-classes\project-to-test\target4: Fri Aug 16 18:05:24 MSK 2024
+
 baseDir:D:\JAVAProgwards\2.00_JavaAdvance0421A_lessons\src\Less06_MavenPlugin\MavenPlugin\target\test-classes\project-to-test
