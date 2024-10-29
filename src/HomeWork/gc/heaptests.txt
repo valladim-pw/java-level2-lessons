@@ -1,0 +1,1507 @@
+1) Fri Oct 18 17:17:51 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 5428800, Heap min size: 50000,
+ Compact frequency coeff: 1, Defrag frequency coeff: 1, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Sort by Size - Average Time: 114 ms (Allocate Time: 81 ms, Free Time: 11 ms), Average Allocate Cycles: 12207, Average Free Cycles: 494
+2. Sort by Address - Average Time: 245 ms (Allocate Time: 196 ms, Free Time: 13 ms), Average Allocate Cycles: 11829, Average Free Cycles: 468
+3. Defrag Periodically - Average Time: 311 ms (Allocate Time: 293 ms, Free Time: 7 ms), Average Allocate Cycles: 11625, Average Free Cycles: 472
+4. Sort by Two Indexes - Average Time: 2691 ms (Allocate Time: 2599 ms, Free Time: 15 ms), Average Allocate Cycles: 12162, Average Free Cycles: 466
+5. Compact Periodically - Average Time: 67556 ms (Allocate Time: 66681 ms, Free Time: 12 ms), Average Allocate Cycles: 12239, Average Free Cycles: 467
+
+2) Fri Oct 18 17:19:42 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 2428800, Heap min size: 50000,
+ Compact frequency coeff: 1, Defrag frequency coeff: 1, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Sort by Size - Average Time: 74 ms (Allocate Time: 59 ms, Free Time: 3 ms), Average Allocate Cycles: 5271, Average Free Cycles: 200
+2. Sort by Address - Average Time: 112 ms (Allocate Time: 86 ms, Free Time: 5 ms), Average Allocate Cycles: 5290, Average Free Cycles: 239
+3. Defrag Periodically - Average Time: 342 ms (Allocate Time: 331 ms, Free Time: 2 ms), Average Allocate Cycles: 5491, Average Free Cycles: 220
+4. Sort by Two Indexes - Average Time: 592 ms (Allocate Time: 556 ms, Free Time: 6 ms), Average Allocate Cycles: 5111, Average Free Cycles: 166
+5. Compact Periodically - Average Time: 13825 ms (Allocate Time: 13552 ms, Free Time: 6 ms), Average Allocate Cycles: 5525, Average Free Cycles: 237
+
+3) Fri Oct 18 17:20:35 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 1428800, Heap min size: 50000,
+ Compact frequency coeff: 1, Defrag frequency coeff: 1, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 16 ms (Allocate Time: 10 ms, Free Time: 1 ms), Average Allocate Cycles: 3191, Average Free Cycles: 116
+2. Sort by Size - Average Time: 28 ms (Allocate Time: 21 ms, Free Time: 1 ms), Average Allocate Cycles: 2834, Average Free Cycles: 96
+3. Sort by Address - Average Time: 78 ms (Allocate Time: 58 ms, Free Time: 3 ms), Average Allocate Cycles: 2892, Average Free Cycles: 117
+4. Sort by Two Indexes - Average Time: 316 ms (Allocate Time: 274 ms, Free Time: 5 ms), Average Allocate Cycles: 3293, Average Free Cycles: 122
+5. Compact Periodically - Average Time: 4875 ms (Allocate Time: 4769 ms, Free Time: 2 ms), Average Allocate Cycles: 3208, Average Free Cycles: 132
+
+4) Fri Oct 18 17:26:53 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 10, Defrag frequency coeff: 10, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 63 ms (Allocate Time: 29 ms, Free Time: 29 ms), Average Allocate Cycles: 22394, Average Free Cycles: 877
+2. Sort by Size - Average Time: 348 ms (Allocate Time: 261 ms, Free Time: 38 ms), Average Allocate Cycles: 23386, Average Free Cycles: 971
+3. Sort by Address - Average Time: 407 ms (Allocate Time: 306 ms, Free Time: 44 ms), Average Allocate Cycles: 23757, Average Free Cycles: 977
+4. Sort by Two Indexes - Average Time: 8675 ms (Allocate Time: 8446 ms, Free Time: 33 ms), Average Allocate Cycles: 23125, Average Free Cycles: 930
+5. Compact Periodically - Average Time: 24960 ms (Allocate Time: 24617 ms, Free Time: 25 ms), Average Allocate Cycles: 23280, Average Free Cycles: 919
+
+5) Fri Oct 18 17:28:06 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 5428800, Heap min size: 50000,
+ Compact frequency coeff: 10, Defrag frequency coeff: 10, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 43 ms (Allocate Time: 21 ms, Free Time: 8 ms), Average Allocate Cycles: 11558, Average Free Cycles: 476
+2. Sort by Size - Average Time: 129 ms (Allocate Time: 97 ms, Free Time: 10 ms), Average Allocate Cycles: 11901, Average Free Cycles: 453
+3. Sort by Address - Average Time: 219 ms (Allocate Time: 172 ms, Free Time: 13 ms), Average Allocate Cycles: 11986, Average Free Cycles: 495
+4. Sort by Two Indexes - Average Time: 2923 ms (Allocate Time: 2824 ms, Free Time: 16 ms), Average Allocate Cycles: 11951, Average Free Cycles: 479
+5. Compact Periodically - Average Time: 5717 ms (Allocate Time: 5614 ms, Free Time: 8 ms), Average Allocate Cycles: 11401, Average Free Cycles: 440
+
+6) Fri Oct 18 17:29:18 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 2428800, Heap min size: 50000,
+ Compact frequency coeff: 10, Defrag frequency coeff: 10, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 24 ms (Allocate Time: 13 ms, Free Time: 3 ms), Average Allocate Cycles: 5391, Average Free Cycles: 220
+2. Sort by Size - Average Time: 65 ms (Allocate Time: 46 ms, Free Time: 4 ms), Average Allocate Cycles: 5846, Average Free Cycles: 229
+3. Sort by Address - Average Time: 113 ms (Allocate Time: 89 ms, Free Time: 4 ms), Average Allocate Cycles: 5331, Average Free Cycles: 213
+4. Sort by Two Indexes - Average Time: 793 ms (Allocate Time: 726 ms, Free Time: 13 ms), Average Allocate Cycles: 5602, Average Free Cycles: 229
+5. Compact Periodically - Average Time: 1021 ms (Allocate Time: 990 ms, Free Time: 6 ms), Average Allocate Cycles: 5443, Average Free Cycles: 224
+
+7) Fri Oct 18 17:30:05 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 20, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 51 ms (Allocate Time: 24 ms, Free Time: 22 ms), Average Allocate Cycles: 22954, Average Free Cycles: 866
+2. Sort by Size - Average Time: 325 ms (Allocate Time: 230 ms, Free Time: 48 ms), Average Allocate Cycles: 23617, Average Free Cycles: 988
+3. Sort by Address - Average Time: 435 ms (Allocate Time: 340 ms, Free Time: 37 ms), Average Allocate Cycles: 23122, Average Free Cycles: 953
+4. Sort by Two Indexes - Average Time: 8579 ms (Allocate Time: 8338 ms, Free Time: 47 ms), Average Allocate Cycles: 23139, Average Free Cycles: 916
+5. Compact Periodically - Average Time: 13076 ms (Allocate Time: 12854 ms, Free Time: 31 ms), Average Allocate Cycles: 23375, Average Free Cycles: 922
+
+8) Fri Oct 18 17:31:46 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 5428800, Heap min size: 50000,
+ Compact frequency coeff: 20, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 37 ms (Allocate Time: 19 ms, Free Time: 8 ms), Average Allocate Cycles: 11531, Average Free Cycles: 464
+2. Sort by Size - Average Time: 148 ms (Allocate Time: 108 ms, Free Time: 11 ms), Average Allocate Cycles: 12153, Average Free Cycles: 501
+3. Sort by Address - Average Time: 281 ms (Allocate Time: 225 ms, Free Time: 14 ms), Average Allocate Cycles: 11844, Average Free Cycles: 509
+4. Sort by Two Indexes - Average Time: 3028 ms (Allocate Time: 2938 ms, Free Time: 14 ms), Average Allocate Cycles: 12149, Average Free Cycles: 504
+5. Compact Periodically - Average Time: 4253 ms (Allocate Time: 4157 ms, Free Time: 18 ms), Average Allocate Cycles: 12182, Average Free Cycles: 508
+
+9) Fri Oct 18 17:32:09 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 2428800, Heap min size: 50000,
+ Compact frequency coeff: 20, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 26 ms (Allocate Time: 14 ms, Free Time: 3 ms), Average Allocate Cycles: 5856, Average Free Cycles: 258
+2. Sort by Size - Average Time: 67 ms (Allocate Time: 43 ms, Free Time: 3 ms), Average Allocate Cycles: 5408, Average Free Cycles: 240
+3. Sort by Address - Average Time: 108 ms (Allocate Time: 82 ms, Free Time: 5 ms), Average Allocate Cycles: 5734, Average Free Cycles: 213
+4. Compact Periodically - Average Time: 468 ms (Allocate Time: 443 ms, Free Time: 10 ms), Average Allocate Cycles: 5099, Average Free Cycles: 218
+5. Sort by Two Indexes - Average Time: 731 ms (Allocate Time: 684 ms, Free Time: 9 ms), Average Allocate Cycles: 5248, Average Free Cycles: 215
+
+10) Fri Oct 18 17:33:01 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 30, Defrag frequency coeff: 30, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 129 ms (Allocate Time: 98 ms, Free Time: 24 ms), Average Allocate Cycles: 23123, Average Free Cycles: 915
+2. Sort by Address - Average Time: 317 ms (Allocate Time: 230 ms, Free Time: 31 ms), Average Allocate Cycles: 23319, Average Free Cycles: 882
+3. Sort by Size - Average Time: 417 ms (Allocate Time: 314 ms, Free Time: 41 ms), Average Allocate Cycles: 22909, Average Free Cycles: 937
+4. Sort by Two Indexes - Average Time: 8133 ms (Allocate Time: 7935 ms, Free Time: 34 ms), Average Allocate Cycles: 22426, Average Free Cycles: 838
+5. Compact Periodically - Average Time: 9337 ms (Allocate Time: 9175 ms, Free Time: 29 ms), Average Allocate Cycles: 24218, Average Free Cycles: 1019
+
+11) Fri Oct 18 17:38:48 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 40, Defrag frequency coeff: 40, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 75 ms (Allocate Time: 42 ms, Free Time: 24 ms), Average Allocate Cycles: 22624, Average Free Cycles: 950
+2. Sort by Size - Average Time: 356 ms (Allocate Time: 248 ms, Free Time: 50 ms), Average Allocate Cycles: 22839, Average Free Cycles: 899
+3. Sort by Address - Average Time: 368 ms (Allocate Time: 272 ms, Free Time: 32 ms), Average Allocate Cycles: 23320, Average Free Cycles: 904
+4. Compact Periodically - Average Time: 8114 ms (Allocate Time: 7944 ms, Free Time: 35 ms), Average Allocate Cycles: 22905, Average Free Cycles: 934
+5. Sort by Two Indexes - Average Time: 8618 ms (Allocate Time: 8415 ms, Free Time: 34 ms), Average Allocate Cycles: 23246, Average Free Cycles: 941
+
+12) Fri Oct 18 17:40:31 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 40, Defrag frequency coeff: 40, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): true):
+
+1. Defrag Periodically - Average Time: 52 ms (Allocate Time: 26 ms, Free Time: 21 ms), Average Allocate Cycles: 22484, Average Free Cycles: 882
+2. Sort by Size - Average Time: 238 ms (Allocate Time: 135 ms, Free Time: 55 ms), Average Allocate Cycles: 23368, Average Free Cycles: 936
+3. Sort by Address - Average Time: 483 ms (Allocate Time: 367 ms, Free Time: 55 ms), Average Allocate Cycles: 23698, Average Free Cycles: 1010
+4. Compact Periodically - Average Time: 4582 ms (Allocate Time: 4466 ms, Free Time: 35 ms), Average Allocate Cycles: 23505, Average Free Cycles: 911
+5. Sort by Two Indexes - Average Time: 16365 ms (Allocate Time: 16299 ms, Free Time: 25 ms), Average Allocate Cycles: 22940, Average Free Cycles: 920
+
+13) Fri Oct 18 17:41:59 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 50, Defrag frequency coeff: 50, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 101 ms (Allocate Time: 73 ms, Free Time: 23 ms), Average Allocate Cycles: 23223, Average Free Cycles: 944
+2. Sort by Size - Average Time: 289 ms (Allocate Time: 188 ms, Free Time: 51 ms), Average Allocate Cycles: 22851, Average Free Cycles: 902
+3. Sort by Address - Average Time: 388 ms (Allocate Time: 290 ms, Free Time: 32 ms), Average Allocate Cycles: 23083, Average Free Cycles: 928
+4. Compact Periodically - Average Time: 4695 ms (Allocate Time: 4322 ms, Free Time: 305 ms), Average Allocate Cycles: 22593, Average Free Cycles: 894
+5. Sort by Two Indexes - Average Time: 8757 ms (Allocate Time: 8536 ms, Free Time: 36 ms), Average Allocate Cycles: 24185, Average Free Cycles: 947
+
+14) Fri Oct 18 17:44:32 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 60, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 166 ms (Allocate Time: 132 ms, Free Time: 27 ms), Average Allocate Cycles: 22946, Average Free Cycles: 910
+2. Sort by Address - Average Time: 322 ms (Allocate Time: 225 ms, Free Time: 36 ms), Average Allocate Cycles: 23336, Average Free Cycles: 942
+3. Sort by Size - Average Time: 355 ms (Allocate Time: 264 ms, Free Time: 47 ms), Average Allocate Cycles: 22213, Average Free Cycles: 897
+4. Compact Periodically - Average Time: 6223 ms (Allocate Time: 6093 ms, Free Time: 29 ms), Average Allocate Cycles: 23671, Average Free Cycles: 927
+5. Sort by Two Indexes - Average Time: 9307 ms (Allocate Time: 9067 ms, Free Time: 35 ms), Average Allocate Cycles: 23744, Average Free Cycles: 982
+
+15) Fri Oct 18 17:46:50 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 100, Defrag frequency coeff: 100, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Sort by Size - Average Time: 281 ms (Allocate Time: 194 ms, Free Time: 37 ms), Average Allocate Cycles: 23272, Average Free Cycles: 930
+2. Defrag Periodically - Average Time: 347 ms (Allocate Time: 313 ms, Free Time: 25 ms), Average Allocate Cycles: 22836, Average Free Cycles: 903
+3. Sort by Address - Average Time: 403 ms (Allocate Time: 313 ms, Free Time: 28 ms), Average Allocate Cycles: 22127, Average Free Cycles: 887
+4. Compact Periodically - Average Time: 1919 ms (Allocate Time: 1846 ms, Free Time: 35 ms), Average Allocate Cycles: 22684, Average Free Cycles: 909
+5. Sort by Two Indexes - Average Time: 8626 ms (Allocate Time: 8419 ms, Free Time: 32 ms), Average Allocate Cycles: 23436, Average Free Cycles: 920
+
+16) Fri Oct 18 17:49:43 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 200, Defrag frequency coeff: 200, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Sort by Size - Average Time: 228 ms (Allocate Time: 147 ms, Free Time: 34 ms), Average Allocate Cycles: 23262, Average Free Cycles: 867
+2. Defrag Periodically - Average Time: 258 ms (Allocate Time: 226 ms, Free Time: 24 ms), Average Allocate Cycles: 22623, Average Free Cycles: 975
+3. Sort by Address - Average Time: 336 ms (Allocate Time: 243 ms, Free Time: 35 ms), Average Allocate Cycles: 23012, Average Free Cycles: 887
+4. Compact Periodically - Average Time: 1332 ms (Allocate Time: 1272 ms, Free Time: 18 ms), Average Allocate Cycles: 22545, Average Free Cycles: 900
+5. Sort by Two Indexes - Average Time: 8514 ms (Allocate Time: 8301 ms, Free Time: 34 ms), Average Allocate Cycles: 22297, Average Free Cycles: 932
+
+17) Fri Oct 18 17:51:49 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 10428800, Heap min size: 50000,
+ Compact frequency coeff: 20, Defrag frequency coeff: 300, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 182 ms (Allocate Time: 150 ms, Free Time: 25 ms), Average Allocate Cycles: 22942, Average Free Cycles: 919
+2. Sort by Size - Average Time: 269 ms (Allocate Time: 153 ms, Free Time: 62 ms), Average Allocate Cycles: 23484, Average Free Cycles: 905
+3. Sort by Address - Average Time: 414 ms (Allocate Time: 308 ms, Free Time: 37 ms), Average Allocate Cycles: 23971, Average Free Cycles: 922
+4. Sort by Two Indexes - Average Time: 9325 ms (Allocate Time: 9076 ms, Free Time: 39 ms), Average Allocate Cycles: 24079, Average Free Cycles: 1009
+5. Compact Periodically - Average Time: 10763 ms (Allocate Time: 10553 ms, Free Time: 43 ms), Average Allocate Cycles: 23226, Average Free Cycles: 958
+
+18) Fri Oct 18 17:54:07 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 50, Defrag frequency coeff: 200, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Sort by Size - Average Time: 294 ms (Allocate Time: 171 ms, Free Time: 95 ms), Average Allocate Cycles: 44467, Average Free Cycles: 1759
+2. Defrag Periodically - Average Time: 331 ms (Allocate Time: 247 ms, Free Time: 74 ms), Average Allocate Cycles: 45909, Average Free Cycles: 1885
+3. Sort by Address - Average Time: 945 ms (Allocate Time: 686 ms, Free Time: 129 ms), Average Allocate Cycles: 46221, Average Free Cycles: 1897
+4. Compact Periodically - Average Time: 12242 ms (Allocate Time: 11999 ms, Free Time: 89 ms), Average Allocate Cycles: 45686, Average Free Cycles: 1799
+5. Sort by Two Indexes - Average Time: 29932 ms (Allocate Time: 29109 ms, Free Time: 426 ms), Average Allocate Cycles: 45668, Average Free Cycles: 1749
+
+19) Fri Oct 18 17:58:34 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 200, Defrag frequency coeff: 50, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 346 ms (Allocate Time: 103 ms, Free Time: 232 ms), Average Allocate Cycles: 44005, Average Free Cycles: 1672
+2. Sort by Size - Average Time: 453 ms (Allocate Time: 273 ms, Free Time: 130 ms), Average Allocate Cycles: 44846, Average Free Cycles: 1888
+3. Sort by Address - Average Time: 661 ms (Allocate Time: 465 ms, Free Time: 101 ms), Average Allocate Cycles: 44700, Average Free Cycles: 1725
+4. Compact Periodically - Average Time: 6033 ms (Allocate Time: 5832 ms, Free Time: 92 ms), Average Allocate Cycles: 45622, Average Free Cycles: 1775
+5. Sort by Two Indexes - Average Time: 29132 ms (Allocate Time: 28636 ms, Free Time: 122 ms), Average Allocate Cycles: 44690, Average Free Cycles: 1715
+
+20) Fri Oct 18 18:00:44 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 300, Defrag frequency coeff: 10, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 193 ms (Allocate Time: 76 ms, Free Time: 108 ms), Average Allocate Cycles: 45286, Average Free Cycles: 1790
+2. Sort by Size - Average Time: 427 ms (Allocate Time: 297 ms, Free Time: 92 ms), Average Allocate Cycles: 45053, Average Free Cycles: 1831
+3. Sort by Address - Average Time: 780 ms (Allocate Time: 559 ms, Free Time: 115 ms), Average Allocate Cycles: 46075, Average Free Cycles: 1857
+4. Compact Periodically - Average Time: 6113 ms (Allocate Time: 5926 ms, Free Time: 89 ms), Average Allocate Cycles: 45459, Average Free Cycles: 1800
+5. Sort by Two Indexes - Average Time: 29608 ms (Allocate Time: 28821 ms, Free Time: 141 ms), Average Allocate Cycles: 44343, Average Free Cycles: 1783
+
+21) Fri Oct 18 18:04:16 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 200, Defrag frequency coeff: 10, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): true):
+
+1. Defrag Periodically - Average Time: 204 ms (Allocate Time: 85 ms, Free Time: 104 ms), Average Allocate Cycles: 44471, Average Free Cycles: 1773
+2. Sort by Size - Average Time: 425 ms (Allocate Time: 294 ms, Free Time: 96 ms), Average Allocate Cycles: 46553, Average Free Cycles: 1882
+3. Sort by Address - Average Time: 760 ms (Allocate Time: 544 ms, Free Time: 111 ms), Average Allocate Cycles: 43976, Average Free Cycles: 1754
+4. Compact Periodically - Average Time: 2729 ms (Allocate Time: 2571 ms, Free Time: 102 ms), Average Allocate Cycles: 45228, Average Free Cycles: 1772
+5. Sort by Two Indexes - Average Time: 61991 ms (Allocate Time: 61853 ms, Free Time: 90 ms), Average Allocate Cycles: 44870, Average Free Cycles: 1768
+
+22) Fri Oct 18 18:06:51 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 200, Defrag frequency coeff: 100, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 213 ms (Allocate Time: 117 ms, Free Time: 85 ms), Average Allocate Cycles: 47183, Average Free Cycles: 1911
+2. Sort by Size - Average Time: 338 ms (Allocate Time: 195 ms, Free Time: 108 ms), Average Allocate Cycles: 45512, Average Free Cycles: 1826
+3. Sort by Address - Average Time: 863 ms (Allocate Time: 649 ms, Free Time: 106 ms), Average Allocate Cycles: 46183, Average Free Cycles: 1930
+4. Compact Periodically - Average Time: 3331 ms (Allocate Time: 3190 ms, Free Time: 87 ms), Average Allocate Cycles: 45099, Average Free Cycles: 1795
+5. Sort by Two Indexes - Average Time: 32233 ms (Allocate Time: 31688 ms, Free Time: 130 ms), Average Allocate Cycles: 46592, Average Free Cycles: 1863
+
+23) Fri Oct 18 18:11:34 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 50428800, Heap min size: 50000,
+ Compact frequency coeff: 200, Defrag frequency coeff: 100, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 726 ms (Allocate Time: 291 ms, Free Time: 411 ms), Average Allocate Cycles: 110389, Average Free Cycles: 4366
+2. Sort by Size - Average Time: 1041 ms (Allocate Time: 438 ms, Free Time: 563 ms), Average Allocate Cycles: 112451, Average Free Cycles: 4454
+3. Sort by Address - Average Time: 2684 ms (Allocate Time: 2042 ms, Free Time: 499 ms), Average Allocate Cycles: 111301, Average Free Cycles: 4368
+4. Compact Periodically - Average Time: 22109 ms (Allocate Time: 21032 ms, Free Time: 499 ms), Average Allocate Cycles: 110677, Average Free Cycles: 4496
+5. Sort by Two Indexes - Average Time: 164844 ms (Allocate Time: 161268 ms, Free Time: 763 ms), Average Allocate Cycles: 111631, Average Free Cycles: 4462
+
+24) Sat Oct 19 19:24:05 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 200, Defrag frequency coeff: 100, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 183 ms (Allocate Time: 68 ms, Free Time: 101 ms), Average Allocate Cycles: 46037, Average Free Cycles: 1933
+2. Sort by Size - Average Time: 346 ms (Allocate Time: 210 ms, Free Time: 101 ms), Average Allocate Cycles: 43900, Average Free Cycles: 1768
+3. Sort by Address - Average Time: 724 ms (Allocate Time: 517 ms, Free Time: 103 ms), Average Allocate Cycles: 44531, Average Free Cycles: 1855
+4. Sort by Two Indexes - Average Time: 2777 ms (Allocate Time: 2667 ms, Free Time: 87 ms), Average Allocate Cycles: 44368, Average Free Cycles: 1766
+5. Compact Periodically - Average Time: 6584 ms (Allocate Time: 6374 ms, Free Time: 99 ms), Average Allocate Cycles: 45553, Average Free Cycles: 1825
+
+25) Sat Oct 19 19:26:47 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 200, Defrag frequency coeff: 100, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): true):
+
+1. Defrag Periodically - Average Time: 181 ms (Allocate Time: 72 ms, Free Time: 86 ms), Average Allocate Cycles: 45740, Average Free Cycles: 1845
+2. Sort by Size - Average Time: 303 ms (Allocate Time: 150 ms, Free Time: 108 ms), Average Allocate Cycles: 43585, Average Free Cycles: 1740
+3. Sort by Address - Average Time: 826 ms (Allocate Time: 598 ms, Free Time: 117 ms), Average Allocate Cycles: 46559, Average Free Cycles: 1940
+4. Compact Periodically - Average Time: 2785 ms (Allocate Time: 2639 ms, Free Time: 93 ms), Average Allocate Cycles: 45254, Average Free Cycles: 1797
+5. Sort by Two Indexes - Average Time: 45840 ms (Allocate Time: 45719 ms, Free Time: 84 ms), Average Allocate Cycles: 43362, Average Free Cycles: 1722
+
+26) Sat Oct 19 19:44:43 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 200, Defrag frequency coeff: 100, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 150 ms (Allocate Time: 40 ms, Free Time: 95 ms), Average Allocate Cycles: 45329, Average Free Cycles: 1835
+2. Sort by Size - Average Time: 321 ms (Allocate Time: 186 ms, Free Time: 97 ms), Average Allocate Cycles: 44788, Average Free Cycles: 1771
+3. Sort by Address - Average Time: 687 ms (Allocate Time: 471 ms, Free Time: 116 ms), Average Allocate Cycles: 46038, Average Free Cycles: 1890
+4. Sort by Two Indexes - Average Time: 3027 ms (Allocate Time: 2923 ms, Free Time: 84 ms), Average Allocate Cycles: 44699, Average Free Cycles: 1826
+5. Compact Periodically - Average Time: 4548 ms (Allocate Time: 4366 ms, Free Time: 98 ms), Average Allocate Cycles: 46356, Average Free Cycles: 1958
+
+27) Sat Oct 19 19:46:31 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 300, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 172 ms (Allocate Time: 51 ms, Free Time: 99 ms), Average Allocate Cycles: 45358, Average Free Cycles: 1833
+2. Sort by Size - Average Time: 296 ms (Allocate Time: 163 ms, Free Time: 97 ms), Average Allocate Cycles: 42632, Average Free Cycles: 1672
+3. Sort by Address - Average Time: 717 ms (Allocate Time: 488 ms, Free Time: 132 ms), Average Allocate Cycles: 45074, Average Free Cycles: 1789
+4. Compact Periodically - Average Time: 1269 ms (Allocate Time: 1106 ms, Free Time: 122 ms), Average Allocate Cycles: 45528, Average Free Cycles: 1902
+5. Sort by Two Indexes - Average Time: 2233 ms (Allocate Time: 2126 ms, Free Time: 86 ms), Average Allocate Cycles: 44722, Average Free Cycles: 1757
+
+28) Sat Oct 19 19:54:35 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 400, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 199 ms (Allocate Time: 54 ms, Free Time: 117 ms), Average Allocate Cycles: 45334, Average Free Cycles: 1799
+2. Sort by Size - Average Time: 321 ms (Allocate Time: 194 ms, Free Time: 91 ms), Average Allocate Cycles: 45196, Average Free Cycles: 1781
+3. Sort by Address - Average Time: 683 ms (Allocate Time: 462 ms, Free Time: 115 ms), Average Allocate Cycles: 44822, Average Free Cycles: 1786
+4. Compact Periodically - Average Time: 1177 ms (Allocate Time: 1048 ms, Free Time: 88 ms), Average Allocate Cycles: 45024, Average Free Cycles: 1859
+5. Sort by Two Indexes - Average Time: 2734 ms (Allocate Time: 2614 ms, Free Time: 107 ms), Average Allocate Cycles: 46512, Average Free Cycles: 1848
+
+29) Sat Oct 19 20:07:26 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 400, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): true, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 140 ms (Allocate Time: 36 ms, Free Time: 90 ms), Average Allocate Cycles: 45615, Average Free Cycles: 1833
+2. Sort by Address - Average Time: 595 ms (Allocate Time: 409 ms, Free Time: 97 ms), Average Allocate Cycles: 44641, Average Free Cycles: 1836
+3. Compact Periodically - Average Time: 1294 ms (Allocate Time: 1175 ms, Free Time: 90 ms), Average Allocate Cycles: 45980, Average Free Cycles: 1950
+4. Sort by Size - Average Time: 2053 ms (Allocate Time: 1888 ms, Free Time: 95 ms), Average Allocate Cycles: 44774, Average Free Cycles: 1835
+5. Sort by Two Indexes - Average Time: 2736 ms (Allocate Time: 2633 ms, Free Time: 89 ms), Average Allocate Cycles: 45087, Average Free Cycles: 1850
+
+30) Sat Oct 19 20:08:23 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 500, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 158 ms (Allocate Time: 51 ms, Free Time: 85 ms), Average Allocate Cycles: 45327, Average Free Cycles: 1818
+2. Sort by Size - Average Time: 394 ms (Allocate Time: 265 ms, Free Time: 91 ms), Average Allocate Cycles: 45847, Average Free Cycles: 1870
+3. Sort by Address - Average Time: 667 ms (Allocate Time: 479 ms, Free Time: 95 ms), Average Allocate Cycles: 44531, Average Free Cycles: 1797
+4. Compact Periodically - Average Time: 803 ms (Allocate Time: 688 ms, Free Time: 81 ms), Average Allocate Cycles: 46071, Average Free Cycles: 1872
+5. Sort by Two Indexes - Average Time: 2422 ms (Allocate Time: 2327 ms, Free Time: 80 ms), Average Allocate Cycles: 45027, Average Free Cycles: 1773
+
+31) Sat Oct 19 20:10:08 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 20428800, Heap min size: 50000,
+ Compact frequency coeff: 600, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 170 ms (Allocate Time: 44 ms, Free Time: 105 ms), Average Allocate Cycles: 45433, Average Free Cycles: 1815
+2. Sort by Size - Average Time: 332 ms (Allocate Time: 176 ms, Free Time: 110 ms), Average Allocate Cycles: 45900, Average Free Cycles: 1831
+3. Sort by Address - Average Time: 607 ms (Allocate Time: 420 ms, Free Time: 96 ms), Average Allocate Cycles: 44966, Average Free Cycles: 1726
+4. Compact Periodically - Average Time: 852 ms (Allocate Time: 737 ms, Free Time: 75 ms), Average Allocate Cycles: 44964, Average Free Cycles: 1797
+5. Sort by Two Indexes - Average Time: 2781 ms (Allocate Time: 2658 ms, Free Time: 99 ms), Average Allocate Cycles: 44623, Average Free Cycles: 1824
+
+32) Sat Oct 19 20:11:42 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 50428800, Heap min size: 50000,
+ Compact frequency coeff: 500, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 658 ms (Allocate Time: 119 ms, Free Time: 516 ms), Average Allocate Cycles: 111990, Average Free Cycles: 4514
+2. Sort by Size - Average Time: 866 ms (Allocate Time: 329 ms, Free Time: 483 ms), Average Allocate Cycles: 113884, Average Free Cycles: 4537
+3. Sort by Address - Average Time: 2297 ms (Allocate Time: 1594 ms, Free Time: 561 ms), Average Allocate Cycles: 112611, Average Free Cycles: 4472
+4. Sort by Two Indexes - Average Time: 11021 ms (Allocate Time: 10486 ms, Free Time: 510 ms), Average Allocate Cycles: 112374, Average Free Cycles: 4516
+5. Compact Periodically - Average Time: 14994 ms (Allocate Time: 14295 ms, Free Time: 427 ms), Average Allocate Cycles: 111321, Average Free Cycles: 4417
+
+33) Sat Oct 19 20:14:15 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 50428800, Heap min size: 50000,
+ Compact frequency coeff: 500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 597 ms (Allocate Time: 147 ms, Free Time: 427 ms), Average Allocate Cycles: 112622, Average Free Cycles: 4493
+2. Sort by Size - Average Time: 791 ms (Allocate Time: 251 ms, Free Time: 509 ms), Average Allocate Cycles: 111278, Average Free Cycles: 4453
+3. Sort by Address - Average Time: 2231 ms (Allocate Time: 1579 ms, Free Time: 489 ms), Average Allocate Cycles: 112969, Average Free Cycles: 4486
+4. Sort by Two Indexes - Average Time: 9012 ms (Allocate Time: 8472 ms, Free Time: 492 ms), Average Allocate Cycles: 109498, Average Free Cycles: 4330
+5. Compact Periodically - Average Time: 9834 ms (Allocate Time: 9213 ms, Free Time: 467 ms), Average Allocate Cycles: 112892, Average Free Cycles: 4648
+
+34) Sat Oct 19 20:15:30 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 50428800, Heap min size: 50000,
+ Compact frequency coeff: 1250, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 683 ms (Allocate Time: 90 ms, Free Time: 541 ms), Average Allocate Cycles: 113215, Average Free Cycles: 4485
+2. Sort by Size - Average Time: 743 ms (Allocate Time: 276 ms, Free Time: 443 ms), Average Allocate Cycles: 110952, Average Free Cycles: 4356
+3. Sort by Address - Average Time: 3122 ms (Allocate Time: 2381 ms, Free Time: 590 ms), Average Allocate Cycles: 111030, Average Free Cycles: 4501
+4. Compact Periodically - Average Time: 6092 ms (Allocate Time: 5482 ms, Free Time: 489 ms), Average Allocate Cycles: 112634, Average Free Cycles: 4613
+5. Sort by Two Indexes - Average Time: 8944 ms (Allocate Time: 8411 ms, Free Time: 493 ms), Average Allocate Cycles: 112836, Average Free Cycles: 4622
+
+35) Sat Oct 19 20:22:04 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 20, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 1860 ms (Allocate Time: 156 ms, Free Time: 1648 ms), Average Allocate Cycles: 222514, Average Free Cycles: 8944
+2. Sort by Size - Average Time: 2653 ms (Allocate Time: 906 ms, Free Time: 1680 ms), Average Allocate Cycles: 223203, Average Free Cycles: 9102
+3. Sort by Address - Average Time: 6757 ms (Allocate Time: 4745 ms, Free Time: 1809 ms), Average Allocate Cycles: 221261, Average Free Cycles: 8929
+4. Compact Periodically - Average Time: 15391 ms (Allocate Time: 13580 ms, Free Time: 1569 ms), Average Allocate Cycles: 221567, Average Free Cycles: 8874
+5. Sort by Two Indexes - Average Time: 33765 ms (Allocate Time: 31941 ms, Free Time: 1757 ms), Average Allocate Cycles: 222144, Average Free Cycles: 8858
+
+36) Sat Oct 19 20:25:23 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 1897 ms (Allocate Time: 237 ms, Free Time: 1612 ms), Average Allocate Cycles: 220060, Average Free Cycles: 8751
+2. Sort by Size - Average Time: 3001 ms (Allocate Time: 1322 ms, Free Time: 1608 ms), Average Allocate Cycles: 221790, Average Free Cycles: 8903
+3. Sort by Address - Average Time: 7180 ms (Allocate Time: 5019 ms, Free Time: 1962 ms), Average Allocate Cycles: 222750, Average Free Cycles: 9130
+4. Compact Periodically - Average Time: 9373 ms (Allocate Time: 7483 ms, Free Time: 1740 ms), Average Allocate Cycles: 223984, Average Free Cycles: 9126
+5. Sort by Two Indexes - Average Time: 29729 ms (Allocate Time: 27937 ms, Free Time: 1737 ms), Average Allocate Cycles: 220713, Average Free Cycles: 8715
+
+37) Mon Oct 21 17:37:15 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 1961 ms (Allocate Time: 249 ms, Free Time: 1641 ms), Average Allocate Cycles: 220549, Average Free Cycles: 8931
+2. Sort by Size - Average Time: 2439 ms (Allocate Time: 736 ms, Free Time: 1633 ms), Average Allocate Cycles: 222647, Average Free Cycles: 8802
+3. Compact Periodically - Average Time: 6912 ms (Allocate Time: 5158 ms, Free Time: 1619 ms), Average Allocate Cycles: 223802, Average Free Cycles: 9088
+4. Sort by Address - Average Time: 7313 ms (Allocate Time: 5288 ms, Free Time: 1842 ms), Average Allocate Cycles: 222743, Average Free Cycles: 9169
+5. Sort by Two Indexes - Average Time: 28745 ms (Allocate Time: 26997 ms, Free Time: 1698 ms), Average Allocate Cycles: 221204, Average Free Cycles: 8713
+
+38) Mon Oct 21 18:12:17 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 1976 ms (Allocate Time: 267 ms, Free Time: 1632 ms), Average Allocate Cycles: 223707, Average Free Cycles: 8987
+2. Sort by Size - Average Time: 3117 ms (Allocate Time: 1358 ms, Free Time: 1686 ms), Average Allocate Cycles: 225017, Average Free Cycles: 9144
+3. Compact Periodically - Average Time: 3856 ms (Allocate Time: 2131 ms, Free Time: 1639 ms), Average Allocate Cycles: 222254, Average Free Cycles: 8662
+4. Sort by Address - Average Time: 6699 ms (Allocate Time: 4782 ms, Free Time: 1724 ms), Average Allocate Cycles: 221890, Average Free Cycles: 8840
+5. Sort by Two Indexes - Average Time: 30635 ms (Allocate Time: 28871 ms, Free Time: 1708 ms), Average Allocate Cycles: 223224, Average Free Cycles: 8953
+
+39) Mon Oct 21 18:42:26 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 1964 ms (Allocate Time: 236 ms, Free Time: 1656 ms), Average Allocate Cycles: 224193, Average Free Cycles: 8996
+2. Sort by Size - Average Time: 3007 ms (Allocate Time: 1338 ms, Free Time: 1604 ms), Average Allocate Cycles: 222186, Average Free Cycles: 8891
+3. Compact Periodically - Average Time: 6830 ms (Allocate Time: 5056 ms, Free Time: 1651 ms), Average Allocate Cycles: 222016, Average Free Cycles: 8725
+4. Sort by Address - Average Time: 6916 ms (Allocate Time: 4937 ms, Free Time: 1783 ms), Average Allocate Cycles: 224366, Average Free Cycles: 9069
+5. Sort by Two Indexes - Average Time: 29952 ms (Allocate Time: 28137 ms, Free Time: 1761 ms), Average Allocate Cycles: 224738, Average Free Cycles: 9127
+
+40) Mon Oct 21 18:46:31 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 1969 ms (Allocate Time: 258 ms, Free Time: 1649 ms), Average Allocate Cycles: 224636, Average Free Cycles: 9112
+2. Sort by Size - Average Time: 2445 ms (Allocate Time: 811 ms, Free Time: 1570 ms), Average Allocate Cycles: 220863, Average Free Cycles: 8693
+3. Compact Periodically - Average Time: 6040 ms (Allocate Time: 4326 ms, Free Time: 1598 ms), Average Allocate Cycles: 221016, Average Free Cycles: 8834
+4. Sort by Address - Average Time: 6942 ms (Allocate Time: 4951 ms, Free Time: 1814 ms), Average Allocate Cycles: 221944, Average Free Cycles: 8965
+5. Sort by Two Indexes - Average Time: 33090 ms (Allocate Time: 31351 ms, Free Time: 1689 ms), Average Allocate Cycles: 222188, Average Free Cycles: 9001
+
+41) Tue Oct 22 16:26:11 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 2102 ms (Allocate Time: 265 ms, Free Time: 1774 ms), Average Allocate Cycles: 222687, Average Free Cycles: 8797
+2. Sort by Size - Average Time: 2906 ms (Allocate Time: 1246 ms, Free Time: 1589 ms), Average Allocate Cycles: 222649, Average Free Cycles: 8934
+3. Compact Periodically - Average Time: 4221 ms (Allocate Time: 2457 ms, Free Time: 1655 ms), Average Allocate Cycles: 221242, Average Free Cycles: 8787
+4. Sort by Address - Average Time: 6806 ms (Allocate Time: 4763 ms, Free Time: 1835 ms), Average Allocate Cycles: 222249, Average Free Cycles: 8798
+5. Sort by Two Indexes - Average Time: 33536 ms (Allocate Time: 31701 ms, Free Time: 1779 ms), Average Allocate Cycles: 224990, Average Free Cycles: 9065
+
+42) Tue Oct 22 16:28:30 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 2049 ms (Allocate Time: 256 ms, Free Time: 1733 ms), Average Allocate Cycles: 223947, Average Free Cycles: 9017
+2. Sort by Size - Average Time: 2672 ms (Allocate Time: 1025 ms, Free Time: 1591 ms), Average Allocate Cycles: 223255, Average Free Cycles: 8927
+3. Compact Periodically - Average Time: 4310 ms (Allocate Time: 2546 ms, Free Time: 1660 ms), Average Allocate Cycles: 220220, Average Free Cycles: 8703
+4. Sort by Address - Average Time: 6288 ms (Allocate Time: 4368 ms, Free Time: 1732 ms), Average Allocate Cycles: 221521, Average Free Cycles: 8818
+5. Sort by Two Indexes - Average Time: 35765 ms (Allocate Time: 33933 ms, Free Time: 1778 ms), Average Allocate Cycles: 224178, Average Free Cycles: 9130
+
+43) Tue Oct 22 17:01:31 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 1990 ms (Allocate Time: 334 ms, Free Time: 1584 ms), Average Allocate Cycles: 224294, Average Free Cycles: 8866
+2. Sort by Size - Average Time: 2455 ms (Allocate Time: 786 ms, Free Time: 1597 ms), Average Allocate Cycles: 221945, Average Free Cycles: 8911
+3. Sort by Address - Average Time: 7047 ms (Allocate Time: 5097 ms, Free Time: 1749 ms), Average Allocate Cycles: 223411, Average Free Cycles: 8982
+4. Compact Periodically - Average Time: 7527 ms (Allocate Time: 5765 ms, Free Time: 1626 ms), Average Allocate Cycles: 223194, Average Free Cycles: 9029
+5. Sort by Two Indexes - Average Time: 29674 ms (Allocate Time: 27924 ms, Free Time: 1697 ms), Average Allocate Cycles: 222173, Average Free Cycles: 8818
+
+44) Tue Oct 22 17:13:55 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 2124 ms (Allocate Time: 277 ms, Free Time: 1796 ms), Average Allocate Cycles: 223657, Average Free Cycles: 8968
+2. Sort by Size - Average Time: 2996 ms (Allocate Time: 1355 ms, Free Time: 1576 ms), Average Allocate Cycles: 221574, Average Free Cycles: 8952
+3. Compact Periodically - Average Time: 5094 ms (Allocate Time: 3449 ms, Free Time: 1531 ms), Average Allocate Cycles: 221377, Average Free Cycles: 8931
+4. Sort by Address - Average Time: 6641 ms (Allocate Time: 4694 ms, Free Time: 1765 ms), Average Allocate Cycles: 222604, Average Free Cycles: 8819
+5. Sort by Two Indexes - Average Time: 34829 ms (Allocate Time: 33130 ms, Free Time: 1651 ms), Average Allocate Cycles: 221405, Average Free Cycles: 8841
+count compact two index: 1
+45) Tue Oct 22 18:41:27 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000,
+ Compact frequency coeff: 2500, Defrag frequency coeff: 60, Reverse sort (SORT_BY_SIZE): false, Reverse sort (SORT_BY_TWO_INDEXES): false):
+
+1. Defrag Periodically - Average Time: 1933 ms (Allocate Time: 333 ms, Free Time: 1539 ms), Average Allocate Cycles: 221488, Average Free Cycles: 8891
+2. Sort by Size - Average Time: 2730 ms (Allocate Time: 1046 ms, Free Time: 1606 ms), Average Allocate Cycles: 226743, Average Free Cycles: 9048
+3. Compact Periodically - Average Time: 3994 ms (Allocate Time: 2384 ms, Free Time: 1531 ms), Average Allocate Cycles: 219742, Average Free Cycles: 8697
+4. Sort by Address - Average Time: 6951 ms (Allocate Time: 4934 ms, Free Time: 1802 ms), Average Allocate Cycles: 224696, Average Free Cycles: 9052
+5. Sort by Two Indexes - Average Time: 32013 ms (Allocate Time: 30190 ms, Free Time: 1747 ms), Average Allocate Cycles: 221172, Average Free Cycles: 8941
+count compact two index: 1
+46) Tue Oct 22 19:01:03 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1927 ms (Allocate Time: 241 ms, Free Time: 1624 ms), Average Allocate Cycles: 225497, Average Free Cycles: 9081
+2. Sort by Size - Average Time: 2570 ms (Allocate Time: 816 ms, Free Time: 1658 ms), Average Allocate Cycles: 220448, Average Free Cycles: 8637
+3. Sort by Address - Average Time: 6988 ms (Allocate Time: 4940 ms, Free Time: 1838 ms), Average Allocate Cycles: 222504, Average Free Cycles: 9015
+4. Compact Periodically - Average Time: 10167 ms (Allocate Time: 8142 ms, Free Time: 1867 ms), Average Allocate Cycles: 222569, Average Free Cycles: 8823
+5. Sort by Two Indexes - Average Time: 11650 ms (Allocate Time: 9965 ms, Free Time: 1582 ms), Average Allocate Cycles: 222193, Average Free Cycles: 8706
+count compact two index: 1
+47) Tue Oct 22 19:05:16 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 2168 ms (Allocate Time: 410 ms, Free Time: 1697 ms), Average Allocate Cycles: 222407, Average Free Cycles: 8940
+2. Sort by Size - Average Time: 2887 ms (Allocate Time: 1181 ms, Free Time: 1643 ms), Average Allocate Cycles: 224226, Average Free Cycles: 9070
+3. Compact Periodically - Average Time: 4876 ms (Allocate Time: 3194 ms, Free Time: 1594 ms), Average Allocate Cycles: 223194, Average Free Cycles: 9057
+4. Sort by Address - Average Time: 6879 ms (Allocate Time: 4921 ms, Free Time: 1781 ms), Average Allocate Cycles: 224101, Average Free Cycles: 8979
+5. Sort by Two Indexes - Average Time: 11365 ms (Allocate Time: 9589 ms, Free Time: 1668 ms), Average Allocate Cycles: 222781, Average Free Cycles: 8833
+count compact two index: 1
+48) Tue Oct 22 19:07:23 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1849 ms (Allocate Time: 244 ms, Free Time: 1551 ms), Average Allocate Cycles: 221117, Average Free Cycles: 8861
+2. Sort by Size - Average Time: 3358 ms (Allocate Time: 1633 ms, Free Time: 1619 ms), Average Allocate Cycles: 222524, Average Free Cycles: 8887
+3. Compact Periodically - Average Time: 5182 ms (Allocate Time: 3531 ms, Free Time: 1561 ms), Average Allocate Cycles: 222365, Average Free Cycles: 8833
+4. Sort by Address - Average Time: 6780 ms (Allocate Time: 4742 ms, Free Time: 1822 ms), Average Allocate Cycles: 220908, Average Free Cycles: 8697
+5. Sort by Two Indexes - Average Time: 22861 ms (Allocate Time: 21035 ms, Free Time: 1585 ms), Average Allocate Cycles: 223394, Average Free Cycles: 8883
+count compact two index: 194
+49) Wed Oct 23 12:23:54 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1990 ms (Allocate Time: 132 ms, Free Time: 1812 ms), Average Allocate Cycles: 224491, Average Free Cycles: 9009
+2. Sort by Size - Average Time: 2983 ms (Allocate Time: 1228 ms, Free Time: 1666 ms), Average Allocate Cycles: 222661, Average Free Cycles: 8937
+3. Compact Periodically - Average Time: 5497 ms (Allocate Time: 3826 ms, Free Time: 1550 ms), Average Allocate Cycles: 222176, Average Free Cycles: 8918
+4. Sort by Address - Average Time: 6597 ms (Allocate Time: 4654 ms, Free Time: 1745 ms), Average Allocate Cycles: 220872, Average Free Cycles: 8848
+5. Sort by Two Indexes - Average Time: 35529 ms (Allocate Time: 33739 ms, Free Time: 1733 ms), Average Allocate Cycles: 223732, Average Free Cycles: 8958
+count compact two index: 4
+50) Wed Oct 23 12:31:31 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1970 ms (Allocate Time: 239 ms, Free Time: 1673 ms), Average Allocate Cycles: 222813, Average Free Cycles: 8858
+2. Sort by Size - Average Time: 3051 ms (Allocate Time: 1354 ms, Free Time: 1630 ms), Average Allocate Cycles: 224578, Average Free Cycles: 9066
+3. Compact Periodically - Average Time: 6779 ms (Allocate Time: 4998 ms, Free Time: 1679 ms), Average Allocate Cycles: 224294, Average Free Cycles: 9152
+4. Sort by Address - Average Time: 6979 ms (Allocate Time: 5034 ms, Free Time: 1760 ms), Average Allocate Cycles: 222013, Average Free Cycles: 8767
+5. Sort by Two Indexes - Average Time: 30425 ms (Allocate Time: 28731 ms, Free Time: 1630 ms), Average Allocate Cycles: 221521, Average Free Cycles: 8729
+count compact two index: 2compact two index sizes: [8095]
+51) Wed Oct 23 12:33:52 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1904 ms (Allocate Time: 248 ms, Free Time: 1595 ms), Average Allocate Cycles: 221489, Average Free Cycles: 8735
+2. Sort by Size - Average Time: 2640 ms (Allocate Time: 864 ms, Free Time: 1682 ms), Average Allocate Cycles: 224121, Average Free Cycles: 8985
+3. Compact Periodically - Average Time: 5355 ms (Allocate Time: 3673 ms, Free Time: 1563 ms), Average Allocate Cycles: 222356, Average Free Cycles: 8802
+4. Sort by Address - Average Time: 6837 ms (Allocate Time: 4852 ms, Free Time: 1807 ms), Average Allocate Cycles: 222252, Average Free Cycles: 8805
+5. Sort by Two Indexes - Average Time: 30954 ms (Allocate Time: 29159 ms, Free Time: 1725 ms), Average Allocate Cycles: 222856, Average Free Cycles: 8850
+count compact two index: 1
+compact two index sizes: [8675]
+52) Wed Oct 23 12:39:07 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 2047 ms (Allocate Time: 261 ms, Free Time: 1713 ms), Average Allocate Cycles: 220169, Average Free Cycles: 8818
+2. Sort by Size - Average Time: 2736 ms (Allocate Time: 918 ms, Free Time: 1746 ms), Average Allocate Cycles: 223017, Average Free Cycles: 8915
+3. Sort by Address - Average Time: 7386 ms (Allocate Time: 5264 ms, Free Time: 1891 ms), Average Allocate Cycles: 221075, Average Free Cycles: 8809
+4. Compact Periodically - Average Time: 7522 ms (Allocate Time: 5781 ms, Free Time: 1618 ms), Average Allocate Cycles: 222485, Average Free Cycles: 8826
+5. Sort by Two Indexes - Average Time: 30222 ms (Allocate Time: 28446 ms, Free Time: 1714 ms), Average Allocate Cycles: 225298, Average Free Cycles: 8991
+count compact two index: 1
+compact two index sizes: [8238]
+
+53) Wed Oct 23 12:41:30 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1890 ms (Allocate Time: 272 ms, Free Time: 1567 ms), Average Allocate Cycles: 221495, Average Free Cycles: 8718
+2. Sort by Size - Average Time: 3186 ms (Allocate Time: 1450 ms, Free Time: 1660 ms), Average Allocate Cycles: 222744, Average Free Cycles: 8897
+3. Sort by Address - Average Time: 6827 ms (Allocate Time: 4887 ms, Free Time: 1741 ms), Average Allocate Cycles: 220861, Average Free Cycles: 8888
+4. Compact Periodically - Average Time: 7176 ms (Allocate Time: 5437 ms, Free Time: 1626 ms), Average Allocate Cycles: 222567, Average Free Cycles: 8817
+5. Sort by Two Indexes - Average Time: 30873 ms (Allocate Time: 29149 ms, Free Time: 1670 ms), Average Allocate Cycles: 224289, Average Free Cycles: 8862
+count compact two index: 0
+compact two index sizes: []
+
+54) Wed Oct 23 12:44:10 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1898 ms (Allocate Time: 309 ms, Free Time: 1537 ms), Average Allocate Cycles: 222125, Average Free Cycles: 8877
+2. Sort by Size - Average Time: 2706 ms (Allocate Time: 1070 ms, Free Time: 1579 ms), Average Allocate Cycles: 220528, Average Free Cycles: 8738
+3. Compact Periodically - Average Time: 4783 ms (Allocate Time: 3140 ms, Free Time: 1560 ms), Average Allocate Cycles: 221246, Average Free Cycles: 8913
+4. Sort by Address - Average Time: 6675 ms (Allocate Time: 4608 ms, Free Time: 1851 ms), Average Allocate Cycles: 221636, Average Free Cycles: 8755
+5. Sort by Two Indexes - Average Time: 28318 ms (Allocate Time: 26589 ms, Free Time: 1667 ms), Average Allocate Cycles: 221118, Average Free Cycles: 8845
+count compact two index: 1
+compact two index sizes: [9640]
+
+55) Wed Oct 23 12:54:37 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 9000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1988 ms (Allocate Time: 246 ms, Free Time: 1676 ms), Average Allocate Cycles: 221524, Average Free Cycles: 8806
+2. Sort by Size - Average Time: 2794 ms (Allocate Time: 1115 ms, Free Time: 1605 ms), Average Allocate Cycles: 222434, Average Free Cycles: 9071
+3. Compact Periodically - Average Time: 3703 ms (Allocate Time: 2072 ms, Free Time: 1551 ms), Average Allocate Cycles: 217839, Average Free Cycles: 8680
+4. Sort by Address - Average Time: 7712 ms (Allocate Time: 5563 ms, Free Time: 1928 ms), Average Allocate Cycles: 224489, Average Free Cycles: 8961
+5. Sort by Two Indexes - Average Time: 31748 ms (Allocate Time: 30001 ms, Free Time: 1697 ms), Average Allocate Cycles: 220112, Average Free Cycles: 8720
+count compact two index: 0
+compact two index sizes: []
+count compact all: 4
+compact all sizes: [9344, 9987, 9177, 8522]
+
+56) Wed Oct 23 12:56:39 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1890 ms (Allocate Time: 259 ms, Free Time: 1583 ms), Average Allocate Cycles: 222211, Average Free Cycles: 8880
+2. Sort by Size - Average Time: 3178 ms (Allocate Time: 1513 ms, Free Time: 1594 ms), Average Allocate Cycles: 222039, Average Free Cycles: 9017
+3. Compact Periodically - Average Time: 6233 ms (Allocate Time: 4584 ms, Free Time: 1542 ms), Average Allocate Cycles: 221628, Average Free Cycles: 8847
+4. Sort by Address - Average Time: 6741 ms (Allocate Time: 4733 ms, Free Time: 1786 ms), Average Allocate Cycles: 222721, Average Free Cycles: 8944
+5. Sort by Two Indexes - Average Time: 30796 ms (Allocate Time: 29056 ms, Free Time: 1687 ms), Average Allocate Cycles: 224056, Average Free Cycles: 8899
+count compact two index: 1
+compact two index sizes: [6765]
+count compact all: 5
+compact all sizes: [9359, 9994, 9507, 8065, 9974]
+
+57) Wed Oct 23 12:57:55 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1856 ms (Allocate Time: 159 ms, Free Time: 1613 ms), Average Allocate Cycles: 222951, Average Free Cycles: 8968
+2. Sort by Size - Average Time: 2420 ms (Allocate Time: 733 ms, Free Time: 1613 ms), Average Allocate Cycles: 222450, Average Free Cycles: 8886
+3. Compact Periodically - Average Time: 4021 ms (Allocate Time: 2366 ms, Free Time: 1568 ms), Average Allocate Cycles: 223563, Average Free Cycles: 8908
+4. Sort by Address - Average Time: 6926 ms (Allocate Time: 4952 ms, Free Time: 1772 ms), Average Allocate Cycles: 222317, Average Free Cycles: 9014
+5. Sort by Two Indexes - Average Time: 24334 ms (Allocate Time: 22590 ms, Free Time: 1687 ms), Average Allocate Cycles: 220407, Average Free Cycles: 8767
+count compact two index: 0
+compact two index sizes: []
+count compact all: 3
+compact all sizes: [9993, 9532, 9694]
+
+58) Wed Oct 23 13:17:17 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1789 ms (Allocate Time: 151 ms, Free Time: 1578 ms), Average Allocate Cycles: 224351, Average Free Cycles: 8849
+2. Sort by Size - Average Time: 2542 ms (Allocate Time: 909 ms, Free Time: 1572 ms), Average Allocate Cycles: 221235, Average Free Cycles: 8866
+3. Sort by Address - Average Time: 6347 ms (Allocate Time: 4367 ms, Free Time: 1792 ms), Average Allocate Cycles: 224666, Average Free Cycles: 8900
+4. Compact Periodically - Average Time: 6989 ms (Allocate Time: 5266 ms, Free Time: 1578 ms), Average Allocate Cycles: 222602, Average Free Cycles: 8886
+5. Sort by Two Indexes - Average Time: 32823 ms (Allocate Time: 31088 ms, Free Time: 1686 ms), Average Allocate Cycles: 221322, Average Free Cycles: 8885
+count compact two index: 0
+compact two index sizes: []
+count compact all: 2
+compact all sizes: [9981, 9901]
+compact periodic sizes: [10, 50, 9, 9, 80, 9, 5, 7, 22, 2, 5, 47, 3, 8, 3954, 8, 5, 7, 10, 9, 90, 305, 3, 86, 1, 8, 802, 1, 95, 591, 4, 57, 5, 87, 642, 2616, 2, 9, 6, 26, 43, 4, 10, 3496, 9, 6, 2, 6, 10, 552, 7, 714, 9, 7, 933]
+
+59) Wed Oct 23 13:25:07 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1813 ms (Allocate Time: 154 ms, Free Time: 1601 ms), Average Allocate Cycles: 224010, Average Free Cycles: 8918
+2. Sort by Size - Average Time: 2873 ms (Allocate Time: 1022 ms, Free Time: 1784 ms), Average Allocate Cycles: 223968, Average Free Cycles: 9016
+3. Sort by Address - Average Time: 7079 ms (Allocate Time: 5052 ms, Free Time: 1830 ms), Average Allocate Cycles: 222662, Average Free Cycles: 9060
+4. Compact Periodically - Average Time: 9007 ms (Allocate Time: 7173 ms, Free Time: 1649 ms), Average Allocate Cycles: 225948, Average Free Cycles: 9072
+5. Sort by Two Indexes - Average Time: 30737 ms (Allocate Time: 28887 ms, Free Time: 1766 ms), Average Allocate Cycles: 222774, Average Free Cycles: 8935
+count compact two index: 0
+compact two index sizes: []
+count compact all: 2
+compact all sizes: [9936, 8833]
+compact periodic sizes: [93, 1, 5, 56, 1, 9, 51, 9, 6, 3, 3, 5, 225, 8, 6, 6, 9, 2, 4, 5, 4, 9603, 9606, 81, 1, 10, 74, 643, 6, 15, 1, 896, 10, 4, 468, 9, 4, 358, 108, 6631, 5, 5, 1, 7, 8, 3, 1, 28, 6, 7847, 7, 10, 18, 4, 9, 3, 6, 663, 7, 7, 1, 6, 10, 64, 91, 69, 976, 559, 46, 13, 71, 89, 523, 12, 844, 2, 38, 4713, 1983, 8]
+up 5000 sizes: [8618, 5032, 7660, 9660, 6707, 6154, 8054, 6171, 8730, 6928, 9930, 6708, 7953, 9845, 9804, 5765, 8486, 8137, 7640, 8472, 6863, ...]
+
+60) Wed Oct 23 13:36:46 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1963 ms (Allocate Time: 159 ms, Free Time: 1739 ms), Average Allocate Cycles: 217885, Average Free Cycles: 8773
+2. Sort by Size - Average Time: 2700 ms (Allocate Time: 1051 ms, Free Time: 1587 ms), Average Allocate Cycles: 220683, Average Free Cycles: 8656
+3. Compact Periodically - Average Time: 5177 ms (Allocate Time: 3348 ms, Free Time: 1714 ms), Average Allocate Cycles: 220959, Average Free Cycles: 8777
+4. Sort by Address - Average Time: 6718 ms (Allocate Time: 4742 ms, Free Time: 1798 ms), Average Allocate Cycles: 223720, Average Free Cycles: 8880
+5. Sort by Two Indexes - Average Time: 32849 ms (Allocate Time: 31073 ms, Free Time: 1725 ms), Average Allocate Cycles: 225425, Average Free Cycles: 9054
+count compact two index: 0
+compact two index sizes: []
+count compact all: 2
+compact all sizes: [9934, 9273]
+compact periodic sizes: [7, 5, 10, 380, 4, 7, 6, 6, 2, 3306, 698, 51, 2, 5579, 7, 4, 1, 90, 490, 38, 367, 91, 9, 9, 9, 605, 4, 2, 1, 1, 64, 7, 1955, 5]
+up 5000 sizes: 44501
+
+61) Wed Oct 23 19:05:16 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1968 ms (Allocate Time: 324 ms, Free Time: 1573 ms), Average Allocate Cycles: 222852, Average Free Cycles: 8903
+2. Sort by Size - Average Time: 2718 ms (Allocate Time: 1080 ms, Free Time: 1566 ms), Average Allocate Cycles: 220639, Average Free Cycles: 8883
+3. Compact Periodically - Average Time: 5800 ms (Allocate Time: 4111 ms, Free Time: 1588 ms), Average Allocate Cycles: 221321, Average Free Cycles: 8794
+4. Sort by Address - Average Time: 7110 ms (Allocate Time: 5048 ms, Free Time: 1847 ms), Average Allocate Cycles: 224969, Average Free Cycles: 8918
+5. Sort by Two Indexes - Average Time: 31939 ms (Allocate Time: 30234 ms, Free Time: 1654 ms), Average Allocate Cycles: 219867, Average Free Cycles: 8903
+
+compact two index sizes: []
+count compact all: 6
+compact all sizes: [7970, 9984, 9827, 7789, 9600, 6651]
+compact periodic sizes: [5, 9, 25, 4830, 1, 5600, 6, 6, 7, 8, 5, 314, 10, 8, 293, 9, 1, 1, 10, 906, 5666, 2, 8, 8, 5, 9, 7, 2, 4900, 120, 5, 4402, 4, 6, 1, 9, 8, 51, 5939, 6, 7, 614, 19, 4, 5, 56, 646]
+up 5000 sizes: 44454
+
+62) Wed Oct 23 19:07:24 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 1886 ms (Allocate Time: 245 ms, Free Time: 1585 ms), Average Allocate Cycles: 225348, Average Free Cycles: 8982
+2. Sort by Size - Average Time: 2415 ms (Allocate Time: 731 ms, Free Time: 1612 ms), Average Allocate Cycles: 222610, Average Free Cycles: 8838
+3. Sort by Address - Average Time: 6495 ms (Allocate Time: 4629 ms, Free Time: 1654 ms), Average Allocate Cycles: 220510, Average Free Cycles: 8868
+4. Compact Periodically - Average Time: 11741 ms (Allocate Time: 9938 ms, Free Time: 1609 ms), Average Allocate Cycles: 219849, Average Free Cycles: 8818
+5. Sort by Two Indexes - Average Time: 29269 ms (Allocate Time: 27559 ms, Free Time: 1650 ms), Average Allocate Cycles: 223529, Average Free Cycles: 8806
+
+compact two index sizes: [8387]
+count compact all: 5
+compact all sizes: [9870, 9949, 9239, 9813, 9702]
+compact periodic sizes: [247, 3, 3, 786, 8, 3, 5, 82, 7, 6, 8, 9, 4, 3, 5, 2, 9, 7, 7, 5, 956, 89, 857, 4, 18, 43, 4329, 1, 1, 4, 7, 4571, 7, 71, 2, 3, 83, 7, 536, 9, 47, 3176, 3, 98, 98, 14, 1, 3, 9078, 31, 2, 6, 5, 10, 8636, 6240, 313, 36, 3, 7, 9, 94, 4, 7, 4, 8, 679, 10, 10, 3727, 85, 7, 2, 123, 5, 960, 2, 6121, 8, 222, 7, 5, 1, 1, 1, 5, 7, 2763, 9, 2, 4, 3, 2, 10, 52, 1, 7, 20, 32, 945, 9, 7, 8, 1, 97, 51, 3, 3, 7236, 5559]
+up 5000 sizes: 44440
+
+63) Wed Oct 23 19:13:57 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 2157 ms (Allocate Time: 330 ms, Free Time: 1765 ms), Average Allocate Cycles: 223577, Average Free Cycles: 8942
+2. Sort by Size - Average Time: 2887 ms (Allocate Time: 1197 ms, Free Time: 1609 ms), Average Allocate Cycles: 223291, Average Free Cycles: 9081
+3. Sort by Address - Average Time: 6790 ms (Allocate Time: 4764 ms, Free Time: 1804 ms), Average Allocate Cycles: 223441, Average Free Cycles: 8972
+4. Compact Periodically - Average Time: 7115 ms (Allocate Time: 5422 ms, Free Time: 1574 ms), Average Allocate Cycles: 222912, Average Free Cycles: 8919
+5. Sort by Two Indexes - Average Time: 33123 ms (Allocate Time: 31318 ms, Free Time: 1726 ms), Average Allocate Cycles: 222735, Average Free Cycles: 8900
+
+compact two index sizes: [4548]
+count compact all: 5
+compact all sizes: [9891, 9569, 6791, 9731, 9559]
+compact periodic sizes: [28, 23, 1, 81, 1, 4108, 5, 3, 224, 1, 1101, 1, 1, 9, 4, 3, 6, 7, 3, 993, 1, 5, 7, 1, 1, 17, 32, 956, 325, 6251, 9, 197, 9909, 7, 14, 1, 384, 8, 3, 75, 3, 5, 1, 4, 1660, 10, 3, 1, 10, 4, 9, 6, 6, 14, 1, 3181, 5, 6, 3, 7, 9120]
+up 5000 sizes: 44792
+
+64) Wed Oct 23 19:16:22 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 2056 ms (Allocate Time: 246 ms, Free Time: 1745 ms), Average Allocate Cycles: 226800, Average Free Cycles: 9358
+2. Sort by Size - Average Time: 3144 ms (Allocate Time: 1463 ms, Free Time: 1598 ms), Average Allocate Cycles: 222201, Average Free Cycles: 8973
+3. Sort by Address - Average Time: 6834 ms (Allocate Time: 4846 ms, Free Time: 1793 ms), Average Allocate Cycles: 223948, Average Free Cycles: 9070
+4. Compact Periodically - Average Time: 8197 ms (Allocate Time: 6360 ms, Free Time: 1684 ms), Average Allocate Cycles: 222967, Average Free Cycles: 8956
+5. Sort by Two Indexes - Average Time: 34278 ms (Allocate Time: 32547 ms, Free Time: 1678 ms), Average Allocate Cycles: 221814, Average Free Cycles: 8861
+
+compact two index sizes: [8779]
+count compact all: 5
+compact all sizes: [9193, 9955, 9773, 7709, 9863]
+compact periodic sizes: [3, 5, 793, 7, 7, 4, 7, 4, 6, 4, 8, 2, 9954, 594, 10, 3943, 6, 5, 2436, 45, 54, 92, 3, 480, 5, 13, 1, 4, 6660, 5, 9, 4, 17, 888, 6, 7, 5613, 37, 2374, 690, 8, 3, 79, 4, 67, 56, 9, 7, 9, 73, 591, 6, 18, 2, 28, 5, 95, 37, 7163, 10, 4, 27, 10, 176, 3, 673, 87, 4, 4, 48, 56, 5, 3, 6146, 1, 10]
+up 5000 sizes: 44914
+
+65) Wed Oct 23 19:23:57 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 2009 ms (Allocate Time: 319 ms, Free Time: 1623 ms), Average Allocate Cycles: 225386, Average Free Cycles: 8937
+2. Sort by Size - Average Time: 2285 ms (Allocate Time: 674 ms, Free Time: 1531 ms), Average Allocate Cycles: 220085, Average Free Cycles: 8596
+3. Sort by Address - Average Time: 6804 ms (Allocate Time: 4689 ms, Free Time: 1909 ms), Average Allocate Cycles: 221578, Average Free Cycles: 8761
+4. Compact Periodically - Average Time: 9938 ms (Allocate Time: 8195 ms, Free Time: 1579 ms), Average Allocate Cycles: 222506, Average Free Cycles: 8881
+5. Sort by Two Indexes - Average Time: 30691 ms (Allocate Time: 28925 ms, Free Time: 1711 ms), Average Allocate Cycles: 223133, Average Free Cycles: 8862
+
+compact two index sizes: []
+count compact all: 6
+compact all sizes: [8831, 9990, 9198, 9282, 8585, 7417]
+compact periodic sizes: [3, 3, 6, 8, 4, 841, 9, 2, 6, 1, 3, 6, 6, 6, 1, 10, 2, 8, 3217, 4, 6, 448, 8, 850, 2, 6, 6, 3, 8, 698, 1, 59, 3, 10, 8790, 6, 6, 6, 6, 2292, 3, 46, 7, 3, 26, 5, 7, 1, 910, 5, 9, 80, 93, 1, 3, 1, 40, 7, 6, 9, 3, 19, 522, 7, 9, 4150, 8, 5, 100, 8, 4, 45, 6, 26, 5, 7, 9, 1, 59, 4, 318, 776, 370, 67, 4, 1, 7, 10, 7, 2]
+up 5000 sizes: 44093
+
+66) Wed Oct 23 19:35:17 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 2090 ms (Allocate Time: 331 ms, Free Time: 1686 ms), Average Allocate Cycles: 223841, Average Free Cycles: 9003
+2. Compact Periodically - Average Time: 2636 ms (Allocate Time: 796 ms, Free Time: 1731 ms), Average Allocate Cycles: 227996, Average Free Cycles: 9406
+3. Sort by Size - Average Time: 2754 ms (Allocate Time: 914 ms, Free Time: 1752 ms), Average Allocate Cycles: 221477, Average Free Cycles: 8814
+4. Sort by Address - Average Time: 6619 ms (Allocate Time: 4652 ms, Free Time: 1773 ms), Average Allocate Cycles: 220448, Average Free Cycles: 8851
+5. Sort by Two Indexes - Average Time: 32090 ms (Allocate Time: 30375 ms, Free Time: 1660 ms), Average Allocate Cycles: 222756, Average Free Cycles: 8959
+
+compact two index sizes: []
+count compact all: 2
+compact all sizes: [8327, 9789]
+compact periodic sizes: [9997, 9988, 9246, 9129]
+up 5000 sizes: 44594
+
+67) Wed Oct 23 19:49:39 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 60):
+
+1. Defrag Periodically - Average Time: 2058 ms (Allocate Time: 331 ms, Free Time: 1659 ms), Average Allocate Cycles: 223052, Average Free Cycles: 9122
+2. Compact Periodically - Average Time: 2701 ms (Allocate Time: 875 ms, Free Time: 1727 ms), Average Allocate Cycles: 224657, Average Free Cycles: 9146
+3. Sort by Size - Average Time: 3249 ms (Allocate Time: 1531 ms, Free Time: 1629 ms), Average Allocate Cycles: 221274, Average Free Cycles: 8884
+4. Sort by Address - Average Time: 6808 ms (Allocate Time: 4906 ms, Free Time: 1717 ms), Average Allocate Cycles: 220745, Average Free Cycles: 8802
+5. Sort by Two Indexes - Average Time: 30060 ms (Allocate Time: 28365 ms, Free Time: 1640 ms), Average Allocate Cycles: 219876, Average Free Cycles: 8607
+
+compact two index sizes: []
+count compact all: 2
+compact all sizes: [9885, 9701]
+compact periodic sizes: [9988, 9996, 8769, 9747]
+count defrag: 3972
+up 5000 sizes: 44638
+
+68) Thu Oct 24 18:38:43 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Compact frequency coeff: 2500, Defrag frequency coeff: 1):
+
+1. Defrag Periodically - Average Time: 1882 ms (Allocate Time: 195 ms, Free Time: 1642 ms), Average Allocate Cycles: 224483, Average Free Cycles: 9030
+2. Compact Periodically - Average Time: 2613 ms (Allocate Time: 966 ms, Free Time: 1541 ms), Average Allocate Cycles: 221076, Average Free Cycles: 8723
+3. Sort by Size - Average Time: 2693 ms (Allocate Time: 970 ms, Free Time: 1660 ms), Average Allocate Cycles: 226942, Average Free Cycles: 9184
+4. Sort by Address - Average Time: 7174 ms (Allocate Time: 5038 ms, Free Time: 1910 ms), Average Allocate Cycles: 223240, Average Free Cycles: 8936
+5. Sort by Two Indexes - Average Time: 28910 ms (Allocate Time: 27047 ms, Free Time: 1809 ms), Average Allocate Cycles: 221823, Average Free Cycles: 8725
+
+compact two index sizes: []
+count compact all: 1
+compact all sizes: [6595]
+compact periodic sizes: [9977, 9844, 7778, 8022]
+count defrag: 224456
+up 5000 sizes: 44609
+
+69) Thu Oct 24 19:49:36 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 1):
+
+1. Defrag Periodically - Average Time: 1978 ms (Allocate Time: 201 ms, Free Time: 1728 ms), Average Allocate Cycles: 221950, Average Free Cycles: 8855
+2. Compact Periodically - Average Time: 2147 ms (Allocate Time: 554 ms, Free Time: 1526 ms), Average Allocate Cycles: 220982, Average Free Cycles: 8890
+3. Sort by Size - Average Time: 2159 ms (Allocate Time: 583 ms, Free Time: 1524 ms), Average Allocate Cycles: 219857, Average Free Cycles: 8577
+4. Sort by Address - Average Time: 7066 ms (Allocate Time: 4949 ms, Free Time: 1919 ms), Average Allocate Cycles: 221243, Average Free Cycles: 8874
+5. Sort by Two Indexes - Average Time: 32518 ms (Allocate Time: 30682 ms, Free Time: 1771 ms), Average Allocate Cycles: 222136, Average Free Cycles: 8851
+
+compact two index sizes: []
+count compact all: 1
+compact all sizes: [3192]
+compact periodic sizes: [9998, 9797, 9600, 9344]
+count defrag: 221950
+up 5000 sizes: 44411
+
+70) Thu Oct 24 19:56:06 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 1):
+
+1. Defrag Periodically - Average Time: 2027 ms (Allocate Time: 164 ms, Free Time: 1773 ms), Average Allocate Cycles: 223447, Average Free Cycles: 8739
+2. Sort by Size - Average Time: 2407 ms (Allocate Time: 689 ms, Free Time: 1641 ms), Average Allocate Cycles: 223379, Average Free Cycles: 9008
+3. Compact Periodically - Average Time: 2509 ms (Allocate Time: 807 ms, Free Time: 1604 ms), Average Allocate Cycles: 222070, Average Free Cycles: 8763
+4. Sort by Address - Average Time: 6793 ms (Allocate Time: 4672 ms, Free Time: 1932 ms), Average Allocate Cycles: 223852, Average Free Cycles: 9051
+5. Sort by Two Indexes - Average Time: 34020 ms (Allocate Time: 32284 ms, Free Time: 1676 ms), Average Allocate Cycles: 224886, Average Free Cycles: 8921
+
+compact two index sizes: []
+count compact all: 0
+compact all sizes: []
+compact periodic sizes: [10000, 9880, 8954, 9832, 9814]
+count defrag: 8740
+up 5000 sizes: 44518
+
+71) Thu Oct 24 20:15:33 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 10):
+
+1. Defrag Periodically - Average Time: 1846 ms (Allocate Time: 253 ms, Free Time: 1541 ms), Average Allocate Cycles: 223099, Average Free Cycles: 8866
+2. Compact Periodically - Average Time: 2261 ms (Allocate Time: 660 ms, Free Time: 1521 ms), Average Allocate Cycles: 221504, Average Free Cycles: 8693
+3. Sort by Size - Average Time: 2569 ms (Allocate Time: 821 ms, Free Time: 1630 ms), Average Allocate Cycles: 223438, Average Free Cycles: 8927
+4. Sort by Address - Average Time: 7173 ms (Allocate Time: 5070 ms, Free Time: 1890 ms), Average Allocate Cycles: 224527, Average Free Cycles: 9157
+5. Sort by Two Indexes - Average Time: 33462 ms (Allocate Time: 31672 ms, Free Time: 1708 ms), Average Allocate Cycles: 221338, Average Free Cycles: 8883
+
+compact two index sizes: [9818]
+count compact all: 2
+compact all sizes: [9893, 5156]
+compact periodic sizes: [10000, 9789, 9487, 8472, 9948]
+count defrag: 8867
+count defrag with coeff: 886
+
+72) Thu Oct 24 20:33:35 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 100):
+
+1. Defrag Periodically - Average Time: 1997 ms (Allocate Time: 256 ms, Free Time: 1692 ms), Average Allocate Cycles: 222372, Average Free Cycles: 8761
+2. Compact Periodically - Average Time: 2395 ms (Allocate Time: 555 ms, Free Time: 1774 ms), Average Allocate Cycles: 225590, Average Free Cycles: 9201
+3. Sort by Size - Average Time: 3180 ms (Allocate Time: 1411 ms, Free Time: 1687 ms), Average Allocate Cycles: 223645, Average Free Cycles: 8938
+4. Sort by Address - Average Time: 6909 ms (Allocate Time: 4874 ms, Free Time: 1808 ms), Average Allocate Cycles: 221055, Average Free Cycles: 8900
+5. Sort by Two Indexes - Average Time: 33166 ms (Allocate Time: 31383 ms, Free Time: 1713 ms), Average Allocate Cycles: 223050, Average Free Cycles: 8984
+
+compact two index sizes: [7674]
+count compact all: 2
+compact all sizes: [9682, 9391]
+compact periodic sizes: [10000, 9911, 9553, 9527]
+count defrag: 8762
+count defrag with coeff: 87
+
+73) Thu Oct 24 20:44:23 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 100):
+
+1. Defrag Periodically - Average Time: 1916 ms (Allocate Time: 277 ms, Free Time: 1567 ms), Average Allocate Cycles: 220032, Average Free Cycles: 8858
+2. Compact Periodically - Average Time: 2643 ms (Allocate Time: 1026 ms, Free Time: 1539 ms), Average Allocate Cycles: 223029, Average Free Cycles: 8788
+3. Sort by Size - Average Time: 2707 ms (Allocate Time: 1020 ms, Free Time: 1595 ms), Average Allocate Cycles: 222236, Average Free Cycles: 8842
+4. Sort by Address - Average Time: 7025 ms (Allocate Time: 5094 ms, Free Time: 1724 ms), Average Allocate Cycles: 222489, Average Free Cycles: 8795
+5. Sort by Two Indexes - Average Time: 31063 ms (Allocate Time: 29338 ms, Free Time: 1652 ms), Average Allocate Cycles: 223329, Average Free Cycles: 8862
+
+compact two index sizes: [7620]
+count compact all: 1
+compact all sizes: [9272]
+compact periodic sizes: [9905, 9899, 9548, 9066]
+count defrag: 8859
+count sort in two index: 223328
+
+74) Thu Oct 24 20:50:55 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 100):
+
+1. Defrag Periodically - Average Time: 1905 ms (Allocate Time: 255 ms, Free Time: 1585 ms), Average Allocate Cycles: 224203, Average Free Cycles: 8972
+2. Compact Periodically - Average Time: 2507 ms (Allocate Time: 829 ms, Free Time: 1608 ms), Average Allocate Cycles: 222041, Average Free Cycles: 8936
+3. Sort by Size - Average Time: 2951 ms (Allocate Time: 1211 ms, Free Time: 1677 ms), Average Allocate Cycles: 223077, Average Free Cycles: 9033
+4. Sort by Address - Average Time: 6800 ms (Allocate Time: 4878 ms, Free Time: 1720 ms), Average Allocate Cycles: 222066, Average Free Cycles: 8880
+5. Sort by Two Indexes - Average Time: 7305 ms (Allocate Time: 5604 ms, Free Time: 1648 ms), Average Allocate Cycles: 222051, Average Free Cycles: 8865
+
+compact two index sizes: [7743]
+count compact all: 2
+compact all sizes: [8486, 9927]
+compact periodic sizes: [9961, 9986, 9831, 7410]
+count defrag: 8973
+count sort in two index: 8866
+
+75) Thu Oct 24 20:59:19 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 100):
+
+1. Defrag Periodically - Average Time: 2181 ms (Allocate Time: 358 ms, Free Time: 1753 ms), Average Allocate Cycles: 222842, Average Free Cycles: 8963
+2. Compact Periodically - Average Time: 2230 ms (Allocate Time: 605 ms, Free Time: 1527 ms), Average Allocate Cycles: 219108, Average Free Cycles: 8617
+3. Sort by Size - Average Time: 2236 ms (Allocate Time: 512 ms, Free Time: 1652 ms), Average Allocate Cycles: 222788, Average Free Cycles: 8847
+4. Sort by Address - Average Time: 4606 ms (Allocate Time: 2402 ms, Free Time: 1985 ms), Average Allocate Cycles: 224161, Average Free Cycles: 8831
+5. Sort by Two Indexes - Average Time: 7612 ms (Allocate Time: 5841 ms, Free Time: 1710 ms), Average Allocate Cycles: 223437, Average Free Cycles: 9052
+
+compact two index sizes: [9602]
+count compact all: 3
+compact all sizes: [5158, 7782, 9359]
+compact periodic sizes: [9995, 9740, 9754]
+count defrag: 8964
+count sort in two index: 9052
+
+76) Thu Oct 24 21:01:35 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 10):
+
+1. Defrag Periodically - Average Time: 2053 ms (Allocate Time: 266 ms, Free Time: 1725 ms), Average Allocate Cycles: 223792, Average Free Cycles: 8977
+2. Sort by Size - Average Time: 2111 ms (Allocate Time: 432 ms, Free Time: 1593 ms), Average Allocate Cycles: 222358, Average Free Cycles: 8691
+3. Compact Periodically - Average Time: 2327 ms (Allocate Time: 668 ms, Free Time: 1564 ms), Average Allocate Cycles: 221609, Average Free Cycles: 8926
+4. Sort by Address - Average Time: 4594 ms (Allocate Time: 2357 ms, Free Time: 2019 ms), Average Allocate Cycles: 222535, Average Free Cycles: 9028
+5. Sort by Two Indexes - Average Time: 6443 ms (Allocate Time: 4678 ms, Free Time: 1693 ms), Average Allocate Cycles: 223099, Average Free Cycles: 8684
+
+compact two index sizes: [8190]
+count compact all: 1
+compact all sizes: [9808]
+compact periodic sizes: [9999, 9890, 9994, 9498, 9432]
+count defrag: 8978
+count sort in two index: 8684
+
+77) Thu Oct 24 21:12:52 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 500428800, Heap min size: 50000, Defrag frequency coeff: 10):
+
+1. Defrag Periodically - Average Time: 82791 ms (Allocate Time: 1385 ms, Free Time: 81067 ms), Average Allocate Cycles: 1111175, Average Free Cycles: 44688
+2. Compact Periodically - Average Time: 85853 ms (Allocate Time: 3933 ms, Free Time: 81470 ms), Average Allocate Cycles: 1106413, Average Free Cycles: 44392
+3. Sort by Size - Average Time: 99026 ms (Allocate Time: 14088 ms, Free Time: 84548 ms), Average Allocate Cycles: 1107776, Average Free Cycles: 44345
+4. Sort by Address - Average Time: 149434 ms (Allocate Time: 60198 ms, Free Time: 88375 ms), Average Allocate Cycles: 1112353, Average Free Cycles: 44058
+5. Sort by Two Indexes - Average Time: 186813 ms (Allocate Time: 103642 ms, Free Time: 82786 ms), Average Allocate Cycles: 1115015, Average Free Cycles: 44900
+
+compact two index sizes: []
+count compact all: 0
+compact all sizes: []
+compact periodic sizes: [9999, 9983, 9933, 9954, 9689]
+count defrag: 44689
+count sort in two index: 44900
+
+78) Sat Oct 26 18:10:08 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000, Defrag frequency coeff: 10):
+
+1. Defrag Periodically - Average Time: 1926 ms (Allocate Time: 170 ms, Free Time: 1663 ms), Average Allocate Cycles: 222797, Average Free Cycles: 8961
+2. Compact Periodically - Average Time: 2319 ms (Allocate Time: 669 ms, Free Time: 1562 ms), Average Allocate Cycles: 220134, Average Free Cycles: 8792
+3. Sort by Size - Average Time: 2521 ms (Allocate Time: 729 ms, Free Time: 1685 ms), Average Allocate Cycles: 222283, Average Free Cycles: 8846
+4. Sort by Address - Average Time: 4811 ms (Allocate Time: 2535 ms, Free Time: 2066 ms), Average Allocate Cycles: 222263, Average Free Cycles: 8948
+5. Sort by Two Indexes - Average Time: 7048 ms (Allocate Time: 5238 ms, Free Time: 1758 ms), Average Allocate Cycles: 222037, Average Free Cycles: 8809
+
+compact two index sizes: []
+count compact all: 0
+compact all sizes: []
+compact periodic sizes: [9990, 9951, 8797]
+count defrag: 896
+count sort in two index: 8809
+
+79) Sat Oct 26 18:28:21 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000, Defrag frequency coeff: 30):
+
+1. Defrag Periodically - Average Time: 1798 ms (Allocate Time: 155 ms, Free Time: 1559 ms), Average Allocate Cycles: 222242, Average Free Cycles: 8864
+2. Compact Periodically - Average Time: 2432 ms (Allocate Time: 765 ms, Free Time: 1575 ms), Average Allocate Cycles: 224101, Average Free Cycles: 9022
+3. Sort by Size - Average Time: 2585 ms (Allocate Time: 825 ms, Free Time: 1686 ms), Average Allocate Cycles: 222759, Average Free Cycles: 8988
+4. Sort by Address - Average Time: 4559 ms (Allocate Time: 2397 ms, Free Time: 1934 ms), Average Allocate Cycles: 219362, Average Free Cycles: 8723
+5. Sort by Two Indexes - Average Time: 6994 ms (Allocate Time: 5340 ms, Free Time: 1602 ms), Average Allocate Cycles: 224887, Average Free Cycles: 8925
+
+compact two index sizes: []
+count compact all: 0
+compact all sizes: []
+compact periodic sizes: [10000, 9920, 9974]
+count defrag: 295
+count sort in two index: 8924
+
+80) Mon Oct 28 22:52:33 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 50000, Defrag frequency coeff: 30):
+
+1. Defrag Periodically - Average Time: 1823 ms (Allocate Time: 159 ms, Free Time: 1613 ms), Average Allocate Cycles: 223846, Average Free Cycles: 8964
+2. Compact Periodically - Average Time: 2282 ms (Allocate Time: 534 ms, Free Time: 1665 ms), Average Allocate Cycles: 222847, Average Free Cycles: 8919
+3. Sort by Size - Average Time: 2438 ms (Allocate Time: 723 ms, Free Time: 1652 ms), Average Allocate Cycles: 220314, Average Free Cycles: 8745
+4. Sort by Address - Average Time: 4592 ms (Allocate Time: 2520 ms, Free Time: 1851 ms), Average Allocate Cycles: 222957, Average Free Cycles: 8954
+5. Sort by Two Indexes - Average Time: 6874 ms (Allocate Time: 5222 ms, Free Time: 1606 ms), Average Allocate Cycles: 219994, Average Free Cycles: 8782
+
+compact two index sizes: []
+count compact all: 0
+compact all sizes: []
+compact periodic sizes: [9995, 9982, 9888]
+count defrag: 298
+count sort in two index: 8782
+
+81) Mon Oct 28 22:55:05 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1..2 >>SORT_BY_SIZE..1..2 >>SORT_BY_TWO_INDEXES..1..2 >>PERIODIC_COMPACT..1..2 >>PERIODIC_DEFRAG..1..2
+
+Performance Leaderboard 
+(Strategy repeat: 2, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30):
+
+1. Defrag Periodically - Average Time: 1831 ms (Allocate Time: 247 ms, Free Time: 1535 ms), Average Allocate Cycles: 221444, Average Free Cycles: 8904
+2. Sort by Size - Average Time: 2388 ms (Allocate Time: 706 ms, Free Time: 1610 ms), Average Allocate Cycles: 222980, Average Free Cycles: 9030
+3. Compact Periodically - Average Time: 2493 ms (Allocate Time: 696 ms, Free Time: 1720 ms), Average Allocate Cycles: 223463, Average Free Cycles: 8920
+4. Sort by Address - Average Time: 4660 ms (Allocate Time: 2720 ms, Free Time: 1808 ms), Average Allocate Cycles: 222435, Average Free Cycles: 8897
+5. Sort by Two Indexes - Average Time: 6805 ms (Allocate Time: 5133 ms, Free Time: 1604 ms), Average Allocate Cycles: 221434, Average Free Cycles: 8815
+
+compact two index sizes: [8610, 9181]
+count compact all: 2
+compact all sizes: [8618, 8591]
+compact periodic sizes: [9996, 9981, 9345, 6400, 9135, 9999, 9799, 9502, 8550]
+count defrag: 593
+count sort in two index: 17629
+
+82) Tue Oct 29 16:25:11 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30):
+
+1. Defrag Periodically - Average Time: 2796 ms (Allocate Time: 279 ms, Free Time: 2450 ms), Average Allocate Cycles: 247651, Average Free Cycles: 9881
+2. Compact Periodically - Average Time: 3231 ms (Allocate Time: 749 ms, Free Time: 2404 ms), Average Allocate Cycles: 247812, Average Free Cycles: 9702
+3. Sort by Address - Average Time: 10190 ms (Allocate Time: 6985 ms, Free Time: 2956 ms), Average Allocate Cycles: 247034, Average Free Cycles: 9902
+4. Sort by Size - Average Time: 10368 ms (Allocate Time: 7737 ms, Free Time: 2524 ms), Average Allocate Cycles: 245916, Average Free Cycles: 9847
+5. Sort by Two Indexes - Average Time: 22746 ms (Allocate Time: 20001 ms, Free Time: 2676 ms), Average Allocate Cycles: 249959, Average Free Cycles: 10057
+
+compact two index sizes: [7907]
+count compact all: 3
+compact all sizes: [6741, 9420, 9977]
+compact periodic sizes: [10000, 9974, 9879, 8115, 8338]
+count defrag: 329
+count sort in two index: 10057
+
+83) Tue Oct 29 16:48:23 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 5):
+
+1. Defrag Periodically - Average Time: 1848 ms (Allocate Time: 227 ms, Free Time: 1559 ms), Average Allocate Cycles: 221035, Average Free Cycles: 8733
+2. Sort by Size - Average Time: 2686 ms (Allocate Time: 797 ms, Free Time: 1813 ms), Average Allocate Cycles: 222909, Average Free Cycles: 8879
+3. Compact Periodically - Average Time: 3376 ms (Allocate Time: 1504 ms, Free Time: 1798 ms), Average Allocate Cycles: 222564, Average Free Cycles: 8820
+4. Sort by Address - Average Time: 4397 ms (Allocate Time: 2248 ms, Free Time: 1975 ms), Average Allocate Cycles: 220401, Average Free Cycles: 8744
+5. Sort by Two Indexes - Average Time: 7451 ms (Allocate Time: 5730 ms, Free Time: 1651 ms), Average Allocate Cycles: 221980, Average Free Cycles: 8857
+
+compact two index sizes: [7787]
+count compact all: 1
+compact all sizes: [9735]
+compact periodic sizes: [9996, 9974, 9907, 4480]
+count defrag: 291
+count sort in two index: 8857
+
+84) Tue Oct 29 16:50:46 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 4):
+
+1. Defrag Periodically - Average Time: 1649 ms (Allocate Time: 322 ms, Free Time: 1240 ms), Average Allocate Cycles: 207931, Average Free Cycles: 8290
+2. Sort by Size - Average Time: 1743 ms (Allocate Time: 227 ms, Free Time: 1451 ms), Average Allocate Cycles: 216514, Average Free Cycles: 8798
+3. Compact Periodically - Average Time: 1973 ms (Allocate Time: 651 ms, Free Time: 1247 ms), Average Allocate Cycles: 211899, Average Free Cycles: 8427
+4. Sort by Address - Average Time: 2682 ms (Allocate Time: 1011 ms, Free Time: 1491 ms), Average Allocate Cycles: 210499, Average Free Cycles: 8360
+5. Sort by Two Indexes - Average Time: 3968 ms (Allocate Time: 2566 ms, Free Time: 1358 ms), Average Allocate Cycles: 209808, Average Free Cycles: 8420
+
+compact two index sizes: []
+count compact all: 2
+compact all sizes: [8793, 9579]
+compact periodic sizes: [9993, 9963, 8946]
+count defrag: 276
+count sort in two index: 8420
+
+85) Tue Oct 29 16:58:50 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 4):
+
+1. Defrag Periodically - Average Time: 1511 ms (Allocate Time: 132 ms, Free Time: 1316 ms), Average Allocate Cycles: 211102, Average Free Cycles: 8403
+2. Sort by Size - Average Time: 1603 ms (Allocate Time: 231 ms, Free Time: 1294 ms), Average Allocate Cycles: 210456, Average Free Cycles: 8255
+3. Compact Periodically - Average Time: 2204 ms (Allocate Time: 736 ms, Free Time: 1385 ms), Average Allocate Cycles: 213636, Average Free Cycles: 8596
+4. Sort by Address - Average Time: 2799 ms (Allocate Time: 1124 ms, Free Time: 1493 ms), Average Allocate Cycles: 213269, Average Free Cycles: 8529
+5. Sort by Two Indexes - Average Time: 3849 ms (Allocate Time: 2389 ms, Free Time: 1414 ms), Average Allocate Cycles: 212261, Average Free Cycles: 8416
+
+compact two index sizes: []
+count compact all: 0
+compact all sizes: []
+compact periodic sizes: [9992, 9974, 7791]
+count defrag: 280
+count all free iterations: 33612
+
+86) Tue Oct 29 17:10:22 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 4):
+
+1. Defrag Periodically - Average Time: 1460 ms (Allocate Time: 223 ms, Free Time: 1176 ms), Average Allocate Cycles: 210162, Average Free Cycles: 8418,Average Free Iterations: 283450896
+2. Sort by Size - Average Time: 1739 ms (Allocate Time: 372 ms, Free Time: 1289 ms), Average Allocate Cycles: 209757, Average Free Cycles: 8423,Average Free Iterations: 283619256
+3. Compact Periodically - Average Time: 2137 ms (Allocate Time: 817 ms, Free Time: 1253 ms), Average Allocate Cycles: 212642, Average Free Cycles: 8534,Average Free Iterations: 287356848
+4. Sort by Address - Average Time: 3136 ms (Allocate Time: 1309 ms, Free Time: 1645 ms), Average Allocate Cycles: 214415, Average Free Cycles: 8692,Average Free Iterations: 292677024
+5. Sort by Two Indexes - Average Time: 3775 ms (Allocate Time: 2399 ms, Free Time: 1333 ms), Average Allocate Cycles: 212189, Average Free Cycles: 8426,Average Free Iterations: 283720272
+
+compact two index sizes: []
+count compact all: 2
+compact all sizes: [3910, 9693]
+compact periodic sizes: [9990, 9970, 9956, 9972]
+count defrag: 280
+
+87) Tue Oct 29 17:12:54 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 4):
+
+1. Defrag Periodically - Average Time: 1471 ms (Allocate Time: 219 ms, Free Time: 1208 ms), Average Allocate Cycles: 210834, Average Free Cycles: 8562, Average Free Iterations: 34248
+2. Sort by Size - Average Time: 1660 ms (Allocate Time: 247 ms, Free Time: 1344 ms), Average Allocate Cycles: 212042, Average Free Cycles: 8346, Average Free Iterations: 33384
+3. Compact Periodically - Average Time: 1956 ms (Allocate Time: 531 ms, Free Time: 1367 ms), Average Allocate Cycles: 213016, Average Free Cycles: 8652, Average Free Iterations: 34608
+4. Sort by Address - Average Time: 2876 ms (Allocate Time: 1181 ms, Free Time: 1505 ms), Average Allocate Cycles: 209442, Average Free Cycles: 8325, Average Free Iterations: 33300
+5. Sort by Two Indexes - Average Time: 3774 ms (Allocate Time: 2367 ms, Free Time: 1362 ms), Average Allocate Cycles: 210137, Average Free Cycles: 8343, Average Free Iterations: 33372
+
+compact two index sizes: []
+count compact all: 2
+compact all sizes: [9550, 5260]
+compact periodic sizes: [9998, 9863, 9708]
+count defrag: 285
+
+88) Tue Oct 29 17:13:53 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 5):
+
+1. Defrag Periodically - Average Time: 2039 ms (Allocate Time: 230 ms, Free Time: 1741 ms), Average Allocate Cycles: 223782, Average Free Cycles: 9035, Average Free Iterations: 45175
+2. Sort by Size - Average Time: 2250 ms (Allocate Time: 579 ms, Free Time: 1595 ms), Average Allocate Cycles: 220800, Average Free Cycles: 8908, Average Free Iterations: 44540
+3. Compact Periodically - Average Time: 2835 ms (Allocate Time: 1143 ms, Free Time: 1611 ms), Average Allocate Cycles: 223216, Average Free Cycles: 8827, Average Free Iterations: 44135
+4. Sort by Address - Average Time: 4578 ms (Allocate Time: 2378 ms, Free Time: 2003 ms), Average Allocate Cycles: 221077, Average Free Cycles: 8865, Average Free Iterations: 44325
+5. Sort by Two Indexes - Average Time: 7560 ms (Allocate Time: 5653 ms, Free Time: 1841 ms), Average Allocate Cycles: 225853, Average Free Cycles: 9042, Average Free Iterations: 45210
+
+compact two index sizes: [8649]
+count compact all: 1
+compact all sizes: [8665]
+compact periodic sizes: [9954, 9512, 9775, 9060]
+count defrag: 301
+
+89) Tue Oct 29 17:16:10 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 6):
+
+1. Defrag Periodically - Average Time: 2248 ms (Allocate Time: 264 ms, Free Time: 1936 ms), Average Allocate Cycles: 230850, Average Free Cycles: 9122, Average Free Iterations: 54732
+2. Compact Periodically - Average Time: 3107 ms (Allocate Time: 1019 ms, Free Time: 2010 ms), Average Allocate Cycles: 236725, Average Free Cycles: 9439, Average Free Iterations: 56634
+3. Sort by Size - Average Time: 6009 ms (Allocate Time: 3612 ms, Free Time: 2321 ms), Average Allocate Cycles: 233689, Average Free Cycles: 9444, Average Free Iterations: 56664
+4. Sort by Address - Average Time: 7059 ms (Allocate Time: 4542 ms, Free Time: 2301 ms), Average Allocate Cycles: 235691, Average Free Cycles: 9395, Average Free Iterations: 56370
+5. Sort by Two Indexes - Average Time: 13882 ms (Allocate Time: 11558 ms, Free Time: 2265 ms), Average Allocate Cycles: 233969, Average Free Cycles: 9402, Average Free Iterations: 56412
+
+compact two index sizes: [8165]
+count compact all: 2
+compact all sizes: [9497, 5179]
+compact periodic sizes: [9985, 9972, 9153, 9221]
+count defrag: 304
+
+90) Tue Oct 29 17:22:53 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 7):
+
+1. Defrag Periodically - Average Time: 3294 ms (Allocate Time: 364 ms, Free Time: 2866 ms), Average Allocate Cycles: 251597, Average Free Cycles: 10201, Average Free Iterations: 71407
+2. Compact Periodically - Average Time: 4806 ms (Allocate Time: 2158 ms, Free Time: 2579 ms), Average Allocate Cycles: 248595, Average Free Cycles: 9804, Average Free Iterations: 68628
+3. Sort by Size - Average Time: 9925 ms (Allocate Time: 7203 ms, Free Time: 2625 ms), Average Allocate Cycles: 245437, Average Free Cycles: 9832, Average Free Iterations: 68824
+4. Sort by Address - Average Time: 10254 ms (Allocate Time: 6994 ms, Free Time: 3054 ms), Average Allocate Cycles: 246755, Average Free Cycles: 9985, Average Free Iterations: 69895
+5. Sort by Two Indexes - Average Time: 23914 ms (Allocate Time: 21055 ms, Free Time: 2797 ms), Average Allocate Cycles: 249121, Average Free Cycles: 10033, Average Free Iterations: 70231
+
+compact two index sizes: [9533]
+count compact all: 4
+compact all sizes: [4691, 6168, 9856, 7828]
+compact periodic sizes: [9948, 9998, 9950, 9916, 8194]
+count defrag: 340
+
+91) Tue Oct 29 17:27:00 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 100428800, Heap min size: 10000, Defrag frequency coeff: 30, Number of free iterations: 8):
+
+1. Defrag Periodically - Average Time: 3357 ms (Allocate Time: 276 ms, Free Time: 3022 ms), Average Allocate Cycles: 264356, Average Free Cycles: 10747, Average Free Iterations: 85976
+2. Compact Periodically - Average Time: 4492 ms (Allocate Time: 859 ms, Free Time: 3551 ms), Average Allocate Cycles: 266292, Average Free Cycles: 10764, Average Free Iterations: 86112
+3. Sort by Size - Average Time: 13891 ms (Allocate Time: 10442 ms, Free Time: 3357 ms), Average Allocate Cycles: 264106, Average Free Cycles: 10518, Average Free Iterations: 84144
+4. Sort by Address - Average Time: 14242 ms (Allocate Time: 10758 ms, Free Time: 3238 ms), Average Allocate Cycles: 259995, Average Free Cycles: 10370, Average Free Iterations: 82960
+5. Sort by Two Indexes - Average Time: 34460 ms (Allocate Time: 31026 ms, Free Time: 3354 ms), Average Allocate Cycles: 264167, Average Free Cycles: 10622, Average Free Iterations: 84976
+
+compact two index sizes: [8070]
+count compact all: 2
+compact all sizes: [7058, 7372]
+compact periodic sizes: [10000, 9964, 9954, 9922, 8859, 7906, 6821]
+count defrag: 358
+
+92) Tue Oct 29 19:24:39 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap size: 500428800, Heap min size: 50000, Defrag frequency coeff: 60, Number of free iterations: 3):
+
+1. Defrag Periodically - Average Time: 45726 ms (Allocate Time: 1099 ms, Free Time: 44342 ms), Average Allocate Cycles: 1002975, Average Free Cycles: 40258
+2. Sort by Size - Average Time: 47386 ms (Allocate Time: 1251 ms, Free Time: 45880 ms), Average Allocate Cycles: 1006075, Average Free Cycles: 40228
+3. Sort by Two Indexes - Average Time: 47883 ms (Allocate Time: 1386 ms, Free Time: 46257 ms), Average Allocate Cycles: 1004775, Average Free Cycles: 40189
+4. Compact Periodically - Average Time: 48591 ms (Allocate Time: 3189 ms, Free Time: 45097 ms), Average Allocate Cycles: 1007935, Average Free Cycles: 40779
+5. Sort by Address - Average Time: 52942 ms (Allocate Time: 1524 ms, Free Time: 50631 ms), Average Allocate Cycles: 1008526, Average Free Cycles: 40300
+
+compact two index sizes: []
+count compact all: 1
+compact all sizes: [9385]
+compact periodic sizes: [10000, 9995, 8913]
+count defrag: 670
+
+93) Tue Oct 29 19:46:21 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap max size: 100428800, Heap min size: 10000, Defrag periodically coeff: 30, Number of iterations in free cycle: 3):
+
+1. Defrag Periodically - Average Time: 1169 ms (Allocate Time: 144 ms, Free Time: 970 ms), Average Allocate Cycles: 202943, Average Free Cycles: 8104
+2. Sort by Size - Average Time: 1273 ms (Allocate Time: 260 ms, Free Time: 940 ms), Average Allocate Cycles: 201428, Average Free Cycles: 8018
+3. Compact Periodically - Average Time: 1485 ms (Allocate Time: 455 ms, Free Time: 948 ms), Average Allocate Cycles: 202114, Average Free Cycles: 7989
+4. Sort by Address - Average Time: 1641 ms (Allocate Time: 317 ms, Free Time: 1151 ms), Average Allocate Cycles: 205446, Average Free Cycles: 8189
+5. Sort by Two Indexes - Average Time: 1664 ms (Allocate Time: 570 ms, Free Time: 1006 ms), Average Allocate Cycles: 200759, Average Free Cycles: 7930
+
+compact two index sizes: []
+count compact all: 0
+compact all sizes: []
+compact periodic sizes: [9998, 9991, 9871]
+count defrag: 270
+
