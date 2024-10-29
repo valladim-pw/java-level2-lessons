@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SimpleCalculatorTest$DiffNormalTest" time="0.006" tests="5" errors="0" skipped="0" failures="0">
+<testsuite name="SimpleCalculatorTest$DiffNormalTest" time="0.003" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2023.3.6"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.6\plugins\maven\lib\maven3\boot\plexus-classworlds-2.7.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.6\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
     <property name="java.vm.specification.version" value="15"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2023.3.6 --update-snapshots -Dmaven.repo.local=C:\Users\Вадим\.m2\repository install --non-recursive"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2023.3.6 --update-snapshots -Dmaven.repo.local=C:\Users\Вадим\.m2\repository install"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-15.0.2"/>
     <property name="user.language" value="ru"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -60,9 +60,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testWithParams[Тест0 : -1 - 0 = -1]" classname="SimpleCalculatorTest$DiffNormalTest" time="0.005"/>
+  <testcase name="testWithParams[Тест0 : -1 - 0 = -1]" classname="SimpleCalculatorTest$DiffNormalTest" time="0.003"/>
   <testcase name="testWithParams[Тест1 : 0 - -1 = 1]" classname="SimpleCalculatorTest$DiffNormalTest" time="0"/>
   <testcase name="testWithParams[Тест2 : -5 - 5 = -10]" classname="SimpleCalculatorTest$DiffNormalTest" time="0"/>
-  <testcase name="testWithParams[Тест3 : -34 - -55 = 21]" classname="SimpleCalculatorTest$DiffNormalTest" time="0.001"/>
-  <testcase name="testWithParams[Тест4 : 55 - -34 = 89]" classname="SimpleCalculatorTest$DiffNormalTest" time="0"/>
 </testsuite>
