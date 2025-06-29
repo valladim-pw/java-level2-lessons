@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+</style>
+</head>
+<body>
+
+<p>Скрипт для удобства добавления тегов картинок с очередной страницы в файл preload-images.html:
+- ставим актуальные имя папки /images_0?.?/ и префикса в имени файла картинки /0?.?. (совпадает с окончанием имени папки)
+- окрываем в браузере,
+- копируем в preload-images.html</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<div id="demo">
+  
+</div>
+
+<script>
+function myFunction() {
+	let n = 26;
+	let demo = document.getElementById("demo");
+	//let img;
+	let txt = ""; 
+	
+	for(let i = 0; i < n; i++) {
+		let img = "<img src=\"images/images_07.3/07.3." + (i + 1) + ".png\" width=\"1\" height=\"1\"/>";
+		txt += img + "\n";
+		
+		demo.innerText = txt;
+		
+	}
+  
+}
+</script>
+
+</body>
+</html>

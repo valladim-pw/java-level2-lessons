@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Java Lessons, продвинутый уровень</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Ссылки на картинки с иконкой сайта не работают в IntelliJ IDEA, раскомментировать на стороннем хостинге-->
+	
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/menu-style.css">
+	<link rel="stylesheet" href="styles/mobile-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>	
+	<style>
+	.demo {
+	  position: absolute;
+		font-size: 10px;
+		top: 0;
+	}
+	.left {
+	  left: 0;		
+	}
+	.right {
+	  right: 0;		
+	}
+	</style>
+</head>
+<body onload="setPageHeading(); controlTip(); highlightActiveLink(); addHighlightFunction();"><!---->
+
+	<div id="head" class="head">
+		
+		<div class="col-sm-1 buttons" >
+			<div id="buts-desk" class="buts-wrap">
+				<button id="switch1" class="switcher"><i class="material-icons">menu</i></button>
+				<button id="switch2" class="switcher btn-menu tip" tooltip="Меню"><i class="material-icons">chevron_left</i></button>
+				<button id="switch3" class="switcher updown"><i class="material-icons">expand_more</i></button>
+				<button id="switch4" class="switcher updown tip" tooltip="Заголовок"><i class="material-icons">expand_less</i></button>
+				<button id="but-menu-desk" style="visibility:hidden;" onclick="highlightActiveLink()" >button</button>
+				<!--arrow_back-->
+				<!--arrow_downward-->
+				<!--arrow_upward-->
+			</div>			
+			<div id="buts-mobile" class="buts-wrap mobile">				
+				<button id="switch-mob-1" class="switcher"><i class="material-icons">chevron_left</i></button>
+				<button id="switch-mob-2" class="switcher btn-menu tip" onclick="highlightActiveLink()" tooltip="Меню" ><i class="material-icons">menu</i></button>
+				<button id="switch-mob-3" class="switcher expand-more btn-tablet"><i class="material-icons">expand_more</i></button>
+				<button id="switch-mob-4" class="switcher expand-less btn-tablet tip"  tooltip="Заголовок" ><i class="material-icons">expand_less</i></button>
+				<button id="switch-mob-5" class="switcher fullscreen" onclick="closeFullscreen();"><i class="material-icons">fullscreen_exit</i></button>
+				<button id="switch-mob-6" class="switcher fullscreen tip"  tooltip="Параметры экрана" onclick="openFullscreen();"><i class="material-icons">fullscreen</i></button>
+				<!--<i class="material-icons">fullscreen_exit</i>-->
+			</div>
+		</div>
+		<div class="col-sm-9 h-wrap">
+			<div id="demo" class="demo left">Demo</div>
+			<h1><span class="h-java">Java Lessons</span><span class="h-level">&nbsp;&nbsp;*продвинутый уровень* </span></h1>
+			<div id="demo1" class="demo right">Demo1</div>
+		</div>		
+		<div class="col-sm-2 icon">
+		  <a href="https://blog.progwards.ru/" target="_blank">
+				<div class="membrane"></div>
+				<img id="icon" src="images/progwards-icon1.png">
+			</a>
+		</div>
+	</div>
+	<div id="buts-mob-back" class="buts-mobile-back"></div>
+	<div id="block-page" class="block-page">
+		<div id="menu" class="block menu">
+			<div class="menu-content">
+				<!--A, B, C, D, E, F, G H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V W, X, Y, Z-->
+				<div id="empty-panel" class="panel panel-default empty-panel panel-out">
+					<div id="panel-fix" class="panel-fixed"></div>
+					<div class="panel-body-empty">
+						<p>
+							<span class="label-wrap">
+							<span class="label">&nbsp;&nbsp;</span><span class="label">&nbsp;&nbsp;</span>							
+							</span> 
+							<span class="head-wrap">&nbsp;&nbsp;</span>
+						</p>												
+					</div>
+				</div>
+				<mark id="theme00"></mark>
+				<mark id="theme01"></mark>
+				<mark id="theme02"></mark>				
+				<mark id="theme03"></mark>
+				<mark id="theme04"></mark>
+				<mark id="theme05"></mark>
+				<mark id="theme06"></mark>
+				<mark id="theme07"></mark>
+				<mark id="theme08"></mark>
+				
+				
+				
+			</div><!--end menu-content-->
+		</div><!--end block menu-->
+		<div class="block frame">
+			<div class="frame-membrane"></div>
+			<div id="page-indexes" class="page-index">
+			  <button id="but-counter" onclick="setTimeout(getCounter, 100);" class="but-counter">c</button>
+				<button class="buts-index but-index">
+					<a id="link-index" class="anchor-index" href="" target="frame">i</a>
+				</button>	
+				<button class="buts-index but-back">					
+					<a id="link-back" class="anchor-index page-back tip invisible" href="" tooltip="Вернуться к исходной ссылке" target="frame" ><i class="material-icons">arrow_back</i><span class="icon-patch"></span><span>Back</span></a>
+					<a id="page-this" class="anchor-index page-this" href="" target="frame" ><i class="material-icons">arrow_downward</i><span>Тема</span></a>
+				</button>
+				<button id="loc-address" class="buts-index location tip">1.1 Динамические массивы</button>
+			</div>
+			<iframe id="frame" onload="loadFrame();setTimeout(linkIndexClick, 100); setTimeout(clickHighlightMenuBut, 100);" src="N-00.1 Динамические массивы.html"  name="frame" title="Iframe Example"></iframe><!--setTimeout(controlTip, 200);-->
+		</div>
+	</div><!--end block-page-->
+<script>
+
+/*
+Fetch API Вставка файлов с темами в меню-контент после тега < mark > с соответствующим названию темы id
+*/
+
+let themes = ["theme00", "theme01", "theme02","theme03", "theme04", "theme05", "theme06", "theme07", "theme08"];
+let dir = "./thems/";
+let ext = ".html";
+
+for (let t in themes) {
+  let file = dir + themes[t] + ext;
+	getContent(file);
+}
+
+async function getContent(file) {
+  let x = await fetch(file);
+  let y = await x.text();	
+	let mark = document.querySelectorAll("mark");	
+	
+	for (let i = 0; i < mark.length; i++) {
+		let id = mark[i].getAttribute("id");
+    let pos = file.search(id);		
+		if (pos != -1)
+			mark[i].insertAdjacentHTML("afterend", y);	
+	}		
+}
+
+/*
+end Fetch API
+*/
+
+let anchors = document.getElementsByClassName("anchor");
+let anchors_block = document.getElementsByClassName("anchors");
+let anchs = document.getElementsByTagName("a");
+let doc_elem = document.documentElement;
+
+let menu = document.getElementById("menu");
+let page = document.getElementById("block-page");
+let icon = document.getElementById("icon");
+let head = document.getElementById("head");
+let frame = document.getElementById("frame");	
+let buts_mobile = document.getElementById("buts-mobile");
+let buts_desk = document.getElementById("buts-desk");
+let empty_panel = document.getElementById("empty-panel");
+let panel_fixed = document.getElementById("panel-fix");
+let buts_back = document.getElementById("buts-mob-back");
+
+let menu_desk_button = document.getElementById("switch1");
+let menu_add_button = document.getElementById("switch-mob-1");
+let menu_button = document.getElementById("switch-mob-2");
+let showhead_button = document.getElementById("switch-mob-3");
+let hidehead_button = document.getElementById("switch-mob-4");
+let fullscreen_button = document.getElementById("switch-mob-6");
+let fullscreen_exit_button = document.getElementById("switch-mob-5");
+let highlight_menu_button = document.getElementById("but-menu-desk");
+let screen_full = false;
+let head_open = true;
+let inn_link = false;
+let back_link = false;
+let back_link_active;
+
+let buts_index = document.getElementById("page-indexes");
+let but_back = document.querySelector(".but-back");
+let but_counter = document.getElementById("but-counter")
+let link_back = document.getElementById("link-back");
+let page_this = document.getElementById("page-this");
+let link_index = document.getElementById("link-index");
+let loc_button = document.getElementById("loc-address");
+let elem_tip = document.getElementsByClassName("tip");
+
+let demo = document.getElementById("demo");
+let demo1 = document.getElementById("demo1");
+
+/* 
+Вспомогательные функции для упрощения преобразований классов элементов средствами Javascript
+*/
+function hasClass(el, attr) {
+  let x = el.classList.contains(attr);
+  if (x)
+		return true;
+  return false;
+}
+function addClass(el, attr) {
+  let list = el.classList;
+  list.add(attr);
+}
+function removeClass(el, attr) {
+  let list = el.classList;
+  list.remove(attr);
+}
+
+/* 
+Функция для изменения адреса текущей темы для записи в панель, фиксированную поверх фрейма
+(чтобы адрес был одинаковым с адресом на кнопке меню с темой, нажатой в данный момент) 
+*/
+
+function setPageLocation(elem, address) {
+	
+	let index1 = address.indexOf("-");
+	let index2 = address.indexOf(".html");
+
+	address = address.substring(index1, index2);
+	if (address.charAt(1) == "0")
+		index1 += 1;
+	
+	address = address.substring(index1, index2);
+	let first = address.charAt(0);
+	let first_plus = first * 1 + 1;
+	address = address.replace(first, first_plus);
+	
+	if (window.innerWidth <= 500) {			
+		if (address.length > 30) {
+			elem.setAttribute("tooltip", address);			
+			address = address.substring(0, 30);
+			address += "...";			
+		}	else
+			elem.removeAttribute("tooltip");
+	} else if (window.innerWidth <= 800 && window.innerWidth > 500) {	
+		if (address.length > 33) {
+			elem.setAttribute("tooltip", address);			
+			address = address.substring(0, 33);
+			address += "...";			
+		}	else
+			elem.removeAttribute("tooltip");		
+	} else if (window.innerWidth <= 1300 && window.innerWidth > 800) {		
+		if (address.length > 35) {
+			elem.setAttribute("tooltip", address);			
+			address = address.substring(0, 35);
+			address += "...";			
+		}	else
+			elem.removeAttribute("tooltip");		
+	}	else if (window.innerWidth > 1300) {
+		if (address.length > 40) {
+			elem.setAttribute("tooltip", address);			
+			address = address.substring(0, 40);
+			address += "...";			
+		}	else
+			elem.removeAttribute("tooltip");	
+	}				
+	elem.innerHTML = address;
+}
+
+/* 
+При переходе по ссылке в теме во фрейме на нужный раздел в другой теме, в
+в панели, фиксированной поверх фрейма (с названием темы), в которой есть кнопка
+с заглавием (Тема), эта кнопка меняется на кнопку Back со ссылкой на исходную тему.
+Функция нужна для изменения значения хэша в ссылке Back (изначально ссылка ведет на картинку
+в теме рядом с которой есть элемент с id) Мы меняем хэш в ссылке (+=100) и id исходной ссылке
+и Back ведет уже на ссылку а не на картинку(потому что от картинки до ссылки может быть 
+большой блок текста и исходная ссылка будет за пределами экрана при возврате к ней)
+*/
+
+function changeLinkHash() {
+	
+	let back_ref = link_back.getAttribute("href");
+	let count = but_counter.getAttribute("data-count");	
+	
+	if (back_ref.indexOf("#") != -1)
+		back_ref = back_ref.substring(0, back_ref.indexOf("#"));
+	
+	new_hash = "link" + count;	
+	back_ref += "#" + new_hash;
+	
+	link_back.setAttribute("href", back_ref);
+}
+
+function setBackButton() {
+	
+	if (hasClass(link_back, "invisible")) {
+		removeClass(link_back, "invisible");
+		addClass(but_back, "blue-but-back");
+		addClass(page_this, "invisible");		
+	}
+}
+
+function setThemeButton() {
+	
+	if (hasClass(page_this, "invisible")) {
+		removeClass(page_this, "invisible");
+		removeClass(but_back, "blue-but-back");
+		addClass(link_back, "invisible");		
+	}	
+}
+
+function highlightInnLinkTarget(idx1, idx2) {	
+	
+  let cols = frame.contentWindow.document.getElementsByClassName("column");
+	
+	for (let i = 0; i < cols.length; i++) {
+		let img = cols[i].querySelector("img");
+		img.removeAttribute("style");			
+		
+		if (i >= idx1 && i <= idx2)	{
+			img.style.borderTop = "15px solid #b4b4fc";	
+			img.style.borderLeft = "15px solid #7575e1";
+		}	
+  }		
+}
+
+function makeCounter() {
+  
+	let count = 1;
+
+  return function() {
+    return count++; 
+  };
+}
+
+let counter = makeCounter(); 
+
+/*
+getCounter()
+(index.html)
+<button id="but-counter" onclick=""setTimeout(getCounter, 100);" class="but-counter">...
+*/
+
+function getCounter() {
+  
+	let html = frame.contentWindow.document.documentElement;	
+	
+	if (but_counter.getAttribute("data-id") == "no") {
+		counter = makeCounter();
+		but_counter.removeAttribute("data-id");
+	}		
+  
+	but_counter.setAttribute("data-count", "" + counter());
+	let c = but_counter.getAttribute("data-count");	
+	
+	if (c == 1)	
+		but_counter.setAttribute("data-scroll-innlink", "" + html.scrollTop);
+	
+	if (c == 2)		
+		but_counter.setAttribute("data-scroll-backlink", "" + html.scrollTop);	
+}
+
+function changeScrollTopLinks() {
+	
+	let html = frame.contentWindow.document.documentElement;
+	
+	loc_button.setAttribute("data-scroll-link", html.scrollTop);
+	let s = loc_button.getAttribute("data-scroll-link");
+	
+	if (+s != 0)
+		html.scrollTop = +s - (window.innerWidth < 500 ? icon.clientHeight *= 2 : icon.clientHeight);	
+}
+
+function changeScrollTopInnLink() {
+	
+	let html = frame.contentWindow.document.documentElement;
+	let c = but_counter.getAttribute("data-count");
+	let s = but_counter.getAttribute("data-scroll-innlink");	
+	
+	if (c >= 1)		
+		html.scrollTop = +s - (window.innerWidth < 500 ? icon.clientHeight *= 2 : icon.clientHeight);			
+}
+
+function changeScrollTopBackLink() {
+	
+	let html = frame.contentWindow.document.documentElement;
+	let c = but_counter.getAttribute("data-count");
+	let s = but_counter.getAttribute("data-scroll-backlink");
+	
+	if (c >= 2)		
+		html.scrollTop = +s - (window.innerWidth < 500 ? icon.clientHeight *= 5 : icon.clientHeight *= 2);			
+}
+
+/*
+(index.html)
+linkIndexClick()
+<iframe id="frame" onload="loadFrame();setTimeout(linkIndexClick, 100);"...
+*/
+
+function linkIndexClick() {
+	
+  let index_href = link_index.getAttribute("href");
+	let back_href = link_back.getAttribute("href");	
+	
+	if (inn_link) {		
+	
+		link_index.addEventListener("click", function() {				
+			setTimeout(changeScrollTopInnLink, 200);
+			
+			let idx1 = but_counter.getAttribute("data-idx1");
+			let idx2 = but_counter.getAttribute("data-idx2");
+			idx1--;
+			idx2--;
+			highlightInnLinkTarget(idx1, idx2);
+		});			
+		
+		link_index.click();			
+		but_counter.click();			
+		
+		inn_link = false;
+		back_link_active = true;
+		
+		setBackButton();
+		
+	} else if (back_link) {		
+		if (back_href.indexOf("#") != -1) {	
+			
+			let anchor = frame.contentWindow.document.querySelector(".inner-anchor[href='" + index_href + "']");
+			let id = back_href.substring(back_href.indexOf("#") + 1);
+			anchor.setAttribute("id", id);
+			if (anchor.hasAttribute("id"))
+				addClass(anchor.parentElement, "focus");
+			
+			link_back.addEventListener("click", function() {				
+				setTimeout(changeScrollTopBackLink, 200);				
+			});
+			
+			link_back.click();
+			but_counter.click();						
+			
+		}	else {
+			buts_index.removeAttribute("style");
+			removeClass(buts_index, "new-top");
+		}	
+		back_link = false;
+		back_link_active = false;
+		setThemeButton();
+	}	
+	
+}
+
+
+/*
+loadFrame()
+(index.html)
+<iframe id="frame" onload="loadFrame();setTimeout(linkIndexClick, 100);clickHighlightMenuBut()"...
+*/
+
+function loadFrame() {
+	
+	let inner_anchors = frame.contentWindow.document.getElementsByClassName("inner-anchor");
+	let but_wrap = frame.contentWindow.document.querySelector(".but-wrap");
+	let head_anchors = document.getElementsByClassName("head-anchor");
+	let panels = document.getElementsByClassName("panel");
+	
+	for (let i = 0; i < head_anchors.length; i++) {		
+		head_anchors[i].addEventListener("click", function() {
+			
+			for (let j = 0; j < panels.length; j++) {						
+				panels[j].querySelector("P").removeAttribute("id");			
+			}
+			
+			for (let y = 0; y < head_anchors.length; y++) {						
+				head_anchors[y].removeAttribute("id");			
+			}
+			
+			let this_panel = this.parentElement.parentElement.parentElement.parentElement.previousElementSibling.querySelector("P");
+			this_panel.setAttribute("id", "panel-a");		
+			
+			this.setAttribute("id", "head-a");
+			
+			//loc_button.setAttribute("data-menu-scroll", menu.scrollTop);
+			//loc_button.setAttribute("data-menu-offset", menu.scrollTop);
+			//demo.innerHTML = "scrollTop: " + loc_button.getAttribute("data-menu-scroll") + "<br>" + 
+			//									"offsetTop: " + loc_button.getAttribute("data-menu-offset")	;
+			
+			let back_href = this.getAttribute("href");
+			link_back.setAttribute("href", back_href);
+			
+			if (hasClass(buts_index, "new-top")) {
+				buts_index.removeAttribute("style");
+				removeClass(buts_index, "new-top");
+			}
+			
+			if (back_link_active)
+				setThemeButton();
+			
+			setPageLocation(loc_button, back_href);
+			
+			let link_href = link_back.getAttribute("href");	
+			
+			//loc_button.setAttribute("data-menu-href", link_href);
+			//loc_button.setAttribute("data-menu-top", menu.scrollTop);
+		});
+	}
+	
+	for (let i = 0; i < inner_anchors.length; i++) {		
+		
+		inner_anchors[i].addEventListener("click", function(event) {
+      let e = event.target;		
+			let index_href = e.getAttribute("href");
+			let index_data = e.getAttribute("data-target-img");
+			let idx1, idx2;
+			
+			if (index_data != null && index_data.indexOf(",") != -1) {
+				idx1 = index_data.substring(0, index_data.indexOf(","));
+				idx2 = index_data.substring(index_data.indexOf(",") + 1);
+			} else
+				idx1 = idx2 = index_data;			
+			
+			but_counter.setAttribute("data-idx1", idx1);
+			but_counter.setAttribute("data-idx2", idx2);
+			
+			setTimeout(changeLinkHash, 100);			
+
+			for (let j = 0; j < anchs.length; j++) {
+				if (anchs[j].getAttribute("id") == "a")
+					anchs[j].removeAttribute("id");	
+			}
+			
+			if (hasClass(buts_index, "new-top")) {
+				buts_index.removeAttribute("style");
+				removeClass(buts_index, "new-top");
+			}
+			
+			link_index.setAttribute("href", index_href);
+			inn_link = true;
+			
+			if (!e.hasAttribute("id"))		
+        but_counter.setAttribute("data-id", "no");			
+			
+			setPageLocation(loc_button, index_href);			
+		});		
+	}
+	
+	link_back.addEventListener("click", function() {
+		
+		if (hasClass(buts_index, "new-top")) {
+			buts_index.removeAttribute("style");
+			removeClass(buts_index, "new-top");
+		}
+
+		let back_href = this.getAttribute("href");
+		back_link = true;
+		
+		setPageLocation(loc_button, back_href);		
+	});
+	
+	for (let i = 0; i < anchors.length; i++) {
+		
+		if (anchors[i].hasAttribute("id")) {
+			let a = document.getElementById("a");
+			
+			a.addEventListener("click", function() {			
+				
+				setTimeout(changeScrollTopLinks, 100);					
+			});
+			
+			a.click();			
+			
+			if (head_open)
+				setPageHeading();
+			else
+				removePageHeading();
+		}
+	}
+}
+
+/*
+highlightByHash(idx1, idx2, event)
+All themes in index.html
+Example in one of themes:
+(theme05.html)
+<a onclick="highlightByHash(2, 2, event)" class="anchor" href="N-05.1 Тестирование кода, JUnit.html#3" target="frame" >...
+*/
+
+function highlightByHash(idx1, idx2, event) {
+	let head_anchors = document.getElementsByClassName("head-anchor");
+	let panels = document.getElementsByClassName("panel");
+	
+	for (let i = 0; i < anchs.length; i++) {
+		if (anchs[i].getAttribute("id") == "a")
+			anchs[i].removeAttribute("id");	
+	}
+	
+	for (let j = 0; j < panels.length; j++) {					
+		panels[j].querySelector("P").removeAttribute("id");			
+	}
+	
+	for (let y = 0; y < head_anchors.length; y++) {					
+		head_anchors[y].removeAttribute("id");			
+	}	
+  
+	let e = event.currentTarget;
+	let back_href = "";
+	
+	let this_anchor = e.parentElement.parentElement.parentElement.previousElementSibling.querySelector(".head-anchor");
+	this_anchor.setAttribute("id", "head-a");
+	
+	let this_panel = e.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling.querySelector("P");
+	this_panel.setAttribute("id", "panel-a");
+	
+	/*if (window.innerWidth > 1200)
+		highlightActiveLink();*/
+	
+	
+	if (e.hasAttribute("href")) {
+		e.setAttribute("id", "a");
+		back_href = e.getAttribute("href"); 
+	}		
+	
+	if (e.parentElement.hasAttribute("href")) {
+		e.parentElement.setAttribute("id", "a");
+		back_href = e.parentElement.getAttribute("href");
+	}
+	
+	if (back_link_active)
+		setThemeButton();
+	
+	link_back.setAttribute("href", back_href);		
+	setPageLocation(loc_button, back_href);
+	
+	let link_href = link_back.getAttribute("href");	
+			
+	//loc_button.setAttribute("data-menu-href", link_href);
+	//loc_button.setAttribute("data-menu-top", menu.scrollTop);	
+	
+	let frame = document.getElementById("frame");
+  let cols = frame.contentWindow.document.getElementsByClassName("column");
+	
+	for (let i = 0; i < cols.length; i++) {
+		let img = cols[i].querySelector("img");
+		img.removeAttribute("style");			
+		
+		if (i >= idx1 && i <= idx2)	{
+			img.style.borderTop = "15px solid #b4b4fc";	
+			img.style.borderLeft = "15px solid #7575e1";
+		}	
+  }	
+	changeScrollTopLinks();	
+	toggleMobileMenu();	
+}
+
+/*
+removeId()
+All themes in index.html
+Example in one of themes:
+(theme05.html)
+...
+<span class="anchor-wrap"><a onclick="removeId()" class="head-anchor" href="N-05.1 Тестирование кода, JUnit.html" target="frame" >
+			Тестирование кода, JUnit</a></span>...
+*/
+
+function removeId() {	
+	
+	for (let i = 0; i < anchs.length; i++) {
+		if (anchs[i].getAttribute("id") == "a")
+			anchs[i].removeAttribute("id");	
+	}	
+	
+	toggleMobileMenu();
+}
+
+function toggleMobileMenu() {
+	
+	if (hasClass(menu, "menu-full")) {
+		removeClass(menu, "menu-full");
+		removeClass(menu_button, "invisible");		
+	}
+}
+
+/*
+toggleArrow(event)
+All themes in index.html
+Example in one of themes:
+(theme05.html)
+1.
+<div class="panel panel-default header" data-toggle="collapse" data-target="#panel6">
+	<div class="panel-body">
+		<p onclick="toggleArrow(event)">...
+2.
+<div class="collapse collapse-custom"  id="panel6">	
+	<div class="anchors">		
+		<p class="heading-wrap">
+			<span onclick="toggleArrow(event)" class="anchors-button" data-toggle="collapse" data-target="#panel61">...		
+*/
+
+function toggleArrow(event) {
+  
+	let e = event.currentTarget;
+	let arrows = e.getElementsByClassName("material-icons");
+	
+	for (let i = 0; i < arrows.length; i++) {
+		let arr = arrows[i];
+		if (hasClass(arr, "invisible"))
+			removeClass(arr, "invisible");
+		else
+			addClass(arr, "invisible");
+	}	
+}
+
+/* Function to open fullscreen mode */
+/*
+closeFullscreen(), openFullscreen()
+(index.html)
+<button id="switch-mob-5" class="switcher fullscreen"  title="" onclick="closeFullscreen();"><i class="material-icons">fullscreen_exit</i></button>
+<button id="switch-mob-6" class="switcher fullscreen"  title="" onclick="openFullscreen();"><i class="material-icons">fullscreen</i></button>
+*/
+
+function openFullscreen() {	
+	
+	addClass(fullscreen_button, "invisible");
+	screen_full = true;
+  
+	if (doc_elem.requestFullscreen)
+		doc_elem.requestFullscreen();
+	else if (doc_elem.webkitRequestFullscreen) /* Safari */
+		doc_elem.webkitRequestFullscreen();
+	else if (doc_elem.mozRequestFullscreen) /* Mozilla */
+		doc_elem.mozRequestFullscreen();
+	else if (doc_elem.msRequestFullscreen) /* IE11 */
+		doc_elem.msRequestFullscreen();
+	
+	if (head_open)
+		setPageHeading();
+	else
+		removePageHeading();
+}
+/* Close fullscreen */
+
+function closeFullscreen() {	
+	
+	removeClass(fullscreen_button, "invisible");
+	screen_full = false;
+  
+	if (document.exitFullscreen)
+		document.exitFullscreen();
+	else if (document.webkitExitFullscreen) /* Safari */
+		document.webkitExitFullscreen();
+	else if (document.mozExitFullscreen) /* Mozilla */
+		document.mozExitFullscreen();
+	else if (document.msExitFullscreen) /* IE11 */
+		document.msExitFullscreen();
+	
+	if (head_open)
+		setPageHeading();
+	else
+		removePageHeading();
+}
+
+/*
+Function for set height of block-page depending on the height of the icon-image
+*/
+/*
+setPageHeading()
+(index.html)
+<body onload="setPageHeading(); controlTip();">
+*/
+
+function setPageHeading() {
+	
+	let half_img = icon.clientHeight / 2;
+	let half_but = menu_desk_button.offsetHeight / 2;
+	let buts_top = half_img - half_but;
+	head_open = true;
+	head.style.top = 0 + "px";
+	page.style.top = 0 + "px";
+	head.style.height = icon.clientHeight + "px";	
+	
+	if (screen_full)		
+		page.style.height = (window.outerHeight - icon.clientHeight) + "px";
+	else		
+		page.style.height = (window.innerHeight - icon.clientHeight) + "px";
+	
+	if (!hasClass(empty_panel, "panel-out"))
+			addClass(empty_panel, "panel-out");	
+	
+	if (window.innerWidth < 500) {
+		buts_mobile.style.top = 1 + "px";
+		buts_back.style.height = menu_add_button.offsetHeight + "px";
+		buts_back.style.display = "none";
+	} else 	
+		buts_mobile.style.top = (icon.clientHeight / 5) + "px";
+	
+	if (window.innerWidth < 1100 && 
+			window.innerWidth >= 500 &&
+			hasClass(buts_index, "new-top"))
+		buts_index.style.top = (icon.clientHeight * 1.6) + "px";
+	
+	buts_desk.style.top = buts_top + "px";	
+	panel_fixed.style.height = menu_desk_button.offsetHeight + "px";	
+}
+
+/*Function to remove height of page heading*/
+
+function removePageHeading() {	
+	
+	head_open = false;
+	head.style.height = 0 + "px";
+	head.style.top = 0 + "px";
+	page.style.top = 0 + "px";
+	buts_mobile.style.top = 1 + "px";
+	
+	if (screen_full)
+		page.style.height = window.outerHeight + "px";		
+	else
+		page.style.height = window.innerHeight + "px";
+		
+	if (hasClass(empty_panel, "panel-out"))
+		removeClass(empty_panel, "panel-out");
+	
+	if (window.innerWidth < 500) {
+		buts_back.style.height = menu_add_button.offsetHeight + "px";
+		buts_back.style.display = "block";
+	}	else
+		buts_back.style.display = "none";
+	
+	if (window.innerWidth < 1100 && 
+			window.innerWidth >= 500 &&
+			hasClass(buts_index, "new-top"))
+		buts_index.style.top = icon.clientHeight + "px";
+	
+	buts_desk.style.top = 0 + "px";	
+}
+
+/* 
+Function to control tooltip attributes behavior
+*/
+/*
+controlTip()
+(index.html)
+<body onload="setPageHeading(); controlTip();">
+*/
+
+function controlTip(){	
+	
+	for (let i = 0; i < elem_tip.length; i++) {
+		elem_tip[i].addEventListener("mouseenter", function(event) {
+			
+			e = event.target;	
+			
+			if (e.hasAttribute("tooltip"))
+				addClass(e, "hide-tip");				
+										
+		});
+		elem_tip[i].addEventListener("mouseleave", function(event) {
+			
+			e = event.target;
+			
+			removeClass(e, "hide-tip");			
+		});
+	}
+}
+
+/*
+ - Функция установки размеров панели с заголовком и блока с контентом, рассчитываемых по высоте иконки в зафисимости от 
+изменений размеров окна (т.е. при смене ориентации мобильного устройства)	 
+*/
+
+window.addEventListener("resize", function(){
+	
+	if (head_open)
+		setPageHeading();
+	else
+		removePageHeading();	
+});
+
+/*
+clickHighlightMenuBut()
+(index.html)
+<iframe id="frame" onload="loadFrame();setTimeout(linkIndexClick, 100); clickHighlightMenuBut();"...
+*/
+
+function clickHighlightMenuBut() {
+	highlight_menu_button.click();
+}
+
+/*
+addHighlightFunction()
+(index.html)
+<body onload="setPageHeading(); controlTip(); highlightActiveLink(); addHighlightFunction();">
+*/
+
+function addHighlightFunction() {
+	let anchors = menu.getElementsByTagName("a");
+	
+	for (let i = 0; i < anchors.length; i++) {
+		
+		anchors[i].addEventListener("click", function() {		
+				
+			setTimeout(clickHighlightMenuBut, 100);				
+		});
+	}
+
+}
+
+/*
+highlightActiveLink()
+(index.html)
+1.<body onload="setPageHeading(); controlTip(); highlightActiveLink();">
+2.<div id="buts-mobile" class="buts-wrap mobile">				
+				<button id="switch-mob-1" class="switcher"><i class="material-icons">chevron_left</i></button>
+				<button id="switch-mob-2" class="switcher btn-menu tip" onclick="highlightActiveLink()" tooltip="Меню" ><i class="material-icons">menu</i></button>
+
+*/
+
+function highlightActiveLink() {
+	
+	let anchors = menu.getElementsByTagName("a");
+	let panels = menu.getElementsByClassName("panel");
+	let a_first = document.getElementById("first-panel-a");
+	let anchors_but, badge, a_badge, collapse, cust_collapse, panel, panel_but, height;
+	let panels_height = 0;
+	
+	
+	if (a_first != null) {
+		a_first.click();
+		a_first.setAttribute("id", "panel-a");
+	}	
+	
+	for (let j = 0; j < panels.length; j++) {
+		
+		let p = panels[j];
+		
+		panel_but = p.querySelector("P");
+		cust_collapse = p.nextElementSibling;
+		
+		if (!panel_but.hasAttribute("id") && hasClass(cust_collapse, "in")) {
+			panel_but.click();
+		}
+		
+		if (panel_but.hasAttribute("id"))	
+			height = panels_height;
+		
+		panels_height += p.clientHeight + 6;	
+	}	
+	
+	
+	for (let i = 0; i < anchors.length; i++) {
+		
+		let a = anchors[i];	
+		
+		//loc_button.setAttribute("data-menu-scroll", menu.scrollTop);		
+		
+		if (a.getAttribute("id") == "head-a") {
+		
+			menu.scrollTop = height;
+			demo1.innerHTML = "menu.scrollTop: "  + menu.scrollTop + "<br>" + 
+											"panels.height: "  + height;	
+		}
+			
+		if (hasClass(a, "head-anchor")) {
+			anchors_but = a.parentElement.previousElementSibling;
+			badge = anchors_but.querySelector(".b-second");
+			collapse = a.parentElement.parentElement.nextElementSibling;
+			cust_collapse = a.parentElement.parentElement.parentElement.parentElement;
+			panel = cust_collapse.previousElementSibling;
+			panel_but = panel.querySelector("P");			
+			
+			if (panel_but.hasAttribute("id")) {
+				if (a.hasAttribute("id")) {
+					
+					a.style.textDecoration = "underline";
+					a.style.color = "#131737";
+					badge.style.backgroundColor = "#131737";
+					
+					if (!hasClass(collapse, "in"))
+						anchors_but.click();
+				} else {
+					if (hasClass(collapse, "in"))
+						anchors_but.click();
+					
+					a.setAttribute("style", "");
+					badge.setAttribute("style", "");
+				}						
+			} else {
+				a.setAttribute("style", "");
+				badge.setAttribute("style", "");
+				
+				if (!a.hasAttribute("id") && hasClass(collapse, "in")) {
+					anchors_but.click();					
+				}				
+			}			
+		}	
+		if (hasClass(a, "anchor")) {
+			
+			head_a = a.parentElement.parentElement.parentElement.previousElementSibling.querySelector(".head-anchor"); 
+			a_badge = a.parentElement.previousElementSibling.querySelector(".b-second");
+			a_nums = a.querySelector(".inums");			
+			
+			if (a.hasAttribute("id")) {
+				
+				if (head_a.hasAttribute("id")) {
+					head_a.style.textDecoration = "none";
+				}
+				
+				a.style.textDecoration = "underline";
+				a.style.color = "#131737";
+				a_badge.style.backgroundColor = "#131737";
+				a_nums.style.backgroundColor = "#131737";
+			} else {
+			
+				a.setAttribute("style", "");	
+				a_badge.setAttribute("style", "");
+				a_nums.setAttribute("style", "");
+			}
+		}
+	}
+}
+
+/* 
+- Функции регулировки скрытия -появления меню и панели с заголовком в дектопном и мобильном вариантах 
+- Функции открытия меню на исходной ссылке из панели, фиксированной поверх фрейма (с названием темы)
+*/
+//function getMenuItemFromLocButton() {
+	//loc_button.setAttribute("data-menu-href", "N-00.1 Динамические массивы.html");
+//} 
+ 
+$(document).ready( function(){
+
+// Регулировка кнопками скрытия-повления меню в дектопном варианте
+	
+	$("#switch2").click( function(){
+    
+		$(this).addClass("invisible");
+    $(".menu").addClass("menu-hidden");
+    $(".frame").addClass("frame-full");	
+		
+  });
+  $("#switch1").click( function(){
+	
+    $("#switch2").removeClass("invisible");
+    $(".menu").removeClass("menu-hidden");
+    $(".frame").removeClass("frame-full");
+		
+  });
+	
+// Регулировка кнопками скрытия-повления панели с заголовком в дектопном варианте	
+	
+	$("#switch4").click( function(){
+	
+    $(this).addClass("invisible");
+		$(".buts-wrap").addClass("shift-right");		
+		removePageHeading();
+		
+  });
+  $("#switch3").click( function(){
+	
+    $("#switch4").removeClass("invisible");
+    $(".buts-wrap").removeClass("shift-right");		
+		setPageHeading();
+		
+  });
+	
+// Регулировка кнопками скрытия-повления меню в мобильном варианте
+	
+	$("#switch-mob-2").click( function(){
+	
+    $(this).addClass("invisible");
+    $(".menu").addClass("menu-full");
+    
+  });
+	$("#switch-mob-1").click( function(){
+	
+    $("#switch-mob-2").removeClass("invisible");
+    $(".menu").removeClass("menu-full");
+    
+  });
+	
+// Регулировка кнопками скрытия-повления панели с заголовком в мобильном варианте
+	
+	$("#switch-mob-4").click( function(){
+	
+    $(this).addClass("invisible");
+		$(".buts-wrap").addClass("shift-right");		
+    removePageHeading();
+		
+  });
+  $("#switch-mob-3").click( function(){
+	
+    $("#switch-mob-4").removeClass("invisible");
+    $(".buts-wrap").removeClass("shift-right");		
+    setPageHeading();
+		
+  });		
+});
+
+
+</script>
+</body>
+</html>

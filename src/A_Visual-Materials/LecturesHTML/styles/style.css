@@ -1,3 +1,8 @@
+
+/*
+******************** Styles ***********************
+*/
+
 * {
 	box-sizing: border-box;
 }
@@ -8,6 +13,12 @@ body {
 #header {
 	text-align: center;
 	padding: 20px 32px;					
+}
+img.but-run {
+	width: 40px;
+}
+.p-3 {
+	padding: 2rem 1rem 1rem 1rem !important;
 }
 .row {
 	display: flex;
@@ -72,6 +83,7 @@ button:focus:not(:focus-visible) {
 	position: static;
 	display: flex;
 	justify-content: center;
+	transition: all 0.5s ease-out;
 }
 .zoomBut {
 	display: inline-flex;			
@@ -119,14 +131,18 @@ i.material-icons.sign {
 .btn.active .divider {
 	background-color: #f1f1f1;
 }
+
 .fix {
 	position: fixed;
-	width: 100%;
-	left: 0;
-	top: 0;
-	z-index: 1;
-	background-image: linear-gradient(to right, rgba(232,232,248,0.3), rgba(232,232,248,1), rgba(232,232,248,0.3));
+	width: 100%;			
+	top: 0;	
+	z-index: 3;
+	background-image: linear-gradient(to right, rgba(232,232,248,0.3), rgba(232,232,248,1), rgba(232,232,248,0.3));		
 }
+.top-up {
+	top: -300px;
+}
+
 /*#e8e8f8
 background-image: linear-gradient(to right, rgba(232,232,248,0.2), rgba(232,232,248,1), rgba(232,232,248,0.2))
 
@@ -180,6 +196,7 @@ a.github {
 i.github-wrap i.fa {
 	font-size: 26px;
 	margin-left: 0.2em;
+	margin-right: 0.4em;
 	color: #0d6efd;
 }		
 i.github-wrap:hover i.fa {		  
@@ -215,3 +232,254 @@ code {
 	color:#330e76;
 	font-size: 1em;
 }
+a:focus-visible {	
+	outline: none !important;
+}
+.focus {	
+	border: 5px solid #4CAF50;	
+	padding-right: 8px;
+}
+.focus .fa.fa-link{	
+	margin: .1em .4em .1em .3em;
+	padding: 4px 4px 2px 3px;
+	background-color: #4CAF50;
+	color: white;
+	border-radius: 3px;
+}
+.focus:hover .fa.fa-link{		
+	background-color: #229127;
+	color: white;	
+}
+html, body {
+	transition: all 0.5s ease-out;
+}
+.img-select .badge{		
+	background-color: #4CAF50 !important;	
+}
+.img-select img{		
+	border-color: #4CAF50;	
+}
+
+/*
+Code wrap styles
+*/
+.invisible {
+	display: none !important;
+}
+pre {
+	position: absolute;
+	overflow: hidden;
+	font-size: .735em;
+}
+pre code.hljs {	
+	overflow: hidden;
+	padding: 0; 
+}
+.code-wrap {	
+	position: absolute;	
+	box-shadow: 0px 0px 0px 2px #00a2e8;	
+	overflow: auto;
+	background-color: white;
+	display: flex;
+}
+.code-null {
+	box-shadow: none;
+}
+.code-wrap.console.shell {	
+	background-color: black;	
+}
+.code-wrap img {	
+	align-self: center;
+}
+i.material-icons.but-gif {	
+	position: absolute;
+	color: white;
+	font-weight: normal;
+	font-size: 36px;
+	background-color: #2d3887;
+	cursor: pointer;
+	right: 0;
+	z-index: 2;
+	border-radius: 0 0 0 15%;
+}
+i.material-icons.but-copy {
+	top: 0;	
+	background-color: white;
+	color: #2d3887;
+	padding: 3px 0 3px 3px;
+}
+i.material-icons.but-copy.right50 {
+	right: 50%;	
+}
+i.material-icons.but-copy::before {
+	position: absolute;
+	content: "\276E  Copy";	
+	font-size: calc(100% / 2.7);
+	background: #282f6c;
+	color: white;
+	top: 100%;
+	right: 1px;
+	padding: 4px 5px 4px 4px;
+	font-family: 'Source Sans Pro', sans-serif;
+	border-radius: 4px 0px 0px 4px;
+}
+i.material-icons.but-test {		
+	color: #04AA6D;	
+}
+i.material-icons.but-test::before {	
+	content: "\276E  Run";
+	background: #04AA6D;
+	padding: 4px 5px 3px 4px;	
+}
+i.material-icons.but-test + .copy-msg {	
+	background: #04AA6D;	
+}
+span.copy-msg {
+	position: absolute;
+	z-index: 2;
+	background-color: #282f6c;
+	color: white;
+	width: 100%;
+	left: 0;
+	top: 20%;
+	text-align: center;
+	opacity: 1;
+	transition: all 0.5s ease-out;
+}
+span.msg-left {	
+	width: 50%;
+	left: 0;	
+}
+span.msg-right {	
+	width: 50%;
+	left: 50%;	
+}
+span.msg-right {	
+	width: 50%;
+	left: 50%;	
+}
+span.msg-hide {	
+	opacity: 0;	
+}
+.hljs-ln-code {
+	padding-left: 10px !important;
+}
+.hljs-ln-numbers {
+	background: #f0f0f0;
+	border-right: 1px solid #c4a898;
+	padding: 0 3px !important;
+	color: #c4a898;
+	font-size: .9em;
+}
+.column img.code-img {
+	border: none;
+}
+
+/* Console styles*/
+
+.code-wrap.console pre code.hljs {
+	color: black !important;
+}
+.code-wrap.console pre code.hljs .hljs-string {
+	color: #636363 !important;
+}
+.code-wrap.console pre code.hljs tr:nth-last-of-type(1) .hljs-ln-code {
+	color: blue !important;
+}
+.code-wrap.console pre code.hljs tr:nth-last-of-type(1) .hljs-ln-code .hljs-number {
+	color: blue !important;
+}
+/*.code-wrap.console pre code.hljs .hljs-number {
+	color: black !important;
+}*/
+.code-wrap.console .hljs-ln-numbers {
+	background: #ffffff;
+	border-right: 1px solid #ffffff;	
+	color: #ffffff;	
+}
+.code-wrap.console pre code.hljs .hljs-title,
+.code-wrap.console pre code.hljs .hljs-number,
+.code-wrap.console pre code.hljs .hljs-keyword, 
+.code-wrap.console pre code.hljs .hljs-literal, 
+.code-wrap.console pre code.hljs .hljs-name, 
+.code-wrap.console pre code.hljs .hljs-section, 
+.code-wrap.console pre code.hljs .hljs-selector-class, 
+.code-wrap.console pre code.hljs .hljs-selector-id, 
+.code-wrap.console pre code.hljs .hljs-selector-tag, 
+.code-wrap.console pre code.hljs .hljs-type {
+	font-weight: normal;
+	color: black;
+}
+
+/* Shell styles*/
+
+.code-wrap.console.shell pre code.hljs {
+	color: white !important;
+	background: black;
+}
+.code-wrap.console.shell pre code.hljs .hljs-string {
+	color: white !important;
+}
+.code-wrap.console.shell pre code.hljs tr:nth-last-of-type(1) .hljs-ln-code {
+	color: white !important;
+}
+.code-wrap.console.shell pre code.hljs tr:nth-last-of-type(1) .hljs-ln-code .hljs-number {
+	color: white !important;
+}
+/*.code-wrap.console.shell pre code.hljs .hljs-number {
+	color: black !important;
+}*/
+.code-wrap.console.shell .hljs-ln-numbers {
+	background: black;
+	border-right: 1px solid black;	
+	color: black;	
+}
+.code-wrap.console.shell pre code.hljs .hljs-number,
+.code-wrap.console.shell pre code.hljs .hljs-keyword, 
+.code-wrap.console.shell pre code.hljs .hljs-literal, 
+.code-wrap.console.shell pre code.hljs .hljs-name, 
+.code-wrap.console.shell pre code.hljs .hljs-section, 
+.code-wrap.console.shell pre code.hljs .hljs-selector-class, 
+.code-wrap.console.shell pre code.hljs .hljs-selector-id, 
+.code-wrap.console.shell pre code.hljs .hljs-selector-tag, 
+.code-wrap.console.shell pre code.hljs .hljs-type {
+	font-weight: normal;
+	color: white;
+}
+
+
+.code-wrap.author {
+	opacity: 0.07;	
+	transition: all 0.5s ease-out;
+}
+.code-wrap.author.full-visible {
+	opacity: 1;
+}
+.code-wrap.back-author{
+	background: #121631;
+	box-shadow: none;
+	cursor: pointer;	
+	transition: all 0.5s ease-out;
+}
+.code-wrap.back-author img{
+	position: absolute;
+	border-width: 3px;
+	transition: all 0.5s ease-out;
+	opacity: 1;
+}
+.code-wrap.back-author .blind-eye{	
+	opacity: 0;
+}
+.code-wrap.author img{
+	border: none;
+}
+
+
+
+
+   
+
+
+
+
+

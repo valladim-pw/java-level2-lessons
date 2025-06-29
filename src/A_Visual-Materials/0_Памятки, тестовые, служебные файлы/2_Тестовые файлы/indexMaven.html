@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06.3 Maven, часть2</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/mobile-style.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+	<style >
+	</style>
+</head>
+<body>
+<div class="container-fluid p-3">
+	<div class="head-buttons" id="header">
+		<p id="demo">DEMO</p>
+		<div class="but-wrap">
+			<div class="back-fix"></div>
+		  <div class="but100-wrap left">
+				<button class="btn" onclick="oneLeft();">100L</button>
+			</div>
+		  <div class="zoomBut">
+				<button class="btn" onclick="zoomLeft();" >50L</button>
+				<button class="btn" onclick="zoomRight();" >50R</button>
+			</div>
+			<div class="but100-wrap right">
+				<button class="btn" onclick="oneRight();">100R</button>
+			</div>
+			<div class="but50-wrap">
+				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column">
+			<span class="badge bg-primary">Рис.1&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.1.png" >
+			<p></p>
+			<p onclick="openWin1()">
+			<script>
+			function openWin1() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/f20856e86c357239e28dd337eaae6243fe8eaa90/src/Less06_BuildingMavenProject/Maven1","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/f20856e86c357239e28dd337eaae6243fe8eaa90/src/Less06_BuildingMavenProject/Maven1">
+			Файлы по теме(Maven1)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
+			<p onclick="openWin1a()">
+			<script>
+			function openWin1a() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenParentPOM","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenParentPOM">
+			Файлы по теме(Maven1 Parent)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
+			<p onclick="openWin1b()">
+			<script>
+			function openWin1b() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/ee3c464df99126cae6622a0b235e19e639293a45/src/Less06_MavenPlugin/MavenPlugin","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin">
+			Файлы по теме(MavenPlugin)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
+			<p onclick="openWin2()">
+			<script>
+			function openWin2() {
+			  window.open("https://maven.apache.org/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <a class="github" href="https://maven.apache.org/">
+			Документация Apache Maven</a>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.2&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.2.png">
+			<p>
+			* <b>Плагины</b> - это своеобразный мотор <i>Maven</i>.</br>
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.3&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.3.png">			
+			<p onclick="openWin3()">
+			<script>
+			function openWin3() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1">			
+			Maven1 (проект)</a><i class="fa fa-github"></i></i></p>
+			<p >			
+			* В командной строке запустим команду <b>mvn compiler : compile</b>, в каталоге проекта <i>Maven1</i>, который мы делали на лекции "Maven, часть1"
+			(предварительно надо очистить проект, открыв вкладку <i>Maven</i> в <i>IntelliJ IDEA</i> и в <i>Lifecycle</i> проекта <i>Maven1</i> запустив команду <b>clean</b>).</br>
+			* В данном случае мы запускаем цель <b>compile</b> плагина <b>compiler</b>.</br>
+			* В синтаксисе работы с плагинами определено, что сначала идет имя плагина, потом <b>обязательно - двоеточие</b>, далее имя цели.</br>
+			* В данном случае мы используем краткое имя плагина (выделено красным), но оно может быть полным, через <b>GAV</b> (выделено желтым).</br>
+			* При запуске компиляции мы получаем два предупреждения:<br>
+			1-е связано с неправильной кодировкой,</br>
+			2-е предупреждение говорит о том, что путь начальной загрузки класса не сочетается с версией <i>JDK</i> - 8.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.4&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.4.png">
+			<p >			
+			* Кодировку файла мы можем изменить через свойства. Сделаем это в файле <i>pom.xml</i> нашего проекта <i>Maven1</i> (выделено синим).</br>
+			* Чтобы установить правильную кодировку нужно в <i>IntelliJ IDEA</i> пройти по ссылкам:<br>
+			<code>File -> Settings -> Editor -> Code Style -> File Encodings</code> и посмотреть установленную кодировку в окне <i>Project Encoding</i>.</br>
+			* Если установлено <i>UTF-8</i>, то в свойствах ставим <b>UTF-8</b>.</br>
+			* У меня установлено <i>windows-1251</i>, и она влияет на другие проекты, поэтому я в свойствах ставлю <b>WINDOWS-1251</b>.</br>
+			</p>
+			<p onclick="openWin4()">
+			<script>
+			function openWin4() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/f8db7cd0a7d7c6d7c6a2ae3894f7ce9f8edc96fb/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/f8db7cd0a7d7c6d7c6a2ae3894f7ce9f8edc96fb/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+			* Теперь, если мы запустим компиляцию с кратким именем плагина <b>mvn compiler : compile</b> - предупреждение о кодировке исчезает, но остается предупреждение о 
+			неправильном пути начальной загрузки класса (выделено желтым).</br>
+			* Если же мы запустим компиляцию с полным именем плагина (выделено зеленым) <b>org.apache.maven.plugins:maven-compiler-plugin:3.1</b> - предупреждение исчезает.</br>
+			* Это связано с правильным конфигурированием в <i>Maven</i> <i>GAV</i> плагина, указанного в его полном имени с версией <i>JDK</i>.</br>
+			</p>
+			<p onclick="openWin5()">
+			<script>
+			function openWin5() {
+			  window.open("https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html">			
+			Apache Maven Compiler Plugin</a></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.5&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.5.png">
+			<p >			
+			* Если мы запустим любой плагин с целью <b>help</b> - мы получим все возможные цели плагина.</br>
+			* Это стандартная опция для всех плагинов.</br>
+			* Например, в данном случае запустив <b>compiler:help</b> мы узнаем, что у плагина <i>compiler</i> существует 3 цели (выделено зеленым).</br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.6&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.6.png">			
+			<p >			
+			* Все плагины находятся в центральном репозитории <i>Maven</i> (ссылка ниже).</br>
+			* По мере их использования перемещаются в локальный репозиторий (выделено красным).			
+			</p>
+			<p>
+				<i class="github-wrap"><i class="fa fa-link"></i>
+				<a  class="inner-anchor" href="N-06.2 Maven, часть1.html#30" data-target-img="30,31" target="frame"> 
+				Репозитории Maven ( Лекция 7.2 )</a></i>
+			</p>
+			<p onclick="openWin6()">
+			<script>
+			function openWin6() {
+			  window.open("https://mvnrepository.com/search?q=plugin&c=maven-plugins&p=1","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/search?q=plugin&c=maven-plugins&p=1">			
+			Maven Plugins</a></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.7&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.7.png">
+			<p>
+			* Если мы хотим, например, задать версию плагина по умолчанию в нашем проекте можно использовать секцию <i>build</i> (выделена синим), которая служит для настройки плагинов.<br>
+			* В данном случае мы задаем версию по умолчанию <b>3.8.1</b> для плагина <i>compiler</i> (до этого была версия 3.1).<br>
+			</p>
+			<p onclick="openWin7()">
+			<script>
+			function openWin7() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/1c32983efcb0ca1c456d9ccff58f8c6e2c1109aa/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/1c32983efcb0ca1c456d9ccff58f8c6e2c1109aa/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.8&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.8.png">
+			<p>
+			* Запускаем компиляцию в командной строке и видим, что версия плагина <b>3.8.1</b> соответствует версии указанной в <i>pom</i>-файле нашего проекта (рис.7).</br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.9&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.9.png">
+			<p>	
+			* Разберемся с настройками основных плагинов <i>Maven</i>:</br>
+			- <i>maven-assembly-plugin</i>,</br>
+			- <i>maven-compiler-plugin</i>,</br>
+			- <i>maven-jar-plugin</i>,</br>
+			- <i>maven-surefire-plugin</i>.</br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.10&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.10.png">
+			<p>
+			* В секции <i>configuration</i> (выделено синим) мы можем задать настройки плагина.</br>
+			* Например тегами <i>source, target</i> задать версию <i>JDK</i> (у нас она уже задана в родительском файле, поэтому во избежание конфликтов оставим теги пустыми).</br>
+			* В секции <i>compilerArgs</i> можно задать дополнительные параметры, которые используются при исполнении команды <i>javac</i>, например, в данном случае аргумент <b>- verbose</b>
+			позволит вывести дополнительную информацию о загружаемых модулях <i>java</i>.</br>
+			</p>
+			<p onclick="openWin8()">
+			<script>
+			function openWin8() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenParentPOM/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenParentPOM/pom.xml">			
+			MavenParent(pom.xml)</a><i class="fa fa-github"></i></i></p>
+			<p onclick="openWin9()">
+			<script>
+			function openWin9() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.11.png">
+			<p>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.12&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.12.png">
+			<p>
+			* Одна из итересных возможностей в настройках конфигурации плагина <i>maven-surefire-plugin</i> - настройка многопоточности (выделено синим).<br>
+			* В теге <i>parallel</i> мы указываем, что работаем с методами в тестовых классах, для каждого метода - отдельный поток, также можем указать количество потоков.<br>
+			* В нашем случае при выполнении команды <i>surefire:test</i> особых отличий не видно, но при большом количестве тестов, многопоточность повлияет на скорость исполнения.<br>
+			</p>
+			<p onclick="openWin10()">
+			<script>
+			function openWin10() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/5016e916753c2213cd08f7e34b794f71f07a113e/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/5016e916753c2213cd08f7e34b794f71f07a113e/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.13&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.13.png">
+			<p>
+			* В секции <i>configuration</i> плагина <i>surefire</i> также можно исключать (выделено красным), либо включать (выделено зеленым) определенные тестовые классы. </br>
+			* Также есть возможность проигнорировать (выделено синим) результаты тестов при сборке проекта. </br>			
+			</p>
+			<p onclick="openWin11()">
+			<script>
+			function openWin11() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.14&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.14.png">
+			<p>
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.15&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.15.png">
+			<p>
+			* Рассмотрим автоматическое добавление зависимости в <i>IntelliJ IDEA</i> на примере библиотеки <b>Gson</b> от <i>Google</i> для работы с форматом <i>JSON</i> (ссылка ниже): <br>
+			1. Cоздаем объект <i>Gson</i> в нашем классе <i>Fibo.java</i> и среда подсвечивает его красным. <br>
+			Наводим указатель мыши на подсвеченную строчку и либо кликаем по красной лампочке, либо жмем <b>Alt + Enter</b> после чего в списке выбираем <i>Add Maven Dependency</i>.<br>
+			2. В окне <i>Maven Artifact Search</i> в поиск забиваем <i>Gson</i> и если появляются варианты выбираем <i>Gson</i> и жмем <i>Add</i>. <br>
+			3. В файле <i>pom.xml</i> (не родительском !) автоматически появляется зависимость.<br>
+			<b>Если на шаге 2 в окне поиска артефактов список пустой</b>, придется добавлять зависимость вручную.<br>
+			Для этого идем в <i>MVN Repository</i> (ссылка (1) ниже), забиваем в поиск <i>gson</i>, из вариантов выбираем <i>com.google.code.gson » gson</i> (ссылка (2) ниже)<br>
+			на этой странице выбираем нужную версию (лучше выбирать версию с наибольшим количеством пользователей) и кликаем по ней.<br>
+			На странице версии есть уже готовый код зависимости для <i>Maven</i> с данной версией. Этот код копируем в наш <i>pom.xml</i> и <i>Maven</i> автоматически загружает библиотеку.<br>
+			4. На этом шаге, после любого из вариантов добавления зависимости, остается в файле <i>Fibo.java</i> еще раз навести курсор на пока подсвеченный объект <i>Gson</i> и комбинацией клавиш <b>Alt + Enter</b>
+			импортировать класс <i>Gson</i>.
+			</p>			
+			<p onclick="openWin12()">
+			<script>
+			function openWin12() {
+			  window.open("https://mvnrepository.com/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/">			
+			MVN Repository(1)</a></i></p>
+			<p onclick="openWin13()">
+			<script>
+			function openWin13() {
+			  window.open("https://mvnrepository.com/artifact/com.google.code.gson/gson","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/com.google.code.gson/gson">			
+			MVN Repository(2)(gson)</a></i></p>
+			<p onclick="openWin14()">
+			<script>
+			function openWin14() {
+			  window.open("https://javarush.com/groups/posts/3970-kofe-breyk-175-kak-mih-mozhem-prochitatjh-fayl-json-v-java-chto-takoe-java-development-kit-jdk","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://javarush.com/groups/posts/3970-kofe-breyk-175-kak-mih-mozhem-prochitatjh-fayl-json-v-java-chto-takoe-java-development-kit-jdk">			
+			Подробее о JSON</a></i></p>
+			<p onclick="openWin15()">
+			<script>
+			function openWin15() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+			<p onclick="openWin16()">
+			<script>
+			function openWin16() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java">			
+			Fibo.java</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.16&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.16.png">
+			<p>
+			* В <i>jar</i> плагинах наиболее частой настройкой является задание имени формируемого <i>jar</i>-файла.</br>
+			* Сделать это можно в секции <i>configuration</i> (выделено синим).</br>
+			* При выполнении команды <b>mvn jar:jar</b> сформируется архив с назначенным именем (выделено зеленым).</br>
+			</p>
+			<p onclick="openWin17()">
+			<script>
+			function openWin17() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/ce5c131061049c9b2ef10841980aa89b1a44819a/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/ce5c131061049c9b2ef10841980aa89b1a44819a/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.17&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.17.png">
+			<p>
+			* Плагин <i>jar</i> достаточно примитивен по своей сути, он не собирает зависимости.</br>
+			* Если мы откроем только собранный архив <i>Progwards.jar</i> в архиваторе, то увидим, что здесь есть только файл <i>META_INF</i> (манифест) и скомпилированный <i>Fibo.class</i>
+			и никакой добавленной зависимости <i>Gson</i>.</br>			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.18&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.18.png">
+			<p>
+			* Плагин <i>assembly</i> более серьезный, он предназначен для сборки со всеми зависимостями.</br>
+			* Чтобы настроить плагин в <i>pom.xml</i> достаточно внести только <i>artifactId</i>, а в секции <i>configuration</i> указать стандартный дескриптор,
+			который описывает что и где надо взять и куда положить.</br>
+			* Дескриптор <b>jar-with-dependencies</b> положит зависимости в наш <i>jar</i>-файл, он под это заточен.</br>
+			</p>
+			<p onclick="openWin18()">
+			<script>
+			function openWin18() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d16e12c6e109a6f5db1cd3836f02b840d94eb0f4/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d16e12c6e109a6f5db1cd3836f02b840d94eb0f4/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.19&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.19.png" usemap="#map">
+			<p>
+			* При запуске в командной строке команды <b>mvn assembly:single</b> в директории <i>target</i> создается <i>jar</i> со всеми добавленными зависимостями.</br>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.20&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.20.png">
+			<p>
+			* Соберем наш <i>jar</i> файл другим способом, на этот раз мы привяжем сборку к фазам сборочного цикла (об этом цикле - далее в лекции).</br>
+			* К фазам можно привязывать цели плагина (в данном случае к фазе <b>package</b> привязана цель <b>single</b>).</br>
+			</p>
+			<p onclick="openWin19()">
+			<script>
+			function openWin19() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.21&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.21.png">
+			<p>	
+			* Во вкладке <i>Maven</i> в <i>IDEA</i> нажимаем команду <b>install</b>.</br>	
+			* В отчете видим новую запись (выделено красным) о том, что <i>maven-assembly-plugin</i> сработал с целью <i>single</i> и был создан <i>jar</i> файл с зависимостями.</br>
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.22&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.22.png">
+			<p>
+			* Посмотрим на сформированный архив в архиваторе.</br>
+			* В каталоге <b>com</b> мы видим скомпилированные файлы <i>Gson</i>, т.е. зависимость попала в наш <i>jar</i>. </br>
+			* Однако не все в этом архиве правильно, если посмотреть содержимое файла <b>MANIFEST.MF</b>, то видно, что в нем отсутствует главный класс. </br>
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.23.png">
+			<p>
+			* Исправим отсутствие главного класса в архиве.</br>
+			* Для этого в плагине <i>assembly</i> в секции <i>configuration</i> добавим код с расположением главного класса в архиве (выделено синим). </br>
+			* Во вкладке <i>Maven</i> в <i>IDEA</i> запускаем команду <b>verify</b>. </br>
+			<b>Почему команда - verify?</b> </br>
+			* В <i>Maven</i> с версии 3.0 <b>запускать verify предпочтительнее, чем clean или install</b> (более подробно ответ на вопрос далее в лекции). </br>
+			</p>
+			<p onclick="openWin20()">
+			<script>
+			function openWin20() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/923a187f9488e2f8bc853b6cb92de5b5575286e2/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/923a187f9488e2f8bc853b6cb92de5b5575286e2/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
+			pom.xml</a><i class="fa fa-github"></i></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.24.png">
+			<p>
+			* Теперь мы видим в файле <b>MANIFEST.MF</b> что главный класс успешно установлен (выделено красным).<br>
+			* Мы можем запустить сформированный архив в командной строке (выделено зеленым) и получим результат работы программы<br>
+			(в <i>Windows</i>, если некорректно отражается кириллица, надо поменять кодировку (выделено желтым)			
+			</p>
+			<p>
+				<i class="github-wrap"><i class="fa fa-link"></i>
+				<a  class="inner-anchor" href="N-06.1 Сборка проекта, введение. Ant.html#12" data-target-img="12,12" target="frame"> 
+				Изменение кодировки в Windows ( Лекция 7.1 )</a></i>
+			</p>		
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.25.png">
+			<p>
+			* На рисунке показаны <b>жизненные (сборочные)</b> циклы <i>Maven</i>.<br>
+			* В <i>IntelliJ IDEA</i> во вкладке <i>Maven</i> отражены фазы этих жизненных циклов (! не все и не по порядку).<br>
+			* Основной жизненный цикл - <b>default</b> имеет всего 23 фазы, но в <i>IDEA</i> показаны наиболее часто используемые - их 7<br>
+			(причем фаза <i>deploy</i>, которая тоже относится к этому циклу, стоит после фазы <i>site</i> из другого жизненного цикла, но это особенность расположения в <i>IDEA</i>).<br>
+			* Жизненный цикл <b>clean</b> состоит из 1-ой фазы <i>clean</i>.<br>
+			* Жизненный цикл <b>site</b> состоит из 4-x фаз, но в <i>IDEA</i> приведена наиболее применимая <i>site</i>.<br>
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.26&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.26.png">
+			<p>
+			* Приведем пример для правила помеченного красным (! оно важно).<br>
+			* Если мы (рис.25) в жизненном цикле <i>default</i> запускаем выполнение фазы <i>deploy</i>, то будут исполнены фазы по порядку 
+			<code>validate -> compile -> test -> package -> verify -> install</code>, а потом уже <code>deploy</code>.<br>
+			</p>
+			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.27&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.27.png">
+			<p>
+				* Фаза <b>verify</b> важна, так как проверяются и вносятся все изменения в проекте в локальном репозитории без выполнения команд <b>clean</b> и <b>install</b>
+				(как было до версии <i>Maven</i> 3.0 (рис.23)). Этот процесс гораздо быстрее, что важно на больших проектах.</br>				
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.28&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.28.png">			
+			<p>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.29&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.29.png">
+			<p>
+			* На рисунке показана последовательность выполнения плагинов и их целей при выполнении в командной строке команды <b>clean dependency:copy-dependencies package</b><br>
+			* Комбинировать в командной строке плагины и фазы сборочного цикла можно как угодно.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.30.png">
+			<p onclick="openWin21()">
+			<script>
+			function openWin21() {
+			  window.open("https://maven.apache.org/guides/introduction/introduction-to-archetypes.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://maven.apache.org/guides/introduction/introduction-to-archetypes.html">			
+			Maven.Introduction to archetypes</a></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.31&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.31.png">
+			<p>	
+			* Все архетипы предназначены для создания каркаса будущего приложения с необходимыми зависимостями.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.32&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.32.png">
+			<p>
+			* Опираясь на архетип <i>Maven</i> для создания плагинов создадим в <i>IntelliJ IDEA</i> плагин.</br>
+			* При создании плагина в уже существующем проекте (как у меня) нужно создать сначала модуль <i>Maven</i>, а потом преобразовать его в проект (подробно описано в лекции "Maven, часть1", рис.11-12).
+			Для этого открываем окно <i>New Module: </i> <code>File -> New -> Module</code>.</br>
+			Если нет необходимости встравивать структуру плагина в проект начинаем <code>File -> New -> Project</code>.</br>
+			* Далее действия идентичные - в окне (<i>New Module</i> или <i>New Project</i>) выбираем в меню слева <i>Maven</i>, чекаем <i>Create from Archetype</i>, в списке архетипов
+			ищем <i>maven-archetype-plugin</i>, выбираем, кликаем <i>Next</i>.</br>
+			<b>! Если в списке нет этого архетипа</b> - надо предварительно добавить его в список, для чего жмем <b>Add Archetype</b>. В окне заполняем <i>GAV</i> (данные можно взять 
+			в центральном репозитории <i>MVNRepository</i>, в разделе архетипов, по ссылке ниже), жмем <i>OK</i>. </br>
+			</p>
+			<p onclick="openWin22()">
+			<script>
+			function openWin22() {
+			  window.open("https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-plugin/1.4","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-plugin/1.4">			
+			MVNRepository.Maven Plugin Archetype 1.4</a></i></p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.33&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.33.png">
+			<p>
+			* Вводим <i>GAV</i> для нашего плагина.<br>
+			* Версию <i>Maven</i> можно оставить по умолчанию.<br>			
+			</p>		
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.34&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.34.png">
+			<p>	
+			* После нажатия <i>Finish</i> у меня создается структура модуля плагина.<br>
+			* Теперь я преобразую модуль в проект <code>File -> New -> Project from Existing Sources</code>
+			</p>
+			<p>
+				<i class="github-wrap"><i class="fa fa-link"></i>
+				<a  class="inner-anchor" href="N-06.2 Maven, часть1.html#12" data-target-img="12,12" target="frame"> 
+				дальнейшие шаги описаны здесь ( Лекция 7.2 )</a></i>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.35&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.35.png">
+			<p>
+			* После преобразования модуля в проект мы получаем готовую структуру плагина с классом <b>MyMojo.java</b> и тестовым классом <b>MyMojoTest.java</b>, которые
+			располагаются в соответствующих правилам каталогах и пэкедже, определенном нами в <i>GroupId</i>.<br>
+			* Внутри класса <i>MyMojo.java</i> (это название по умолчанию), определено имя плагина <b>touch</b> (выделено зеленым), которое является его целью.<br>
+			<b>defaultPhase</b> - это сборочный цикл по умолчанию, к которому привязан данный плагин (выделено синим).<br>
+			* Для сборки плагина в сборочном цикле жмем <i>install</i>, так как важно не только собрать плагин, но и загрузить его в локальный репозиторий, 
+			чтобы можно было воспользоваться им для других проектов.<br>
+			</p>			
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.36&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.36.png">
+			<p>
+			* В первый раз у меня сборка провалилась. В сообщении было предупреждение об отсутствии необходимого для тестирования плагина
+			<b>surefire-junit-4</b> и приводился пример команды для ручной установки плагина.<br>
+			* <i>jar</i>-файл плагина я скачал в репозитории по ссылке ниже.<br> 
+			</p>
+			<p onclick="openWin23()">
+			<script>
+			function openWin23() {
+			  window.open("https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-junit4/2.22.1","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-junit4/2.22.1">			
+			MVNRepository.SureFire JUnit4 Runner 2.22.1</a></i></p>
+			* В командной строке запустил предложенную в сообщении команду<br> 
+			<code>mvn install:install-file -DgroupId=org.apache.maven.surefire -DartifactId=surefire-junit4 -Dversion=2.22.1 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\surefire-junit4-2.22.1.jar</code><br>
+			(выделена желтым) и плагин успешно установился в локальный репозиторий.<br>
+			* Оставалось еще раз запустить <i>install</i> в <i>IDEA</i> и сборка на этот раз завершилась успешно! (выделено красным)<br>
+			</p>
+			<p onclick="openWin24()">
+			<script>
+			function openWin24() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/7d1021db87391397e2d6879c2874a318e16c528d/src/Less06_MavenPlugin/MavenPlugin","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/7d1021db87391397e2d6879c2874a318e16c528d/src/Less06_MavenPlugin/MavenPlugin">			
+			MavenPlugin</a><i class="fa fa-github"></i></i>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.37&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.37.png">
+			<p>
+			* Для проверки работоспособности созданного плагина <i>MavenPlugin</i> включим его в <i>pom.xml</i> файл нашего проекта <i>Maven1</i>.<br>
+			* В блоке <i>executions</i> мы привязываем цель плагина <b>touch</b> (рис.35) к фазе сборочного цикла <i>Maven1</i> - <b>verify</b>.<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.38&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.38.png">
+			<p>
+			* Теперь помотрим, что же делает наш плагин, заглянем в файл <i>MyMojo.java</i>.<br>
+			* Я немного изменил код по умолчанию (строки изменений отмечены зеленым).<br>
+			Теперь он пишет в создаваемый файл <i>touch.txt</i> пронумерованные строки с датой и временем.<br>
+			</p>
+			<p onclick="openWin25()">
+			<script>
+			function openWin25() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin/src/main/java/Less06_MavenPlugin/MyMojo.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin/src/main/java/Less06_MavenPlugin/MyMojo.java">
+			MyMojo.java</a><i class="fa fa-github"></i></i></br>
+			</p>
+			<p onclick="openWin26()">
+			<script>
+			function openWin26() {
+			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
+			}
+			</script>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin">
+			MavenPlugin</a><i class="fa fa-github"></i></i></br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.39&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.39.png">
+			<p>
+			* Теперь, если мы запустим в проекте <i>Maven1</i> фазу <b>verify</b> в отчете мы увидим, что плагин отработал с заданной целью (выделено красным).<br>
+			
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.40&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.40.png">
+			<p>
+			* В результате успешной сборки в проекте <i>Maven1</i> в каталоге <b>target</b> появился файл <b>touch.txt</b> (выделено зеленым), а если посмотреть его содержимое,
+			то в файле появилась очередная строка с временем и датой совпадающими с временем и датой окончания сборки (выделено красным).<br>
+			</p>
+		</div>
+		<div class="column">
+			<span class="badge bg-primary">Рис.41&nbsp;<i class="material-icons">&#xe5db;</i></span>
+			<img src="images/images_06.3/06.3.41.png">
+			<p>
+			
+			</p>
+		</div>		
+	</div>
+</div>
+<!--<script src="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/javascript/script.js"></script>-->
+
+<script>
+
+/*let demo = document.getElementById("demo");
+const frame = document.getElementById("frame");
+const c_frame = frame.contentWindow.document;
+const images = c_frame.getElementsByTagName("img");
+const arr_src = [];*/
+
+//function loadImages() {
+	let demo = document.getElementById("demo");	
+	const images = document.getElementsByTagName("img");
+	const arr = Array.from(images);
+	const arr_src = [];
+	let txt = "";
+
+	arr.forEach(myFunction);
+
+	function myFunction(value, index) {
+		arr_src[index] = value.getAttribute("src");
+		//txt += arr_src[index] + "<br>";  
+	}
+	/*const preloadImage = src => (new Image().src = src);
+
+	arr_src.forEach(preloadImage);*/
+	
+	const preloadImageWithEvents = (src, callback) => {
+		const img = new Image();
+		img.onload = () => callback(null, src);  
+		img.onerror = error => callback(error, src);
+		img.src = src;
+	};
+
+	const imageSources = arr_src;
+	const imagePromises = imageSources.map(src => {
+		return new Promise((resolve, reject) => {
+			preloadImageWithEvents(src, (error) => {
+				if (error) reject(error); else resolve();
+			});
+		});
+	});
+	
+	
+	let ms2 = 0;
+	
+	let ms1 = Date.now();
+	txt += ms1 + "<br>";
+	
+	for (let i = 0; i < images.length; i++) {
+		let img = images[i];
+		img.addEventListener("load", function() {				
+			txt += (i + 1) + ": img loaded " + Date.now() + ", ";
+			ms2 = Date.now() - ms1;			
+			txt += ms2 + ", ";
+			demo.innerHTML = txt ;
+			ms2 = 0;
+		});			
+	}
+
+	//let ms2 = Date.now();
+	//txt += ms2 + "<br>";
+	//txt += ms2 - ms1 + "<br>";
+	//demo.innerHTML = txt ;
+//}
+
+
+//const arr = Array.from(images);
+
+/*arr.forEach(myFunction);
+
+function myFunction(value, index) {
+	arr_src[index] = value.getAttribute("src");
+  txt += arr_src[index] + "<br>";  
+}
+const preloadImage = src => (new Image().src = src);
+
+arr_src.forEach(preloadImage);
+
+let ms1 = Date.now();
+txt += ms1 + "<br>";
+
+const preloadImageWithEvents = (src, callback) => {
+  const img = new Image();
+  img.onload = () => callback(null, src);  // Готово к показу!
+  img.onerror = error => callback(error, src);  // Бывают и неудачи
+  img.src = src;
+};
+
+const imageSources = arr_src;
+const imagePromises = imageSources.map(src => {
+  return new Promise((resolve, reject) => {
+    preloadImageWithEvents(src, (error) => {
+      if (error) reject(error); else resolve();
+    });
+  });
+});
+let ms2 = Date.now();
+txt += ms2 + "<br>";
+txt += ms2 - ms1;
+*/
+//demo.innerHTML = txt ;
+
+/*Promise.all(imagePromises)
+  .then(() => console.info('Изображения предварительно загружены. Превосходно!'))
+  .catch(error => console.error('Предварительная загрузка не удалась. Ошибка:', error));
+*/
+</script>
+<!--<script src="javascript/script.js"></script>-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+

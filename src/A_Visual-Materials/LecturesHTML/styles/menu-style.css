@@ -4,29 +4,35 @@ body {
 .block-page {
 	position: relative;
 	width: 100%;
-	height: 89vh;
+	height: 87vh;
 	top: 0;
-	transition: all 0.3s ease-out;
-}
-.block-page.shift-up {
-	height: 99vh;
-	top: -10vh;
+	/*transition: all 0.3s ease-out;*/
 }
 .block {
 	position: absolute;
 	height: 100%;
 	top: 0;
-	transition: all 0.5s ease-out;
+	/*transition: all 0.3s 0.1s ease-out;*/
 }	
 .head {
 	position: relative;
 	width: 100%;
-	text-align: center;
-	height: 10vh;
+	text-align: center;	
+	height: initial;
 	display: flex;
 	align-content: center;
 	flex-wrap: wrap;
 	padding: 0;
+	transition: all 0.3s ease-out;
+	background: url("../images/back-image.png");
+	background-repeat: repeat;
+  background-size: 95% 100%;
+}
+.block-page.shift-up {
+	height: 100vh;
+}
+.head.shift-up {
+	height: 0;
 }
 .h-wrap {
 	display: flex;
@@ -40,19 +46,18 @@ img {
 .icon {
 	overflow: hidden;   
 }
-.icon img {		
-	border-top: 10px solid #cbcbe7;
-	border-bottom: 10px solid #6161a3;
-	border-left: 10px solid #9898d6;
-	border-right: 10px solid #9898d6;    
-	border-radius: 8px;
+.icon img{
+	border-top: 0px solid #131737;
+  border-bottom: 0px solid #131737;
 }
 .menu {
 	width: 25%;
 	background-color: white;
 	overflow: auto;
 	left: 0;
-	border-top: 1px solid #767676;	
+	border-top: 1px solid #767676;
+	z-index: 2;
+	/*transition: all 0.3s ease-out 1.5s;*/
 }
 .menu-hidden {
 	left: -26vw;
@@ -63,12 +68,13 @@ img {
 }
 .frame-full {
 	width: 100%;
-	left: 0;
+	left: 0;	
 }
 iframe {
 	width: 100%;
 	height: 100%;
 	border-width: 1px;
+	position: absolute;
 }
 .buttons {
 	display: flex;
@@ -76,28 +82,33 @@ iframe {
 	align-content: center;
 }
 .buts-wrap {
-	height: 50%;
+	height: 0;
 	position: fixed;
 	left: 1%;
-	top: 2vh;
+	top: 4vh;
 	z-index: 10;
 	transition: all 0.5s ease-in 0.2s;
 }
-.buts-wrap.shift-right {
+.buts-wrap.shift-right,
+.buts-wrap.mobile.shift-right {
 	left: 1%;		
-	top: 0;		
-}
+	top: 0;	
+} 
 .head h1 {
 	margin: 0;
 }
-button {
-	box-shadow: 20px -15px 40px 5px #e8e8f8;
+span.h-java {
+	/*font-weight: 600;*/
+}
+span.h-level {
+	color: #555555;	
 }
 button.switcher {
 	position: absolute;
-	border: 2px solid #666;
+	border: 1px solid #212529;
 	border-radius: 0.4rem;
 	color: #212529;
+	box-shadow: inset 0px 0px 0px 1px #ffffff;
 }
 button.switcher:hover {
 	background-color: #ddd;		
@@ -106,7 +117,7 @@ button.switcher:hover {
 	left: 48px;
 }
 .invisible {
-	display: none;
+	display: none !important;
 }
 i.material-icons {    
 	font-size: 29px;
@@ -128,7 +139,6 @@ i.material-icons {
 }
 .panel-body p {
 	margin: 5px 0;
-	font-size: 2.1vh;
 	display: flex;
 	align-items: start;
 }	
@@ -157,7 +167,8 @@ i.material-icons {
 }
 .nav {
 	position: absolute;
-	top: 1vh;
+	top: 6px;
+	left: 0;
 }
 .panel.header .nav.up {
 	display: none;
@@ -213,19 +224,26 @@ a.anchor {
 	border-radius: 5px;
 	background-color: #4994d5;
 }
-a:focus .badge.inums, a:hover .badge.inums {	
-	background-color: #23527c;
+.anchor:hover, 
+.anchor:focus,
+.anchor:active {	
+	color: #131737;
+}
+.anchor:hover .badge.inums,
+.anchor:focus .badge.inums, 
+.anchor:active .badge.inums{	
+	background-color: #282f6c;
 }
 .heading-wrap .badge-wrap .badge {
 	font-size: 13px;		
 }
 .heading-wrap .badge-wrap .b-first {
 	background-color: #0860e3;
-	border-radius: 3px 0 0 0;	
+	border-radius: 3px 0 0 3px;	
 }
 .heading-wrap .badge-wrap .b-second {
 	background-color: #3b8aff;
-	border-radius: 0 3px 0 0;
+	border-radius: 0 3px 3px 0;
 }
 .badge-wrap .b-first {
 	padding: 4px 7px 3px 7px;
@@ -247,7 +265,7 @@ a:focus .badge.inums, a:hover .badge.inums {
 .anchors-button {		
 	position: relative;	
 	cursor: pointer;
-	height: 4.5vh;
+	height: 32px;
 	border-radius: 3px;
 	background-color: #efefef;
 	box-shadow: inset 0px -1px 0px 0px #767676;		
@@ -256,7 +274,7 @@ a:focus .badge.inums, a:hover .badge.inums {
 	background-color: #f3dcdc;    	
 }	
 .anchors-button .nav {
-	color: #0860e3;
+	color: #2f3881;
 }
 .l-second + i,
 .badge-wrap + i	{
@@ -269,8 +287,9 @@ mark {
 	position: fixed;
 	width: 25%;
 	height: 6vh;
-	background-color: #e8e8f8;
+	background-color: #ffffff;
 	z-index: 3;
+	display: block;
 }
 .panel.empty-panel {	
 	background-color: #fff;
@@ -286,11 +305,223 @@ mark {
 .panel-out {
 	display: none;
 }
+.page-index {
+	position: fixed;	
+	z-index: 11;  
+	display: flex;
+  right: -500px;	
+  margin: 5px;	
+	transition: all 0.3s ease-out;
+}
+.buts-index {
+	border: 1px solid #212529;	
+	color: #212529;
+	transition: all 0.3s ease-out;	
+}
+.link-repeat {
+	position: absolute;
+	font-size: 1px;
+	opacity: 0;
+}
+.but-index,
+.but-counter {
+	visibility: hidden;
+  padding: 0;	
+	border: none;
+}
+.buts-control-wrap,
+.buts-zoom-wrap {
+	position: fixed;	
+	z-index: 11;
+  margin: 5px;	
+}
+.buts-control-wrap:after {
+	content: "";
+	position: absolute;
+	height: 116%;
+	width: 100%;
+	left: 50%;
+	top: -8%;
+	background: #fff;
+	transition: background 1s;
+}
+.buts-control-wrap.blue-after:after {	
+	background: #1ea3fe;
+	transition: none;
+}
+.wrap-opacity {
+	opacity: 0;
+}
+.index-bottom,
+.control-bottom {
+	bottom: 0;
+}
+.but-control {
+	position: absolute;
+	z-index: 12;   
+	border: 1px solid #212529;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;	
+	height: 116%;
+	width: 116%;
+	top: -8%;
+	left: -8%;
+	background-color: #f0f0f0;
+	box-shadow: inset 0px 0px 0px 1px #fff;
+}
+.but-control:hover {	
+	background-color: #ddd;	
+}
+/*.material-icons стрелки*/
+.but-control i.material-icons {
+	position: absolute;
+  font-size: 16px;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	transform-origin: center center;
+	line-height: 1;
+}
+.to-left {
+  transform: rotate(-180deg);
+}
+.to-up {
+  transform: rotate(-90deg);
+}
+.to-down {
+  transform: rotate(90deg);
+}
+.but-back {
+	border-radius: 0.4rem 0 0 0.4rem;
+	background: #282f6c;
+	border-color: #212529;
+	padding-left: 3px;
+	box-shadow: inset 0px 0px 0px 1px #4c5ef4;
+}
+.blue-but-back {	
+	background: #0d6efd;
+	border-color: #0d6efd;
+	box-shadow: inset 0px 0px 0px 1px #5d99f4;
+}
+.anchor-index {	
+	color: #fff;
+	text-decoration: none;
+}
+.anchor-index:hover, 
+.anchor-index:focus {
+	color: #fff;
+	text-decoration: none;
+}
 
-
-
-
-
+/*.blue-but-back:hover,
+.blue-but-back:focus {	
+	background: #0955c6;
+	border-color: #0f70ff;
+	box-shadow: inset 0px 0px 0px 1px #5d99f4;
+	transition: all .3s ease-out;
+}*/
+.page-this:hover {	
+	text-decoration: none;
+}
+.page-this,
+.but-back {	
+	cursor: default;
+}
+.location {
+	position: relative;
+	border-left-width: 0;
+	box-shadow: inset 0px 0px 0px 1px #ffffff;
+	cursor: default;
+}
+*[tooltip]:hover:before {
+	content: attr(tooltip);
+	border-radius: 3px;
+	background-color: #282f6c;
+	padding: 5px;
+	color: white;
+	position: absolute;
+	top: 120%;
+	font-size: 12px;	
+}
+.page-back[tooltip]:before {
+	content: attr(tooltip);
+	border-radius: 3px;
+	background-color: #282f6c;
+	padding: 5px;
+	color: white;
+	position: absolute;
+	top: 120%;
+	font-size: 12px;
+	width: 200%;
+	opacity: 1;
+	left: 0px;
+}
+.index-bottom .page-back[tooltip]:before {	
+	top: -70px;
+}
+.index-bottom .location[tooltip]:hover:before {
+	top: -70px;	
+}
+.but-control[tooltip]:hover:before {	
+	right: 5px;	
+}
+.control-bottom .but-control[tooltip]:hover:before {	
+	top: -50px;	
+}
+.hide-tip[tooltip]:hover:before {
+	opacity: 0;	
+	transition: all 0.3s ease-out 1s;
+}
+.hide-tip[tooltip]:before {
+	opacity: 0;	
+	transition: all 0.3s ease-out 1s;
+}
+.tip-left[tooltip]:before {
+	left: 500px;
+	transition: all 0.3s ease-out 3s;
+}
+.page-back .text-back {
+	box-shadow: none;
+	/*padding: 0 3px;*/
+	transition: all 0.3s ease-out;
+}
+.page-back:hover .text-back {
+	box-shadow: 3px 0 0 0 #2d2db5, -5px 0 0 0 #2d2db5, inset 0 30px 0 0 #2d2db5, inset 0 -30px 0 0 #2d2db5;/*inset 0px -2px 0px 0px white;*/
+}
+.location.hide-tip[tooltip]:hover:before {		
+	transition: all 0.3s ease-out 3s;
+}
+.anchor-index i.material-icons {	
+	font-weight: normal; 
+	line-height: 1.3;
+	font-size: 16px;
+	margin-right: 3px;	
+}
+.anchor-index {
+	display: flex;
+	position: relative;	
+}
+.page-back i.material-icons {
+	position: relative;
+}
+.icon-patch {	
+	position: absolute; 
+	width: 100%;
+	height: 20%;
+	background: #666;
+  left: 0;
+  top: 80%;	
+}
+.blue-but-back .icon-patch {	
+	background: #0d6efd;  	
+}
 
 
 

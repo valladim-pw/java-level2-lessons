@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>03.1 Generic классы</title>
-	<base target="_blank">
+	<base target="_parent">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -11,15 +11,16 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
 	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/mobile-style.css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 	<style >
 	</style>
 </head>
-<body onload="insertLabel(); two();">
+<body onload="setOpenWinAttr(); insertLabel(); bothLeftRight();">
 <div class="container-fluid p-3">
-	<div class="header" id="header">		
+	<div class="head-buttons" id="header">		
 		<p>Кнопками можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>
 		<div class="but-wrap">
 			<div class="back-fix"></div>
@@ -34,41 +35,33 @@
 				<button class="btn" onclick="oneRight();">100R</button>
 			</div>
 			<div class="but50-wrap">
-				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+				<button class="btn active" onclick="bothLeftRight();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
 			</div>			
 		</div>		
 	</div>	
 	<div class="row">
 		<div class="column">
 			<img src="images/images_03.1/03.1.1.png">
+			<div class="code-wrap author" data-pos="30">				
+				<img src="images/authors/trunov.png" >
+			</div>
+			<div class="code-wrap back-author">				
+				<img src="images/authors/back-author3.png">
+				<img class="eye" src="images/authors/back-author2.png">
+			</div>
 			<p></p>
-			<p onclick="openWin1()">
-			<script>
-			function openWin1() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less03_Generics/_1_GenericClasses","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less03_Generics/_1_GenericClasses">
 			Файлы по теме</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></br>
 			</p>
 		</div>
 		<div class="column">
 			<img src="images/images_03.1/03.1.2.png">
-			<p onclick="openWin1a()">
-			<script>
-			function openWin1a() {
-			  window.open("https://javarush.com/groups/posts/2004-teorija-dzhenerikov-v-java-ili-gde-na-praktike-stavitjh-skobki","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://javarush.com/groups/posts/2004-teorija-dzhenerikov-v-java-ili-gde-na-praktike-stavitjh-skobki">
 			Дженерики в Java</a><span class="fwrap"></span></i></br>
 			</p>
-			<p onclick="openWin1b()">
-			<script>
-			function openWin1b() {
-			  window.open("https://docs.oracle.com/javase/tutorial/java/generics/index.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://docs.oracle.com/javase/tutorial/java/generics/index.html">
 			Lesson: Generics (docs.oracle.com)</a><span class="fwrap"></span></i></br>
 			</p>
@@ -79,21 +72,11 @@
 				* <i>Generic</i>(Обобщения) появились с версии <i>Java</i> 1.5.</br>
 				* Очень полезно помимо документации постоянно (!!!) читать книгу Кея Хорстмана "Библиотека профессионала".
 				Скачать книги можно по ссылкам ниже (в открывшемся окне нажать на стрелку в правом верхнем углу)</p>
-				<p onclick="openWin2()">
-				<script>
-				function openWin2() {
-					window.open("Java Библиотека профессионала том 1 изд 11 2019 Кей Хорстман (рус).pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+				<p>
 				* <a class="github" href="Java Библиотека профессионала том 1 изд 11 2019 Кей Хорстман (рус).pdf">
 				Java Библиотека профессионала том 1 изд 11 2019 Кей Хорстман (рус)</a>
 				</p>
-				<p onclick="openWin2()">
-				<script>
-				function openWin2() {
-					window.open("Java Библиотека профессионала том 2 изд 11 2020 Кей Хорстман (рус).pdf","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+				<p>
 				* <a class="github" href="Java Библиотека профессионала том 2 изд 11 2020 Кей Хорстман (рус).pdf">
 				Java Библиотека профессионала том 2 изд 11 2020 Кей Хорстман (рус)</a>
 				</p>
@@ -113,12 +96,7 @@
 			<img src="images/images_03.1/03.1.4.png">
 			<p>
 			* Пример небезопасного обобщенного метода, с точки зрения применения переменного числа аргументов (подробнее рис.26).</p>
-			<p onclick="openWin3()">
-				<script>
-				function openWin3() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_0VarargsWarning.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_0VarargsWarning.java">
 				VarargsWarning.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -128,12 +106,7 @@
 			<p>
 			* Пример небезопасного класса.</br>
 			</p>
-			<p onclick="openWin4()">
-				<script>
-				function openWin4() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_1NonSafeGeneric.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_1NonSafeGeneric.java">
 				NonSafeGeneric.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -143,12 +116,7 @@
 			<p>
 			* При явном приведении типа в небезопасном классе в рантайме возникает исключение.</br>
 			</p>
-			<p onclick="openWin4()">
-				<script>
-				function openWin4() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_1NonSafeGeneric.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_1NonSafeGeneric.java">
 				NonSafeGeneric.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -160,12 +128,7 @@
 			* Чтобы не получить исключения при реализации небезопасного класса, надо делать проверку на <b>instanceof</b> (и таких проверок может быть очень много) - это неудобно.</br>		
 			* Поэтому были придуманы <b>Generic</b> (Обобщения).
 			</p>
-			<p onclick="openWin4()">
-				<script>
-				function openWin4() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_1NonSafeGeneric.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_1NonSafeGeneric.java">
 				NonSafeGeneric.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -176,12 +139,7 @@
 			* С использованием Обобщения мы делаем наш класс безопасным.</br>
 			* Если мы строго типизируем класс, например <<i>String</i>>, то при попытке использования объектов другого типа получим ошибку компиляции .</br>
 			</p>
-			<p onclick="openWin5()">
-				<script>
-				function openWin5() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_2SafeGeneric.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_2SafeGeneric.java">
 				SafeGeneric.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -192,12 +150,7 @@
 		</div>
 		<div class="column">
 			<img src="images/images_03.1/03.1.10.png">
-			<p onclick="openWin6()">
-				<script>
-				function openWin6() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_5GenericApp.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_5GenericApp.java">
 				GenericApp.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -215,12 +168,7 @@
 			<p>
 			* Пример класса <i>Repository</i>, который используется во фреймворке <i>Spring</i> для работы с базой данных.</br>
 			</p>
-			<p onclick="openWin7()">
-				<script>
-				function openWin7() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_3GenericInterfaceAndMethod.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_3GenericInterfaceAndMethod.java">
 				GenericInterfaceAndMethod.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -237,12 +185,7 @@
 			* Внутри класса с типизированным методом можно использовать и обычные методы (<i>say</i>).</br>
 			* Если внутри класса или интерфейса мы хотим использовать типизированное поле (<i>E item</i>) нужно типизировать и сам класс.</br>
 			</p>
-			<p onclick="openWin7a()">
-				<script>
-				function openWin7a() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_3GenericInterfaceAndMethod.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_3GenericInterfaceAndMethod.java">
 				GenericInterfaceAndMethod.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -254,12 +197,7 @@
 			* Вообще любой обобщенный тип можно расширить <b>одним</b> классом (как в наследовании) и любым количеством интерфейсов.
 			В примере выше класс <i>People</i> и интерфейсы <i>Comparable</i>, <i>Serializable</i>.</br>						
 			</p>
-			<p onclick="openWin8()">
-				<script>
-				function openWin8() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_4GenericComparable.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_4GenericComparable.java">
 				GenericComparable.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -270,24 +208,14 @@
 			* Чтобы использовать объект для сравнения в дженерик классе, ограниченном интерфейсом, нужно соответственно имплементировать 
 			в класс объекта этот интерфейс (<i>People implements Comparable< People ></i>) и переопределить метод <i>compareTo</i>.</br>
 			</p>
-			<p onclick="openWin8a()">
-				<script>
-				function openWin8a() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_4GenericComparable.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>				
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_4GenericComparable.java">
 				GenericComparable.java</a><i class="fa fa-github"></i></i>
 			</p>
 		</div>
 		<div class="column">
 			<img src="images/images_03.1/03.1.18.png">
-			<p onclick="openWin8b()">
-				<script>
-				function openWin8b() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_4GenericComparable.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_4GenericComparable.java">
 				GenericComparable.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -315,12 +243,7 @@
 		</div>
 		<div class="column">
 			<img src="images/images_03.1/03.1.23.png">
-			<p onclick="openWin9()">
-				<script>
-				function openWin9() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_5GenericApp.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_5GenericApp.java">
 				GenericApp.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -340,12 +263,7 @@
 			* В документации есть предупреждение об опасности применения в обобщенных методах переменного числа аргументов (<i>T...args</i>).</br>
 			* В принципе, на данный момент это работает. В крайнем случае, можно использовать аннотацию <i>SuppressWarnings</i>.</br>
 			</p>
-			<p onclick="openWin10()">
-				<script>
-				function openWin10() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_0VarargsWarning.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_0VarargsWarning.java">
 				VarargsWarning.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -356,12 +274,7 @@
 			* В документации есть предупреждение об опасности применения в обобщенных методах переменного числа аргументов (<i>T...args</i>).</br>
 			* В принципе, на данный момент это работает. В крайнем случае, можно использовать аннотацию <i>SuppressWarnings</i>.</br>
 			</p>
-			<p onclick="openWin11()">
-				<script>
-				function openWin11() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_0VarargsWarning.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_0VarargsWarning.java">
 				VarargsWarning.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -405,24 +318,14 @@
 		</div>
 		<div class="column">
 			<img src="images/images_03.1/03.1.34.png">
-			<p onclick="openWin12()">
-				<script>
-				function openWin12() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_6WildcardGenerics.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_6WildcardGenerics.java">
 				WildcardGenerics.java</a><i class="fa fa-github"></i></i>
 			</p>
 		</div>
 		<div class="column">
 			<img src="images/images_03.1/03.1.35.png">
-			<p onclick="openWin13()">
-				<script>
-				function openWin13() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_6WildcardGenerics.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_6WildcardGenerics.java">
 				WildcardGenerics.java</a><i class="fa fa-github"></i></i>
 			</p>
@@ -437,24 +340,14 @@
 		</div>
 		<div class="column">
 			<img src="images/images_03.1/03.1.38.png">
-			<p onclick="openWin14()">
-				<script>
-				function openWin14() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_7SuperGeneric.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_7SuperGeneric.java">
 				SuperGeneric.java</a><i class="fa fa-github"></i></i>
 			</p>
 		</div>
 		<div class="column">
 			<img src="images/images_03.1/03.1.39.png">
-			<p onclick="openWin15()">
-				<script>
-				function openWin15() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_8Test.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-				}
-				</script>
+			<p>
 				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less03_Generics/_1_GenericClasses/_8Test.java">
 				Test.java</a><i class="fa fa-github"></i></i>
 			</p>

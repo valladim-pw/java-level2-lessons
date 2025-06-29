@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<body onload="myFunction()">
+
+<p>Example list:</p>
+
+<div class="column">
+<span class="badge bg-primary">Рис.23&nbsp;<i class="material-icons">&#xe5db;</i></span>
+<img src="images/images_06.1/06.1.23.png">
+<p>
+* Для <b>Пример 2</b> также создадим отдельный проект <b>Ant3</b> (рис. выше (1)).</p>
+<p onclick="openWin13()">
+<script>
+function openWin13() {
+window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+}
+</script>
+* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3">			
+Проект Ant3</a><i class="fa fa-github"></i></i></p>
+<p>
+<p>
+<a  class="inner-anchor" href="N-05.1 Тестирование кода, JUnit.html#20" > 
+Подключение в проект внешних библиотек для работы JUnit</a>
+</p>
+</div>
+<div class="column">
+<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
+<img src="images/images_06.1/06.1.24.png">
+<p>
+* Для <b>Пример 2</b> также создадим отдельный проект <b>Ant3</b> (рис. выше (1)).</p>
+<p onclick="openWin13()">
+<script>
+function openWin13() {
+window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
+}
+</script>
+* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3">			
+Проект Ant3</a><i class="fa fa-github"></i></i></p>
+<p>
+<p>
+<a  class="inner-anchor" href="" > 
+Подключение в проект внешних библиотек для работы JUnit2</a>
+</p>
+</div>
+<div id="page-indexes" class="page-index">
+	<button class="buts-index but-index">
+		<a id="link-index" class="anchor-index" href="" target="frame"></a>
+	</button>	
+	<button class="buts-index but-back">					
+		<a id="link-back" class="anchor-index invisible" href="N-05.1 Тестирование кода, JUnit.html" target="frame" ><i class="material-icons">arrow_back</i><span class="icon-patch"></span><span>Back</span></a>
+		<a id="page-this" class="anchor-index page-this" href="" target="frame" ><i class="material-icons">arrow_downward</i><span>Page</span></a>
+	</button>
+	<button id="loc-address" class="buts-index location">1.1 Динамические массивы</button>
+</div>
+
+
+<p>Click the button to get the node name of the parent element of the li element in the list.</p>
+
+<button >Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function changeLinkHash(atr1, atr2, elem) {
+	atr1 = atr1.substring(0, atr1.lastIndexOf("."));
+	atr1 = atr1.substring(+atr1.lastIndexOf(".") + 1);
+	if(atr2.indexOf("#") != -1)
+		atr2 = atr2.substring(0, atr2.indexOf("#"));
+	atr2 += "#" + atr1;
+	elem.setAttribute("href", atr2);
+
+}
+
+function myFunction() {
+	let inner_anchors = document.getElementsByClassName("inner-anchor");
+	let link_back = document.getElementById("link-back");
+	let atr2 = link_back.getAttribute("href");
+	
+	
+  for(let i = 0; i < inner_anchors.length; i++) {
+		
+		inner_anchors[i].addEventListener("click", function(event) {
+			event.preventDefault();
+			let e = event.target;
+			let img = e.parentElement.parentElement.querySelector("img");
+			let atr1 = img.getAttribute("src");
+			changeLinkHash(atr1, atr2, link_back);
+			document.getElementById("demo").innerHTML = link_back.getAttribute("href");
+					
+		});
+	}
+}
+</script>
+
+</body>
+</html>

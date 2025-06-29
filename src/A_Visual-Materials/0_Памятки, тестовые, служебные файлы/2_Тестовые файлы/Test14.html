@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body onload="myFunction2()">
+	<div class="collapse collapse-custom"  id="panel6">
+	<!--Start Theme6 Body Wrap-->
+		<div class="anchors">
+			<!--Start Lecture6.1 Head-->
+			<p class="heading-wrap">
+				<span onclick="toggleArrow(event)" class="anchors-button" data-toggle="collapse" data-target="#panel61">
+					<span class="badge-wrap"><span class="badge b-first">Лекция</span><span class="badge b-second">6.1</span></span>
+					<i class="material-icons nav invisible">arrow_drop_up</i>
+					<i class="material-icons nav">arrow_drop_down</i>
+				</span>	
+				<span class="anchor-wrap"><button onclick="removeId()" class="head-anchor" href="N-05.1 Тестирование кода, JUnit.html" target="frame" >
+				Тестирование кода, JUnit</button></span>
+			</p><!--End Lecture6.1 Head-->						
+			<!--Start Lecture6.1 Body-->
+			<div class="collapse" id="panel61">
+				<p>
+					<span class="badge-wrap"><span class="badge b-first">6.1</span><span class="badge b-second">&nbsp;&nbsp;1</span></span>
+					<span class="anchor-wrap"><button onclick="myFunction1(event)" class="anchor" data-href="N-05.1 Тестирование кода, JUnit.html#1" target="frame" > 
+					Что и зачем тестировать? Файлы по теме лекции<span class="badge bg-primary inums">рис.1, 2</span></button></span>
+				</p>
+				<p>
+					<span class="badge-wrap"><span class="badge b-first">6.1</span><span class="badge b-second">&nbsp;&nbsp;2</span></span>
+					<span class="anchor-wrap"><button onclick="myFunction1(event)" class="anchor" data-href="N-05.1 Тестирование кода, JUnit.html#3" target="frame" > 
+					Пример системы в разрезе тестирования<span class="badge bg-primary inums">рис.3</span></button></span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<p>
+	<a id="a1" class="head-anchor" href="N-05.1 Тестирование кода, JUnit.html" target="frame"></a>
+	</p>
+<script>
+let collapse1 = document.getElementsByClassName("collapse-custom");
+function myFunction1(event) {
+	let e = event.target;
+}
+function myFunction2(){
+	let head_anchors = document.getElementsByClassName("head-anchor");	
+	
+	for (let i = 0; i < head_anchors.length; i++) {		
+		head_anchors[i].addEventListener("click", function(event) {			
+			
+			let e = event.target;
+			
+			let link_href = link_back.getAttribute("href");	
+			
+			loc_button.setAttribute("data-menu-href", link_href);
+			//loc_button.setAttribute("data-menu-top", menu.scrollTop);
+		});
+	}
+}
+$(document).ready(function(){
+  function getParents(elem, class) {
+		return $(elem).parents("")
+	}
+});
+
+</script>
+</body>
+
+</html>

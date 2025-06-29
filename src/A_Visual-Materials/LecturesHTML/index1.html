@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Java Lessons, продвинутый уровень</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Ссылки на картинки с иконкой сайта не работают в IntelliJ IDEA, раскомментировать на стороннем хостинге-->
+	
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/menu-style.css">
+	<link rel="stylesheet" href="styles/mobile-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>	
+	<style>
+	.demo {
+	  position: absolute;
+		font-size: 10px;
+		top: 0;
+	}
+	.left {
+	  left: 0;		
+	}
+	.right {
+	  right: 0;		
+	}
+	</style>
+</head>
+<body onload="setPageHeading()">
+
+	<div id="head" class="head">
+		
+		<div class="col-sm-1 buttons" >
+			<div id="buts-desk" class="buts-wrap">
+				<button id="switch1" class="switcher" title="Меню"><i class="material-icons">menu</i></button>
+				<button id="switch2" class="switcher" title="Убрать меню"><i class="material-icons">chevron_left</i></button>
+				<button id="switch3" class="switcher updown" title="Вернуть заголовок"><i class="material-icons">expand_more</i></button>
+				<button id="switch4" class="switcher updown" title="Убрать заголовок"><i class="material-icons">expand_less</i></button>
+				<!--arrow_back-->
+				<!--arrow_downward-->
+				<!--arrow_upward-->
+			</div>			
+			<div id="buts-mobile" class="buts-wrap mobile">				
+				<button id="switch-mob-1" title="Убрать меню" class="switcher"><i class="material-icons">chevron_left</i></button>
+				<button id="switch-mob-2" title="Меню" class="switcher"><i class="material-icons">menu</i></button>
+				<button id="switch-mob-3" class="switcher expand-more btn-tablet"  title="Вернуть заголовок" ><i class="material-icons">expand_more</i></button>
+				<button id="switch-mob-4" class="switcher expand-less btn-tablet"  title="Убрать заголовок" ><i class="material-icons">expand_less</i></button>
+				<button id="switch-mob-5" class="switcher fullscreen"  title="" onclick="closeFullscreen();"><i class="material-icons">fullscreen_exit</i></button>
+				<button id="switch-mob-6" class="switcher fullscreen"  title="" onclick="openFullscreen();"><i class="material-icons">fullscreen</i></button>
+				<!--<i class="material-icons">fullscreen_exit</i>-->
+			</div>
+		</div>
+		<div class="col-sm-9 h-wrap">
+			<div id="demo" class="demo left">Demo</div>
+			<h1><span class="h-java">Java Lessons</span><span class="h-level">&nbsp;&nbsp;*продвинутый уровень* </span></h1>			
+			<div id="demo1" class="demo right">Demo1</div>
+			<!--<div id="demo2" class="demo">Demo2</div>-->
+		</div>		
+		<div class="col-sm-2 icon">
+		  <a href="https://blog.progwards.ru/" target="_blank">
+				<div class="membrane"></div>
+				<img id="icon" src="images/progwards-icon1.png">
+			</a>
+		</div>
+	</div>
+	<div id="buts-mob-back" class="buts-mobile-back"></div>
+	<div id="block-page" class="block-page">
+		<div id="menu" class="block menu">
+			<div class="menu-content">
+				<!--A, B, C, D, E, F, G H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V W, X, Y, Z-->
+				<div id="empty-panel" class="panel panel-default empty-panel panel-out">
+					<div id="panel-fix" class="panel-fixed"></div>
+					<div class="panel-body-empty">
+						<p>
+							<span class="label-wrap">
+							<span class="label">&nbsp;&nbsp;</span><span class="label">&nbsp;&nbsp;</span>							
+							</span> 
+							<span class="head-wrap">&nbsp;&nbsp;</span>
+						</p>												
+					</div>
+				</div>
+				<mark id="theme00"></mark>
+				<mark id="theme01"></mark>
+				<mark id="theme02"></mark>				
+				<mark id="theme03"></mark>
+				<mark id="theme04"></mark>
+				<mark id="theme05"></mark>
+				<mark id="theme06"></mark>
+				<mark id="theme07"></mark>
+				<mark id="theme08"></mark>
+				
+				
+				
+			</div><!--end menu-content-->
+		</div><!--end block menu-->
+		<div class="block frame">
+			<div class="frame-membrane"></div>
+			<div id="page-indexes" class="page-index">
+			  <button id="but-counter" onclick="setTimeout(getCounter, 0);" class="but-counter">c</button>
+				<button class="buts-index but-index">
+					<a id="link-index" class="anchor-index" href="" target="frame">i</a>
+				</button>	
+				<button class="buts-index but-back">					
+					<a id="link-back" class="anchor-index invisible" href="" target="frame" ><i class="material-icons">arrow_back</i><span class="icon-patch"></span><span>Back</span></a>
+					<a id="page-this" class="anchor-index page-this" href="" target="frame" ><i class="material-icons">arrow_downward</i><span>Тема</span></a>
+				</button>
+				<button id="loc-address" class="buts-index location">1.1 Динамические массивы</button>
+			</div>
+			<iframe id="frame" onload="loadFrame();setTimeout(linkIndexClick, 500);" src="N-00.1 Динамические массивы.html"  name="frame" title="Iframe Example"></iframe>
+		</div>
+	</div><!--end block-page-->
+<script>
+/*
+Fetch API Вставка файлов с темами в меню-контент после тега < mark > с соответствующим названию темы id
+*/
+let themes = ["theme00", "theme01", "theme02","theme03", "theme04", "theme05", "theme06", "theme07", "theme08"];
+let dir = "./thems/";
+let ext = ".html";
+
+for (let t in themes) {
+  let file = dir + themes[t] + ext;
+	getContent(file);
+}
+
+async function getContent(file) {
+  let x = await fetch(file);
+  let y = await x.text();	
+	let mark = document.querySelectorAll("mark");	
+	for (let i = 0; i < mark.length; i++) {
+		let id = mark[i].getAttribute("id");
+    let pos = file.search(id);		
+		if (pos != -1)
+			mark[i].insertAdjacentHTML("afterend", y);	
+	}		
+}
+
+/*
+end Fetch API
+*/
+let anchors = document.getElementsByClassName("anchor");
+let anchors_block = document.getElementsByClassName("anchors");
+let anchs = document.getElementsByTagName("a");
+let doc_elem = document.documentElement;
+
+let menu = document.getElementById("menu");
+let page = document.getElementById("block-page");
+let icon = document.getElementById("icon");
+let head = document.getElementById("head");
+let frame = document.getElementById("frame");	
+let buts_mobile = document.getElementById("buts-mobile");
+let buts_desk = document.getElementById("buts-desk");
+let empty_panel = document.getElementById("empty-panel");
+let panel_fixed = document.getElementById("panel-fix");
+let buts_back = document.getElementById("buts-mob-back");
+
+let menu_desk_button = document.getElementById("switch1");
+let menu_add_button = document.getElementById("switch-mob-1");
+let menu_button = document.getElementById("switch-mob-2");
+let showhead_button = document.getElementById("switch-mob-3");
+let hidehead_button = document.getElementById("switch-mob-4");
+let fullscreen_button = document.getElementById("switch-mob-6");
+let fullscreen_exit_button = document.getElementById("switch-mob-5");
+let screen_full = false;
+let head_open = true;
+let inn_link = false;
+let back_link = false;
+let back_link_active;
+let adres1 = "";
+let adres2 = "";
+//let correct_scrolltop = false;
+
+
+let buts_index = document.getElementById("page-indexes");
+let but_back = document.querySelector(".but-back");
+let but_counter = document.getElementById("but-counter")
+let link_back = document.getElementById("link-back");
+let page_this = document.getElementById("page-this");
+let link_index = document.getElementById("link-index");
+let loc_button = document.getElementById("loc-address");
+
+
+let demo = document.getElementById("demo");
+let demo1 = document.getElementById("demo1");
+let demo2 = document.getElementById("demo2");
+
+/*
+
+<body onload="setPageHeading()">
+
+<iframe id="frame" onload="loadFrame();setTimeout(linkIndexClick, 500);"...
+
+<button id="but-counter" onclick="getCounter()" class="but-counter">
+
+*/
+
+/* 
+Вспомогательные функции для упрощения преобразований классов элементов средствами Javascript
+*/
+function hasClass(el, attr) {
+  let x = el.classList.contains(attr);
+  if (x)
+		return true;
+  return false;
+}
+function addClass(el, attr) {
+  let list = el.classList;
+  list.add(attr);
+}
+function removeClass(el, attr) {
+  let list = el.classList;
+  list.remove(attr);
+}
+
+/* 
+Функция для изменения адреса текущей темы для записи в панель, фиксированную поверх фрейма
+(адрес сокращается как в записи на кнопке меню с темой, нажатой в данный момент ) 
+*/
+
+function setPageLocation(elem, address) {
+	let index1 = address.indexOf("-");
+	let index2 = address.indexOf(".html");
+
+	address = address.substring(index1, index2);
+	if (address.charAt(1) == "0")
+		index1 += 1;
+	address = address.substring(index1, index2);
+	let first = address.charAt(0);
+	let first_plus = first * 1 + 1;
+	address = address.replace(first, first_plus);
+	
+	if (window.innerWidth <= 500) {			
+		if (address.length > 30) {
+			elem.setAttribute("title", address);
+			address = address.substring(0, 30);
+			address += "..."
+		}		
+	} else if (window.innerWidth <= 800 && window.innerWidth > 500) {	
+		if (address.length > 33) {
+			elem.setAttribute("title", address);
+			address = address.substring(0, 33);
+			address += "..."
+		}			
+	} else if (window.innerWidth <= 1300 && window.innerWidth > 800) {		
+		if (address.length > 35) {
+			elem.setAttribute("title", address);
+			address = address.substring(0, 35);
+			address += "..."
+		}			
+	}	else if (window.innerWidth > 1300) {
+		if (address.length > 40) {
+			elem.setAttribute("title", address);
+			address = address.substring(0, 40);
+			address += "..."
+		}		
+	}				
+	elem.innerHTML = address;
+}
+
+/* 
+При переходе по ссылке в теме во фрейме на нужный раздел в другой теме, в
+в панели, фиксированной поверх фрейма (с названием темы), в которой есть кнопка
+с заглавием (Тема), эта кнопка меняется на кнопку Back со ссылкой на исходную тему.
+Функция нужна для изменения значения хэша в ссылке Back (изначально ссылка ведет на картинку
+в теме рядом с которой есть элемент с id) Мы меняем хэш в ссылке (+=100) и id исходной ссылке
+и Back ведет уже на ссылку а не на картинку(потому что от картинки до ссылки может быть 
+большой блок текста и исходная ссылка будет за пределами экрана при возврате к ней)
+*/
+
+function changeLinkHash(adr1, adr2, elem) {
+	adr1 = adr1.substring(0, adr1.lastIndexOf("."));
+	adr1 = adr1.substring(+adr1.lastIndexOf(".") + 1);
+  adr1 = 100 + +adr1;	
+	
+	if (adr2.indexOf("#") != -1)
+		adr2 = adr2.substring(0, adr2.indexOf("#"));
+	adr2 += "#" + adr1;
+	elem.setAttribute("href", adr2);
+}
+
+function setBackButton() {
+	if (hasClass(link_back, "invisible")) {
+		removeClass(link_back, "invisible");
+		addClass(but_back, "blue-but-back");
+		addClass(page_this, "invisible");		
+	}
+}
+
+function setThemeButton() {
+	if (hasClass(page_this, "invisible")) {
+		removeClass(page_this, "invisible");
+		removeClass(but_back, "blue-but-back");
+		addClass(link_back, "invisible");		
+	}	
+}
+
+function makeCounter() {
+  let count = 1;
+
+  return function() {
+    return count++; 
+  };
+}
+
+let counter = makeCounter();
+
+function getCounter() {
+  let html = frame.contentWindow.document.documentElement;  
+	but_counter.setAttribute("data-count", "" + counter());
+	let c = but_counter.getAttribute("data-count");	
+	
+	if (c == 1)	
+		but_counter.setAttribute("data-scroll-innlink", "" + html.scrollTop);
+	
+	if (c == 2)		
+		but_counter.setAttribute("data-scroll-backlink", "" + html.scrollTop);	
+	
+}
+
+function changeScrollTopLinks() {
+	let html = frame.contentWindow.document.documentElement; 
+  html.scrollTop -= icon.clientHeight;//icon.clientHeight;		
+}
+
+function changeScrollTopInnLink() {
+	let html = frame.contentWindow.document.documentElement;
+	let c = but_counter.getAttribute("data-count");
+	let s = but_counter.getAttribute("data-scroll-innlink");	
+	let txt = "";
+	
+	txt += "counter(changeInnLink): " + c + "<br>";	
+	
+	if (c > 1) {
+		txt += "2data-s: " + s + "<br>";
+		html.scrollTop = +s - icon.clientHeight;
+		txt += "2h.sT=s-100: " + html.scrollTop + "<br>";			
+	} else {
+		txt += "1h.sT: " + html.scrollTop + "<br>";
+		html.scrollTop -= icon.clientHeight;
+		txt += "1h.sT-=100: " + html.scrollTop + "<br>";
+	}		
+	
+	demo.innerHTML = txt;	
+}
+
+function changeScrollTopBackLink() {
+	let html = frame.contentWindow.document.documentElement;
+	let c = but_counter.getAttribute("data-count");
+	let s = but_counter.getAttribute("data-scroll-backlink");
+	let txt = "";	
+	
+	txt += "counter(changeBackLink): " + c + "<br>";
+	
+	if (c > 2) {
+		txt += "2data-s: " + s + "<br>";
+		html.scrollTop = +s - (icon.clientHeight * 2);
+		txt += "2h.sT=s-100: " + html.scrollTop + "<br>";			
+	} else {
+		txt += "1h.sT: " + html.scrollTop + "<br>";
+		html.scrollTop -= icon.clientHeight * 2;
+		txt += "1h.sT-=100: " + html.scrollTop + "<br>";
+	}
+	
+	demo.innerHTML = txt;	
+}
+
+function linkIndexClick() {	
+  let index_href = link_index.getAttribute("href");
+	let back_href = link_back.getAttribute("href");
+	
+	
+	if (inn_link) {
+		
+		if (index_href.indexOf("#") != -1) {
+			
+			link_index.addEventListener("click", function() {				
+				setTimeout(changeScrollTopInnLink, 50);				
+			});			
+			but_counter.click();
+			link_index.click();			
+		}	
+		inn_link = false;
+		back_link_active = true;
+		
+		setBackButton();		
+	}
+	if (back_link) {		
+		if (back_href.indexOf("#") != -1) {
+			
+			let id1 = back_href.substring(back_href.indexOf("#") + 2);
+			let id_elem = frame.contentWindow.document.getElementById(id1);
+			let anchor = id_elem.parentElement.querySelector(".inner-anchor");
+			let id2 = back_href.substring(back_href.indexOf("#") + 1);
+			anchor.setAttribute("id", id2);
+			
+			link_back.addEventListener("click", function() {				
+				setTimeout(changeScrollTopBackLink, 50);				
+			});
+			but_counter.click();
+			link_back.click();			
+			
+		}	else {
+			buts_index.removeAttribute("style");
+			removeClass(buts_index, "new-top");
+		}	
+		back_link = false;
+		back_link_active = false;
+		setThemeButton();
+	}
+}
+
+function loadFrame() {
+	let inner_anchors = frame.contentWindow.document.getElementsByClassName("inner-anchor");
+	let but_wrap = frame.contentWindow.document.querySelector(".but-wrap");
+	let head_anchors = document.getElementsByClassName("head-anchor");
+	//let html = frame.contentWindow.document.documentElement;	
+	
+	
+	for (let i = 0; i < head_anchors.length; i++) {		
+		head_anchors[i].addEventListener("click", function() {			
+			
+			let back_href = this.getAttribute("href");
+			link_back.setAttribute("href", back_href);
+			
+			if (hasClass(buts_index, "new-top")) {
+				buts_index.removeAttribute("style");
+				removeClass(buts_index, "new-top");
+			}
+			
+			if (back_link_active)
+				setThemeButton();
+				
+			setPageLocation(loc_button, back_href);				
+		});
+	}
+	
+	for (let i = 0; i < inner_anchors.length; i++) {		
+		inner_anchors[i].addEventListener("click", function(event) {
+      let e = event.target;		
+			let index_href = e.getAttribute("href");		
+			
+			let img = e.parentElement.parentElement.querySelector("img");
+			adres1 = img.getAttribute("src");
+			adres2 = link_back.getAttribute("href");
+			
+			changeLinkHash(adres1, adres2, link_back);			
+
+			for (let j = 0; j < anchs.length; j++) {
+				if (anchs[j].getAttribute("id") == "a")
+					anchs[j].removeAttribute("id");	
+			}
+			
+			if (hasClass(buts_index, "new-top")) {
+				buts_index.removeAttribute("style");
+				removeClass(buts_index, "new-top");
+			}
+			
+			link_index.setAttribute("href", index_href);
+			inn_link = true;
+			
+			setPageLocation(loc_button, index_href);		
+		});
+	}
+	
+	link_back.addEventListener("click", function() {
+		if (hasClass(buts_index, "new-top")) {
+			buts_index.removeAttribute("style");
+			removeClass(buts_index, "new-top");
+		}
+		let back_href = this.getAttribute("href");
+		back_link = true;
+		setPageLocation(loc_button, back_href);		
+	});
+	
+	for (let i = 0; i < anchors.length; i++) {
+		if (anchors[i].hasAttribute("id")) {
+			let a = document.getElementById("a");
+			
+			a.addEventListener("click", function() {
+				setTimeout(changeScrollTopLinks, 100);		
+			});
+			
+			a.click();			
+			
+			if (head_open)
+				setPageHeading();
+			else
+				removePageHeading();
+		}
+	}
+}
+
+function highlightByHash(idx1, idx2, event) { 
+	for (let i = 0; i < anchs.length; i++) {
+		if (anchs[i].getAttribute("id") == "a")
+			anchs[i].removeAttribute("id");	
+	}	
+  
+	let e = event.target;
+	let back_href = "";
+	
+	if (e.hasAttribute("href")) {
+		e.setAttribute("id", "a");
+		back_href = e.getAttribute("href"); 
+	}		
+	if (e.parentElement.hasAttribute("href")) {
+		e.parentElement.setAttribute("id", "a");
+		back_href = e.parentElement.getAttribute("href");
+	}
+	
+	if (back_link_active)
+		setThemeButton();
+	
+	link_back.setAttribute("href", back_href);		
+	setPageLocation(loc_button, back_href);	
+	
+	let frame = document.getElementById("frame");
+  let cols = frame.contentWindow.document.getElementsByClassName("column");
+	
+	for (let i = 0; i < cols.length; i++) {
+		let img = cols[i].querySelector("img");
+		img.removeAttribute("style");			
+		if (i >= idx1 && i <= idx2)	{
+			img.style.borderTop = "15px solid #b4b4fc";	
+			img.style.borderLeft = "15px solid #7575e1";
+		}	
+  }	
+	changeScrollTopLinks();	
+	toggleMobileMenu();	
+}
+
+function removeId() {	
+	for (let i = 0; i < anchors.length; i++) {
+		anchors[i].removeAttribute("id");		
+	}
+	toggleMobileMenu();
+}
+
+function toggleMobileMenu() {
+	if (hasClass(menu, "menu-full")) {
+		removeClass(menu, "menu-full");
+		removeClass(menu_button, "invisible");		
+	}
+}
+
+function toggleArrow(event) {
+  let e = event.currentTarget;
+	let arrows = e.querySelectorAll(".nav");
+	for (let i = 0; i < arrows.length; i++) {		
+		let arr = arrows[i];
+		if  (hasClass(arr, "invisible"))
+			removeClass(arr, "invisible");
+		else
+			addClass(arr, "invisible");				
+	}
+}
+
+/* Function to open fullscreen mode */
+
+function openFullscreen() {	
+	addClass(fullscreen_button, "invisible");
+	screen_full = true;
+  
+	if (doc_elem.requestFullscreen)
+		doc_elem.requestFullscreen();
+	else if (doc_elem.webkitRequestFullscreen) /* Safari */
+		doc_elem.webkitRequestFullscreen();
+	else if (doc_elem.mozRequestFullscreen) /* Mozilla */
+		doc_elem.mozRequestFullscreen();
+	else if (doc_elem.msRequestFullscreen) /* IE11 */
+		doc_elem.msRequestFullscreen();
+	
+	if (head_open)
+		setPageHeading();
+	else
+		removePageHeading();
+}
+/* Close fullscreen */
+
+function closeFullscreen() {	
+	removeClass(fullscreen_button, "invisible");
+	screen_full = false;
+  
+	if (document.exitFullscreen)
+		document.exitFullscreen();
+	else if (document.webkitExitFullscreen) /* Safari */
+		document.webkitExitFullscreen();
+	else if (document.mozExitFullscreen) /* Mozilla */
+		document.mozExitFullscreen();
+	else if (document.msExitFullscreen) /* IE11 */
+		document.msExitFullscreen();
+	
+	if (head_open)
+		setPageHeading();
+	else
+		removePageHeading();
+}
+
+/*Function for set height of block-page depending on the height of the icon-image*/
+
+function setPageHeading() {
+	let half_img = icon.clientHeight / 2;
+	let half_but = menu_desk_button.offsetHeight / 2;
+	let buts_top = half_img - half_but;
+	head_open = true;
+	head.style.top = 0 + "px";
+	page.style.top = 0 + "px";
+	head.style.height = icon.clientHeight + "px";	
+	
+	if (screen_full)		
+		page.style.height = (window.outerHeight - icon.clientHeight) + "px";
+	else		
+		page.style.height = (window.innerHeight - icon.clientHeight) + "px";
+	
+	if (!hasClass(empty_panel, "panel-out"))
+			addClass(empty_panel, "panel-out");	
+	
+	if (window.innerWidth < 500) {
+		buts_mobile.style.top = 1 + "px";
+		buts_back.style.height = menu_add_button.offsetHeight + "px";
+		buts_back.style.display = "none";
+	} else 	
+		buts_mobile.style.top = (icon.clientHeight / 5) + "px";
+	
+	if (window.innerWidth < 1100 && 
+			window.innerWidth >= 500 &&
+			hasClass(buts_index, "new-top"))
+		buts_index.style.top = (icon.clientHeight * 1.6) + "px";
+	
+	buts_desk.style.top = buts_top + "px";	
+	panel_fixed.style.height = menu_desk_button.offsetHeight + "px";	
+}
+
+/*Function to remove height of page heading*/
+
+function removePageHeading() {	
+	head_open = false;
+	head.style.height = 0 + "px";
+	head.style.top = 0 + "px";
+	page.style.top = 0 + "px";
+	buts_mobile.style.top = 1 + "px";
+	
+	if (screen_full)
+		page.style.height = window.outerHeight + "px";		
+	else
+		page.style.height = window.innerHeight + "px";
+		
+	if (hasClass(empty_panel, "panel-out"))
+		removeClass(empty_panel, "panel-out");
+	
+	if (window.innerWidth < 500) {
+		buts_back.style.height = menu_add_button.offsetHeight + "px";
+		buts_back.style.display = "block";
+	}	else
+		buts_back.style.display = "none";
+	
+	if (window.innerWidth < 1100 && 
+			window.innerWidth >= 500 &&
+			hasClass(buts_index, "new-top"))
+		buts_index.style.top = icon.clientHeight + "px";
+	
+	buts_desk.style.top = 0 + "px";	
+}
+
+/*
+ - Функция установки размеров панели с заголовком и блока с контентом, рассчитываемых по высоте иконки в зафисимости от 
+изменений размеров окна (т.е. при смене ориентации мобильного устройства)	 
+*/
+
+window.addEventListener("resize", function(){
+	if (head_open)
+		setPageHeading();
+	else
+		removePageHeading();	
+});
+
+/* - Функции регулировки скрытия -появления меню и панели с заголовком в дектопном и мобильном вариантах */
+  
+$(document).ready(function(){	
+
+// Регулировка кнопками скрытия-повления меню в дектопном варианте
+  $("#switch2").click(function(){
+    $(this).addClass("invisible");
+    $(".menu").addClass("menu-hidden");
+    $(".frame").addClass("frame-full");		
+  });
+  $("#switch1").click(function(){
+    $("#switch2").removeClass("invisible");
+    $(".menu").removeClass("menu-hidden");
+    $(".frame").removeClass("frame-full");
+  });
+// Регулировка кнопками скрытия-повления панели с заголовком в дектопном варианте	
+	$("#switch4").click(function(){
+    $(this).addClass("invisible");
+		$(".buts-wrap").addClass("shift-right");		
+		removePageHeading();
+  });
+  $("#switch3").click(function(){
+    $("#switch4").removeClass("invisible");
+    $(".buts-wrap").removeClass("shift-right");		
+		setPageHeading();
+  });	
+// Регулировка кнопками скрытия-повления меню в мобильном варианте	
+	$("#switch-mob-2").click(function(){
+    $(this).addClass("invisible");
+    $(".menu").addClass("menu-full");    
+  });
+	$("#switch-mob-1").click(function(){
+    $("#switch-mob-2").removeClass("invisible");
+    $(".menu").removeClass("menu-full");    
+  });
+// Регулировка кнопками скрытия-повления панели с заголовком в мобильном варианте	
+	$("#switch-mob-4").click(function(){
+    $(this).addClass("invisible");
+		$(".buts-wrap").addClass("shift-right");		
+    removePageHeading();
+  });
+  $("#switch-mob-3").click(function(){
+    $("#switch-mob-4").removeClass("invisible");
+    $(".buts-wrap").removeClass("shift-right");		
+    setPageHeading();	
+  });		
+});
+
+
+</script>
+</body>
+</html>

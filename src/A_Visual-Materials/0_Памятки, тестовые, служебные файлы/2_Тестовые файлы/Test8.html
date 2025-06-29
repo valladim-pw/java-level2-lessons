@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<style>
+.myStyle {
+  background-color: coral;
+  padding: 16px;
+}
+.anotherClass {
+  text-align: center;
+  font-size: 25px;
+}
+.thirdClass {
+  text-transform: uppercase;
+}
+</style>
+
+<body>
+<h1>The DOMToken Object</h1>
+<h2>The contains() Method</h2>
+
+<div id="myDIV" class="myStyle thirdClass">
+<p>I am myDIV.</p>
+</div>
+
+<p>Does the "myDIV" element have a class of "myStyle"?</p>
+<p id="demo"></p>
+
+<script>
+function hasClass(el, attr) {
+  let x = el.classList.contains(attr);
+  if(x)
+  return true;
+  return false;
+}
+function addClass(el, attr) {
+  let list = el.classList;
+  list.add(attr);
+}
+function removeClass(el, attr) {
+  let list = el.classList;
+  list.remove(attr);
+}
+let elem = document.getElementById("myDIV");
+if(hasClass(elem, "myStyle")){
+	addClass(elem, "anotherClass");
+	removeClass(elem, "thirdClass");
+}
+let t = "N-05.1 Тестирование кода, JUnit.html#123";
+let s = t.substring(t.indexOf("#") + 1);
+document.getElementById("demo").innerHTML = s; //elem.getAttribute("class");
+</script>
+
+</body>
+</html>

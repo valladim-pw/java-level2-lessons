@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a:after {content: " (" attr(href) ")";}
+.div {
+	position: relative;
+	width: 50%;
+	height: 300px;
+	border: 2px solid blue;
+	background-color: #87b9e4;
+}
+.but {
+	position: absolute;
+  left: 0;	
+}
+.left {	
+  left: attr(data-left);	
+}
+</style>
+</head>
+<body>
+
+<h1>The attr() Function</h1>
+
+
+<button onclick="setAttr()">Onclick</button>
+<p>Insert the value of the href attribute in parenthesis after each link:</p>
+<div class="div" id="div">
+<button class="but" id="but">Button</button>
+</div>
+
+<script>
+function addClass(el, attr) {
+  let list = el.classList;
+  list.add(attr);
+}
+
+let but = document.getElementById("but");
+
+function setAttr() {
+	let w = but.offsetWidth;
+	
+	but.setAttribute("data-left", w);
+	addClass(but, "left");
+
+}
+
+</script>
+
+</body>
+</html>

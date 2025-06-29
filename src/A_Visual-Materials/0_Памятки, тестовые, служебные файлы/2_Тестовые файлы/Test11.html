@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.tip {
+	position: relative;
+	width: 200px;
+}
+*[tooltip]:hover:before {
+	content: attr(tooltip);
+	border: #777;
+	background-color: #131737;
+	padding: 5px;
+	color: white;
+	position: absolute;
+	top: 100%;
+}
+</style>
+</head>
+<body>
+
+<h1>Tooltip</h1>
+<div class="tip" title='tooltip'>С тултипом title</div>
+<div id="tip" class="tip" tooltip='2.1 JRE, JDK, JVM, JIT-компиляция, Декомпиляция, Командная строка, jar-файлы'>C тултипом :hover:after</div>
+<div id="demo"></div>
+
+
+<script>
+let back_ref = "N-00.1 Динамические массивы.html#18";
+let r1 = back_ref.substring(0, back_ref.indexOf("#"));
+let r2 = back_ref.substring(back_ref.indexOf("#") + 1);
+document.getElementById("demo").innerHTML = r1 + "<br>" + r2;
+</script>
+
+</body>
+</html>

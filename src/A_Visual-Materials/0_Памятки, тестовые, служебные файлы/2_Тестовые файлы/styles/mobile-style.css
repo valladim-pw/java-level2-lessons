@@ -1,0 +1,141 @@
+/*
+******************** Mobile styles ****************
+*/
+
+.buts-wrap.mobile {
+	display: none;
+}
+.buts-mobile-back {
+	display: none;
+}
+
+
+@media screen and (max-width: 1200px) {
+	.buts-wrap {
+		display: none;
+	}
+	.buts-wrap.mobile {
+		display: block;
+		top: 3vh;
+	}
+	.buts-wrap.mobile i.material-icons {		
+		font-size: 3.5vw;
+	}
+	.menu {
+		width: 100%;
+		left: -100vw;
+	}
+	.menu-full {
+		width: 100%;
+		left: 0;
+	}
+	.frame {
+		width: 100%;
+		left: 0;
+	}
+	#header {
+		padding: 0 !important;		
+	}
+	#header p {
+		font-size: 1.5vw;
+		margin-bottom: 1.5vw;
+	}
+	button {
+		box-shadow: none;
+	}	
+	.btn-tablet {
+		left: 6vw;
+	}
+	.fullscreen {
+		left: 12vw;
+	}	
+	.btn {    
+		padding: 0.8vw 1.2vw;    
+		font-size: 1.5vw;    
+	}
+	.head h1 {         
+		font-size: 3.5vw;    
+	}
+	span.h-java {
+		display: block;
+	}
+	span.h-level {
+		font-size: 3vw;
+	}
+	.col-sm-1.buttons {         
+		width: 20% !important ;    
+	}
+	.col-sm-9.h-wrap {         
+		width: 55% !important;    
+	}
+	.col-sm-2.icon {         
+		width: 25% !important;    
+	}
+	.panel-fixed {
+		display: none;
+	}
+	.panel-body-empty {
+		line-height: 2;
+	}	
+	.head {	
+		background-size: 120% 100%;
+	}
+}
+
+
+@media screen and (max-width: 500px) {
+	#header {
+		display: none;
+	}	
+	.btn-tablet {
+		left: 9.6vw;
+	}
+	.fullscreen {
+		left: 19.3vw;
+	}
+	.column {
+		flex: 100% !important;
+	}	
+	.buts-wrap.mobile {		
+		top: 0.5vw;
+	}
+	.col-sm-1.buttons {         
+		width: 30% !important ;    
+	}
+	.col-sm-9.h-wrap {         
+		width: 40% !important; 
+		padding: 0 !important;	
+	}
+	.col-sm-2.icon {         
+		width: 30% !important;    
+	}
+	.buts-wrap.mobile i.material-icons {		
+		font-size: 5vw;
+		line-height: 1.5;
+	}	
+	.head h1 {         
+		font-size: 3.8vw;    
+	}
+	.buts-mobile-back {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background: rgb(227 227 244 / 65%);
+		z-index: 9;
+	}	
+	.new-top {		
+		top: initial;
+	}
+	.page-index {		
+		font-size: 2.8vw;		
+	}
+	*[tooltip]:hover:before {	
+		font-size: 10px;
+	}
+	.anchor-index i.material-icons {    
+    font-size: 13px;    
+	}
+	.head {	
+		background-size: 130% 100%;
+	}
+}

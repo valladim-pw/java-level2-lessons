@@ -10,6 +10,7 @@ public class QTest {
 		q.offer(8);
 		q.offer(22);
 		q.offer(35);
+		
 		System.out.println(q.poll());
 		System.out.println(q.poll());
 		System.out.println(q.poll());

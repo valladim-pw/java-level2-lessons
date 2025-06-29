@@ -3,23 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>06.3 Maven, часть2</title>
-	<base target="_blank">
+	<base target="_parent">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
-	<link rel="stylesheet" href="styles/style.css">	
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/mobile-style.css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 	<style >
 	</style>
 </head>
-<body onload="insertLabel(); two();">
+<body onload="setOpenWinAttr(); insertLabel(); bothLeftRight();">
 <div class="container-fluid p-3">
-	<div class="header" id="header">
+	<div class="head-buttons" id="header">
 		<p>Кнопками можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>
 		<div class="but-wrap">
 			<div class="back-fix"></div>
@@ -34,7 +35,7 @@
 				<button class="btn" onclick="oneRight();">100R</button>
 			</div>
 			<div class="but50-wrap">
-				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+				<button class="btn active" onclick="bothLeftRight();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
 			</div>
 		</div>
 	</div>
@@ -42,37 +43,24 @@
 		<div class="column">
 			<span class="badge bg-primary">Рис.1&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.1.png" >
+			<div class="code-wrap author" data-pos="30">				
+				<img src="images/authors/korneev.png" >
+			</div>
+			<div class="code-wrap back-author">				
+				<img src="images/authors/back-author3.png">
+				<img class="eye" src="images/authors/back-author2.png">
+			</div>
 			<p></p>
-			<p onclick="openWin1()">
-			<script>
-			function openWin1() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/f20856e86c357239e28dd337eaae6243fe8eaa90/src/Less06_BuildingMavenProject/Maven1","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/f20856e86c357239e28dd337eaae6243fe8eaa90/src/Less06_BuildingMavenProject/Maven1">
 			Файлы по теме(Maven1)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
-			<p onclick="openWin1a()">
-			<script>
-			function openWin1a() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenParentPOM","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenParentPOM">
 			Файлы по теме(Maven1 Parent)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
-			<p onclick="openWin1b()">
-			<script>
-			function openWin1b() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/ee3c464df99126cae6622a0b235e19e639293a45/src/Less06_MavenPlugin/MavenPlugin","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin">
 			Файлы по теме(MavenPlugin)</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
-			<p onclick="openWin2()">
-			<script>
-			function openWin2() {
-			  window.open("https://maven.apache.org/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <a class="github" href="https://maven.apache.org/">
 			Документация Apache Maven</a>
 			</p>
@@ -87,12 +75,7 @@
 		<div class="column">
 			<span class="badge bg-primary">Рис.3&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.3.png">			
-			<p onclick="openWin3()">
-			<script>
-			function openWin3() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingMavenProject/Maven1">			
 			Maven1 (проект)</a><i class="fa fa-github"></i></i></p>
 			<p >			
@@ -116,12 +99,7 @@
 			* Если установлено <i>UTF-8</i>, то в свойствах ставим <b>UTF-8</b>.</br>
 			* У меня установлено <i>windows-1251</i>, и она влияет на другие проекты, поэтому я в свойствах ставлю <b>WINDOWS-1251</b>.</br>
 			</p>
-			<p onclick="openWin4()">
-			<script>
-			function openWin4() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/f8db7cd0a7d7c6d7c6a2ae3894f7ce9f8edc96fb/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/f8db7cd0a7d7c6d7c6a2ae3894f7ce9f8edc96fb/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 			* Теперь, если мы запустим компиляцию с кратким именем плагина <b>mvn compiler : compile</b> - предупреждение о кодировке исчезает, но остается предупреждение о 
@@ -129,12 +107,7 @@
 			* Если же мы запустим компиляцию с полным именем плагина (выделено зеленым) <b>org.apache.maven.plugins:maven-compiler-plugin:3.1</b> - предупреждение исчезает.</br>
 			* Это связано с правильным конфигурированием в <i>Maven</i> <i>GAV</i> плагина, указанного в его полном имени с версией <i>JDK</i>.</br>
 			</p>
-			<p onclick="openWin5()">
-			<script>
-			function openWin5() {
-			  window.open("https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html">			
 			Apache Maven Compiler Plugin</a></i></p>
 		</div>
@@ -152,15 +125,14 @@
 			<img src="images/images_06.3/06.3.6.png">			
 			<p >			
 			* Все плагины находятся в центральном репозитории <i>Maven</i> (ссылка ниже).</br>
-			* По мере их использования перемещаются в локальный репозиторий (выделено красным).</br> 
-			(подробнее cм. "Maven, часть1", рис.30)			
+			* По мере их использования перемещаются в локальный репозиторий (выделено красным).			
 			</p>
-			<p onclick="openWin6()">
-			<script>
-			function openWin6() {
-			  window.open("https://mvnrepository.com/search?q=plugin&c=maven-plugins&p=1","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
+				<i class="github-wrap"><i class="fa fa-link"></i>
+				<a  class="inner-anchor" href="N-06.2 Maven, часть1.html#30" data-target-img="30,31" target="frame"> 
+				Репозитории Maven *7.2</a></a></i>
+			</p>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/search?q=plugin&c=maven-plugins&p=1">			
 			Maven Plugins</a></i></p>
 		</div>
@@ -171,12 +143,7 @@
 			* Если мы хотим, например, задать версию плагина по умолчанию в нашем проекте можно использовать секцию <i>build</i> (выделена синим), которая служит для настройки плагинов.<br>
 			* В данном случае мы задаем версию по умолчанию <b>3.8.1</b> для плагина <i>compiler</i> (до этого была версия 3.1).<br>
 			</p>
-			<p onclick="openWin7()">
-			<script>
-			function openWin7() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/1c32983efcb0ca1c456d9ccff58f8c6e2c1109aa/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/1c32983efcb0ca1c456d9ccff58f8c6e2c1109aa/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
@@ -207,20 +174,11 @@
 			* В секции <i>compilerArgs</i> можно задать дополнительные параметры, которые используются при исполнении команды <i>javac</i>, например, в данном случае аргумент <b>- verbose</b>
 			позволит вывести дополнительную информацию о загружаемых модулях <i>java</i>.</br>
 			</p>
-			<p onclick="openWin8()">
-			<script>
-			function openWin8() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenParentPOM/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenParentPOM/pom.xml">			
 			MavenParent(pom.xml)</a><i class="fa fa-github"></i></i></p>
 			<p onclick="openWin9()">
-			<script>
-			function openWin9() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/cace14c08f4b8060c7f22a2e71428101dbde5882/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
@@ -239,12 +197,7 @@
 			* В теге <i>parallel</i> мы указываем, что работаем с методами в тестовых классах, для каждого метода - отдельный поток, также можем указать количество потоков.<br>
 			* В нашем случае при выполнении команды <i>surefire:test</i> особых отличий не видно, но при большом количестве тестов, многопоточность повлияет на скорость исполнения.<br>
 			</p>
-			<p onclick="openWin10()">
-			<script>
-			function openWin10() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/5016e916753c2213cd08f7e34b794f71f07a113e/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/5016e916753c2213cd08f7e34b794f71f07a113e/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
@@ -255,12 +208,7 @@
 			* В секции <i>configuration</i> плагина <i>surefire</i> также можно исключать (выделено красным), либо включать (выделено зеленым) определенные тестовые классы. </br>
 			* Также есть возможность проигнорировать (выделено синим) результаты тестов при сборке проекта. </br>			
 			</p>
-			<p onclick="openWin11()">
-			<script>
-			function openWin11() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d6cac8cac4d779079d0831d1c81cd036fbb273d6/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
@@ -287,44 +235,19 @@
 			4. На этом шаге, после любого из вариантов добавления зависимости, остается в файле <i>Fibo.java</i> еще раз навести курсор на пока подсвеченный объект <i>Gson</i> и комбинацией клавиш <b>Alt + Enter</b>
 			импортировать класс <i>Gson</i>.
 			</p>			
-			<p onclick="openWin12()">
-			<script>
-			function openWin12() {
-			  window.open("https://mvnrepository.com/","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/">			
 			MVN Repository(1)</a></i></p>
-			<p onclick="openWin13()">
-			<script>
-			function openWin13() {
-			  window.open("https://mvnrepository.com/artifact/com.google.code.gson/gson","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/com.google.code.gson/gson">			
 			MVN Repository(2)(gson)</a></i></p>
-			<p onclick="openWin14()">
-			<script>
-			function openWin14() {
-			  window.open("https://javarush.com/groups/posts/3970-kofe-breyk-175-kak-mih-mozhem-prochitatjh-fayl-json-v-java-chto-takoe-java-development-kit-jdk","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://javarush.com/groups/posts/3970-kofe-breyk-175-kak-mih-mozhem-prochitatjh-fayl-json-v-java-chto-takoe-java-development-kit-jdk">			
 			Подробее о JSON</a></i></p>
-			<p onclick="openWin15()">
-			<script>
-			function openWin15() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
-			<p onclick="openWin16()">
-			<script>
-			function openWin16() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/2f0393ae0c6bfb24310dd3cd60a100418c1d0fd4/src/Less06_BuildingMavenProject/Maven1/src/main/java/Fibo.java">			
 			Fibo.java</a><i class="fa fa-github"></i></i></p>
 		</div>
@@ -336,12 +259,7 @@
 			* Сделать это можно в секции <i>configuration</i> (выделено синим).</br>
 			* При выполнении команды <b>mvn jar:jar</b> сформируется архив с назначенным именем (выделено зеленым).</br>
 			</p>
-			<p onclick="openWin17()">
-			<script>
-			function openWin17() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/ce5c131061049c9b2ef10841980aa89b1a44819a/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/ce5c131061049c9b2ef10841980aa89b1a44819a/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 			
@@ -364,12 +282,7 @@
 			который описывает что и где надо взять и куда положить.</br>
 			* Дескриптор <b>jar-with-dependencies</b> положит зависимости в наш <i>jar</i>-файл, он под это заточен.</br>
 			</p>
-			<p onclick="openWin18()">
-			<script>
-			function openWin18() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/d16e12c6e109a6f5db1cd3836f02b840d94eb0f4/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/d16e12c6e109a6f5db1cd3836f02b840d94eb0f4/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
@@ -388,12 +301,7 @@
 			* Соберем наш <i>jar</i> файл другим способом, на этот раз мы привяжем сборку к фазам сборочного цикла (об этом цикле - далее в лекции).</br>
 			* К фазам можно привязывать цели плагина (в данном случае к фазе <b>package</b> привязана цель <b>single</b>).</br>
 			</p>
-			<p onclick="openWin19()">
-			<script>
-			function openWin19() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/43d743cfcd19e28e1e6b96061c7c420e4b96bbb9/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
@@ -424,12 +332,7 @@
 			<b>Почему команда - verify?</b> </br>
 			* В <i>Maven</i> с версии 3.0 <b>запускать verify предпочтительнее, чем clean или install</b> (более подробно ответ на вопрос далее в лекции). </br>
 			</p>
-			<p onclick="openWin20()">
-			<script>
-			function openWin20() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/923a187f9488e2f8bc853b6cb92de5b5575286e2/src/Less06_BuildingMavenProject/Maven1/pom.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/923a187f9488e2f8bc853b6cb92de5b5575286e2/src/Less06_BuildingMavenProject/Maven1/pom.xml">			
 			pom.xml</a><i class="fa fa-github"></i></i></p>
 		</div>
@@ -439,10 +342,13 @@
 			<p>
 			* Теперь мы видим в файле <b>MANIFEST.MF</b> что главный класс успешно установлен (выделено красным).<br>
 			* Мы можем запустить сформированный архив в командной строке (выделено зеленым) и получим результат работы программы<br>
-			(в <i>Windows</i>, если некорректно отражается кириллица, надо поменять кодировку (выделено желтым)(по кодировке - см. Лекция 7.1, рис.12)).<br>
-			
+			(в <i>Windows</i>, если некорректно отражается кириллица, надо поменять кодировку (выделено желтым)			
 			</p>
-					
+			<p>
+				<i class="github-wrap"><i class="fa fa-link"></i>
+				<a  class="inner-anchor" href="N-06.1 Сборка проекта, введение. Ant.html#12" data-target-img="12,12" target="frame"> 
+				Изменение кодировки в Windows *7.1</a></a></i>
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.25&nbsp;<i class="material-icons">&#xe5db;</i></span>
@@ -493,12 +399,7 @@
 		<div class="column">
 			<span class="badge bg-primary">Рис.30&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.3/06.3.30.png">
-			<p onclick="openWin21()">
-			<script>
-			function openWin21() {
-			  window.open("https://maven.apache.org/guides/introduction/introduction-to-archetypes.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://maven.apache.org/guides/introduction/introduction-to-archetypes.html">			
 			Maven.Introduction to archetypes</a></i></p>
 		</div>
@@ -522,12 +423,7 @@
 			<b>! Если в списке нет этого архетипа</b> - надо предварительно добавить его в список, для чего жмем <b>Add Archetype</b>. В окне заполняем <i>GAV</i> (данные можно взять 
 			в центральном репозитории <i>MVNRepository</i>, в разделе архетипов, по ссылке ниже), жмем <i>OK</i>. </br>
 			</p>
-			<p onclick="openWin22()">
-			<script>
-			function openWin22() {
-			  window.open("https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-plugin/1.4","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/org.apache.maven.archetypes/maven-archetype-plugin/1.4">			
 			MVNRepository.Maven Plugin Archetype 1.4</a></i></p>
 		</div>
@@ -544,7 +440,12 @@
 			<img src="images/images_06.3/06.3.34.png">
 			<p>	
 			* После нажатия <i>Finish</i> у меня создается структура модуля плагина.<br>
-			* Теперь я преобразую модуль в проект <code>File -> New -> Project from Existing Sources</code> (дальнейшие шаги в лекции "Maven, часть1", рис.12).<br>
+			* Теперь я преобразую модуль в проект <code>File -> New -> Project from Existing Sources</code>
+			</p>
+			<p>
+				<i class="github-wrap"><i class="fa fa-link"></i>
+				<a  class="inner-anchor" href="N-06.2 Maven, часть1.html#12" data-target-img="12,12" target="frame"> 
+				Дальнейшие шаги описаны здесь *7.2</a></a></i>
 			</p>
 		</div>
 		<div class="column">
@@ -567,26 +468,18 @@
 			<b>surefire-junit-4</b> и приводился пример команды для ручной установки плагина.<br>
 			* <i>jar</i>-файл плагина я скачал в репозитории по ссылке ниже.<br> 
 			</p>
-			<p onclick="openWin23()">
-			<script>
-			function openWin23() {
-			  window.open("https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-junit4/2.22.1","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-junit4/2.22.1">			
 			MVNRepository.SureFire JUnit4 Runner 2.22.1</a></i></p>
 			* В командной строке запустил предложенную в сообщении команду<br> 
 			<code>mvn install:install-file -DgroupId=org.apache.maven.surefire -DartifactId=surefire-junit4 -Dversion=2.22.1 -Dpackaging=jar -Dfile=d:\JAVAProgwards\downloads\surefire-junit4-2.22.1.jar</code><br>
 			(выделена желтым) и плагин успешно установился в локальный репозиторий.<br>
 			* Оставалось еще раз запустить <i>install</i> в <i>IDEA</i> и сборка на этот раз завершилась успешно! (выделено красным)<br>
-			<p onclick="openWin24()">
-			<script>
-			function openWin24() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/7d1021db87391397e2d6879c2874a318e16c528d/src/Less06_MavenPlugin/MavenPlugin","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			</p>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/7d1021db87391397e2d6879c2874a318e16c528d/src/Less06_MavenPlugin/MavenPlugin">			
-			MavenPlugin</a><i class="fa fa-github"></i></i></p>
+			MavenPlugin</a><i class="fa fa-github"></i></i>
+			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.37&nbsp;<i class="material-icons">&#xe5db;</i></span>
@@ -604,21 +497,11 @@
 			* Я немного изменил код по умолчанию (строки изменений отмечены зеленым).<br>
 			Теперь он пишет в создаваемый файл <i>touch.txt</i> пронумерованные строки с датой и временем.<br>
 			</p>
-			<p onclick="openWin25()">
-			<script>
-			function openWin25() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin/src/main/java/Less06_MavenPlugin/MyMojo.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin/src/main/java/Less06_MavenPlugin/MyMojo.java">
 			MyMojo.java</a><i class="fa fa-github"></i></i></br>
 			</p>
-			<p onclick="openWin26()">
-			<script>
-			function openWin26() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-			}
-			</script>
+			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/997b3a09ef95cca196bb774d0eebfafef87356ac/src/Less06_MavenPlugin/MavenPlugin">
 			MavenPlugin</a><i class="fa fa-github"></i></i></br>
 			</p>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Element Object</h1>
+<h2>The innerText Property</h2>
+
+<p id="p">code01.jpeg</p>
+
+<p>The text content of the button element is:</p>
+<p id="demo"></p>
+
+<script>
+let demo = document.getElementById("demo");
+let p = document.getElementById("p");
+let text = p.innerText;
+let str = text.substr(text.lastIndexOf(".") + 1);
+if (text != "")
+ demo.innerHTML = str; 
+else 
+ demo.innerHTML = "NO";
+</script>
+
+</body>
+</html>

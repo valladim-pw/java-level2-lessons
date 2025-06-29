@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<style>
+#frame {
+  height: 250px;
+  width: 250px;
+  overflow: auto;
+}
+
+#content {
+  height: 800px;
+  width: 2000px;
+  background-color: coral;
+}
+</style>
+
+<body>
+<h1>The Element Object</h1>
+<h2>The scrollTop and scrollLeft Properties</h2>
+
+<p>Click "Scroll" many times to scroll the contents of "myDIV" by 50px horizontally and 10px vertically.</p>
+<button onclick="myFunction()">Scroll</button><br><br>
+<div id="demo"></div>
+
+<iframe id="frame"  src="https://lessons-java.ru"  name="frame" title="Iframe Example"></iframe>
+
+<script>
+function myFunction() {
+  let frame = document.getElementById("frame");
+	let demo = document.getElementById("demo");
+	let scroll = frame.scrollTop;
+  
+  scroll += 100;
+	frame.scrollTop = scroll;
+	demo.innerHTML = scroll;
+}
+</script>
+
+</body>
+</html>

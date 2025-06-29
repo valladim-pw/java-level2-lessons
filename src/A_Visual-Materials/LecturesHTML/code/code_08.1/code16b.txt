@@ -1,0 +1,204 @@
+import java.util.ArrayList;
+import java.util.TreeMap;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Consumer;
+
+// класс исключения
+class TreeException extends Exception {
+    public TreeException(String message) {
+        super(message);
+    }
+}
+
+// класс дерева
+class BinaryTree<K extends Comparable<K>, V> {
+	private static final String KEYEXIST = "Key already exist";
+	private static final String KEYNOTEXIST = "Key not exist";
+	
+	// класс листа дерева - это дженерик с двумя параметрами
+	class TreeLeaf<K extends Comparable<K>, V> {
+		K key; // параметр - ключ расширяемый интерфейсом Comparable, определяет положение листа в дереве
+		V value; // параметр - значение, соответствующее ключу
+		TreeLeaf parent; // ссылка на родителя
+		TreeLeaf left; // ссылка на левого потомка
+		TreeLeaf right; // ссылка на правого потомка
+		
+		// конструктор с параметрами ключа и значения
+		public TreeLeaf(K key, V value) {
+			this.key = key;
+			this.value = value;
+		}
+		
+		// метод поиска листа в дереве, возвращающий объект листа с ключом равным ключу в параметре
+		// метод используется и для вставки и для поиска
+		public TreeLeaf<K, V> find(K key) {
+			// метод основан на сравнении ключа в параметре метода с ключом текущего листа
+			int cmp = key.compareTo(this.key);
+			if (cmp > 0) { // параметр больше - движемся к правому потомку
+				if (right != null)
+					return right.find(key); // рекурсивно повторяем метод пока существует правый потомок
+				else
+					return this; // если потомка нет возвращаем текущий лист
+			}
+			if (cmp < 0) { // параметр больше - движемся к левому потомку
+				if (left != null)
+					return left.find(key); // рекурсивно повторяем метод пока существует левый потомок
+				else
+					return this; // если потомка нет возвращаем текущий лист
+			}
+			return this; // если ключи равны возвращаем текущий лист
+		}
+		
+		// метод вставки листа в дерево
+		void add(TreeLeaf<K, V> leaf) throws TreeException {
+			// метод основан также на сравнении ключа объекта листа в параметре с ключом текущего листа
+			int cmp = leaf.key.compareTo(key);
+			// при равенстве ключей выбрасываем исключение, так как в дереве не может быть листов с одинаковыми ключами
+			if (cmp == 0)
+				throw new TreeException(KEYEXIST);
+			if (cmp > 0) { // если ключ объекта-параметра больше, он становится правым потомком
+				right = leaf;
+				leaf.parent = this; // соответственно текущий лист становится его родителем
+			} else {
+				left = leaf; // если ключ объекта-параметра больше, он становится левым потомком
+				leaf.parent = this; // соответственно текущий лист становится его родителем
+			}
+		}
+		
+		// метод удаления листа из дерева
+		void delete() throws TreeException {
+			if (parent.right == this) { // если текущий удаляемый лист справа
+				parent.right = right; // текущий лист заменяется на правого потомка
+				if (right != null) // если правый потомок существует
+					right.parent = parent; // его родителем становится родитель текущего удаляемого листа
+				if (left != null) // если у текущего листа есть еще левый потомок
+					parent.find(left.key).add(left); // родитель добавляет его
+			} else { // если текущий удаляемый лист слева, совершаем зеркально те же действия, что и в первом случае
+				parent.left = left;
+				if (left != null)
+					left.parent = parent;
+				if (right != null)
+					parent.find(right.key).add(right);
+			}
+		}
+		
+		public String toString() {
+			return "(" + key + "," + value + ")";
+		}
+		
+		// реализация прямого обхода дерева
+		public void process(Consumer<TreeLeaf<K, V>> consumer) {
+			// поскольку начинается обход с левых значений, то они будут выведены от меньших к большим
+			if (left != null)
+				left.process(consumer);
+			consumer.accept(this);
+			if (right != null)
+				right.process(consumer);
+		}
+	}
+	
+	// дерево изначально представляет из себя одну ссылку - корневой лист, это точка входа в дерево
+	private TreeLeaf<K, V> root;
+	
+	// метод поиска дерева, возвращает значение листа по его ключу
+	public V find(K key) {
+		if (root == null) // если ничего нет возвращаем null
+			return null;
+		// если корневой лист есть, вызываем метод поиска у корневого листа по ключу-параметру
+		TreeLeaf found = root.find(key);
+		// делаем дополнительную проверку на равенство ключа текущего листа с ключом-параметром
+		// при равенстве возвращаем значение текущего листа, иначе - null
+		return found.key.compareTo(key) == 0 ? (V) found.value : null;
+	}
+	
+	public TreeLeaf<K, V> findLeaf(K key) {
+		return root.find(key);
+	}
+	
+	// метод вставки самого дерева
+	public void add(TreeLeaf<K, V> leaf) throws TreeException {
+		if (root == null)// если корневого листа нет объект листа в параметре становится корневым листом
+			root = leaf;
+		else // если есть, запускаем метод поиска,который либо находит лист с ключом равным ключу листа-параметра
+			root.find(leaf.key).add(leaf); // либо запускает вставку листа-параметра
+	}
+	
+	public void add(K key, V value) throws TreeException {
+		add(new TreeLeaf<>(key, value));
+	}
+	
+	public void delete(K key) throws TreeException {
+		internaldDelete(key);
+	}
+	
+	// метод удаления в дереве по ключу, возвращает удаляемый лист
+	public TreeLeaf<K, V> internaldDelete(K key) throws TreeException {
+		if (root == null) // если дерева нет выбрасываем исключение
+			throw new TreeException(KEYNOTEXIST);
+		
+		TreeLeaf found = root.find(key); // ищем лист, который будем удалять
+		int cmp = found.key.compareTo(key);
+		if (cmp != 0) // если лист не нашелся тоже выбрасываем исключение
+			throw new TreeException(KEYNOTEXIST);
+		if (found.parent == null) { // проверяем не является ли удаляемый лист корневым
+			// если удаляем корневой лист, то надо в корень присвоить то, что будет вставляться
+			if (found.right != null) { // если есть правый потомок
+				root = found.right; // в корень присваиваем его значение
+				if (found.left != null) // при наличии еще и левого потомка
+					add(found.left); // добавляем его в дерево
+			} else if (found.left != null) // если есть левый потомок(а правый равен null, раз дошло до этой части условий)
+				root = found.left; // присваиваем в корень значение левого потомка
+			else
+				root = null; // в случае отсутствия потомков обнуляем корневой лист
+		} else
+			found.delete(); // если удаляемый лист не корневой, вызываем у него метод удаления листа
+		return found;
+	}
+	
+	// метод позволяющий заменить ключ листа на другой ключ с соответствующей перестройкой дерева
+	public void change(K oldKey, K newKey) throws TreeException {
+		TreeLeaf<K, V> current = internaldDelete(oldKey);
+		current.key = newKey;
+		add(current);
+	}
+	
+	public void process(Consumer<TreeLeaf<K, V>> consumer) {
+		if (root != null)
+			root.process(consumer);
+	}	
+}
+class TreeTest {
+	static final int ITERATIONS = 10;
+	
+	public static void main(String[] args) throws TreeException {
+		// Для тестирования используется две структуры,
+		// потому что для добавления в дерево используются случайные числа
+		// и запоминание происходит и в map и в tree, что ниже используется в проверке работы поиска
+		TreeMap<Integer, Integer> map = new TreeMap<>();
+		BinaryTree<Integer, String> tree = new BinaryTree<>();
+		for (int i = 0; i < ITERATIONS; i++) {
+			int key = ThreadLocalRandom.current().nextInt();
+			if (!map.containsKey(key)) {
+				map.put(key, key);
+				tree.add(key, "key=" + key);
+			}
+		}
+		System.out.println("add passed OK");
+		// в первой части теста элементы просто распечатываются, причем идут по возрастанию
+		System.out.println("1. Print tree");
+		tree.process(System.out::println);
+		// во второй части теста элементы сортируются
+		System.out.println("2. Sort tree");
+		ArrayList<BinaryTree.TreeLeaf> sorted = new ArrayList<>();
+		tree.process(sorted::add);
+		for (BinaryTree.TreeLeaf leaf : sorted) {
+			System.out.println(leaf.toString());
+		}
+		// проверка работы поиска и удаления с использованием ключей сохраненных в map
+		for (Integer i : map.keySet()) {
+			tree.find(i);
+			tree.delete(i);
+		}
+		System.out.println("find&delete passed OK");
+	}
+}

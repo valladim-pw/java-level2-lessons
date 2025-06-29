@@ -28,7 +28,7 @@ public class BIntArray {
 		return size;
 	}
 	
-	public void add(int item) {
+	/*public void add(int item) {
 		if(size == array.length) { // 1
 			int[] newArray = new int[array.length + block]; // 2
 			copyData(array, newArray);
@@ -36,32 +36,32 @@ public class BIntArray {
 			array = newArray;
 		}
 		array[size++] = item;	// 3
+	}*/
+	public void add(int item) {
+		if(size == array.length) {
+			int[] newArray = new int[array.length + block];
+
+			System.out.println("if:1-array: " + Arrays.toString(array));
+			System.out.println("if:1-newArray: " + Arrays.toString(newArray));
+
+			copyData(array, newArray);
+
+			System.out.println("if:2-array: " + Arrays.toString(array));
+			System.out.println("if:2-newArray: " + Arrays.toString(newArray));
+
+			newArray[array.length] = item;
+
+			System.out.println("if:3-array: " + Arrays.toString(array));
+			System.out.println("if:3-newArray: " + Arrays.toString(newArray));
+
+			array = newArray;
+
+			System.out.println("if:4-array: " + Arrays.toString(array));
+			System.out.println("if:4-newArray: " + Arrays.toString(newArray));
+		}
+		array[size++] = item;
+		System.out.println("else:1-array: " + Arrays.toString(array));
 	}
-//	public void add(int item) {
-//		if(size == array.length) {
-//			int[] newArray = new int[array.length + block];
-//
-//			System.out.println("if:1-array: " + Arrays.toString(array));
-//			System.out.println("if:1-newArray: " + Arrays.toString(newArray));
-//
-//			copyData(array, newArray);
-//
-//			System.out.println("if:2-array: " + Arrays.toString(array));
-//			System.out.println("if:2-newArray: " + Arrays.toString(newArray));
-//
-//			newArray[array.length] = item;
-//
-//			System.out.println("if:3-array: " + Arrays.toString(array));
-//			System.out.println("if:3-newArray: " + Arrays.toString(newArray));
-//
-//			array = newArray;
-//
-//			System.out.println("if:4-array: " + Arrays.toString(array));
-//			System.out.println("if:4-newArray: " + Arrays.toString(newArray));
-//		}
-//		array[size++] = item;
-//		System.out.println("else:1-array: " + Arrays.toString(array));
-//	}
 	public static void main(String[] args) {
 		BIntArray dia = new BIntArray(0, 2);
 		System.out.println("1-----------------------------------");

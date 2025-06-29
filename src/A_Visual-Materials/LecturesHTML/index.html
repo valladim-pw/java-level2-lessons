@@ -7,47 +7,119 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--Ссылки на картинки с иконкой сайта не работают в IntelliJ IDEA, раскомментировать на стороннем хостинге-->
 	
-	<!--<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">-->
+	<!--<link rel="manifest" href="/site.webmanifest">-->
+	<!--<link rel="preload" href="/images/java-cup600.png" as="image">-->
+	<link rel="stylesheet" href="styles/loader-style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="styles/menu-style.css">
+	<link rel="stylesheet" href="styles/menu-style.css">	
+	<link rel="stylesheet" href="styles/mobile-style.css">
+	<script src="preload-img.js" async></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>	
-	<style>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>-->
 	
+	<style>
+	#preloaded-images {
+		 position: absolute;
+		 overflow: hidden;
+		 left: -9999px; 
+		 top: -9999px;
+		 height: 1px;
+		 width: 1px;
+		 opacity: 0;
+	}	
+	#link-ids {
+		position: absolute;
+    left: -9999px; 
+	  top: -9999px;	
+	}
+	#demo {
+		position: absolute;
+    top: 100px;
+		left: 50%;
+		padding: 5px;
+    z-index: 15;
+    background: yellow;
+		font-size: 10px;
+		height: 40%;
+    overflow: auto;
+	}
 	</style>
+	
 </head>
-<body onload="addLastBlockPadding()">
-	<div class="container head">
+
+<body onload="openStartLoader(); setPanelImgPreload(); setPageHeading(); controlTip(); highlightActiveLink(); addHighlightFunction();">
+	<div id="preloaded-images"></div>
+	<div id="link-ids">1.1</div>
+	<!--<div id="demo">Demo</div>-->
+	<div id="start-loader" class="loader-membrane start-loader open-loader">				
+		<div class="loader back back-wrap">					
+			<div class="loader back back-in1">
+				<div class="loader smoke smoke1"></div>
+			</div>			
+			<div class="loader back back-in2">
+				<div class="loader smoke smoke2"></div>
+			</div>
+			<div class="loader back back-in3">
+				<div class="loader smoke smoke3"></div>
+			</div>			
+			<div class="loader back back-in4">
+				<div class="loader smoke smoke4"></div>
+			</div>
+			<div class="loader back back-in5">				
+				<div class="loader cup1"></div>
+				<div class="loader text">JAVA</div>
+			</div>
+			<div class="loader back back-in6">				
+				<div class="loader cup2"></div>				
+			</div>
+		</div>	
+	</div>
+	<div id="head" class="head">		
 		<div class="col-sm-1 buttons" >
-			<div class="buts-wrap">
-				<button id="switch1" title="Меню" class="switcher"><i class="material-icons">menu</i></button>
-				<button id="switch2" title="Убрать меню" class="switcher"><i class="material-icons">chevron_left</i></button>
-				<button id="switch3" title="Вернуть заголовок" class="switcher updown"><i class="material-icons">expand_more</i></button>
-				<button id="switch4" title="Убрать заголовок" class="switcher updown"><i class="material-icons">expand_less</i></button>
+			<div id="buts-desk" class="buts-wrap">
+				<button id="switch1" class="switcher"><i class="material-icons">menu</i></button>
+				<button id="switch2" class="switcher btn-menu tip" tooltip="Меню"><i class="material-icons">chevron_left</i></button>
+				<button id="switch3" class="switcher updown"><i class="material-icons">expand_more</i></button>
+				<button id="switch4" class="switcher updown tip" tooltip="Заголовок"><i class="material-icons">expand_less</i></button>
+				<button id="but-menu-desk" style="visibility:hidden;" onclick="highlightActiveLink()" >button</button>
 				<!--arrow_back-->
 				<!--arrow_downward-->
 				<!--arrow_upward-->
 			</div>			
+			<div id="buts-mobile" class="buts-wrap mobile">				
+				<button id="switch-mob-1" class="switcher"><i class="material-icons">chevron_left</i></button>
+				<button id="switch-mob-2" class="switcher btn-menu tip" onclick="highlightActiveLink()" tooltip="Меню" ><i class="material-icons">menu</i></button>
+				<button id="switch-mob-3" class="switcher expand-more btn-tablet"><i class="material-icons">expand_more</i></button>
+				<button id="switch-mob-4" class="switcher expand-less btn-tablet tip"  tooltip="Заголовок" ><i class="material-icons">expand_less</i></button>
+				<button id="switch-mob-5" class="switcher fullscreen" onclick="closeFullscreen();"><i class="material-icons">fullscreen_exit</i></button>
+				<button id="switch-mob-6" class="switcher fullscreen tip"  tooltip="Параметры экрана" onclick="openFullscreen();"><i class="material-icons">fullscreen</i></button>				
+			</div>
 		</div>
-		<div class="col-sm-9 h-wrap"><h1>Java Lessons, продвинутый уровень</h1></div>		
+		<div class="col-sm-9 h-wrap">
+			
+			<h1><span class="h-java">Java Lessons</span><span class="h-level">&nbsp;&nbsp;*продвинутый уровень* </span></h1>						
+		</div>		
 		<div class="col-sm-2 icon">
-			<div class="membrane"></div>
-			<img src="images/progwards-icon.png">
+		  <a href="https://blog.progwards.ru/" target="_blank">
+				<div class="membrane"></div>
+				<img id="icon" src="images/progwards-icon.png">
+			</a>
 		</div>
 	</div>
-	<div class="block-page">
-		<div class="block menu">
+	<div id="buts-mob-back" class="buts-mobile-back"></div>
+	<div id="block-page" class="block-page">
+		<div id="menu" class="block menu">
 			<div class="menu-content">
 				<!--A, B, C, D, E, F, G H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V W, X, Y, Z-->
-				<div class="panel panel-default empty-panel panel-out">
-					<div class="panel-fixed"></div>
+				<div id="empty-panel" class="panel panel-default empty-panel panel-out">
+					<div id="panel-fix" class="panel-fixed"></div>
 					<div class="panel-body-empty">
 						<p>
 							<span class="label-wrap">
@@ -65,24 +137,73 @@
 				<mark id="theme05"></mark>
 				<mark id="theme06"></mark>
 				<mark id="theme07"></mark>
+				<mark id="theme08"></mark>
 				
 				
 				
 			</div><!--end menu-content-->
 		</div><!--end block menu-->
 		<div class="block frame">
-			<div class="frame-membrane"></div>
-			<iframe onload="loadFrame()" src="N-00.1 Динамические массивы.html" id="frame" name="frame" title="Iframe Example"></iframe>
+			<div id="loader" class="loader-membrane">				
+				<div class="loader back back-wrap">					
+					<div class="loader back back-in1">
+						<div class="loader smoke smoke1"></div>
+					</div>			
+					<div class="loader back back-in2">
+						<div class="loader smoke smoke2"></div>
+					</div>
+					<div class="loader back back-in3">
+						<div class="loader smoke smoke3"></div>
+					</div>			
+					<div class="loader back back-in4">
+						<div class="loader smoke smoke4"></div>
+					</div>
+					<div class="loader back back-in5">				
+						<div class="loader cup1"></div>
+						<div class="loader text">JAVA</div>
+					</div>
+					<div class="loader back back-in6">				
+						<div class="loader cup2"></div>				
+					</div>
+				</div>	
+			</div>
+			<div class="buts-zoom-wrap wrap-opacity">
+				<button id="open-zoom" class="but-control" onclick="openZoomPanel()"><i class="material-icons dir-arrow to-down">play_arrow</i></button>
+				<button id="close-zoom" class="but-control tip" onclick="closeZoomPanel()" tooltip="Кнопки Zoom"><i class="material-icons dir-arrow to-up">play_arrow</i></button>
+			</div>
+			<div id="page-indexes" class="page-index">
+        <div id="link-repeat-up" class="link-repeat"></div>	
+				<div id="link-repeat-down" class="link-repeat"></div>
+				<button id="indexes" class="buts-index but-back">					
+					<a id="link-back" class="anchor-index page-back invisible" href="" tooltip="Вернуться к исходной ссылке" target="frame" >
+					<i class="material-icons">arrow_back<!--<span class="icon-patch"></span>--></i><span class="text-back">Back <span class="count"></span></span>
+					</a>
+					<a id="page-this" class="anchor-index page-this" href="" target="frame" ><i class="material-icons">arrow_downward</i><span>Тема</span></a>
+				</button>
+				
+				<button id="loc-address" class="buts-index location tip">1.1 Динамические массивы&nbsp;&nbsp;&nbsp;</button>
+				<button id="but-counter" class="but-counter"></button>
+				<button class="buts-index but-index">
+					<a id="link-index" class="anchor-index" href="" target="frame"></a>
+				</button>
+			</div>
+			<div class="buts-control-wrap wrap-opacity">
+				<button id="open-panel" class="but-control" onclick="openIndexPanel()"><i class="material-icons dir-arrow to-left">play_arrow</i></button><!--&nbsp;&nbsp;&nbsp;&nbsp;-->
+				<button id="close-panel" class="but-control tip" onclick="closeIndexPanel()" tooltip="Панель адреса"><i class="material-icons dir-arrow">play_arrow</i></button>
+			</div>
+			<iframe id="frame" onload="setControlButsPos(); loadFrame(); setTimeout(linkIndexClick, 50); setTimeout(clickHighlightMenuBut, 50);" src="N-00.1 Динамические массивы.html" loading="eager" name="frame" title="Iframe Example">
+			</iframe>
 		</div>
 	</div><!--end block-page-->
 <script>
 /*
-Fetch API
+Fetch API Вставка файлов с темами в меню-контент после тега < mark > с соответствующим названию темы id
 */
-let themes = ["theme00", "theme01", "theme02","theme03", "theme04", "theme05", "theme06", "theme07"];
 
+let themes = ["theme00", "theme01", "theme02","theme03", "theme04", "theme05", "theme06", "theme07", "theme08"];
 let dir = "./thems/";
 let ext = ".html";
+
 for (let t in themes) {
   let file = dir + themes[t] + ext;
 	getContent(file);
@@ -91,102 +212,16 @@ for (let t in themes) {
 async function getContent(file) {
   let x = await fetch(file);
   let y = await x.text();	
-	let mark = document.querySelectorAll("mark");		
-	//let fnum2 = file.substring(14, 16);
-	for(let i = 0; i < mark.length; i++) {
+	let mark = document.querySelectorAll("mark");	
+	
+	for (let i = 0; i < mark.length; i++) {
 		let id = mark[i].getAttribute("id");
     let pos = file.search(id);		
-		if(pos != -1)
+		if (pos != -1)
 			mark[i].insertAdjacentHTML("afterend", y);	
 	}		
 }
-
-/*
-end Fetch API
-*/
-let anchors = document.getElementsByClassName("anchor");
-let anchors_block = document.getElementsByClassName("anchors");
-let anchs = document.getElementsByTagName("a");
-
-function loadFrame() { 	
-	for(let i = 0; i < anchors.length; i++) {
-		if(anchors[i].hasAttribute("id")) {
-			let a = document.getElementById("a");
-			a.click();
-		}
-	}	
-}
-
-function highlightByHash(idx1, idx2, event) { 
-	for(let i = 0; i < anchs.length; i++) {
-		anchs[i].removeAttribute("id");	
-	}	
-  let e = event.target;
-	if(e.hasAttribute("href"))
-		e.setAttribute("id", "a");
-	if(e.parentElement.hasAttribute("href"))
-		e.parentElement.setAttribute("id", "a");
-	let iframe = document.getElementById("frame");
-  let cols = iframe.contentWindow.document.getElementsByClassName("column");
-	for(let i = 0; i < cols.length; i++) {
-		let img = cols[i].querySelector("img");
-		img.removeAttribute("style");			
-		if(i >= idx1 && i <= idx2)	{
-			img.style.borderTop = "15px solid #b4b4fc";	
-			img.style.borderLeft = "15px solid #7575e1";
-		}	
-  }
-}
-
-function removeId() {
-	for(let i = 0; i < anchors.length; i++) {
-		anchors[i].removeAttribute("id");		
-	}	
-}
-
-function toggleArrow(event) {
-  let e = event.currentTarget;
-	let arrows = e.querySelectorAll(".nav");
-	for (let i = 0; i < arrows.length; i++) {
-		if(arrows[i].className == "material-icons nav")
-			arrows[i].className += " invisible";
-		else
-			arrows[i].className = arrows[i].className.replace(" invisible", "");				
-	}
-}
-
-function addLastBlockPadding() {	
-	anchors_block[anchors_block.length - 1].className += " last";		
-}	
-
-
-$(document).ready(function(){
-  $("#switch2").click(function(){
-    $(this).addClass("invisible");
-    $(".menu").addClass("menu-hidden");
-    $(".frame").addClass("frame-full");
-  });
-  $("#switch1").click(function(){
-    $("#switch2").removeClass("invisible");
-    $(".menu").removeClass("menu-hidden");
-    $(".frame").removeClass("frame-full");
-  });
-	$("#switch4").click(function(){
-    $(this).addClass("invisible");
-		$(".buts-wrap").addClass("shift-right");
-		$(".panel.empty-panel").removeClass("panel-out");
-    $(".block-page").addClass("shift-up");    
-  });
-  $("#switch3").click(function(){
-    $("#switch4").removeClass("invisible");
-    $(".buts-wrap").removeClass("shift-right");
-		$(".panel.empty-panel").addClass("panel-out");
-    $(".block-page").removeClass("shift-up");
-  });
-	
-	$('[data-toggle="tooltip"]').tooltip();
-});
-
 </script>
+<script src="javascript/script-index.js"></script>
 </body>
 </html>

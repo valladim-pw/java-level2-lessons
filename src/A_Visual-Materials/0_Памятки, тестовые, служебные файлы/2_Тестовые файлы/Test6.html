@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Strings</h1>
+<h2>The lastIndexOf() Method</h2>
+
+<p>The position of the last occurrence of "locate" is:</p>
+<a id="link" href="N-08.1 Бинарные деревья, АВЛ-деревья, АВЛ-деревья.html#2" data-target-img="23,25">Link</a>
+<button>Button</button>
+<p id="demo"></p>
+
+<script>
+let link = document.getElementById("link");
+//let attr = link.getAttribute("href");
+//let index1 = attr.indexOf("-");
+//let index2 = attr.indexOf(".html");
+
+/*attr = attr.substring(index1, index2);
+if (attr.charAt(1) == "0")
+	index1 += 1;
+attr = attr.substring(index1, index2);
+let first = attr.charAt(0);
+let first_plus = first * 1 + 1;
+attr = attr.replace(first, first_plus)
+if(attr.length > 33) {
+  attr = attr.substring(0, 33);
+	attr += "..."
+}*/
+let button = document.querySelector("button");
+let data = link.getAttribute("data-target-img");
+let idx1 = data.substring(0, data.indexOf(","));
+let idx2 = data.substring(data.indexOf(",") + 1);
+idx1--;
+idx2--;
+
+button.setAttribute("onclick", "myFunction()");
+
+function myFunction() {
+	document.getElementById("demo").innerHTML = data + "<br>i1: " + typeof idx1 + "<br>i2: " + idx2;
+}
+
+
+</script>
+
+</body>
+</html>

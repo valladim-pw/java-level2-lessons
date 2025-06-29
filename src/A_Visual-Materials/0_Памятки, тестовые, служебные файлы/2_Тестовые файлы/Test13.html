@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ 
+	let s = document.getElementById("s");
+  var tree = $(s).parents(".div").map(function(){
+		return this.click();});
+  
+});
+
+//let demo1 = document.getElementById("demo1");
+
+function getText(event) {
+let demo = document.getElementById("demo");
+	let e = event.target;
+	let txt = e.getAttribute("data-name");
+	demo.innerHTML = txt;
+}
+function getText1(event) {
+let demo1 = document.getElementById("demo1");
+	let e = event.target;
+	let txt = e.getAttribute("data-name");
+	demo1.innerHTML = txt;
+}
+
+</script>
+</head>
+
+<body>
+	<div id="demo"></div>
+    <div id="demo1"></div>
+  
+  <div data-name="One" class="div" onclick="getText(event)">  
+    <p data-name="Two" class="div" onclick="getText1(event)">       
+      <span id="s">This is is a span element. My ancestors are: </span>  
+    </p>  
+  </div>
+</body>
+
+</html>

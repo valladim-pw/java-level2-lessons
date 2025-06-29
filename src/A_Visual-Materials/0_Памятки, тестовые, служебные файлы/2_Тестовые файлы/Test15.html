@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Document Object</h1>
+<h2>The querySelector() Method</h2>
+
+<p>Add a background color to the first element with class="example":</p>
+<div id="menu">
+<p>I am a paragraph.</p>
+<p>I am a paragraph.</p> 
+</div>
+<script>
+document.getElementById("menu");
+let p = menu.querySelector(".example");
+if (p.getAttribute("class") != null)
+  p.style.backgroundColor = "red";
+else
+  p.style.backgroundColor = "blue";
+</script>
+
+</body>
+</html>

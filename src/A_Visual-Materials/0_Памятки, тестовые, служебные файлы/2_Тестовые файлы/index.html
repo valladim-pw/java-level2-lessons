@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Iframe - Target for a Link</h2>
+<p id="demo1"></p>
+
+<iframe id="frame" src="indexFirstPage.html" name="frame" height="500px" width="100%" title="Iframe Example" loading="lazy"></iframe>
+
+<p><a href="indexMaven.html" target="frame">Test.16.html</a></p>
+
+<p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
+
+<script>
+
+	/*let demo1 = document.getElementById("demo1");
+	let txt = "";
+	const frame = document.getElementById("frame");
+	const images = frame.contentWindow.document.getElementsByTagName("img");
+	const arr = Array.from(images);
+	const arr_src = [];
+
+	arr.forEach(myFunction);
+
+	function myFunction(value, index) {
+		arr_src[index] = value.getAttribute("src");
+		txt += arr_src[index] + "<br>";  
+	}
+	const preloadImage = src => (new Image().src = src);
+
+	arr_src.forEach(preloadImage);
+	
+	demo1.innerHTML = txt;*/
+	/*const preloadImageWithEvents = (src, callback) => {
+		const img = new Image();
+		img.onload = () => callback(null, src);  // Готово к показу!
+		img.onerror = error => callback(error, src);  // Бывают и неудачи
+		img.src = src;
+	};
+
+	const imageSources = arr_src;
+	const imagePromises = imageSources.map(src => {
+		return new Promise((resolve, reject) => {
+			preloadImageWithEvents(src, (error) => {
+				if (error) reject(error); else resolve();
+			});
+		});
+	});*/
+
+/*Promise.all(imagePromises)
+  .then(() => console.info('Изображения предварительно загружены. Превосходно!'))
+  .catch(error => console.error('Предварительная загрузка не удалась. Ошибка:', error));*/
+
+</script>
+
+</body>
+</html>

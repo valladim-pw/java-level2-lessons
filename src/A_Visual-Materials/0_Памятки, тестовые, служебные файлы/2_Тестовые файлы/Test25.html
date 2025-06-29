@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>00.1 Сборка проекта, введение. Ant</title>
+</head>
+<body>
+<h1>The Element Object</h1>
+<h2>The Differences Between innerText, innerHTML and textContent</h2>
+
+<p >   This element has extra spacing   and contains <span>a span element</span>.</p>
+
+<p><button onclick="addRepeatLink()">Add Link</button></p>
+<p><button onclick="getRepeatLink()">Get Link</button></p>
+<p><button id="but">Get Link</button></p>
+
+<div id="repeat"></div>
+<div id="demo"></div>
+<div id="demo1"></div>
+
+<script>
+let demo =  document.getElementById("demo");
+let demo1 =  document.getElementById("demo1");
+let repeat =  document.getElementById("repeat");
+let button =  document.getElementById("but");
+
+//let links = ["N-06.1 Динамические массивы.html#32", "N-00.1 Динамические массивы.html#3", "N-10.1 Динамические массивы.html#13"];
+
+function addRepeatLink() {  
+	let add = links.pop();
+	let txt = repeat.innerText;
+	if (add != null)
+		txt += add;
+	
+	repeat.innerText = txt;
+	
+	
+	
+	//demo.innerHTML = repeat.innerText;
+}
+
+function getRepeatLink() {
+	let txt = repeat.innerText;
+	
+	txt = txt.substring(0, txt.lastIndexOf("N"));
+	
+	let get = txt.substring(txt.lastIndexOf("N"));
+		
+	
+	/*if (txt.length == 0)
+	  repeat.innerText = "Empty";
+	else
+		repeat.innerText = txt;*/	
+	
+	//demo1.innerHTML = repeat.innerText;
+}
+
+let nums = [10, 4, 22];
+
+function addRepeatIndex(elem, arr) {
+	
+	let attr = "";
+	let add_id = arr.pop();
+	
+	if (!elem.hasAttribute("data-repeat-idx")) {
+		elem.setAttribute("data-repeat-idx", add_id);
+	} else {
+		attr = elem.getAttribute("data-repeat-idx");
+		if (attr.split(" ").length == 1)
+			attr += "," + add_id;
+		elem.setAttribute("data-repeat-idx", attr);		
+	}
+	demo.innerHTML = elem.getAttribute("data-repeat-idx");
+}
+
+but.onclick = function() {addRepeatIndex(repeat, nums)};
+
+let attr = "25,3,7";
+let num = "35";
+let txt = "N-06.1 Динамические массивы.html#32";
+let add = "N-06.1 Динамические массивы.html#33";
+
+//attr2 = attr.substring(attr.lastIndexOf(",") + 1);
+attr1 = attr.substring(0, attr.indexOf("#") + 1);
+attr1 += num;
+
+attr = attr.substring(0, attr.lastIndexOf(","));
+let get1 = attr.substring(attr.lastIndexOf(",") + 1);
+
+
+let get2 = txt.substring(txt.lastIndexOf("N"));
+txt = txt.substring(0, txt.lastIndexOf("N"));	
+//if (!txt.includes(add))
+	//txt += add;
+	
+let index_href = "N-06.1 Динамические массивы.html#33";	
+let index1 = index_href.substring(0, index_href.indexOf("#") + 1);
+let index2 = index_href.substring(index_href.indexOf("#") + 1);
+	
+demo.innerHTML = "txt: " + txt.length + "<br>get: " + get2;
+
+</script>
+
+</body>
+</html>

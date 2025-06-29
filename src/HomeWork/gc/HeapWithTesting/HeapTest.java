@@ -1,8 +1,5 @@
 package HomeWork.gc.HeapWithTesting;
 
-import Less04_CodeExamples.TestHeap;
-import com.google.common.escape.ArrayBasedUnicodeEscaper;
-
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -342,10 +339,10 @@ public class HeapTest {
 	public static void main(String[] args) throws InvalidPointerException, OutOfMemoryException, IOException {
 		System.out.println(new HeapTest(
 						1,
-						1032735283,
+						103273528,
 						50000,
-						100,
-						2).getLeaderBoard());
+						10,
+						5).getLeaderBoard());
 //		System.out.println(new HeapTest(2,
 //						10428800,
 //						50000,

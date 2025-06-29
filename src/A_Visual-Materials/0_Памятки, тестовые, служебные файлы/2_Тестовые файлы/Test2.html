@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+padding: 0;
+margin: 0;
+}
+#myDIV {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 10vw;
+  width: 20vw;  
+  background-color: lightblue;  
+}
+#myDIV2 {
+  position: relative;
+  left: 0;
+  background-color: orange;
+}
+</style>
+
+<body>
+<!--<h1>The Element Object</h1>
+<h2>The clientHeight and clientWidth Properties</h2>-->
+
+<div id="myDIV">  
+  <span id="demo"></span>
+</div>
+
+<div id="myDIV2"> 
+  <span id="demo2"></span>
+	
+</div>
+
+<script>
+const element = document.getElementById("myDIV");
+let text = "";
+text += "clientHeight: " + element.clientHeight + "px<br>";
+//text += "offsetHeight1: " + element.offsetHeight + "px<br>";
+text += "clientWidth: " + element.clientWidth + "px<br>";
+//text += "offsetWidth: " + element.offsetWidth + "px";
+document.getElementById("demo").innerHTML = text;
+
+const element2 = document.getElementById("myDIV2");
+
+let divHeight = element.clientHeight;
+let divWidth = element.clientWidth;
+let winHeight = window.innerHeight;
+let winWidth = window.innerWidth;
+let h = winHeight - divHeight;
+let w = winWidth;
+
+
+element2.style.height = h + "px";
+element2.style.width = w + "px";
+
+let text2 = "";
+text2 += "clientHeight: " + element2.clientHeight + "px<br>";
+text2 += "clientWidth: " + element2.clientWidth + "px<br>";
+text2 += "-------------------------------------------------<br>";
+text2 += "window inner height: " + window.innerHeight + "px<br>";
+text2 += "window inner width: " + window.innerWidth + "px<br><br>";
+text2 += "window outer height: " + window.outerHeight + "px<br>";
+text2 += "window outer width: " + window.outerWidth + "px<br>";
+
+document.getElementById("demo2").innerHTML = text2;
+</script>
+
+</body>
+</html>

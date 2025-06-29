@@ -1505,3 +1505,22 @@ compact all sizes: []
 compact periodic sizes: [9998, 9991, 9871]
 count defrag: 270
 
+94) Sun Nov 24 21:43:36 MSK 2024
+Test Process:
+ >>SORT_BY_ADDRESS..1 >>SORT_BY_SIZE..1 >>SORT_BY_TWO_INDEXES..1 >>PERIODIC_COMPACT..1 >>PERIODIC_DEFRAG..1
+
+Performance Leaderboard 
+(Strategy repeat: 1, Heap max size: 103273528, Heap min size: 50000, Defrag periodically coeff: 10, Number of iterations in free cycle: 5):
+
+1. Defrag Periodically - Average Time: 1965 ms (Allocate Time: 169 ms, Free Time: 1728 ms), Average Allocate Cycles: 227117, Average Free Cycles: 9008
+2. Sort by Size - Average Time: 2641 ms (Allocate Time: 810 ms, Free Time: 1764 ms), Average Allocate Cycles: 232224, Average Free Cycles: 9308
+3. Compact Periodically - Average Time: 2923 ms (Allocate Time: 1065 ms, Free Time: 1758 ms), Average Allocate Cycles: 229236, Average Free Cycles: 9204
+4. Sort by Address - Average Time: 5077 ms (Allocate Time: 2846 ms, Free Time: 2025 ms), Average Allocate Cycles: 229890, Average Free Cycles: 9415
+5. Sort by Two Indexes - Average Time: 6856 ms (Allocate Time: 5085 ms, Free Time: 1724 ms), Average Allocate Cycles: 231566, Average Free Cycles: 9302
+
+compact two index sizes: []
+count compact all: 0
+compact all sizes: []
+compact periodic sizes: [9937, 9992, 9348]
+count defrag: 900
+

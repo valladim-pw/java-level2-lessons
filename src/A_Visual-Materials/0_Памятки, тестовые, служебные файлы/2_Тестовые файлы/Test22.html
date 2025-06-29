@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+</style>
+</head>
+<body>
+
+<p>Click the "Try it" button to set the borderRadius property of the DIV element:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<div id="demo">
+  
+</div>
+
+<script>
+function myFunction() {
+	let n = 26;
+	let demo = document.getElementById("demo");
+	//let img;
+	let txt = ""; 
+	
+	for(let i = 0; i < n; i++) {
+		let img = "<img src=\"images/images_00.1/00.1." + (i + 1) + ".png\" width=\"1\" height=\"1\"/>";
+		txt += img + "\n";
+		
+		demo.innerText = txt;
+		
+	}
+  
+}
+</script>
+
+</body>
+</html>

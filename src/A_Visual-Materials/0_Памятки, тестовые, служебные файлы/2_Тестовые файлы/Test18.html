@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+
+<img src="images/06.2.1.png" onload="loadImage()" width="100" height="132">
+<img src="images/06.2.2.png" onload="loadImage()" width="100" height="132">
+<img src="images/06.2.3.png" onload="loadImage()" width="100" height="132">
+<img src="images/06.2.4.png" onload="loadImage()" width="100" height="132">
+<img src="images/06.2.5.png" onload="loadImage()" width="100" height="132">
+
+<script>
+let demo = document.getElementById("demo");	
+const images = document.getElementsByTagName("img");
+let txt = "";
+let count = 0;
+
+function loadImage() {
+  count++;
+  
+  txt += count + " img loaded<br>";
+  demo.innerHTML = txt;
+}
+
+</script>
+
+</body>
+</html>

@@ -3,23 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>06.1 Сборка проекта, введение. Ant</title>
-	<base target="_blank">
+	<base target="_parent">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/idea.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
-	<link rel="stylesheet" href="styles/style.css">	
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/mobile-style.css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 	<style >
 	</style>
 </head>
-<body onload="insertLabel(); two();">
+<body onload="setOpenWinAttr(); insertLabel(); bothLeftRight();">
 <div class="container-fluid p-3">
-	<div class="header" id="header">
+	<div class="head-buttons" id="header">
 		<p>Кнопками можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>
 		<div class="but-wrap">
 			<div class="back-fix"></div>
@@ -34,7 +35,7 @@
 				<button class="btn" onclick="oneRight();">100R</button>
 			</div>
 			<div class="but50-wrap">
-				<button class="btn active" onclick="two();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
+				<button class="btn active" onclick="bothLeftRight();">50L&nbsp;&nbsp;&nbsp;&nbsp;50R<div class="divider"></div></button>
 			</div>
 		</div>
 	</div>
@@ -42,21 +43,18 @@
 		<div class="column">
 			<span class="badge bg-primary">Рис.1&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.1/06.1.1.png" >
+			<div class="code-wrap author" data-pos="30">				
+				<img src="images/authors/korneev.png" >
+			</div>
+			<div class="code-wrap back-author">				
+				<img src="images/authors/back-author3.png">
+				<img class="eye" src="images/authors/back-author2.png">
+			</div>
 			<p></p>
-			<p onclick="openWin1()">
-			<script>
-			function openWin1() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject","_blank","titlebar=yes, toolbar=yes, location=yes, directories=yes, status=yes, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingProject">
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject">
 			Файлы по теме</a><span class="fwrap"><i class="fa fa-folder"></i><i class="fa fa-github"></i></span></i></p>
-			<p onclick="openWin2()">
-			<script>
-			function openWin2() {
-			  window.open("https://ant.apache.org/manual/index.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <a class="github" href="https://ant.apache.org/manual/index.html">
 			Документация Apache Ant</a>
 			</p>
@@ -79,28 +77,13 @@
 			* Система <i>Ant</i> считается устаревшей, и сейчас редко используется.</br>
 			При этом система достаточно проста.</br>
 			* Сценарии написанные на <i>Ant</i> могут использоваться как в <i>Maven</i> так и в <i>Gradle</i>.</p>
-			<p onclick="openWin3()">
-			<script>
-			function openWin3() {
-			  window.open("https://ru.wikipedia.org/wiki/%D0%98%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%98%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
 			Императивное программирование</a></p>
-			<p onclick="openWin4()">
-			<script>
-			function openWin4() {
-			  window.open("https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
 			Декларативное программирование</a></p>
-			<p onclick="openWin5()">
-			<script>
-			function openWin5() {
-			  window.open("https://ru.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <a class="github" href="https://ru.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">
 			Функциональное программирование</a>
 			</i></br>
@@ -115,12 +98,7 @@
 		<div class="column">
 			<span class="badge bg-primary">Рис.5&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.1/06.1.5.png">
-			<p onclick="openWin5a()">
-			<script>
-			function openWin5a() {
-			  window.open("https://www.w3schools.com/xml/xml_whatis.asp","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <a class="github" href="https://www.w3schools.com/xml/xml_whatis.asp">
 			Подробнее о XML</a></br>
 			</p>
@@ -132,21 +110,11 @@
 			* <b>Установка Ant в Windows:</b><br>
 			* <i>Ant</i> как правило уже предустановлен в <i>IntelliJ IDEA</i>, но для понимания пойдем традиционным путем и установим <i>Ant</i> с нуля в нашу ОС.</br>
 			* Для этого переходим по ссылкам показанным на рисунке и скачиваем <i>zip</i> файл с версией 1.10.7</p>
-			<p onclick="openWin6()">
-			<script>
-			function openWin6() {
-			  window.open("https://ant.apache.org/bindownload.cgi","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* Ссылка на страницу (1): <a class="github" class="github" href="https://ant.apache.org/bindownload.cgi">
 			ant.apache.org</a>
 			</p>
-			<p onclick="openWin6a()">
-			<script>
-			function openWin6a() {
-			  window.open("https://archive.apache.org/dist/ant/binaries/?C=M;O=A","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* Ссылка на страницу (2): <a class="github" class="github" href="https://archive.apache.org/dist/ant/binaries/?C=M;O=A">
 			ant.apache.org (архив версий)</a>
 			</p>
@@ -189,13 +157,8 @@
 			* Создаем новый проект в <i>IntelliJ IDEA</i> с названием <i>Ant</i>.<br>
 			В проекте размещаем файл <i>build.xml</i>, с приветствием.
 			</p>
-			<p onclick="openWin7()">
-			<script>
-			function openWin7() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject/Ant","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingProject/Ant">			
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject/Ant">			
 			Проект Ant</a><i class="fa fa-github"></i></i></p>
 			<p>
 		</div>
@@ -234,12 +197,7 @@
 			<img src="images/images_06.1/06.1.14.png">
 			<p>
 			* Весь список заданий можно посмотреть в документации:<p>
-			<p onclick="openWin8()">
-			<script>
-			function openWin8() {
-			  window.open("https://ant.apache.org/manual/index.html","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
+			<p>
 			* <a class="github" href="https://ant.apache.org/manual/index.html">			
 			Документация Apache Ant</a></p>
 			<p>
@@ -257,33 +215,18 @@
 			<img src="images/images_06.1/06.1.16.png">
 			<p>
 			* Для <b>Пример 1</b> создадим отдельный проект <b>Ant2</b> (рис. выше (1)).</p>
-			<p onclick="openWin9()">
-			<script>
-			function openWin9() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject/Ant2","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingProject/Ant2">			
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/tree/master/src/Less06_BuildingAntProject/Ant2">			
 			Проект Ant2</a><i class="fa fa-github"></i></i></p>
 			<p>
-			* Основной класс проекта <i>Main4Ant3</i> будет рассчитывать <i>n</i>-ое число Фибоначчи (рис. выше (2)).</p>
-			<p onclick="openWin10()">
-			<script>
-			function openWin10() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/src/Main4Ant3.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant2/src/Main4Ant3.java">
-			Main4Ant3.java</a><i class="fa fa-github"></i></i></p>
+			* Основной класс проекта <i>Main4Ant</i> будет рассчитывать <i>n</i>-ое число Фибоначчи (рис. выше (2)).</p>
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/src/Main4Ant.java">
+			Main4Ant.java</a><i class="fa fa-github"></i></i></p>
 			<p>
 			* Файл <i>build.xml</i> определяет сценарий сборки проекта, который мы назовем как и основной <i>java</i> файл (рис. выше (3)):</p>
-			<p onclick="openWin11()">
-			<script>
-			function openWin11() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant2/build.xml">			
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/build.xml">			
 			build.xml</a><i class="fa fa-github"></i></i></p>
 			<p>
 			- Сначала с помощью свойств определяется каталог, где будет размещен скомпилированный файл проекта <i>Main4Ant3.class</i> - <b>build/classes</b>,</br>
@@ -324,13 +267,8 @@
 			<img src="images/images_06.1/06.1.20.png">
 			<p>
 			* Для демонстрации следующего примера добавим в наш проект файл <i>build2.xml</i>.</p>
-			<p onclick="openWin12()">
-			<script>
-			function openWin12() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/build2.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant2/build2.xml">			
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant2/build2.xml">			
 			build2.xml</a><i class="fa fa-github"></i></i></p>
 			<p>
 			* В этом файле изменим сценарий, сделав дефолтной цель <i>clean</i>, а из цели <i>run</i> уберем зависимость.</br>
@@ -357,66 +295,33 @@
 			<img src="images/images_06.1/06.1.23.png">
 			<p>
 			* Для <b>Пример 2</b> также создадим отдельный проект <b>Ant3</b> (рис. выше (1)).</p>
-			<p onclick="openWin13()">
-			<script>
-			function openWin13() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3">			
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3">			
 			Проект Ant3</a><i class="fa fa-github"></i></i></p>
 			<p>
 			* Основной класс проекта <i>Main4Ant3</i> также будет рассчитывать <i>n</i>-ое число Фибоначчи (рис. выше (2)).</p>
-			<p onclick="openWin14()">
-			<script>
-			function openWin14() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/src/Main4Ant3.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/src/Main4Ant3.java">
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/src/Main4Ant3.java">
 			Main4Ant3.java</a><i class="fa fa-github"></i></i></p>
 			<p>
 			* Дополнительно создадим тестовый класс <i>Test1</i> (рис. выше (3)).</p>
-			<p onclick="openWin15()">
-			<script>
-			function openWin15() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/src/Test1.java","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingProject/Ant3/src/Test1.java">			
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/src/Test1.java">			
 			Test1.java</a><i class="fa fa-github"></i></i></p>
 			<p>
-			* Для корректной работы тестового класса к проекту надо подключить внешние библиотеки <i>junit</i> и <i>hamcrest-core</i> (см. ссылки ниже).</p>
-			<p onclick="openWin16()">
-			<script>
-			function openWin16() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/A_Visual-Materials/LecturesHTML/images/images_05.1/05.1.23.png","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=1000, height=700");
-			}
-			</script>			
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/A_Visual-Materials/LecturesHTML/images/images_05.1/05.1.23.png">
-			Подключение в проект внешних библиотек для работы JUnit (рис)</a><i class="fa fa-github"></i></i></p>
-			<p onclick="openWin17()">
-			<script>
-			function openWin17() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/A_Visual-Materials/LecturesHTML/images/images_05.1/05.1.24.png","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/A_Visual-Materials/LecturesHTML/images/images_05.1/05.1.24.png">
-			Расположение в проекте внешних библиотек для работы JUnit (рис)</a><i class="fa fa-github"></i></i></br>
-			</p>
+			* Для корректной работы тестового класса к проекту надо подключить внешние библиотеки <i>junit</i> и <i>hamcrest-core</i> (см. ссылки ниже).</p>			
+			<p>
+				<i class="github-wrap"><i class="fa fa-link"></i><a  class="inner-anchor" href="N-05.1 Тестирование кода, JUnit.html#23" data-target-img="23,24" data-preload="5" target="frame"> 
+				Подключение в проект внешних библиотек для работы JUnit *6.1</a></i>
+			</p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.24&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.1/06.1.24.png">
 			<p>
 			* Для проекта напишем <i>build.xml</i>.</p>
-			<p onclick="openWin18()">
-			<script>
-			function openWin18() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/94e00d9916eb8d4b010028b5bec33d36b512faf5/src/Less06_BuildingAntProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/94e00d9916eb8d4b010028b5bec33d36b512faf5/src/Less06_BuildingProject/Ant3/build.xml">
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/build.xml">
 			build.xml</a><i class="fa fa-github"></i></i></br>
 			</p>
 			<p>
@@ -456,26 +361,16 @@
 				* В цели по запуску <i>jar</i>-файла пишем задание на запуск <i>java</i>, в котором определяем файл для запуска <i>jar="${build}/${ant.project.name}.jar"</i> и то,
 				что запуск будет в отдельной копии виртуальной машины <i>Java</i> (<i>fork="true"</i>).</br>
 			</p>
-			<p onclick="openWin19()">
-			<script>
-			function openWin19() {
-			  window.open("https://github.com/valladim-pw/java-level2-lessons/blob/54bf350a2ecf8a89a6fe55a5742c324a997d2767/src/Less06_BuildingAntProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-			}
-			</script>
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/54bf350a2ecf8a89a6fe55a5742c324a997d2767/src/Less06_BuildingProject/Ant3/build.xml">
+			<p>
+			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/build.xml">
 			build.xml</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.28&nbsp;<i class="material-icons">&#xe5db;</i></span>
 			<img src="images/images_06.1/06.1.28.png">			
-			<p onclick="openWin20()">
-				<script>
-				function openWin20() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/54bf350a2ecf8a89a6fe55a5742c324a997d2767/src/Less06_BuildingAntProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-				}
-				</script>
-				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/54bf350a2ecf8a89a6fe55a5742c324a997d2767/src/Less06_BuildingProject/Ant3/build.xml">
+			<p>
+				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/build.xml">
 				build.xml</a><i class="fa fa-github"></i></i></br>
 			</p>
 			<p>
@@ -524,13 +419,8 @@
 			- На этой странице находим выпадающее меню <i>Project Encoding</i> и в нем выбираем <i>windows-1251</i>,<br>
 			- Кликаем здесь же <i>OK</i>.<br>
 			</p>
-			<p onclick="openWin21()">
-				<script>
-				function openWin21() {
-					window.open("https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/Less06_BuildingAntProject/Ant3/build.xml","_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=900, height=700");
-				}
-				</script>
-				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/6401021b216a851a438159b1027e11ad7b773f82/src/Less06_BuildingProject/Ant3/build.xml">
+			<p>
+				* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less06_BuildingAntProject/Ant3/build.xml">
 				build.xml</a><i class="fa fa-github"></i></i></br>
 			</p>
 		</div>

@@ -1,0 +1,41 @@
+package Less08_BinaryTrees._1_BinarySearchTree_AVLTree.BinaryTreeMy;
+
+import java.util.Random;
+
+public class TreeTest {
+	static final int ITERATIONS = 10;
+	
+	public static void main(String[] args) throws TreeException {
+		BinaryTree<Integer, String> tree1 = new BinaryTree<>();
+		Random random = new Random();
+		for (int i = 0; i < 10; i++) {
+			int randomNumber = random.nextInt(900) + 1; // Генерация числа от 1 до 1000
+			tree1.add(randomNumber, "==" + randomNumber);
+		}
+		System.out.println("");
+		tree1.printTree();
+		BinaryTree<Integer, String> tree2 = new BinaryTree<>();
+		tree2.add(7, "*7");
+		tree2.add(3, "*3");
+		tree2.add(11, "*11");
+		tree2.add(2, "*2");
+		tree2.add(5, "*5");
+		tree2.add(4, "*4");
+		tree2.add(9, "*9");
+		tree2.add(12, "*12");
+		tree2.add(1, "*1");
+		tree2.add(6, "*6");
+		tree2.add(8, "*8");
+		tree2.add(10, "*10");
+		tree2.add(13, "*13");
+		
+		tree2.printTree();
+		tree2.delete(7);
+		tree2.printTree();
+		tree2.delete(8);
+		tree2.printTree();
+		tree2.find(10);
+		tree2.change(14, 9);
+		tree2.printTree();
+	}
+}

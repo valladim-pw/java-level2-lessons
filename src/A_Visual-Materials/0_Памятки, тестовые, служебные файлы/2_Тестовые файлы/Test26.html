@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>00.1 Сборка проекта, введение. Ant</title>
+</head>
+<body>
+<h1>Counter</h1>
+<p><button onclick="addCounter(demo)">Plus Counter</button></p>
+<p><button onclick="subCounter(demo)">Minus Counter</button></p>
+<p><button id="but">Get Link</button></p>
+
+
+<div id="demo"></div>
+<div id="demo1"></div>
+
+<script>
+let demo =  document.getElementById("demo");
+let demo1 =  document.getElementById("demo1");
+
+function makeCounter() {
+  
+	let count = 1;
+
+  return function() {
+    return count++; 
+  };
+}
+
+let counter = makeCounter();
+
+function addCounter(elem) {  
+	let add = elem.innerText;
+	if (add == "")
+		add = 1;
+	else
+		+add++;		
+	
+	elem.innerText = add;		
+}
+
+function subCounter(elem) {
+  let sub = elem.innerText;
+  +sub--;
+	elem.innerText = sub;
+}
+</script>
+
+</body>
+</html>

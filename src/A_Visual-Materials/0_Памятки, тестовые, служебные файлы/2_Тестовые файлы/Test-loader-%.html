@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Center the loader */
+img {
+	width: 100%;
+}
+#demo {
+	position: absolute;
+	top: 0;
+	left: 0;	
+	background: lightblue;
+	z-index: 10;
+}
+.block {
+	position: relative;
+	left: 25%;
+	top: 100px;
+	width: 50%;
+	height: 500px;
+	border: 3px solid blue;
+	background: white;
+}
+
+.membrane {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+	background: grey; /*#1ea3fe;*/
+}
+.loader {
+	position: absolute;	
+}
+.back {		
+	box-shadow: inset 0px 0px 0px 1px blue;
+	overflow: hidden;
+}
+.smoke {		
+	border-radius: 50%;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #fff;
+	border-top-width: 0;
+	border-bottom-width: 0;	
+}
+.back-wrap {	
+	width: 150px;
+	height: 150px;  	
+	display: flex;
+	align-self: center;	
+	overflow: hidden;
+	background: url("images/java-cup600.png") no-repeat;
+	background-size: cover;
+}
+.back-in1 {	
+	width: 52.5%;/*105px*/
+	height: 22.5%;/*45px*/
+	top: 5%;/*10px*/
+	right: 0;	
+}
+.smoke1 {		
+	width: 55.24%;/*58px*/
+	height: 122.22%;/*55px*/
+	left: -31.43%;/*-33px*/
+	top: -33.33%;/*-15px*/
+	border-width: 3px;
+	border-top-width: 0;
+	border-bottom-width: 0;	
+	-webkit-animation: spin2 4s linear infinite;
+	animation: spin2 4s linear infinite;	
+}
+.back-in2 {		
+	width: 47.5%;/*95px*/
+	height: 75%;/*150px*/
+	top: 25%;/*50px*/
+	left: 0;	
+}
+.smoke2 {	
+	width: 73.68%;/*70px*/
+	height: 48%;/*72px*/
+	right: -49.47%;/*-47px*/
+	top: 0;	
+	-webkit-animation: spin1 5s linear infinite; 
+  animation: spin1 5s linear infinite;	
+}
+.back-in3 {	
+	width: 60%;/*120px*/
+	height: 77.5%;/*155px*/
+	bottom: 0;
+	left: 0;	
+}
+.smoke3 {	
+	width: 35.83%;/*43px*/
+	height: 29.03%;/*45px*/
+	right: -18.33%;/*-22px*/
+	top: 5.16%;/*8px*/	
+	-webkit-animation: spin1 5s linear infinite; 
+  animation: spin1 5s linear infinite;	
+}
+.back-in4 {		
+	width: 47.5%;/*95px*/
+	height: 65%;/*130px*/
+	bottom: 0;
+	right: 0;			
+}
+.smoke4 {		
+	width: 48.42%;/*46px*/
+	height: 38.46%;/*50px*/
+	left: -34.74%;/*-33px*/
+	top: 2.31%;/*3px*/	
+	-webkit-animation: spin2 5s linear infinite; 
+  animation: spin2 5s linear infinite;	
+}
+
+@-webkit-keyframes spin1 {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin1 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(-360deg); }
+}
+@keyframes spin2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+
+</style>
+</head>
+<body>
+<div class="block">
+	<div id="membrane" class="membrane">
+		<div class="loader back back-wrap">			
+			<div class="loader back back-in1">
+				<div class="loader smoke smoke1"></div>
+			</div>			
+			<div class="loader back back-in2">
+				<div class="loader smoke smoke2"></div>
+			</div>
+			<div class="loader back back-in3">
+				<div class="loader smoke smoke3"></div>
+			</div>			
+			<div class="loader back back-in4">
+				<div class="loader smoke smoke4"></div>
+			</div>
+		</div>		
+		
+		
+	</div>
+</div>
+<button onclick="convertPixelsToPercent()">Convert px -> %</button>
+<div id="demo"></div>
+<script>
+function convertPixelsToPercent() {
+	let str1 = "95,130,0,0";// width, height, left/right, top/bottom of blocks (.back-inX)
+	let arr1 = str1.split(",");
+	
+	let str2 = "46,50,33,3";// width, height, left/right, top/bottom  of blocks (.smokeX)
+	let arr2 = str2.split(",");
+	
+	let txt = "width, height, left/right, top/bottom .back-inX: <br>";
+	
+	document.getElementById("demo").insertAdjacentHTML("beforeend", txt);
+	arr1.forEach(myFunction1);
+	
+	myFunction2(+arr1[0], +arr1[1], arr2);	
+}
+
+function myFunction1(value, index, array) {	
+	let txt = "";
+	
+  txt += ((value/200)*100) + "%<br>"; // convert array (width, height, left/right, top/bottom of blocks (.back-inX)) in % to parent block(.back-wrap, width=200, height=200)
+	
+	document.getElementById("demo").insertAdjacentHTML("beforeend", txt);
+}
+
+function myFunction2(width, height, arr) {
+	let txt = "width, height, left/right, top/bottom .smokeX: <br>";
+	
+  txt += ((+arr[0]/width)*100) + "%<br>"; // convert arr(0-width,1-height,2-left/right,3-top/bottom) of bloks(.smokeX) in % to width, height of parent blocks (.back-inX)
+	txt += ((+arr[1]/height)*100) + "%<br>";
+	txt += ((+arr[2]/width)*100) + "%<br>";
+	txt += ((+arr[3]/height)*100) + "%<br>";
+	
+	document.getElementById("demo").insertAdjacentHTML("beforeend", txt);
+}
+
+</script>
+
+</body>
+</html>
