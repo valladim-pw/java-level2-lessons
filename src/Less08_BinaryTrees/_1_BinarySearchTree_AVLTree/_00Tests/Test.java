@@ -77,7 +77,11 @@ public class Test {
 		System.out.println(i);
 		char[] arr = ch.toCharArray();
 		System.out.println(Arrays.toString(arr));
-		
+		int maxValueLength = 5;
+		int startValueHalf = (int) Math.floor(((maxValueLength) * 1.0) / 2);
+		int endValueHalf = (int) Math.ceil(((maxValueLength) * 1.0) / 2);
+		System.out.println("floor: " + startValueHalf);
+		System.out.println("ceil: " + endValueHalf);
 	}
 }
 //5, 2, 8, 1, 4, 6, 9, n, n, 3, n, n, 7, n, 10, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, 22

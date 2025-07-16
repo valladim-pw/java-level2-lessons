@@ -50,7 +50,8 @@
 		height: 40%;
     overflow: auto;
 	}
-	</style>	
+	</style>
+	
 </head>
 
 <body onload="openStartLoader(); setPanelImgPreload(); setPageHeading(); controlTip(); highlightActiveLink(); addHighlightFunction();">
@@ -103,8 +104,7 @@
 		</div>
 		<div class="col-sm-9 h-wrap">
 			
-			<h1><span class="h-java">Java Lessons</span><span class="h-level">&nbsp;&nbsp;*продвинутый уровень* </span></h1>
-			<!--<button onclick="clearStorage()">Clear Storage</button>-->
+			<h1><span class="h-java">Java Lessons</span><span class="h-level">&nbsp;&nbsp;*продвинутый уровень* </span></h1>						
 		</div>		
 		<div class="col-sm-2 icon">
 		  <a href="https://blog.progwards.ru/" target="_blank">
@@ -191,20 +191,31 @@
 				<button id="open-panel" class="but-control" onclick="openIndexPanel()"><i class="material-icons dir-arrow to-left">play_arrow</i></button><!--&nbsp;&nbsp;&nbsp;&nbsp;-->
 				<button id="close-panel" class="but-control tip" onclick="closeIndexPanel()" tooltip="Панель адреса"><i class="material-icons dir-arrow">play_arrow</i></button>
 			</div>
-			<div id="guide-wrap" class="run-code-guide run-desk">
+			<div class="run-code-guide run-desk">
 			  <div class="but-guide-wrap">					
-					<button class="but-guide guide-link" onclick="openW3Schools(event)">Перейти для запуска<i class="material-icons">launch</i></button>					
-					<button class="but-guide guide-close" onclick="closeGuide()">Закрыть инструкцию<i class="material-icons">clear</i></button>
-					<a target="_blank" href="https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld"></a>
+					<button class="but-guide guide-link">Перейти для запуска<i class="material-icons">launch</i></button>
+					
+					<div class="guide-select-wrap">
+						<button class="but-guide guide-close">Закрыть инструкцию<i class="material-icons">clear</i></button>						
+						<div class="select-wrap">
+							<label for="guide-block">Больше не показывать инструкцию</label>
+							<div class="guide-select-wrap">
+								<select name="guide-block guide-select" id="block-cases">
+									<option disabled selected hidden>В каких случаях</option>
+									<option value="here">Только с этим кодом</option>
+									<option value="everywhere">Во всех подобных примерах</option>						
+								</select>
+								<button class="but-guide but-block guide-select">
+									<span class="but-block-item but-block-wrap">В каких случаях <i class="material-icons">arrow_drop_down</i></span>
+									<span class="but-block-item select-text">this is text</span>
+								</button>
+							</div>							
+						</div>
+					</div>					
 				</div>				
 				<img class="guide-desk" src="images/guides/runcode-guide.png">
 			</div>
-			<div id="guide-mob-wrap" class="run-code-guide run-mob">
-				<div class="but-guide-wrap">					
-					<button class="but-guide guide-link" onclick="openW3Schools(event)">Перейти для запуска<i class="material-icons">launch</i></button>					
-					<button class="but-guide guide-close" onclick="closeGuide()">Закрыть инструкцию<i class="material-icons">clear</i></button>
-					<a target="_blank" href="https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld"></a>
-				</div>
+			<div class="run-code-guide run-mob">	
 				<img class="guide-mob" src="images/guides/runcode-guide-mob.png">
 			</div>
 			<iframe id="frame" onload="setControlButsPos(); loadFrame(); setTimeout(linkIndexClick, 50); setTimeout(clickHighlightMenuBut, 50);" src="N-00.1 Динамические массивы.html" loading="eager" name="frame" title="Iframe Example">

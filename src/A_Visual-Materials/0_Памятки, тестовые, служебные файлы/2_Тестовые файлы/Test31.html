@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	text-align: center;
+	padding-top: 50px;
+}
+</style>
+</head>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The setInterval() Method</h2>
+
+<button onclick="getCounter()">Counter</button>
+<p id="demo"></p>
+
+<script>
+
+function getCounter() {
+  const demo = document.getElementById("demo");
+  let i = 6;
+  const id = setInterval(counter, 1000);
+  function counter() {
+    if (i == 0) {
+      clearInterval(id);
+    } else {
+      i--;
+      demo.innerHTML = i;
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>

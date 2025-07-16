@@ -37,28 +37,26 @@
 		Fetch API Вставка файлов с кодом 
 		*/
 		
-		let code = ["code09.txt", "code14.txt", "code15.txt", "code18.txt", "code19.txt", "code25a.txt", "code25b.txt"]; 
+		let code = ["code09.txt", "code11.txt", "code14.txt", "code15.txt", "code18.txt", "code19.txt", "code25a.txt", "code25b.txt"]; 
 		
 		let dir = "./code/code_00.1/";			
 
 		for (let c in code) {
 			let file = dir + code[c];			
 			getContent(file);
-		}		
+		}
+		
 		 
 		async function getContent(file) {
 			let ext = file.substr(file.lastIndexOf(".") + 1);
 			let x = await fetch(file);
 			let txt = await x.text();	
-			let code_wraps = document.getElementsByClassName("code-wrap");
+			let code_wrap = document.querySelectorAll(".code-wrap");
 			let arrTab, arrSign;
 			
-			for (let i = 0; i < code_wraps.length; i++) {
-				let code_wrap = code_wraps[i];
-				let but_copy = code_wrap.previousElementSibling.previousElementSibling;				
-				let a = code_wrap.parentElement.querySelector(".link-test");
-				let id = code_wrap.getAttribute("id");
-				let code_tag = code_wrap.querySelector("code");
+			for (let i = 0; i < code_wrap.length; i++) {
+				let id = code_wrap[i].getAttribute("id");
+				let code_tag = code_wrap[i].querySelector("code");
 				let pos = file.search(id);		
 				if (pos != -1) {
 					if (ext == "txt") {
@@ -73,108 +71,106 @@
 						else							
 							txt = txt.replace(/^( *)/gm, (_, spaces) => spaces.replace(/  /g, " "));// если вместо \t используется два пробела,  функция заменяет каждые два пробела в начале строки на один
 						
-						let msg_class = "<div class=\"copy-msg msg-test\">";// msg-hide\">";
-						let msg_class_right = "<div class=\"copy-msg msg-test msg-right\">";// msg-hide\">";
-						let msg_class_left = "<div class=\"copy-msg msg-test msg-left\">";// msg-hide\">";
-						
-						let msg_content =	"<span class=\"guide-choice msg-hide\">Нажмите <i class=\"material-icons icon-setting\">settings</i> для выбора варианта запуска кода</span>" +
-						"<span class=\"msg-alert msg-hide\">" +
-						"<p class=\"setting-choice\">Настройка процесса запуска кода<i class=\"material-icons but-gif setting-close msg-hide\" onclick=\"closeSettings(event)\">clear</i></p>" +
-						"<select class=\"guide-cases\" onchange=\"changeSelect(event)\">" +
-						"<option value=\"no-choice\" disabled selected hidden>Выберите вариант</option>" +						
-						"<option value=\"guide-yes\">Предпоказ инструкции (по-умолчанию)</option>" +
-						"<option value=\"guide-no\">Не показывать инструкцию (эта лекция)</option>" +		
-						"<option value=\"guide-no-all\">Не показывать инструкцию (все лекции)</option>" +
-						"<option value=\"clear-all\">Очистить настройки</option>" +
+						let msg_class = "<div class=\"copy-msg msg-hide\">";
+						let msg_class_right = "<div class=\"copy-msg msg-right msg-hide\">";
+						let msg_class_left = "<div class=\"copy-msg msg-left msg-hide\">";
+						let msg_content = "<span class=\"msg-text\">Скопировано в буфер обмена</span>" +
+						"<span class=\"msg-alert\">" +
+						"<select  id=\"guide-cases\">" +
+						"<option disabled selected hidden>Выберите вариант процесса запуска кода</option>" +
+						"<option value=\"guide-yes\">Предпоказ инструкции по запуску</option>" +
+						"<option value=\"guide-no\">Не показывать инструкцию по запуску</option>" +						
 						"</select></span>" +
 						"</div>";
-						let msg_copy = "<span class=\"msg-copy msg-hide\">Скопировано в буфер обмена</span>";
-						let msg_copy_right = "<span class=\"msg-copy msg-hide msg-right\">Скопировано в буфер обмена</span>";
-						let msg_copy_left = "<span class=\"msg-copy msg-hide msg-left\">Скопировано в буфер обмена</span>";
 						
-						
-						let copy_msg_run = msg_class + msg_copy + msg_content;
-						let copy_msg_run_right = msg_class_right + msg_copy_right + msg_content;
-						let copy_msg_run_left = msg_class_left + msg_copy_left + msg_content;
-						
-						let copy_msg = "<span class=\"copy-msg msg-hide\">Скопировано в буфер обмена</span>";
-						let copy_msg_right = "<span class=\"copy-msg msg-right msg-hide\">Скопировано в буфер обмена</span>";
-						let copy_msg_left = "<span class=\"copy-msg msg-left msg-hide\">Скопировано в буфер обмена</span>";
-						
-						let btn_copy = "<i class=\"material-icons but-gif but-copy\" onclick=\"copyCode(event)\">content_copy</i>";
-						let btn_copy_test = "<i class=\"material-icons but-gif but-copy but-test\" onclick=\"copyCode(event); clickCounter();\">content_copy</i>";
-						let btn_test_setting = "<i class=\"material-icons but-gif but-setting but-test\" onclick=\"openSettings(event);\">settings</i>";
-						
-						let btn_copy_right = "<i class=\"material-icons but-gif but-copy right50\" onclick=\"copyCode(event)\" >content_copy</i>";
-						let btn_copy_right_test = "<i class=\"material-icons but-gif but-copy right50 but-test\" onclick=\"copyCode(event); clickCounter();\">content_copy</i>";
-						let btn_right_test_setting = "<i class=\"material-icons but-gif right50 but-setting but-test\" onclick=\"openSettings(event);\">settings</i>";
-						
-						let link_w3s = "<a class=\"link-test\" target=\"_blank\" href=\"https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld\"></a>";
+						let copy_msg = msg_class + msg_content;
+						let copy_msg_right = msg_class_right + msg_content;
+						let copy_msg_left = msg_class_left + msg_content;
 						
 						if (id.search("a") != -1) {
-							if (hasClass(code_wrap, "code-test")) {								
-									code_wrap.insertAdjacentHTML("beforebegin", btn_right_test_setting + btn_copy_right_test + copy_msg_run_left);
-								if (a == null)
-									code_wrap.insertAdjacentHTML("afterend", link_w3s);
-							} else								
-								code_wrap.insertAdjacentHTML("beforebegin", btn_copy_right + copy_msg_left);
+							if (hasClass(code_wrap[i], "code-test")) {
+								code_wrap[i].insertAdjacentHTML("beforebegin", "<i class=\"material-icons but-gif but-copy right50 but-test\" onclick=\"copyCode(event); setTimeout(() => openGuide(event), 3000); \" >content_copy</i>" + copy_msg_left);
+								code_wrap[i].insertAdjacentHTML("afterend", "<a class=\"link-test\" target=\"_blank\" href=\"https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld\"></a>");
+							} else
+								code_wrap[i].insertAdjacentHTML("beforebegin", "<i class=\"material-icons but-gif but-copy right50\" onclick=\"copyCode(event)\">content_copy</i>" + copy_msg_left);
 						}	else if (id.search("b") != -1) {
-							if (hasClass(code_wrap, "code-test")) {								
-									code_wrap.insertAdjacentHTML("beforebegin", btn_test_setting + btn_copy_test + copy_msg_run_right);
-								if (a == null)
-									code_wrap.insertAdjacentHTML("afterend", link_w3s);
+							if (hasClass(code_wrap[i], "code-test")) {
+								code_wrap[i].insertAdjacentHTML("beforebegin", "<i class=\"material-icons but-gif but-copy but-test\" onclick=\"copyCode(event); setTimeout(() => openGuide(event), 3000); \" >content_copy</i>" + copy_msg_right);
+								code_wrap[i].insertAdjacentHTML("afterend", "<a class=\"link-test\" target=\"_blank\" href=\"https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld\"></a>");
 							} else
-								code_wrap.insertAdjacentHTML("beforebegin", btn_copy + copy_msg_right);
+								code_wrap[i].insertAdjacentHTML("beforebegin", "<i class=\"material-icons but-gif but-copy\" onclick=\"copyCode(event)\">content_copy</i>" + copy_msg_right);
 						}	else {
-							if (hasClass(code_wrap, "code-test")) {								
-									code_wrap.insertAdjacentHTML("beforebegin", btn_test_setting + btn_copy_test + copy_msg_run);
-								if (a == null)
-									code_wrap.insertAdjacentHTML("afterend", link_w3s);
+							if (hasClass(code_wrap[i], "code-test")) {
+								code_wrap[i].insertAdjacentHTML("beforebegin", "<i class=\"material-icons but-gif but-copy but-test\" onclick=\"copyCode(event); setTimeout(() => openGuide(event), 3000); \" >content_copy</i>" + copy_msg);
+								code_wrap[i].insertAdjacentHTML("afterend", "<a class=\"link-test\" target=\"_blank\" href=\"https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld\"></a>");
 							} else
-								code_wrap.insertAdjacentHTML("beforebegin", btn_copy + copy_msg);
+								code_wrap[i].insertAdjacentHTML("beforebegin", "<i class=\"material-icons but-gif but-copy\" onclick=\"copyCode(event)\">content_copy</i>" + copy_msg);
 						}
 						code_tag.innerHTML = txt;
 						
 					}	else if (ext == "gif") {
 						
-						code_wrap.innerHTML = "<i class=\"material-icons but-gif pause-gif\" onclick=\"pauseGif(event)\">pause_circle_outline</i>" +
+						code_wrap[i].innerHTML = "<i class=\"material-icons but-gif pause-gif\" onclick=\"pauseGif(event)\">pause_circle_outline</i>" +
 						"<i class=\"material-icons but-gif start-gif\" onclick=\"startGif(event)\">play_circle_outline</i>" + 
 						"<img class='code-img' src='" + file + "'/>";	
 					
 					} else
-						code_wrap.innerHTML = "<img class='code-img' src='" + file + "'/>";
+						code_wrap[i].innerHTML = "<img class='code-img' src='" + file + "'/>";
 				}						
 			}				
 		}
+		
+	/*
+	Function for copying code from frame to clipboard
+
+	<div class="column" >
+		<b class="column-id" id="19"></b>
+		<span class="badge bg-primary">Рис.19&nbsp;<i class="material-icons"></i></span>
+		<img src="images/images_08.1/08.1.19.png" usemap="#map">
+		<i class="material-icons but-gif but-copy" onclick="copyCode(event)" >content_copy</i>
+		<span class="copy-msg msg-left">Скопировано в буфер обмена</span>
+		<div id="code19" class="code-wrap">
+			<pre>
+			<code class="hljs language-java">
+	*/
+
+	async function copyCode(event) {
+		let e = event.target;
+		let code_wrap = e.nextSibling.nextSibling;
+		let copy_msg = e.nextSibling;
+		let code_id = code_wrap.getAttribute("id");
+		let file = dir + code_id + ".txt";		
+		
+		let x = await fetch(file);
+		let copy_text = await x.text();
+		
+		navigator.clipboard.writeText(copy_text);
+		
+		removeClass(copy_msg, "msg-hide");
+		
+		//setTimeout(function(){ addClass(copy_msg, "msg-hide") }, 3000);
+	}
 	/*
 	Функция для установки id для каждой страницы 
 	*/
 
 	function setPageId() {
-		let page_id_elem = document.querySelector(".page_id");
+		let page_id_elem = document.getElementById("page_id");
 		
-		let page_id = dir.substring(dir.indexOf("_") + 1, dir.lastIndexOf("/"));		
+		let page_id = dir.substring(dir.indexOf("_") + 1, dir.lastIndexOf("/"));
+		page_id += "*";
 		
-		if (page_id_elem == null)				
-			document.body.insertAdjacentHTML("afterbegin", "<div id=\"" + page_id + "\" class=\"page-id\"></div>");			
+		if (page_id_elem == null)
+			document.body.insertAdjacentHTML("afterbegin", "<div id=\"" + page_id + "\" class=\"page-id\"></div>");		
 	}
 	</script>	
 	<script src="javascript/highlight.min.js"></script>
-	<script src="javascript/highlightjs-line-numbers.js"></script>  
+	<script src="javascript/highlightjs-line-numbers.js"></script>	
 </head>	
-<body onload="setPageId(); setOpenWinAttr(); insertLabel(); bothLeftRight(); setCode(true); loadWithStorageValues();">
-<div id="click-count"></div>
+<body onload="setPageId(); setOpenWinAttr(); insertLabel(); bothLeftRight();setCode(true);">
 <div class="container-fluid p-3">
-	<div class="user-info-wrap">
-		<i class="material-icons info-symbol">info</i>
-		<div class="info-wrap">
-			<p class="user-info info-but-run">Кнопкой <img src="images/run-button.png"/> можно скопировать и запустить код онлайн в браузере.</p>
-			<p class="user-info info-but-zoom" >Кнопками ниже можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>
-		</div>
-	</div>
-  
 	<div class="head-buttons" id="header">		
-				
+		<p>Кнопками ниже можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>		
 		<div class="but-wrap">
 			<div class="back-fix"></div>
 		  <div class="but100-wrap left">
@@ -192,7 +188,8 @@
 			</div>			
 		</div>		
 	</div>	
-	<div class="row">	  
+	<div class="row">
+	  
 		<div class="column">
 			<img src="images/images_00.1/00.1.1.png">
 			<div class="code-wrap author" data-pos="30">				
@@ -261,7 +258,7 @@
 			<img src="images/images_00.1/00.1.9.png">
 			<div id="code09" class="code-wrap code-null code-test"> 
 				<pre><code class="hljs language-java"></code></pre>
-			</div>			
+			</div>
 			<p>
 			* Наглядная демонстрация присваивания нового значения элемента массива по индексу и присваивания значения одного массива другому массиву (фактически копирование).</br>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less00_DinamicArrays/_1DinamicIntArray/DIntArray.java">
@@ -270,7 +267,7 @@
 			</p>
 		</div>
 		<div class="column">
-			<img src="images/images_00.1/00.1.10.png">			
+			<img src="images/images_00.1/00.1.10.png">
 			<p>
 			* Добавление элементов в динамическом массиве осуществляется в методе</br>
 			<b>add(int item)</b>:</br>
@@ -289,7 +286,10 @@
 			</p>
 		</div>
 		<div class="column">
-			<img src="images/images_00.1/00.1.11.png">			
+			<img src="images/images_00.1/00.1.11.png">
+			<div id="code11" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* Здесь, на примере, демонстрируется поэтапная схема работы метода добавления элемента в массив через копию.</br>
 			* Наглядная демонстрация присваивания нового значения элемента массива по индексу и присваивания значения одного массива другому массиву (фактически копирование).</br>
@@ -300,7 +300,6 @@
 		</div>
 		<div class="column">
 			<img src="images/images_00.1/00.1.12.png">
-			
 			<p>
 			* Существуют динамические массивы, в которых вместимость (capacity) при заполнении увеличивается заданными блоками.</br>
 			* К таким структурам данных относится	<b>ArrayList</b>.</br>

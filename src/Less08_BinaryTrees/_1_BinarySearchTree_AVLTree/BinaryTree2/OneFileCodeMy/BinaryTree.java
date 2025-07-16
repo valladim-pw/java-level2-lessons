@@ -1,9 +1,46 @@
-package Less08_BinaryTrees._1_BinarySearchTree_AVLTree.BinaryTreeMy;
+package Less08_BinaryTrees._1_BinarySearchTree_AVLTree.BinaryTree2.OneFileCodeMy;
 
 import java.util.*;
-import java.util.Random;
 
-public class BinaryTree<K extends Comparable<K>, V> {
+class TreeTest {
+	static final int ITERATIONS = 10;
+	
+	public static void main(String[] args) throws TreeException {
+		BinaryTree<Integer, String> tree = new BinaryTree<>();
+		
+		tree.add(7, "*7");
+		tree.add(3, "*3");
+		tree.add(11, "*11");
+		tree.add(2, "*2");
+		tree.add(5, "*5");
+		tree.add(4, "*4");
+		tree.add(9, "*9");
+		tree.add(12, "*12");
+		tree.add(1, "*1");
+		tree.add(6, "*6");
+		tree.add(8, "*8");
+		tree.add(10, "*10");
+		tree.add(13, "*13");
+		
+		tree.printTree();
+		tree.delete(7);
+		tree.printTree();
+		BinaryTree.Node node = tree.find(8);
+		System.out.println("\n" + node + " - parent of this node: " + node.parent);
+		System.out.println(node + " - left of this node: " + node.left);
+		System.out.println(node + " - right of this node: " + node.right);
+		tree.delete(8);
+		tree.printTree();
+	}
+}
+
+class TreeException extends Exception {
+	public TreeException(String message) {
+		super(message);
+	}
+}
+
+class BinaryTree<K extends Comparable<K>, V> {
 	private static final String KEYEXIST = "Key already exist";
 	private static final String KEYNOTEXIST = "Key not exist";
 	
@@ -347,11 +384,5 @@ public class BinaryTree<K extends Comparable<K>, V> {
 		}
 	}
 }
-
-
-
-
-
-
 
 

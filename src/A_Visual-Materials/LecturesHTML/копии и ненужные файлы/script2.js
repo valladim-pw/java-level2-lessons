@@ -256,12 +256,6 @@ function removeClass(el, attr) {
   let list = el.classList;
   list.remove(attr);
 }
-function toggleClass(el, attr) {
-  if (hasClass(el, attr))
-		removeClass(el, attr);
-	else
-		addClass(el, attr);
-}
 
 /* 
 Функции для для вставки в верхней части страницы совета по применению кнопок Run для запуска кода
@@ -329,26 +323,36 @@ function openWin(resource) {
 }
 
 /*
-	Функция для работы кликкаунтера в локальном хранилище браузера 
+	Каунтер обратного отсчета (сколько осталось до закрытия блока с селектом для выбора варианта запуска кода)
 
 */
 
-function clickCounter() {  
-   
-	if (typeof(Storage) !== "undefined") { 	 
-    if (localStorage.clickcount) {
-      localStorage.clickcount = Number(localStorage.clickcount)+1;
+let proceed = true;
+let stopCounter = false;
+
+function getCounter(elem, callback) {	
+  
+	let i = 6;
+	elem.innerHTML = i;	
+  
+  const id = setInterval(counter, 1000);
+  function counter() {
+    if (i == 0) {
+      clearInterval(id);
+			callback();
     } else {
-      localStorage.clickcount = 1;
-    }    
-  } else {
-    x.innerHTML = "Sorry, no Web storage support!";
-  }
+			if (proceed)
+				i--;
+			if (stopCounter)
+				clearInterval(id);
+      elem.innerHTML = i;
+    }
+  }	
 }
 
 
 /*
-	Функция для копирования кода из рамки с кодом, а также для запуска кода на ресурсе w3schools.com
+	Function for copying code from frame to clipboard
 
 	<div class="column" >
 		<b class="column-id" id="19"></b>
@@ -361,13 +365,13 @@ function clickCounter() {
 			<code class="hljs language-java">
 	*/
 
-
 async function copyCode(event) {
 	
 	let e = event.target;
 	let code_wrap = e.nextElementSibling.nextElementSibling;
 	let copy_msg = e.nextElementSibling;
-		
+	let a = e.parentElement.querySelector(".link-test");
+	let counter_elem = e.parentElement.querySelector(".countdown");
 	let code_id = code_wrap.getAttribute("id");
 	let id_elem = document.body.querySelector(".page-id");
 	let page_id = id_elem.getAttribute("id");
@@ -381,43 +385,22 @@ async function copyCode(event) {
 	
 	navigator.clipboard.writeText(copy_text);
 	
-	let count = localStorage.getItem("clickcount");
-	let store_val = localStorage.getItem(store_id);
-	let store_no_all = localStorage.getItem("no-all");
+	removeClass(copy_msg, "msg-hide");
 	
-	if (hasClass(e, "but-test")) {
+	if (!hasClass(e, "but-test"))
+		setTimeout(function(){ addClass(copy_msg, "msg-hide") }, 2000);
+	
+	if (hasClass(copy_msg, "code-start")) {
 		
-		let msg_copy = copy_msg.children[0];
-		let guide_choice = copy_msg.children[1];
-		let msg_alert = copy_msg.children[2];
-		let select = msg_alert.querySelector("select");
-		let a = e.parentElement.querySelector(".link-test");
-		
-		closeAllSettings();
-		
-		if (+count <= 1 || select.value == "no-choice") {
-			removeClass(guide_choice, "msg-hide");
-			
-			if (!hasClass(msg_copy, "msg-hide"))
-				addClass(msg_copy, "msg-hide");
-			if (!hasClass(msg_alert, "msg-hide"))
-				addClass(msg_alert, "msg-hide");
-		
-		} else {		
-			removeClass(msg_copy, "msg-hide");
-		
-			if (select.value == "guide-yes")
-				setTimeout(() => startWithGuide(msg_copy), 2000);					
-			
-			if (select.value == "guide-no" || select.value == "guide-no-all")
-				setTimeout(() => startWithoutGuide(a, msg_copy), 2000);	
-		}
-	} else {
-		
-		removeClass(copy_msg, "msg-hide");
-		setTimeout(function() {addClass(copy_msg, "msg-hide")}, 2000);
-	}
+		stopCounter = false;
 				
+		if (localStorage.getItem(store_id) == "guide-yes")
+			getCounter(counter_elem, () => startWithGuide(copy_msg));			
+		
+		if (localStorage.getItem(store_id) == "guide-no")
+			getCounter(counter_elem, () => startWithoutGuide(a, copy_msg));		
+	} 
+		
 }
 
 function startWithGuide(msg) {	
@@ -428,6 +411,59 @@ function startWithGuide(msg) {
 function startWithoutGuide(anchor, msg) {	
 	anchor.click();
 	addClass(msg, "msg-hide");
+}
+/*
+Функция для открытия ресурса (W3Schools) на котором можно в режиме онлайн запустить скопированный 
+в рамке или из файла код, а также закрытия после определенного времени
+*/
+//let demo = document.getElementById("demo");
+
+function selectChange(event) {	
+	
+	stopCounter = true;
+	
+	let e = event.target;
+	let id_elem = document.body.querySelector(".page-id");
+	let page_id = id_elem.getAttribute("id");
+	let code_elem = e.parentElement.parentElement.nextElementSibling;
+	let code_id = code_elem.getAttribute("id");
+	let store_id = page_id + "*" + code_id;
+	let copy_msg = e.parentElement.parentElement;
+	let but_copy = copy_msg.parentElement.querySelector(".but-copy");
+	let a = code_elem.nextElementSibling;
+	let text = e.previousElementSibling;
+	let counter_elem = copy_msg.parentElement.querySelector(".countdown");
+	let text_yes = "Можно выключить показ инструкции <time class=\"countdown\"></time>";
+	let text_no = "Можно включить показ инструкции <time class=\"countdown\"></time>";	
+	
+	if (typeof(Storage) !== "undefined") {
+		
+		localStorage.setItem(store_id, e.value);
+		
+		addClass(copy_msg, "code-start");
+		
+		if (localStorage.getItem(store_id) == "guide-yes") {			
+			setTimeout(openGuide, 2000);
+			text.innerHTML = text_yes;			
+			setTimeout(function(){ addClass(copy_msg, "msg-hide") }, 2000);
+		}
+		if (localStorage.getItem(store_id) == "guide-no") {
+			setTimeout(function(){ a.click() }, 2000);
+			text.innerHTML = text_no;	
+			setTimeout(function(){ addClass(copy_msg, "msg-hide") }, 2000);
+		}	
+	
+	} else {
+		alert("Sorry, no Web storage support!");
+	}
+  
+	copy_msg.addEventListener("mouseenter", function(){		
+		proceed = false;
+	});
+	
+	copy_msg.addEventListener("mouseleave", function(){
+		proceed = true;
+	});
 }
 
 function openGuide() {
@@ -440,177 +476,6 @@ function openGuide() {
 	else 
 		addClass(guide_elem_mob, "open-guide");
 }
-
-/*
-Функции для настроек с помощью значений селекта способа открытия кода для запуска (с инструкцией по запуску или без нее)
-а также установки значений настроек в локальном хранилище
-*/
-//let demo = document.getElementById("demo");
-
-function openSettings(event) {
-	
-	let e = event.target;
-	let guide_choice = e.nextElementSibling.nextElementSibling.children[1];
-	let msg_alert = e.nextElementSibling.nextElementSibling.children[2];
-	let copy_msg = msg_alert.parentElement;
-	let select = msg_alert.querySelector("select");
-	let close = msg_alert.querySelector(".setting-close");
-	let count = localStorage.getItem("clickcount");
-	
-	if (!hasClass(guide_choice, "msg-hide"))
-		addClass(guide_choice, "msg-hide");
-	
-	closeAllSettings();
-	
-	removeClass(msg_alert, "msg-hide");
-	if (select.value == "no-choice") {
-		
-		if (!hasClass(close, "msg-hide"))
-			addClass(close, "msg-hide");
-	} else
-		removeClass(close, "msg-hide");
-}
-
-function closeSettings(event) {
-	
-	let e = event.target;	
-	let msg_alert = e.parentElement.parentElement;
-	
-	if (!hasClass(msg_alert, "msg-hide"))
-		addClass(msg_alert, "msg-hide");	
-}
-
-function closeAllSettings() {
-	let msg_alerts = document.getElementsByClassName("msg-alert");
-	
-	for (let i = 0; i < msg_alerts.length; i++) {
-		let msg_alert = msg_alerts[i];
-		let guide_choice = msg_alert.previousElementSibling;
-		
-		if (!hasClass(msg_alert, "msg-hide"))
-			addClass(msg_alert, "msg-hide");
-		
-		if (!hasClass(guide_choice, "msg-hide"))
-			addClass(guide_choice, "msg-hide");
-	}
-}
-
-
-function changeSelect(event) {		
-	
-	let e = event.target;
-	let id_elem = document.body.querySelector(".page-id");
-	let page_id = id_elem.getAttribute("id");	
-  let msg_alert = e.parentElement;	
-	
-	if (typeof(Storage) !== "undefined") {
-		
-		switch(e.value) {			
-			
-			case "guide-yes":
-				setSelectAllValue("guide-yes");
-				break;
-			case "guide-no":
-				setSelectAllValue("guide-no");
-				break;
-			case "guide-no-all":
-				setSelectAllValue("guide-no-all");
-				break;	
-			default:
-				setSelectAllValue("clear-all");
-		}		
-		
-		setTimeout(function() {addClass(msg_alert, "msg-hide")}, 1000);
-	
-	} else
-		alert("Sorry, no Web storage support!");
-	
-}
-
-function removeItem(storageKey) {
-	
-	if (localStorage.getItem(storageKey) != null)
-		localStorage.removeItem(storageKey);	
-}
-
-function clearAndSetClickcount() {
-	let clickcount = 0;
-	
-	if (localStorage.getItem("clickcount") != null) {
-		clickcount = localStorage.getItem("clickcount");
-		localStorage.clear();
-		localStorage.setItem("clickcount", clickcount);
-	}	
-}
-
-function setSelectAllValue(value) {
-	let selects = document.getElementsByTagName("select");
-	let id_elem = document.body.querySelector(".page-id");
-	let page_id = id_elem.getAttribute("id");
-	
-	for (let i = 0; i < selects.length; i++) {
-		let select = selects[i];
-		
-		switch(value) {
-			
-			case "clear-all":
-				select.value = "no-choice";
-				localStorage.clear();
-				localStorage.setItem("clear", "clear-all");
-				break;
-			case "guide-yes":
-				select.value = "guide-yes";
-				removeItem("clear");
-				removeItem("no-all");
-				localStorage.setItem("yes-all", "guide-yes");				
-				break;
-			case "guide-no":
-				select.value = "guide-no";
-				removeItem("clear");
-				removeItem("no-all");
-				localStorage.setItem("yes-all", "guide-yes");
-				localStorage.setItem(page_id, "guide-no");
-				break;
-			case "guide-no-all":
-				select.value = "guide-no-all";
-				clearAndSetClickcount();
-				localStorage.setItem("no-all", "guide-no-all");
-				break;			
-		}		
-	}
-}
-
-function loadWithStorageValues() {
-	let code_tests = document.getElementsByClassName("code-test");
-	let id_elem = document.body.querySelector(".page-id");
-	let page_id = id_elem.getAttribute("id");
-	
-	for (let i = 0; i < code_tests.length; i++) {
-		let code_test = code_tests[i];
-		let select = code_test.previousElementSibling.querySelector("select");		
-		
-		if (localStorage.getItem("clickcount") != null) {
-			
-			if (localStorage.getItem("clear") != null)
-				select.value = "no-choice";
-			
-			else if (localStorage.getItem("no-all") != null)
-				select.value = "guide-no-all";
-			
-			else if (localStorage.getItem("yes-all") != null) {
-				
-				if (localStorage.getItem(page_id) == "guide-no")
-					select.value = "guide-no";
-				else if (localStorage.getItem(page_id) == "guide-yes")
-					select.value = "guide-yes";					
-			}
-		}	
-		
-		if (localStorage.getItem("clickcount") == null)
-			select.value = "no-choice";
-		 
-	}
-}	
 
 /*
 Functions for start or pause gif-images
@@ -687,8 +552,7 @@ function setCode(init) {
 		const border = 5;
 		const coeff_ratio = 5.72;
 		const coeff_font = 31.5;
-		const coeff_button = 9;
-		const coeff_button2 = 11;
+		const coeff_button = 8;
 		const coeff_msg = 20;
 		let badge_h = badge.offsetHeight;
 		let img_h = img.clientHeight;
@@ -705,26 +569,18 @@ function setCode(init) {
 		if (but_content != null) { // buttons for start/pause gif and for copy code
 			
 			for (let x = 0; x < but_content.length; x++) {
-				let but = but_content[x];		
+				let but = but_content[x];
+				
+				but.style.fontSize = (img_h / coeff_button) + "px";
 				
 				if (hasClass(but, "but-copy")) {
-					
-					but.style.fontSize = (img_h / coeff_button) + "px";					
 					but.style.top = offset_top + "px";
+					
 					if (!hasClass(but, "right50"))
 						but.style.right = (indent_half + margin) + "px";
 					else
 						but.style.right = ((indent_half + margin_half) + img_w / 2) + "px";
-					
-				} else if (hasClass(but, "but-setting")) {
-					
-					but.style.fontSize = (img_h / coeff_button2) + "px";					
-					but.style.top = (offset_top + indent_v * 1.3) + "px";	
-					if (!hasClass(but, "right50"))
-						but.style.right = (indent_half + margin) + "px";
-					else
-						but.style.right = ((indent_half + margin_half) + img_w / 2) + "px";
-				}				
+				}					
 			}
 		}
 		
@@ -844,11 +700,9 @@ function setCode(init) {
 				
 				} else {
 					if (hasClass(code_wrap, "back-author")) {
-						let img_but_author = code_wrap.querySelector(".eye");
-						let but_author_h = img_but_author.offsetHeight;
 						
-						code_wrap.style.height = but_author_h + "px";
-						code_wrap.style.top = (badge_h + margin + border + (img_h / 2)) + "px";
+						code_wrap.style.height = (img_h / 6) + "px";
+						code_wrap.style.top = (img_h / 1.7) + "px";
 						code_wrap.style.width = (width / 3) + "px";
 						code_wrap.style.left = (offset_left + ((width / 3) * 2)) + "px";
 								break;	
@@ -883,8 +737,7 @@ function setCode(init) {
 								if (hasClass(code_wrap, "code-null"))
 									but_msg.style.right = (border + margin_half) + "px";
 								else
-									//but_msg.style.left = (offset_left + width_part + indent_half) + "px";
-									but_msg.style.right = (border + margin) + "px";
+									but_msg.style.left = (offset_left + width_part + indent_half) + "px";
 							}
 								
 						}						

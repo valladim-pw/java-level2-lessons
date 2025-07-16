@@ -1268,6 +1268,33 @@ function removeStartLoaderOpacity() {
 }
 
 /* 
+  Функция закрытия окна с инструкцией для запуска кода 
+*/
+
+function closeGuide() {	
+	let guide_elem = document.getElementById("guide-wrap");
+	let guide_elem_mob = document.getElementById("guide-mob-wrap");	
+	
+	if (window.innerWidth > 500)
+		removeClass(guide_elem, "open-guide");
+	else 
+		removeClass(guide_elem_mob, "open-guide");
+}
+
+/* 
+  Функция для перехода на ресурс w3schools.com
+*/
+
+function openW3Schools(event) {
+	closeGuide();
+	let e = event.target;
+	let w3s_link = e.parentElement.querySelector("A");
+	
+	w3s_link.click();
+	//setTimeout(closeGuide, 0);
+}
+
+/* 
 - Функции регулировки скрытия -появления меню и панели с заголовком в дектопном и мобильном вариантах 
 */
  
@@ -1279,7 +1306,7 @@ $(document).ready( function(){
     
 		$(this).addClass("invisible");
     $(".menu").addClass("menu-hidden");
-    $(".frame").addClass("frame-full");	
+    $(".frame").addClass("frame-full");
 		
   });
   $("#switch1").click( function(){

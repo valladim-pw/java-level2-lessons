@@ -175,10 +175,31 @@
 		border-top: 2px solid #131737;
 		border-bottom: 1px solid #131737;
 	}
-	/*.anchors-button {	
-		height: 2.8vw;
+	.run-desk,
+	.guide-desk {
+		display: none;
 	}
-	.nav {		
-		top: 0.6vw;		
-	}*/
+	.run-mob,
+	.guide-mob {
+		display: block;
+	}
+	.user-info-wrap {
+		flex-direction: column;
+	}
+	i.material-icons.info-symbol {		
+		font-size: calc(100% * 1.8);		
+		padding: 0 0 5px 0;
+	}
+	.info-wrap {
+		text-align: left;
+	}
+	.user-info img {		
+		width: 32px;
+	}
+	.info-but-run {
+    font-size: 12px;
+	}
+	.info-but-zoom {
+		display: none;
+	}
 }

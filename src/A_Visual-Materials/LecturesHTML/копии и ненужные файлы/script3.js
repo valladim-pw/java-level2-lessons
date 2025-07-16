@@ -329,18 +329,21 @@ function openWin(resource) {
 }
 
 /*
-	Функция для работы кликкаунтера в локальном хранилище браузера 
+	Каунтер обратного отсчета (сколько осталось до закрытия блока с селектом для выбора варианта запуска кода)
 
 */
 
-function clickCounter() {  
-   
+function clickCounter() {
+  
+ const x = document.getElementById("click-count");
+  
 	if (typeof(Storage) !== "undefined") { 	 
     if (localStorage.clickcount) {
       localStorage.clickcount = Number(localStorage.clickcount)+1;
     } else {
       localStorage.clickcount = 1;
-    }    
+    }
+    x.innerHTML = localStorage.clickcount;
   } else {
     x.innerHTML = "Sorry, no Web storage support!";
   }
@@ -348,7 +351,7 @@ function clickCounter() {
 
 
 /*
-	Функция для копирования кода из рамки с кодом, а также для запуска кода на ресурсе w3schools.com
+	Function for copying code from frame to clipboard
 
 	<div class="column" >
 		<b class="column-id" id="19"></b>
@@ -442,8 +445,8 @@ function openGuide() {
 }
 
 /*
-Функции для настроек с помощью значений селекта способа открытия кода для запуска (с инструкцией по запуску или без нее)
-а также установки значений настроек в локальном хранилище
+Функция для открытия ресурса (W3Schools) на котором можно в режиме онлайн запустить скопированный 
+в рамке или из файла код, а также закрытия после определенного времени
 */
 //let demo = document.getElementById("demo");
 
@@ -500,26 +503,28 @@ function changeSelect(event) {
 	
 	let e = event.target;
 	let id_elem = document.body.querySelector(".page-id");
-	let page_id = id_elem.getAttribute("id");	
+	let page_id = id_elem.getAttribute("id");
+	let code_elem = e.parentElement.parentElement.nextElementSibling;
+	let code_id = code_elem.getAttribute("id");
+	let store_id = page_id + "*" + code_id;
   let msg_alert = e.parentElement;	
 	
 	if (typeof(Storage) !== "undefined") {
 		
-		switch(e.value) {			
+		if (e.value == "guide-yes")			
+			setSelectAllValue("guide-yes");
 			
-			case "guide-yes":
-				setSelectAllValue("guide-yes");
-				break;
-			case "guide-no":
-				setSelectAllValue("guide-no");
-				break;
-			case "guide-no-all":
-				setSelectAllValue("guide-no-all");
-				break;	
-			default:
-				setSelectAllValue("clear-all");
-		}		
-		
+		else if (e.value == "guide-no-all")			
+			setSelectAllValue("guide-no-all");
+			
+		else if (e.value == "clear-all")			
+			setSelectAllValue("clear-all");
+			
+		else if (e.value == "guide-no") {
+			
+			setSelectAllValue("guide-no");
+			localStorage.setItem(store_id, "guide-no");
+		}			
 		setTimeout(function() {addClass(msg_alert, "msg-hide")}, 1000);
 	
 	} else
@@ -533,16 +538,6 @@ function removeItem(storageKey) {
 		localStorage.removeItem(storageKey);	
 }
 
-function clearAndSetClickcount() {
-	let clickcount = 0;
-	
-	if (localStorage.getItem("clickcount") != null) {
-		clickcount = localStorage.getItem("clickcount");
-		localStorage.clear();
-		localStorage.setItem("clickcount", clickcount);
-	}	
-}
-
 function setSelectAllValue(value) {
 	let selects = document.getElementsByTagName("select");
 	let id_elem = document.body.querySelector(".page-id");
@@ -550,32 +545,38 @@ function setSelectAllValue(value) {
 	
 	for (let i = 0; i < selects.length; i++) {
 		let select = selects[i];
+		let code_elem = select.parentElement.parentElement.nextElementSibling;
+		let code_id = code_elem.getAttribute("id");
+		let store_id = page_id + "*" + code_id;		
 		
-		switch(value) {
+		if (value == "clear-all") {
 			
-			case "clear-all":
-				select.value = "no-choice";
-				localStorage.clear();
-				localStorage.setItem("clear", "clear-all");
-				break;
-			case "guide-yes":
+			select.value = "no-choice";
+			localStorage.clear();
+			localStorage.setItem("clear", "clear-all");
+			
+		} else if (value == "guide-no-all") {
+			
+			select.value = "guide-no-all";
+			removeItem("clear");
+			removeItem(store_id);
+			localStorage.setItem("no-all", "guide-no-all");	
+			
+		} else if (value == "guide-yes") {
+			
+			select.value = "guide-yes";
+			removeItem("clear");
+			removeItem("no-all");
+			localStorage.setItem(store_id, "guide-yes");	
+			
+		} else if (value == "guide-no") {
+			
+			removeItem("clear");
+			removeItem("no-all");
+			if (select.value == "no-choice" || select.value == "guide-no-all") {
 				select.value = "guide-yes";
-				removeItem("clear");
-				removeItem("no-all");
-				localStorage.setItem("yes-all", "guide-yes");				
-				break;
-			case "guide-no":
-				select.value = "guide-no";
-				removeItem("clear");
-				removeItem("no-all");
-				localStorage.setItem("yes-all", "guide-yes");
-				localStorage.setItem(page_id, "guide-no");
-				break;
-			case "guide-no-all":
-				select.value = "guide-no-all";
-				clearAndSetClickcount();
-				localStorage.setItem("no-all", "guide-no-all");
-				break;			
+				localStorage.setItem(store_id, "guide-yes");
+			}			 
 		}		
 	}
 }
@@ -587,7 +588,9 @@ function loadWithStorageValues() {
 	
 	for (let i = 0; i < code_tests.length; i++) {
 		let code_test = code_tests[i];
-		let select = code_test.previousElementSibling.querySelector("select");		
+		let select = code_test.previousElementSibling.querySelector("select");
+		let code_id = code_test.getAttribute("id");
+		let store_id = page_id + "*" + code_id;
 		
 		if (localStorage.getItem("clickcount") != null) {
 			
@@ -597,16 +600,13 @@ function loadWithStorageValues() {
 			else if (localStorage.getItem("no-all") != null)
 				select.value = "guide-no-all";
 			
-			else if (localStorage.getItem("yes-all") != null) {
-				
-				if (localStorage.getItem(page_id) == "guide-no")
-					select.value = "guide-no";
-				else if (localStorage.getItem(page_id) == "guide-yes")
-					select.value = "guide-yes";					
-			}
-		}	
+			else if (localStorage.getItem(store_id) == "guide-yes")
+				select.value = "guide-yes";
+			
+			else if (localStorage.getItem(store_id) == "guide-no")
+				select.value = "guide-no";
 		
-		if (localStorage.getItem("clickcount") == null)
+		}	else			
 			select.value = "no-choice";
 		 
 	}
@@ -719,7 +719,7 @@ function setCode(init) {
 				} else if (hasClass(but, "but-setting")) {
 					
 					but.style.fontSize = (img_h / coeff_button2) + "px";					
-					but.style.top = (offset_top + indent_v * 1.3) + "px";	
+					but.style.top = (offset_top + indent_v * 1.2) + "px";	
 					if (!hasClass(but, "right50"))
 						but.style.right = (indent_half + margin) + "px";
 					else
@@ -844,11 +844,9 @@ function setCode(init) {
 				
 				} else {
 					if (hasClass(code_wrap, "back-author")) {
-						let img_but_author = code_wrap.querySelector(".eye");
-						let but_author_h = img_but_author.offsetHeight;
 						
-						code_wrap.style.height = but_author_h + "px";
-						code_wrap.style.top = (badge_h + margin + border + (img_h / 2)) + "px";
+						code_wrap.style.height = (img_h / 6) + "px";
+						code_wrap.style.top = (img_h / 1.7) + "px";
 						code_wrap.style.width = (width / 3) + "px";
 						code_wrap.style.left = (offset_left + ((width / 3) * 2)) + "px";
 								break;	

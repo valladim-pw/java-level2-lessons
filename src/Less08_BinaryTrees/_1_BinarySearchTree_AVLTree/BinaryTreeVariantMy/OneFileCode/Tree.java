@@ -1,7 +1,73 @@
-package Less08_BinaryTrees._1_BinarySearchTree_AVLTree.BinaryTreeVariantMy;
-
+package Less08_BinaryTrees._1_BinarySearchTree_AVLTree.BinaryTreeVariantMy.OneFileCode;
 import java.util.*;
 
+class Main {
+	public static void main(String[] args) {
+		Tree tree = new Tree();
+    // Вставляем узлы в дерево
+		tree.insertNode(7);
+		tree.insertNode(3);
+		tree.insertNode(11);
+		tree.insertNode(2);
+		tree.insertNode(5);
+		tree.insertNode(9);
+		tree.insertNode(12);
+		tree.insertNode(1);
+		tree.insertNode(4);
+		tree.insertNode(6);
+		tree.insertNode(8);
+		tree.insertNode(10);
+		tree.printTree();
+		// Удаляем узел
+		Node deleted = tree.deleteNode(7);
+		tree.printTree();
+		System.out.println("Удаленный узел: " + deleted.toString());
+		// Находим узлы по ключу
+		tree.findNode(10);
+		tree.findNode(13);
+	}
+}
+
+
+class Node implements Comparable<Node> {
+	private int value; // ключ узла
+	private Node leftChild; // ссылка на левый узел потомок
+	private Node rightChild; // ссылка на правый узел потомок
+	
+	public int getValue() {
+		return value;
+	}
+	
+	public void setValue(final int value) {
+		this.value = value;
+	}
+	
+	public Node getLeftChild() {
+		return leftChild;
+	}
+	
+	public void setLeftChild(final Node leftChild) {
+		this.leftChild = leftChild;
+	}
+	
+	public Node getRightChild() {
+		return rightChild;
+	}
+	
+	public void setRightChild(final Node rightChild) {
+		this.rightChild = rightChild;
+	}
+	
+	@Override
+	public String toString() {
+		return "(" + value + ")";
+	}
+	
+	@Override
+	public int compareTo(Node otherNode) {
+		return Integer.compare(this.value, otherNode.value);
+	}
+}
 // класс дерева
 class Tree {
 	private Node rootNode; // корневой узел
@@ -349,4 +415,3 @@ class Tree {
 		}
 	}
 }
-

@@ -1,5 +1,54 @@
-import java.util.*;
+package Less08_BinaryTrees._1_BinarySearchTree_AVLTree.BinaryTreeMy.OneFileCode;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import java.util.Random;
+
+class TreeTest {
+	static final int ITERATIONS = 10;
+	
+	public static void main(String[] args) throws TreeException {
+		BinaryTree<Integer, String> tree1 = new BinaryTree<>();
+		Random random = new Random();
+		for (int i = 0; i < 10; i++) {
+			int randomNumber = random.nextInt(900) + 1; // Генерация числа от 1 до 1000
+			tree1.add(randomNumber, "==" + randomNumber);
+		}
+		System.out.println("");
+		tree1.printTree();
+		BinaryTree<Integer, String> tree2 = new BinaryTree<>();
+		tree2.add(7, "*7");
+		tree2.add(3, "*3");
+		tree2.add(11, "*11");
+		tree2.add(2, "*2");
+		tree2.add(5, "*5");
+		tree2.add(4, "*4");
+		tree2.add(9, "*9");
+		tree2.add(12, "*12");
+		tree2.add(1, "*1");
+		tree2.add(6, "*6");
+		tree2.add(8, "*8");
+		tree2.add(10, "*10");
+		tree2.add(13, "*13");
+		
+		tree2.printTree();
+		tree2.delete(7);
+		tree2.printTree();
+		tree2.delete(8);
+		tree2.printTree();
+		tree2.find(10);
+		tree2.change(14, 9);
+		tree2.printTree();
+	}
+}
+
+class TreeException extends Exception {
+	public TreeException(String message) {
+		super(message);
+	}
+}
 
 class BinaryTree<K extends Comparable<K>, V> {
 	private static final String KEYEXIST = "Key already exist";
@@ -174,7 +223,7 @@ class BinaryTree<K extends Comparable<K>, V> {
 		private LinkedList<Integer> levelList;
 		private int maxValueLength;
 		private int maxStringLength;
-
+		
 		public void printTree(Node<K, V> root) {
 			this.maxValueLength = Integer.MIN_VALUE;
 			this.maxStringLength = 0;
@@ -186,18 +235,18 @@ class BinaryTree<K extends Comparable<K>, V> {
 				System.out.println(" () ");
 				return;
 			}
-
+			
 			while (!printList.isEmpty()) {
 				int index = levelList.poll();
-
+				
 				subList = printList.subList(0, index);
 				printRow(space, subList, subList.size());
 				printList = printList.subList(index, printList.size());
-
+				
 				space /= 2;
 			}
 		}
-
+		
 		private int getTreeMaxLevel(Node<K, V> root) {
 			int maxLevel = 0;
 			int levelIndex = 0;
@@ -211,7 +260,7 @@ class BinaryTree<K extends Comparable<K>, V> {
 			Queue<Node> queue = new LinkedList<>();
 			queue.add(root);
 			boolean isEmptyRow = true;
-
+			
 			while (!queue.isEmpty()) {
 				int levelSize = queue.size();
 				levelList.add(levelSize);
@@ -252,89 +301,91 @@ class BinaryTree<K extends Comparable<K>, V> {
 			}
 			int index = tempList.size() - maxLevel / 2;
 			tempList.add(index, "flag");
-
+			
 			printList = adjustValues(maxValueLength, tempList);
-			maxStringLength = (maxValueLength + 1) * levelIndex;
-
+			maxStringLength = maxValueLength * levelIndex;
+			
 			return maxLevel;
 		}
-
+		
 		private List<String> adjustValues(int maxValueLength, List<String> values) {
 			String gapDash = "_";
 			String gapSpace = " ";
 			int mark = values.indexOf("flag");
-			int countLastRow = 1;
 			int startSpace = 0;
 			int endSpace = 0;
 			int lengthDiff = 0;
 			String value = "";
 			String newValue = "";
-
-
+			
 			List<String> changeValues = new ArrayList<>();
 			for (int i = 0; i < values.size(); i++) {
 				value = values.get(i);
+				
 				lengthDiff = maxValueLength - value.length();
+				
 				startSpace = (int) Math.floor(((lengthDiff) * 1.0) / 2);
 				endSpace = (int) Math.ceil(((lengthDiff) * 1.0) / 2);
-
+				
 				if (!value.equals("flag")) {
-					if (i < mark) {
-						newValue = gapDash.repeat(startSpace) + value + gapDash.repeat(endSpace);
-					}
-					if (i > mark) {
-						if (countLastRow == 1)
-							newValue = gapSpace.repeat(2) + value + gapSpace.repeat(endSpace + startSpace);
-						else {
-							if (countLastRow % 2 == 0)
-								newValue = gapSpace.repeat((endSpace + startSpace) >= 2 ? (endSpace + startSpace) - (value.length() < 4 && maxValueLength > 4 ? 2 : 0) : (endSpace + startSpace))
-			           + value + gapSpace.repeat(value.length() < 4 && maxValueLength > 4 ? 4 : 2);
-							else
-								newValue = value + gapSpace.repeat(endSpace + startSpace);
-						}
-						countLastRow++;
-					}
-					changeValues.add(newValue);
+					if (lengthDiff >= 0) {
+						if (i < mark)
+							newValue = gapDash.repeat(startSpace) + value + gapDash.repeat(endSpace);
+						if (i > mark)
+							newValue = gapSpace.repeat(startSpace) + value + gapSpace.repeat(endSpace);
+						
+						changeValues.add(newValue);
+					} else
+						changeValues.add(value);
 				}
 			}
 			return changeValues;
 		}
-
+		
 		private void printRow(int space, List<String> list, int index) {
+			int count = 0;
 			String gapSpace = " ";
 			String gapDash = "_";
-			int startValueHalf = (int) Math.floor(((maxValueLength) * 1.0) / 2);
-			int endValueHalf = (int) Math.ceil(((maxValueLength) * 1.0) / 2);
-
-			int startCount = ((maxStringLength / (index * 2) - space) + space) - startValueHalf;
-			int tmpStartSpaceCount = (int) Math.ceil(((startCount) * 1.0) / 2);
-			int tmpStartDashCount = (int) Math.floor(((startCount) * 1.0) / 2);
-			int startDashCount = tmpStartDashCount > startValueHalf ? tmpStartDashCount - startValueHalf : tmpStartDashCount;
-			int startSpaceCount = tmpStartDashCount > startValueHalf ? tmpStartSpaceCount + startValueHalf : tmpStartSpaceCount;
-
-			int endCount = ((maxStringLength / (index * 2) - space) + space) - endValueHalf;
-			int tmpEndDashCount = (int) Math.ceil(((endCount) * 1.0) / 2);
-			int tmpEndSpaceCount = (int) Math.floor(((endCount) * 1.0) / 2);
-			int endDashCount = tmpEndDashCount > endValueHalf ? tmpEndDashCount - endValueHalf : tmpEndDashCount;
-			int endSpaceCount = tmpEndDashCount > endValueHalf ? tmpEndSpaceCount + endValueHalf : tmpEndSpaceCount;
-
+			int startValueHalf = 0;
+			int endValueHalf = 0;
+			int startCount = 0;
+			int spaceCount = 0;
+			int startDashCount = 0;
+			int endDashCount = 0;
+			
+			startValueHalf = (int) Math.floor(((maxValueLength) * 1.0) / 2);
+			endValueHalf = (int) Math.ceil(((maxValueLength) * 1.0) / 2);
+			
+			startCount = (maxStringLength / (index * 2));
+			
+			spaceCount = startCount / 2;
+			if (spaceCount >= startValueHalf)
+				startDashCount = spaceCount - startValueHalf;
+			if (spaceCount >= endValueHalf)
+				endDashCount = spaceCount - endValueHalf;
+			
 			LinkedList<String> valueList = new LinkedList<>(list);
-			String startSpaceHalf = "";
+			String spaceHalf = "";
 			String startDashHalf = "";
-			String endSpaceHalf = "";
 			String endDashHalf = "";
-
+			
 			while (!valueList.isEmpty()) {
 				String value = valueList.poll();
-
-				startSpaceHalf = gapSpace.repeat(startSpaceCount);
-				endSpaceHalf = gapSpace.repeat(endSpaceCount);
+				if (space == 4 && maxValueLength % 2 != 0)
+					count++;
+				
+				if (count % 2 == 0 && count != 0)
+					spaceHalf = gapSpace.repeat(spaceCount + 1);
+				else
+					spaceHalf = gapSpace.repeat(spaceCount);
+				
 				startDashHalf = gapDash.repeat(startDashCount);
 				endDashHalf = gapDash.repeat(endDashCount);
-
-				StringBuilder sb = new StringBuilder();
+				
+				StringBuilder sb = new StringBuilder(space);
+				
 				if (levelList.size() > 1)
-					sb.append(startSpaceHalf + startDashHalf + value + endDashHalf + endSpaceHalf);
+					sb.append(spaceHalf + startDashHalf + value + endDashHalf + spaceHalf);
 				else
 					sb.append(value);
 				System.out.print(sb.toString());
@@ -343,53 +394,5 @@ class BinaryTree<K extends Comparable<K>, V> {
 		}
 	}
 }
-
-class TreeException extends Exception {
-    public TreeException(String message) {
-        super(message);
-    }
-}
-class TreeTest {
-	static final int ITERATIONS = 10;
-	
-	public static void main(String[] args) throws TreeException {
-		BinaryTree<Integer, String> tree1 = new BinaryTree<>();
-		Random random = new Random();
-		for (int i = 0; i < 10; i++) {
-			int randomNumber = random.nextInt(900) + 1; // Генерация числа от 1 до 1000
-			tree1.add(randomNumber, "==" + randomNumber);
-		}
-		System.out.println("");
-		tree1.printTree();
-		BinaryTree<Integer, String> tree2 = new BinaryTree<>();
-		tree2.add(7, "*7");
-		tree2.add(3, "*3");
-		tree2.add(11, "*11");
-		tree2.add(2, "*2");
-		tree2.add(5, "*5");
-		tree2.add(4, "*4");
-		tree2.add(9, "*9");
-		tree2.add(12, "*12");
-		tree2.add(1, "*1");
-		tree2.add(6, "*6");
-		tree2.add(8, "*8");
-		tree2.add(10, "*10");
-		tree2.add(13, "*13");
-		
-		tree2.printTree();
-		tree2.delete(7);
-		tree2.printTree();
-		tree2.delete(8);
-		tree2.printTree();
-		tree2.find(10);
-		tree2.change(14, 9);
-		tree2.printTree();
-	}
-}
-
-
-
-
-
 
 

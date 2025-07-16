@@ -1,5 +1,33 @@
 import java.util.*;
-//класс узла
+
+class Main {
+	public static void main(String[] args) {
+		Tree tree = new Tree();
+    // Вставляем узлы в дерево
+		tree.insertNode(7);
+		tree.insertNode(3);
+		tree.insertNode(11);
+		tree.insertNode(2);
+		tree.insertNode(5);
+		tree.insertNode(9);
+		tree.insertNode(12);
+		tree.insertNode(1);
+		tree.insertNode(4);
+		tree.insertNode(6);
+		tree.insertNode(8);
+		tree.insertNode(10);
+		tree.printTree();
+		// Удаляем узел
+		Node deleted = tree.deleteNode(7);
+		tree.printTree();
+		System.out.println("Удаленный узел: " + deleted.toString());
+		// Находим узлы по ключу
+		tree.findNode(10);
+		tree.findNode(13);
+	}
+}
+
+
 class Node implements Comparable<Node> {
 	private int value; // ключ узла
 	private Node leftChild; // ссылка на левый узел потомок
@@ -295,7 +323,8 @@ class Tree {
 			int index = tempList.size() - maxLevel / 2;
 			tempList.add(index, "flag");
 			printList = adjustValues(maxValueLength, tempList);
-			maxStringLength = (maxValueLength + 1) * levelIndex;
+			maxStringLength = maxValueLength * levelIndex;
+			
 			return maxLevel;
 		}
 		
@@ -303,7 +332,6 @@ class Tree {
 			String gapDash = "_";
 			String gapSpace = " ";
 			int mark = values.indexOf("flag");
-			int countLastRow = 1;
 			int startSpace = 0;
 			int endSpace = 0;
 			int lengthDiff = 0;
@@ -313,98 +341,76 @@ class Tree {
 			List<String> changeValues = new ArrayList<>();
 			for (int i = 0; i < values.size(); i++) {
 				value = values.get(i);
+				
 				lengthDiff = maxValueLength - value.length();
+				
 				startSpace = (int) Math.floor(((lengthDiff) * 1.0) / 2);
 				endSpace = (int) Math.ceil(((lengthDiff) * 1.0) / 2);
 				
 				if (!value.equals("flag")) {
-					if (i < mark) {
-						newValue = gapDash.repeat(startSpace) + value + gapDash.repeat(endSpace);
-					}
-					if (i > mark) {
-						if (countLastRow == 1)
-							newValue = gapSpace.repeat(2) + value + gapSpace.repeat(endSpace + startSpace);
-						else {
-							if (countLastRow % 2 == 0)
-								newValue = gapSpace.repeat((endSpace + startSpace) >= 2 ? (endSpace + startSpace) - (value.length() < 4 && maxValueLength > 4 ? 2 : 0) : (endSpace + startSpace))
-			           + value + gapSpace.repeat(value.length() < 4 && maxValueLength > 4 ? 4 : 2);
-							else
-								newValue = value + gapSpace.repeat(endSpace + startSpace);
-						}
-						countLastRow++;
-					}
-					changeValues.add(newValue);
+					if (lengthDiff >= 0) {
+						if (i < mark)
+							newValue = gapDash.repeat(startSpace) + value + gapDash.repeat(endSpace);
+						if (i > mark)
+							newValue = gapSpace.repeat(startSpace) + value + gapSpace.repeat(endSpace);
+						
+						changeValues.add(newValue);
+					} else
+						changeValues.add(value);
 				}
 			}
 			return changeValues;
 		}
 		
 		private void printRow(int space, List<String> list, int index) {
+			int count = 0;
 			String gapSpace = " ";
 			String gapDash = "_";
-			int startValueHalf = (int) Math.floor(((maxValueLength) * 1.0) / 2);
-			int endValueHalf = (int) Math.ceil(((maxValueLength) * 1.0) / 2);
+			int startValueHalf = 0;
+			int endValueHalf = 0;
+			int startCount = 0;
+			int spaceCount = 0;
+			int startDashCount = 0;
+			int endDashCount = 0;
 			
-			int startCount = ((maxStringLength / (index * 2) - space) + space) - startValueHalf;
-			int tmpStartSpaceCount = (int) Math.ceil(((startCount) * 1.0) / 2);
-			int tmpStartDashCount = (int) Math.floor(((startCount) * 1.0) / 2);
-			int startDashCount = tmpStartDashCount > startValueHalf ? tmpStartDashCount - startValueHalf : tmpStartDashCount;
-			int startSpaceCount = tmpStartDashCount > startValueHalf ? tmpStartSpaceCount + startValueHalf : tmpStartSpaceCount;
+			startValueHalf = (int) Math.floor(((maxValueLength) * 1.0) / 2);
+			endValueHalf = (int) Math.ceil(((maxValueLength) * 1.0) / 2);
 			
-			int endCount = ((maxStringLength / (index * 2) - space) + space) - endValueHalf;
-			int tmpEndDashCount = (int) Math.ceil(((endCount) * 1.0) / 2);
-			int tmpEndSpaceCount = (int) Math.floor(((endCount) * 1.0) / 2);
-			int endDashCount = tmpEndDashCount > endValueHalf ? tmpEndDashCount - endValueHalf : tmpEndDashCount;
-			int endSpaceCount = tmpEndDashCount > endValueHalf ? tmpEndSpaceCount + endValueHalf : tmpEndSpaceCount;
+			startCount = (maxStringLength / (index * 2));
+			
+			spaceCount = startCount / 2;
+			if (spaceCount >= startValueHalf)
+				startDashCount = spaceCount - startValueHalf;
+			if (spaceCount >= endValueHalf)
+				endDashCount = spaceCount - endValueHalf;
 			
 			LinkedList<String> valueList = new LinkedList<>(list);
-			String startSpaceHalf = "";
+			String spaceHalf = "";
 			String startDashHalf = "";
-			String endSpaceHalf = "";
 			String endDashHalf = "";
 			
 			while (!valueList.isEmpty()) {
 				String value = valueList.poll();
+				if (space == 4 && maxValueLength % 2 != 0)
+					count++;
 				
-				startSpaceHalf = gapSpace.repeat(startSpaceCount);
-				endSpaceHalf = gapSpace.repeat(endSpaceCount);
+				if (count % 2 == 0 && count != 0)
+					spaceHalf = gapSpace.repeat(spaceCount + 1);
+				else
+					spaceHalf = gapSpace.repeat(spaceCount);
+				
 				startDashHalf = gapDash.repeat(startDashCount);
 				endDashHalf = gapDash.repeat(endDashCount);
 				
-				StringBuilder sb = new StringBuilder();
+				StringBuilder sb = new StringBuilder(space);
+				
 				if (levelList.size() > 1)
-					sb.append(startSpaceHalf + startDashHalf + value + endDashHalf + endSpaceHalf);
+					sb.append(spaceHalf + startDashHalf + value + endDashHalf + spaceHalf);
 				else
 					sb.append(value);
 				System.out.print(sb.toString());
 			}
 			System.out.println();
 		}
-	}
-}
-class Main {
-	public static void main(String[] args) {
-		Tree tree = new Tree();
-    // Вставляем узлы в дерево
-		tree.insertNode(7);
-		tree.insertNode(3);
-		tree.insertNode(11);
-		tree.insertNode(2);
-		tree.insertNode(5);
-		tree.insertNode(9);
-		tree.insertNode(12);
-		tree.insertNode(1);
-		tree.insertNode(4);
-		tree.insertNode(6);
-		tree.insertNode(8);
-		tree.insertNode(10);
-		tree.printTree();
-		// Удаляем узел
-		Node deleted = tree.deleteNode(7);
-		tree.printTree();
-		System.out.println("Удаленный узел: " + deleted.toString());
-		// Находим узлы по ключу
-		tree.findNode(10);
-		tree.findNode(13);
 	}
 }

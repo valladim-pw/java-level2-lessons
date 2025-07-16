@@ -1,0 +1,49 @@
+<html>
+<head>
+<script>
+function clickCounter(event) {
+  let e = event.currentTarget;
+ const x = document.getElementById("result");
+  if (typeof(Storage) !== "undefined") {
+	 localStorage.setItem("item", "itemValue");
+ 	 e.innerHTML = localStorage.clickcount;
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    e.innerHTML = localStorage.clickcount;
+  } else {
+    x.innerHTML = "Sorry, no Web storage support!";
+  }
+}
+function clearCounter() {
+	//localStorage.clear();
+	
+	let item = localStorage.getItem("item1");
+	let count = localStorage.getItem("clickcount");
+	//if (+count > 1)
+	 //document.getElementById("result").innerHTML = count;
+	//else
+		document.getElementById("result").innerHTML = item;
+	//localStorage.removeItem("clickcount");	
+}
+</script>
+</head>
+<body>
+
+<h1>localStorage</h1>
+
+<p onclick="clickCounter(event)">Button1</p>
+<button onclick="clickCounter(event)" >Button2</button>
+<button onclick="clickCounter(event)" type="button">Button3</button>
+<button onclick="clickCounter(event)" type="button">Button4</button>
+<button onclick="clickCounter(event)" type="button">Button5</button>
+
+<p id="result"></p>
+
+<p>Click the button to see the counter increase.</p>
+<button onclick="clearCounter()" type="button">Clear Counter</button>
+
+</body>
+</html>

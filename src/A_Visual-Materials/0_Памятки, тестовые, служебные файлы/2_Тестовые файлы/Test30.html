@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	text-align: center;
+	padding-top: 50px;
+}
+</style>
+</head>
+<body> <!--onload="myFunction2()">-->
+<div id="00.1*" class="page-id"></div>
+<div class="wrap">
+	<div class="wrap-select">
+		<p class=\"guide-choice\">Выберите вариант</p>
+		<select id="guide-cases" onchange="myFunction1(event)">
+		<option value="no-choice" disabled="" selected="" hidden="">Варианты</option>
+		<option value="guide-yes" selected>Предпоказ инструкции по запуску</option>
+		<option value="guide-no">Не показывать инструкцию по запуску</option>
+		</select>
+	</div>
+</div>
+<div id="code09"></div>
+
+
+
+
+<!--<button onclick="myFunction()">Try it</button>-->
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+/*
+Можно больше не показывать инструкцию
+Можно восстановить показ инструкции
+*/
+function hasClass(el, attr) {
+	let x = el.classList.contains(attr);
+	if (x)
+		return true;
+	return false;
+}
+function addClass(el, attr) {
+	let list = el.classList;
+	list.add(attr);
+}
+function removeClass(el, attr) {
+	let list = el.classList;
+	list.remove(attr);
+}
+
+let demo1 = document.getElementById("demo1");
+let demo2 = document.getElementById("demo2");
+
+let select = document.getElementById("guide-cases");
+//select.value = "no-choice";
+
+function myFunction1(event) {
+	let select = document.getElementById("guide-cases");
+	let e = event.target;
+	let id_elem = document.body.querySelector(".page-id");
+	let page_id = id_elem.getAttribute("id");
+	let code_elem = e.parentElement.parentElement.nextElementSibling;
+	let code_id = code_elem.getAttribute("id");
+	let store_id = page_id + code_id;
+	let alert = e.previousElementSibling;
+	let alert_yes = "Можно больше не показывать инструкцию";
+	let alert_no = "Можно восстановить показ инструкции";
+	//let store_key;
+	
+	if (typeof(Storage) !== "undefined") {
+		//let store_key = localStorage.getItem(store_id);
+		
+		//if (store_key == null)
+			localStorage.setItem(store_id, e.value);			
+		
+		//if (store_key != null) {
+			
+			if (localStorage.getItem(store_id) == "guide-yes") {
+				alert.innerHTML = alert_yes;
+				e.value = localStorage.getItem(store_id);
+			}
+			if (localStorage.getItem(store_id) == "guide-no") {
+				alert.innerHTML = alert_no;
+				e.value = localStorage.getItem(store_id);
+			}		
+		//}	
+		
+		demo2.innerHTML = localStorage.getItem(store_id);
+	} else {
+		demo1.innerHTML = "Sorry, no Web storage support!";
+	}  
+}
+/*function myFunction2() {
+	//let select = document.getElementById("guide-cases");
+	let e = event.target;
+	let page_id = document.body.querySelector(".page-id").getAttribute("id");
+	let code_id = e.parentElement.parentElement.nextSibling.getAttribute("id");
+	let store_id = page_id + code_id;
+	let text = e.previousSibling;
+	let txt_yes = "Можно больше не показывать инструкцию";
+	let txt_no = "Можно восстановить показ инструкции";
+	let store_key;
+	
+	if (typeof(Storage) !== "undefined") {
+		if (localStorage.getItem(store_id) == "") {
+			localStorage.setItem(store_id, e.value);			
+		} else {
+			store_key = localStorage.getItem(store_id);
+			if (store_key == "guide-yes") {
+				text.innerText = txt_yes;
+				e.value = store_key;
+			}
+			if (store_key == "guide-no") {
+				text.innerText = txt_no;
+				e.value = store_key;
+			}
+		
+		}	
+	} else {
+		demo1.innerHTML = "Sorry, no Web storage support!";
+	}  
+  
+}*/
+</script>
+
+</body>
+</html>

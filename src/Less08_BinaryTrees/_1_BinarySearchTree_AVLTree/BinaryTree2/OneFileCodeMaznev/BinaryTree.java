@@ -1,10 +1,40 @@
-package Less08_BinaryTrees._1_BinarySearchTree_AVLTree.BinaryTree2;
+package Less08_BinaryTrees._1_BinarySearchTree_AVLTree.BinaryTree2.OneFileCodeMaznev;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.function.Consumer;
+
+class TreeTest {
+	static final int ITERATIONS = 10;
+	
+	public static void main(String[] args) throws TreeException {
+		BinaryTree<Integer, String> tree = new BinaryTree<>();
+		
+		tree.add(7, "*7");
+		tree.add(3, "*3");
+		tree.add(11, "*11");
+		tree.add(2, "*2");
+		tree.add(5, "*5");
+		tree.add(4, "*4");
+		tree.add(9, "*9");
+		tree.add(12, "*12");
+		tree.add(1, "*1");
+		tree.add(6, "*6");
+		tree.add(8, "*8");
+		tree.add(10, "*10");
+		tree.add(13, "*13");
+		
+		tree.printTree();
+		tree.delete(7);
+		tree.printTree();
+		BinaryTree.TreeLeaf leaf = tree.findLeaf(11);
+		System.out.println(leaf + " - parent of this leaf: " + leaf.parent);
+		System.out.println(leaf + " - left of this leaf: " + leaf.left);
+		System.out.println(leaf + " - right of this leaf: " + leaf.right);
+	}
+}
 
 class TreeException extends Exception {
 	public TreeException(String message) {
@@ -247,7 +277,8 @@ public class BinaryTree<K extends Comparable<K>, V> {
 			int index = tempList.size() - maxLevel / 2;
 			tempList.add(index, "flag");
 			printList = adjustValues(maxValueLength, tempList);
-			maxStringLength = (maxValueLength + 1) * levelIndex;
+			maxStringLength = maxValueLength * levelIndex;
+		
 			return maxLevel;
 		}
 		
@@ -264,16 +295,19 @@ public class BinaryTree<K extends Comparable<K>, V> {
 			List<String> changeValues = new ArrayList<>();
 			for (int i = 0; i < values.size(); i++) {
 				value = values.get(i);
+			
 				lengthDiff = maxValueLength - value.length();
+			
 				startSpace = (int) Math.floor(((lengthDiff) * 1.0) / 2);
 				endSpace = (int) Math.ceil(((lengthDiff) * 1.0) / 2);
-				
+
 				if (!value.equals("flag")) {
-					if (lengthDiff > 0) {
+					if (lengthDiff >= 0) {
 						if (i < mark)
 							newValue = gapDash.repeat(startSpace) + value + gapDash.repeat(endSpace);
 						if (i > mark)
 							newValue = gapSpace.repeat(startSpace) + value + gapSpace.repeat(endSpace);
+						
 						changeValues.add(newValue);
 					} else
 						changeValues.add(value);
@@ -283,40 +317,49 @@ public class BinaryTree<K extends Comparable<K>, V> {
 		}
 		
 		private void printRow(int space, List<String> list, int index) {
+			int count = 0;
 			String gapSpace = " ";
 			String gapDash = "_";
-			int startValueHalf = (int) Math.floor(((maxValueLength) * 1.0) / 2);
-			int endValueHalf = (int) Math.ceil(((maxValueLength) * 1.0) / 2);
+			int startValueHalf = 0;
+			int endValueHalf = 0;
+			int startCount = 0;
+			int spaceCount = 0;
+			int startDashCount = 0;
+			int endDashCount = 0;
 			
-			int startCount = ((maxStringLength / (index * 2) - space) + space) - startValueHalf;
-			int tmpStartSpaceCount = (int) Math.ceil(((startCount) * 1.0) / 2);
-			int tmpStartDashCount = (int) Math.floor(((startCount) * 1.0) / 2);
-			int startDashCount = tmpStartDashCount > startValueHalf ? tmpStartDashCount - startValueHalf : tmpStartDashCount;
-			int startSpaceCount = tmpStartDashCount > startValueHalf ? tmpStartSpaceCount + startValueHalf : tmpStartSpaceCount;
+			startValueHalf = (int) Math.floor(((maxValueLength) * 1.0) / 2);
+			endValueHalf = (int) Math.ceil(((maxValueLength) * 1.0) / 2);
 			
-			int endCount = ((maxStringLength / (index * 2) - space) + space) - endValueHalf;
-			int tmpEndDashCount = (int) Math.ceil(((endCount) * 1.0) / 2);
-			int tmpEndSpaceCount = (int) Math.floor(((endCount) * 1.0) / 2);
-			int endDashCount = tmpEndDashCount > endValueHalf ? tmpEndDashCount - endValueHalf : tmpEndDashCount;
-			int endSpaceCount = tmpEndDashCount > endValueHalf ? tmpEndSpaceCount + endValueHalf : tmpEndSpaceCount;
+			startCount = (maxStringLength / (index * 2));
 			
+			spaceCount = startCount / 2;
+			if (spaceCount >= startValueHalf)
+				startDashCount = spaceCount - startValueHalf;
+			if (spaceCount >= endValueHalf)
+				endDashCount = spaceCount - endValueHalf;
+		
 			LinkedList<String> valueList = new LinkedList<>(list);
-			String startSpaceHalf = "";
+			String spaceHalf = "";
 			String startDashHalf = "";
-			String endSpaceHalf = "";
 			String endDashHalf = "";
 			
 			while (!valueList.isEmpty()) {
 				String value = valueList.poll();
+				if (space == 4 && maxValueLength % 2 != 0)
+					count++;
 				
-				startSpaceHalf = gapSpace.repeat(startSpaceCount);
-				endSpaceHalf = gapSpace.repeat(endSpaceCount);
+				if (count % 2 == 0 && count != 0)
+					spaceHalf = gapSpace.repeat(spaceCount + 1);
+				else
+					spaceHalf = gapSpace.repeat(spaceCount);
+				
 				startDashHalf = gapDash.repeat(startDashCount);
 				endDashHalf = gapDash.repeat(endDashCount);
 				
-				StringBuilder sb = new StringBuilder();
+				StringBuilder sb = new StringBuilder(space);
+				
 				if (levelList.size() > 1)
-					sb.append(startSpaceHalf + startDashHalf + value + endDashHalf + endSpaceHalf);
+					sb.append(spaceHalf + startDashHalf + value + endDashHalf + spaceHalf);
 				else
 					sb.append(value);
 				System.out.print(sb.toString());
@@ -326,32 +369,3 @@ public class BinaryTree<K extends Comparable<K>, V> {
 	}
 }
 
-class TreeTest {
-	static final int ITERATIONS = 10;
-	
-	public static void main(String[] args) throws TreeException {
-		BinaryTree<Integer, String> tree = new BinaryTree<>();
-		
-		tree.add(7, "*7");
-		tree.add(3, "*3");
-		tree.add(11, "*11");
-		tree.add(2, "*2");
-		tree.add(5, "*5");
-		tree.add(4, "*4");
-		tree.add(9, "*9");
-		tree.add(12, "*12");
-		tree.add(1, "*1");
-		tree.add(6, "*6");
-		tree.add(8, "*8");
-		tree.add(10, "*10");
-		tree.add(13, "*13");
-		
-		tree.printTree();
-		tree.delete(7);
-		tree.printTree();
-		BinaryTree.TreeLeaf leaf = tree.findLeaf(11);
-		System.out.println(leaf + " - parent of this leaf: " + leaf.parent);
-		System.out.println(leaf + " - left of this leaf: " + leaf.left);
-		System.out.println(leaf + " - right of this leaf: " + leaf.right);
-	}
-}

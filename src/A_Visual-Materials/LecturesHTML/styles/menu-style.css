@@ -86,7 +86,7 @@ iframe {
 	position: fixed;
 	left: 1%;
 	top: 4vh;
-	z-index: 10;
+	z-index: 12;
 	transition: all 0.5s ease-in 0.2s;
 }
 .buts-wrap.shift-right,
@@ -522,6 +522,86 @@ mark {
 .blue-but-back .icon-patch {	
 	background: #0d6efd;  	
 }
+.run-desk {
+	display: flex;
+}
+.guide-desk {
+	display: block;
+}
+.run-mob,
+.guide-mob {
+	display: none;
+}
+.run-code-guide {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 11;
+	background: white;	
+	align-content: flex-start;
+	flex-wrap: wrap;
+	top: 0;
+	border-top: 1px solid #9a9a9a;
+	overflow: auto;
+	left: 10000px;
+	opacity: 0;
+	transition: opacity 0.3s ease-out, left 0.3s 0.4s;
+}
+.run-code-guide.open-guide {	
+	left: 0;
+	opacity: 1;
+	transition: left 0.2s, opacity 0.3s 0.2s ease-out;
+}
+.but-guide-wrap {
+	position: relative;
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;	
+	align-items: center;
+	top: 0;
+	padding: 5px;
+}
+.but-guide {
+	position: relative;
+	border: 1px solid #212529;
+	border-radius: 0.4rem;
+	color: #212529;
+	box-shadow: inset 0px 0px 0px 1px #ffffff;
+	background: #f0f0f0;
+	display: flex;
+  align-items: center;
+	padding: 5px;
+}
+.guide-close {
+	margin-left: 5px;
+}
+.but-guide:hover {
+	background: #ddd;
+	border-radius: 0.4rem;
+	color: #212529;
+	box-shadow: inset 0px 0px 0px 1px #ffffff;
+}
+.but-guide i.material-icons{
+	font-size: calc(100% * 1.7);
+	margin-left: 5px;
+	background: #212529;
+	color: white;
+	font-weight: normal;
+	line-height: 1;
+	border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
