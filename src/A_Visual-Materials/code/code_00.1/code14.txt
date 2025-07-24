@@ -1,0 +1,72 @@
+import java.util.Arrays;
+
+class BIntArray {
+	
+	int[] array;
+	int size;
+	int block;
+	
+	public BIntArray(int initSize, int blockSize) {
+		size = 0;
+		array = new int[initSize];
+		block = blockSize;
+	}
+	
+	void copyData(int[] src, int[] dst) {
+		for(int i = 0; i < src.length; i++) {
+			dst[i] = src[i];
+		}
+	}
+	
+	public int get(int index) {
+		return array[index];
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	/*public void add(int item) {
+		if(size == array.length) { // 1
+			int[] newArray = new int[array.length + block]; // 2
+			copyData(array, newArray);
+			newArray[array.length] = item;
+			array = newArray;
+		}
+		array[size++] = item;	// 3
+	}*/
+	public void add(int item) {
+		if(size == array.length) {
+			int[] newArray = new int[array.length + block];
+
+			System.out.println("if:1-array: " + Arrays.toString(array));
+			System.out.println("if:1-newArray: " + Arrays.toString(newArray));
+
+			copyData(array, newArray);
+
+			System.out.println("if:2-array: " + Arrays.toString(array));
+			System.out.println("if:2-newArray: " + Arrays.toString(newArray));
+
+			newArray[array.length] = item;
+
+			System.out.println("if:3-array: " + Arrays.toString(array));
+			System.out.println("if:3-newArray: " + Arrays.toString(newArray));
+
+			array = newArray;
+
+			System.out.println("if:4-array: " + Arrays.toString(array));
+			System.out.println("if:4-newArray: " + Arrays.toString(newArray));
+		}
+		array[size++] = item;
+		System.out.println("else:1-array: " + Arrays.toString(array));
+	}
+	public static void main(String[] args) {
+		BIntArray dia = new BIntArray(0, 2);
+		System.out.println("1-----------------------------------");
+		dia.add(9);
+		System.out.println("2-----------------------------------");
+		dia.add(5);
+		System.out.println("3-----------------------------------");
+		dia.add(2);
+	}
+}

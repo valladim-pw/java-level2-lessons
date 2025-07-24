@@ -1,0 +1,46 @@
+import java.util.Arrays;
+
+class QIntArray {
+	int[] array;
+	int head;
+	int tail;
+	
+	public QIntArray(int size) {
+		array = new int[size];
+		head = tail = 0;
+	}
+	
+	public void offer(int item) {
+		if(tail == array.length)
+			tail = 0;
+		// Если хвост массива догнал голову, то массив расширяется
+		// в данном случае копируется с увеличенной на 1 длиной
+		if(tail == head)
+			array = Arrays.copyOf(array, array.length + 1);
+		array[tail++] = item;
+		System.out.println("arr: " + Arrays.toString(array));
+	}
+	
+	public int poll() throws Exception {
+		if(head == tail)
+			throw new Exception("no data");
+		return array[head++];
+	}
+}
+class QTest {
+	public static void main(String[] args) throws Exception {
+		QIntArray q = new QIntArray(5);
+		q.offer(10);
+		q.offer(15);
+		q.offer(8);
+		q.offer(22);
+		q.offer(35);
+		System.out.println(q.poll());
+		System.out.println(q.poll());
+		System.out.println(q.poll());
+		System.out.println(q.poll());
+		System.out.println(q.poll());		
+		q.offer(45);
+		System.out.println(q.poll());
+	}
+}

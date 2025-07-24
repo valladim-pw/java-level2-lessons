@@ -256,12 +256,6 @@ function removeClass(el, attr) {
   let list = el.classList;
   list.remove(attr);
 }
-function toggleClass(el, attr) {
-  if (hasClass(el, attr))
-		removeClass(el, attr);
-	else
-		addClass(el, attr);
-}
 
 /* 
 Функции для для вставки в верхней части страницы совета по применению кнопок Run для запуска кода
@@ -333,19 +327,21 @@ function openWin(resource) {
 
 */
 
+let demo = document.getElementById("demo");
+
 function clickCounter() {  
    
-	if (typeof(Storage) !== "undefined") { 	 
+  if (typeof(Storage) !== "undefined") { 	 
     if (localStorage.clickcount) {
       localStorage.clickcount = Number(localStorage.clickcount)+1;
     } else {
       localStorage.clickcount = 1;
-    }    
+    } 
+    //demo.insertAdjacentHTML("beforeend", localStorage.getItem("clickcount"));
   } else {
-    x.innerHTML = "Sorry, no Web storage support!";
+   demo.innerHTML = "Sorry, no Web storage support!";
   }
 }
-
 
 /*
 	Функция для копирования кода из рамки с кодом, а также для запуска кода на ресурсе w3schools.com
@@ -373,7 +369,7 @@ async function copyCode(event) {
 	let page_id = id_elem.getAttribute("id");
 	
 	let dir = "./code/code_" + page_id + "/";	
-	let store_id = page_id + "*" + code_id;
+	//let store_id = page_id + "*" + code_id;
 	let file = dir + code_id + ".txt";		
 	
 	let x = await fetch(file);
@@ -382,7 +378,7 @@ async function copyCode(event) {
 	navigator.clipboard.writeText(copy_text);
 	
 	let count = localStorage.getItem("clickcount");
-	let store_val = localStorage.getItem(store_id);
+	//let store_val = localStorage.getItem(store_id);
 	let store_no_all = localStorage.getItem("no-all");
 	
 	if (hasClass(e, "but-test")) {
@@ -495,7 +491,6 @@ function closeAllSettings() {
 	}
 }
 
-
 function changeSelect(event) {		
 	
 	let e = event.target;
@@ -581,34 +576,34 @@ function setSelectAllValue(value) {
 }
 
 function loadWithStorageValues() {
+	
 	let code_tests = document.getElementsByClassName("code-test");
+	let selects = document.getElementsByTagName("SELECT");
 	let id_elem = document.body.querySelector(".page-id");
 	let page_id = id_elem.getAttribute("id");
 	
-	for (let i = 0; i < code_tests.length; i++) {
+	for (let i = 0; i < code_tests.length && i < selects.length; i++) {
 		let code_test = code_tests[i];
-		let select = code_test.previousElementSibling.querySelector("select");		
+		let select = selects[i];
+		let code_id = code_test.getAttribute("id");
 		
 		if (localStorage.getItem("clickcount") != null) {
 			
 			if (localStorage.getItem("clear") != null)
 				select.value = "no-choice";
-			
 			else if (localStorage.getItem("no-all") != null)
 				select.value = "guide-no-all";
-			
 			else if (localStorage.getItem("yes-all") != null) {
 				
 				if (localStorage.getItem(page_id) == "guide-no")
 					select.value = "guide-no";
-				else if (localStorage.getItem(page_id) == "guide-yes")
-					select.value = "guide-yes";					
+				else
+					select.value = "guide-yes";
+										
 			}
-		}	
-		
-		if (localStorage.getItem("clickcount") == null)
-			select.value = "no-choice";
-		 
+		} else if (localStorage.getItem("clickcount") == null)
+		   select.value = "no-choice";
+		    
 	}
 }	
 
@@ -685,10 +680,10 @@ function setCode(init) {
 		const margin = 8;
 		const margin_half = margin / 2;
 		const border = 5;
-		const coeff_ratio = 5.72;
-		const coeff_font = 31.5;
-		const coeff_button = 9;
-		const coeff_button2 = 11;
+		const coeff_ratio = 5;
+		const coeff_font = 30;
+		const coeff_button = 8;
+		const coeff_button2 = 10;
 		const coeff_msg = 20;
 		let badge_h = badge.offsetHeight;
 		let img_h = img.clientHeight;
@@ -724,7 +719,11 @@ function setCode(init) {
 						but.style.right = (indent_half + margin) + "px";
 					else
 						but.style.right = ((indent_half + margin_half) + img_w / 2) + "px";
-				}				
+				} else {
+				   if (!hasClass(but, "setting-close"))
+				        but.style.fontSize = (img_h / coeff_button) + "px";
+				} 
+				    
 			}
 		}
 		
@@ -740,22 +739,23 @@ function setCode(init) {
 				let width_part = (width - indent_half) / code_wraps.length;
 				
 				if (!hasClass(code_wrap, "code-null"))
-					code_wrap.style.height = (img_h - (indent_v + margin_half)) + "px";
+					code_wrap.style.height = (img_h - (indent_v + 2)) + "px";
 				else
 					code_wrap.style.height = 0 + "px";
 				
 				code_wrap.style.top = offset_top + "px";
 				
 				if (but_msg != null) {
-					but_msg.style.top = ((badge_h + margin + border) + img_h / 2) + "px";
+					but_msg.style.top = ((badge_h + margin + border) + img_h / 1.6) + "px";
 					but_msg.style.fontSize = img_h / coeff_msg + "px";
 					
 					if (hasClass(code_wrap, "code-test")) {
-						but_msg.style.height = ((img_h / coeff_msg) * 2) + "px";
-						but_msg.lastElementChild.style.height = ((img_h / coeff_msg) * 4) + "px";
+						but_msg.style.height = ((img_h / coeff_msg) * 5) + "px";
+						but_msg.firstElementChild.style.height = ((img_h / coeff_msg) * 2.6) + "px";
+						but_msg.lastElementChild.style.height = ((img_h / coeff_msg) * 5.5) + "px";
 						but_msg.lastElementChild.style.top = ((img_h / coeff_msg) * 2) + "px";
 					} else
-						but_msg.style.height = ((img_h / coeff_msg) * 2) + "px";
+						but_msg.style.height = ((img_h / coeff_msg) * 2.6) + "px";
 						
 				}				
 				
@@ -973,7 +973,6 @@ $(document).ready(function() {
   });
 	
 });
-
 
 
 

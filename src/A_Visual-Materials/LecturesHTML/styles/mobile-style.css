@@ -179,25 +179,48 @@
 	.guide-desk {
 		display: none;
 	}
-	.run-mob,
+	
 	.guide-mob {
-		display: block;
+		display: block;		
 	}
-	.user-info-wrap {
-		flex-direction: column;
+	.run-mob {
+		display: flex;
+		justify-content: flex-end;
 	}
-	i.material-icons.info-symbol {		
-		font-size: calc(100% * 1.8);		
-		padding: 0 0 5px 0;
+	.run-mob .but-guide-wrap {
+		width: 48%;
 	}
-	.info-wrap {
-		text-align: left;
+	.run-mob .but-guide {
+		width: 100%;
+		justify-content: space-between;
+		font-size: calc(100% * 0.9);
 	}
+	.run-mob .guide-link {
+		margin-bottom: 5px;
+	}
+	.run-mob .guide-close {
+		margin: 0;
+	}
+	.run-mob .but-guide i.material-icons {
+		font-size: calc(100% * 1.5);
+	}
+	.copy-msg {
+	    font-size: calc(100% * 0.7) !important;
+	}
+	i.material-icons.info-symbol {
+        margin-right: 8px;
+    }
+    .first-info {
+    	padding-right: 5px;
+    }
+    .second-info {
+    	padding-left: 5px;
+    }
 	.user-info img {		
 		width: 32px;
 	}
 	.info-but-run {
-    font-size: 12px;
+        font-size: 12px;
 	}
 	.info-but-zoom {
 		display: none;

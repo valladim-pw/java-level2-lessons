@@ -335,13 +335,14 @@ i.material-icons.but-test:not([class~="but-setting"])::before {
 i.material-icons.but-setting {		
 	color: #08724b;
 	background: white;
-	margin-top: 3px;
+	margin-top: 5px;
 }
 i.material-icons.but-gif.setting-close {
 	font-size: calc(100% * 1.5);
 	background: #06925f;
 	border-radius: 3px 0px 0px 3px;
-  opacity: 1;	
+  opacity: 1;
+  top: 0;
 }
 .msg-left i.material-icons.setting-close {
 	left: 0;
@@ -366,11 +367,11 @@ i.material-icons.but-gif.setting-close {
 	background: transparent;
 }
 .msg-left {	
-	width: 60%;
+	width: 70%;
 	border-radius: 0px 5px 5px 0px;
 }
 .msg-right {	
-	width: 60%;
+	width: 70%;
 	border-radius: 5px 0px 0px 5px;
 }
 .copy-msg.msg-left span {	
@@ -401,10 +402,18 @@ i.material-icons.but-gif.setting-close {
 	background: #08724b;
 	opacity: 1;
 }
+.choice-click {
+    display: flex !important;
+    height: 60% !important;
+}
+.choice-opt {
+    top: 40%;
+}
 .msg-copy {
 	background: #04aa6d;
 	opacity: 1;
 	left: 0 !important;
+	/*height: calc(100% * 0.7) !important;*/
 }
 .msg-alert {
 	flex-direction: column;
@@ -416,6 +425,7 @@ i.material-icons.but-gif.setting-close {
 	background: #08724b;
 	margin: 0 0 4px 0;
 	left: 0 !important;
+	font-weight: 600;
 }
 .guide-choice.msg-hide,
 .msg-copy.msg-hide,
@@ -445,9 +455,6 @@ select.guide-cases {
 	appearance: none; /* Убирает стандартное оформление в некоторых браузерах */
 	-webkit-appearance: none; /* Для Safari */
 	-moz-appearance: none; /* Для Firefox */
-}
-select:not(:-internal-list-box):not([multiple]) option:disabled {
-  text-align: left;
 }
 .hljs-ln-code {
 	padding-left: 10px !important;
@@ -572,20 +579,34 @@ select:not(:-internal-list-box):not([multiple]) option:disabled {
 	display: flex;
 }
 i.material-icons.info-symbol {
-	color: red;
-	font-size: calc(100% * 2.5);
-	font-weight: normal;
-	padding: 5px 20px 0 0;
+	color: #fff;
+    font-size: calc(100% * 2.3);
+    font-weight: normal;
+    background: red;
+    border-radius: 5px;
+    margin-right: 15px;
 }
 .info-wrap {
-	text-align: center;
+	/*text-align: center;*/
+}
+.user-info {
+	display: flex;
+    align-items: center;
+    padding: 0;
 }
 .user-info img {
-	position: relative;
-	width: 42px;
+	width: 38px;
+	box-shadow: 2px 2px 1px 3px #bbd4fb;
+	border-radius: 5px;
+}
+.first-info {
+	padding-right: 10px;
+}
+.second-info {
+	padding-left: 10px;
 }
 .info-but-zoom {
-	display: block;
+	display: flex;
 }
 
 

@@ -1,0 +1,96 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class BIntArray {
+	
+	int[] array;
+	int size;
+	int block;
+	
+	public BIntArray(int initSize, int blockSize) {
+		size = 0;
+		array = new int[initSize];
+		block = blockSize;
+	}
+	
+	void copyData(int[] src, int[] dst) {
+		for(int i = 0; i < src.length; i++) {
+			dst[i] = src[i];
+		}
+	}
+	
+	public int get(int index) {
+		return array[index];
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public void add(int item) {
+		if(size == array.length) { // 1
+			int[] newArray = new int[array.length + block]; // 2
+			copyData(array, newArray);
+			newArray[array.length] = item;
+			array = newArray;
+		}
+		array[size++] = item;	// 3
+	}	
+}
+class PIntArray {
+	
+	ArrayList<int[]> array; // Список с массивами (страницами)
+	int size; // Заполненность данными последней страницы списка
+	int block; // Размер страницы
+	int[] page; // Страница массива
+	
+	public PIntArray(int blockSize) {
+		array = new ArrayList<>();
+		size = 0;
+		block = blockSize;
+		page = new int[block]; // Создаем страницу
+		array.add(page); // Добавляем страницу в список
+	}
+	public int get(int index) {
+		int index1 = index / block;
+		int index2 = index % block;
+		return array.get(index1)[index2];
+	}
+	public void add(int item) {
+		if (size == page.length) {
+			page = new int[block]; // Создаем страницу
+			array.add(page); // Добавляем страницу в список
+			size = 0; // Если страница заполнена заполненность приводим к 0
+		}
+		page[size++] = item; // Добавляем элемент на страницу по инкременту заполненности страницы
+	}
+	public int size() {
+		return ((array.size() - 1) * block) + size; // Возвращаем заполненность (последний индекс) последней странцы
+	}
+	public void print() {
+		ArrayList<String> list = new ArrayList<>();
+		for (int[] page : array) {
+			list.add(Arrays.toString(page));
+		}
+		System.out.println(list);
+	}
+}
+class TimeTest {
+	static final int count = 1000_000;
+	
+	public static void main(String[] args) {
+		PIntArray a1 = new PIntArray(1000);
+		BIntArray a2 = new BIntArray(1000, 1000);
+		
+		long start = System.currentTimeMillis();
+		for(int i = 0; i < count; i++)
+			a1.add(i);
+		long middle = System.currentTimeMillis();
+		for(int i = 0; i < count; i++)
+			a2.add(i);
+		long stop = System.currentTimeMillis();
+		
+		System.out.println("PIntArray add time: " + (middle - start));
+		System.out.println("BIntArray add time: " + (stop - middle));
+	}
+}

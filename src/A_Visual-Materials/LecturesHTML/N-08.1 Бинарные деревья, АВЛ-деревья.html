@@ -14,7 +14,20 @@
 	<link rel="stylesheet" href="styles/mobile-style.css">	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	
+		<style>
+	#demo {
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        padding: 5px;
+        z-index: 15;
+        background: yellow;
+        font-size: 10px;
+        height: 30%;
+        width:200px;
+        overflow: auto;
+	}
+	</style>
 	<script>
 			/* 
 		Вспомогательные функции для упрощения преобразований классов элементов средствами Javascript
@@ -78,7 +91,8 @@
 						let msg_class_right = "<div class=\"copy-msg msg-test msg-right\">";// msg-hide\">";
 						let msg_class_left = "<div class=\"copy-msg msg-test msg-left\">";// msg-hide\">";
 						
-						let msg_content =	"<span class=\"guide-choice msg-hide\">Нажмите <i class=\"material-icons icon-setting\">settings</i> для выбора варианта запуска кода</span>" +
+						let msg_content =	"<span class=\"guide-choice msg-hide\">" +
+						"<span class=\"choice-click\">Нажмите <i class=\"material-icons icon-setting\">settings</i></span><span class=\"choice-click choice-opt\"> для выбора варианта запуска кода</span></span>" +
 						"<span class=\"msg-alert msg-hide\">" +
 						"<p class=\"setting-choice\">Настройка процесса запуска кода<i class=\"material-icons but-gif setting-close msg-hide\" onclick=\"closeSettings(event)\">clear</i></p>" +
 						"<select class=\"guide-cases\" onchange=\"changeSelect(event)\">" +
@@ -163,16 +177,23 @@
 	<script src="javascript/highlight.min.js"></script>
 	<script src="javascript/highlightjs-line-numbers.js"></script>  
 </head>	
-<body onload="setPageId(); setOpenWinAttr(); insertLabel(); bothLeftRight(); setCode(true); loadWithStorageValues();">
+<body onload="setPageId(); setOpenWinAttr(); insertLabel(); bothLeftRight(); setCode(true); setTimeout(loadWithStorageValues, 2000);">
 <div class="container-fluid p-3">
+    <!--<div id="demo"></div>-->
 	<div class="user-info-wrap">
-		<i class="material-icons info-symbol">info</i>
 		<div class="info-wrap">
-			<p class="user-info info-but-run">Кнопкой <img src="images/run-button.png"/> можно скопировать и запустить код онлайн в браузере.</p>
-			<p class="user-info info-but-zoom" >Кнопками ниже можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>
+			<p class="user-info info-but-run">
+			    <i class="material-icons info-symbol">info_outline</i>
+    			<span class="info-content first-info">Кнопкой</span> 
+    			<img src="images/run-button.png"/>
+    			<span class="info-content second-info"> можно скопировать и запустить код онлайн в браузере</span>
+			</p>
+			<p class="user-info info-but-zoom" >
+			    <i class="material-icons info-symbol">info_outline</i>
+			    <span class="info-content">Кнопками ниже можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%)</span>
+		    </p>
 		</div>
 	</div>
-  
 	<div class="head-buttons" id="header">
 		<div class="but-wrap">
 			<div class="back-fix"></div>
@@ -214,7 +235,7 @@
 			</p>
 			<p>
 			* <a class="github" href="https://skysmart.ru/articles/mathematic/osnovnye-ponyatiya-teorii-grafov">
-			Теория графов. Основные понятия и виды графов</a>
+			Теория графов. Основные понятия и виды графов</a>
 			</p>
 			<p>
 			* <a class="github" href="https://habr.com/ru/companies/otus/articles/568026/">

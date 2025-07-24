@@ -543,7 +543,7 @@ mark {
 	top: 0;
 	border-top: 1px solid #9a9a9a;
 	overflow: auto;
-	left: 10000px;
+	left: -10000px;
 	opacity: 0;
 	transition: opacity 0.3s ease-out, left 0.3s 0.4s;
 }
@@ -560,6 +560,7 @@ mark {
 	align-items: center;
 	top: 0;
 	padding: 5px;
+    justify-content: flex-end
 }
 .but-guide {
 	position: relative;

@@ -1294,6 +1294,7 @@ function openW3Schools(event) {
 	//setTimeout(closeGuide, 0);
 }
 
+
 /* 
 - Функции регулировки скрытия -появления меню и панели с заголовком в дектопном и мобильном вариантах 
 */
@@ -1306,7 +1307,7 @@ $(document).ready( function(){
     
 		$(this).addClass("invisible");
     $(".menu").addClass("menu-hidden");
-    $(".frame").addClass("frame-full");
+    $(".frame").addClass("frame-full");	
 		
   });
   $("#switch1").click( function(){
