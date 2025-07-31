@@ -1,8 +1,6 @@
-package Less02_Lambda_Recursion._1_IntroToLambdaExpressions;
-
 import java.util.*;
 
-public class _3TreeSetWithCustomComparator {
+public class TreeSetWithCustomComparator {
 	public static void main(String[] args) {
 		TreeSet<Integer> treeSet = new TreeSet<>(new Comparator<Integer>() {
 			@Override

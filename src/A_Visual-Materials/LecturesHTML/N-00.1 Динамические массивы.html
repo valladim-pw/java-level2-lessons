@@ -88,9 +88,9 @@
 						else							
 							txt = txt.replace(/^( *)/gm, (_, spaces) => spaces.replace(/  /g, " "));// если вместо \t используется два пробела,  функция заменяет каждые два пробела в начале строки на один
 						
-						let msg_class = "<div class=\"copy-msg msg-test\">";// msg-hide\">";
-						let msg_class_right = "<div class=\"copy-msg msg-test msg-right\">";// msg-hide\">";
-						let msg_class_left = "<div class=\"copy-msg msg-test msg-left\">";// msg-hide\">";
+						let msg_class = "<div class=\"copy-msg msg-test\">";
+						let msg_class_right = "<div class=\"copy-msg msg-test msg-right\">";
+						let msg_class_left = "<div class=\"copy-msg msg-test msg-left\">";
 						
 						let msg_content =	"<span class=\"guide-choice msg-hide\">" +
 					    "<span class=\"choice-click\">Нажмите <i class=\"material-icons icon-setting\">settings</i></span><span class=\"choice-click choice-opt\"> для выбора варианта запуска кода</span></span>" +
@@ -106,8 +106,7 @@
 						"</div>";
 						let msg_copy = "<span class=\"msg-copy msg-hide\">Скопировано в буфер обмена</span>";
 						let msg_copy_right = "<span class=\"msg-copy msg-hide msg-right\">Скопировано в буфер обмена</span>";
-						let msg_copy_left = "<span class=\"msg-copy msg-hide msg-left\">Скопировано в буфер обмена</span>";
-						
+						let msg_copy_left = "<span class=\"msg-copy msg-hide msg-left\">Скопировано в буфер обмена</span>";						
 						
 						let copy_msg_run = msg_class + msg_copy + msg_content;
 						let copy_msg_run_right = msg_class_right + msg_copy_right + msg_content;
@@ -123,30 +122,27 @@
 						
 						let btn_copy_right = "<i class=\"material-icons but-gif but-copy right50\" onclick=\"copyCode(event)\" >content_copy</i>";
 						let btn_copy_right_test = "<i class=\"material-icons but-gif but-copy right50 but-test\" onclick=\"copyCode(event); clickCounter();\">content_copy</i>";
-						let btn_right_test_setting = "<i class=\"material-icons but-gif right50 but-setting but-test\" onclick=\"openSettings(event);\">settings</i>";
-						
-						let link_w3s = "<a class=\"link-test\" target=\"_blank\" href=\"https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld\"></a>";
+						let btn_right_test_setting = "<i class=\"material-icons but-gif right50 but-setting but-test\" onclick=\"openSettings(event);\">settings</i>";				
 						
 						if (id.search("a") != -1) {
-							if (hasClass(code_wrap, "code-test")) {								
-									code_wrap.insertAdjacentHTML("beforebegin", btn_right_test_setting + btn_copy_right_test + copy_msg_run_left);
-								if (a == null)
-									code_wrap.insertAdjacentHTML("afterend", link_w3s);
-							} else								
+							
+							if (hasClass(code_wrap, "code-test"))							
+									code_wrap.insertAdjacentHTML("beforebegin", btn_right_test_setting + btn_copy_right_test + copy_msg_run_left);								
+							else								
 								code_wrap.insertAdjacentHTML("beforebegin", btn_copy_right + copy_msg_left);
+						
 						}	else if (id.search("b") != -1) {
-							if (hasClass(code_wrap, "code-test")) {								
-									code_wrap.insertAdjacentHTML("beforebegin", btn_test_setting + btn_copy_test + copy_msg_run_right);
-								if (a == null)
-									code_wrap.insertAdjacentHTML("afterend", link_w3s);
-							} else
+							
+							if (hasClass(code_wrap, "code-test"))								
+									code_wrap.insertAdjacentHTML("beforebegin", btn_test_setting + btn_copy_test + copy_msg_run_right);								
+							else
 								code_wrap.insertAdjacentHTML("beforebegin", btn_copy + copy_msg_right);
+						
 						}	else {
-							if (hasClass(code_wrap, "code-test")) {								
-									code_wrap.insertAdjacentHTML("beforebegin", btn_test_setting + btn_copy_test + copy_msg_run);
-								if (a == null)
-									code_wrap.insertAdjacentHTML("afterend", link_w3s);
-							} else
+						
+							if (hasClass(code_wrap, "code-test"))							
+									code_wrap.insertAdjacentHTML("beforebegin", btn_test_setting + btn_copy_test + copy_msg_run);								
+							else
 								code_wrap.insertAdjacentHTML("beforebegin", btn_copy + copy_msg);
 						}
 						code_tag.innerHTML = txt;
@@ -178,11 +174,9 @@
 	<script src="javascript/highlight.min.js"></script>
 	<script src="javascript/highlightjs-line-numbers.js"></script>  
 </head>	
-<body onload="setPageId(); setOpenWinAttr(); insertLabel(); bothLeftRight(); setCode(true); setTimeout(loadWithStorageValues, 2000);">
-<div class="container-fluid p-3">
-  <!--<div id="demo"></div>-->
-  	<div class="user-info-wrap">
-		<!--<i class="material-icons info-symbol">info</i>-->
+<body onload="setPageId(); setOpenWinAttr(); insertLabel(); bothLeftRight(); setTimeout(() => setCode(true), 1000); setTimeout(loadWithStorageValues, 2000);">
+<div class="container-fluid p-3">  
+	<div class="user-info-wrap">		
 		<div class="info-wrap">
 			<p class="user-info info-but-run">
 			    <i class="material-icons info-symbol">info_outline</i>
@@ -196,8 +190,7 @@
 		    </p>
 		</div>
 	</div>
-	<div class="head-buttons" id="header">		
-		<!--<p>Кнопками ниже можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>-->		
+	<div class="head-buttons" id="header">
 		<div class="but-wrap">
 			<div class="back-fix"></div>
 		  <div class="but100-wrap left">

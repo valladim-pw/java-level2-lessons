@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<body >
+
+<h1>The Window Object</h1>
+<h2>The closed Property</h2>
+
+<p><button onclick="openWin()">Open1 "myWindow"</button></p>
+<p><button onclick="openWin()">Open2 "myWindow"</button></p>
+<p><button onclick="checkWin()">Is "myWindow" closed?</button></p>
+<p><button onclick="pressKey()">select</button></p>
+
+<div id="demo"></div>
+
+<script>
+let myWindow;
+let w;
+let h;
+let demo = document.getElementById("demo");
+
+function openWin() {
+  let dir = "https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld";
+	//w = window.outerWidth;
+	//h = window.innerHeight;
+	
+	if (!myWindow || myWindow.closed)
+		myWindow = window.open(dir, "myWindow");
+	else
+	  myWindow.focus();
+	/*myWindow.document.addEventListener('click', function(e) {
+  // Проверяем, что клик не по инпуту или редактируемому элементу
+		if (!['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) {
+			const event = new KeyboardEvent('keydown', {
+				key: 'a',
+				ctrlKey: true,
+				bubbles: true
+			});
+			myWindow.document.activeElement.dispatchEvent(event);
+		}
+	});	*/
+		
+	myWindow.document.addEventListener('click', function() {
+		myWindow.document.execCommand('selectAll', false, null);
+	});	
+}
+
+function pressKey() {
+
+	window.document.addEventListener('click', function() {
+		document.execCommand('selectAll', false, null);
+	});
+}
+// Function to simulate the keypress
+/*function simulateCtrlAKeypress() {
+    // Create a KeyboardEvent object for Ctrl+A
+    const ctrlAEvent = new KeyboardEvent("keydown", {
+        key: "a",
+        code: "KeyA",
+        keyCode: 65, // KeyCode for 'A'
+        ctrlKey: true, // Indicates Ctrl key is pressed
+				isTrusted: true
+    });
+
+    // Dispatch the event to the window
+    window.dispatchEvent(ctrlAEvent);
+		demo.innerHTML = 'Ctrl+A keypress simulated';
+}
+
+// Add an event listener to the window to handle the keydown event
+window.addEventListener('click', simulateCtrlAKeypress);
+*/
+// Call the function to simulate the keypress
+
+
+
+/*function myFunction(event) {
+  let e = event.target;
+	//setTimeout(function() {e.close()}, 2000);
+	//e.document.getElementsByTagName("textarea")[0].click();
+}
+
+function KeyPress(e) {
+    var eobj = window.event ? event : e
+    if (eobj.key == "a" && eobj.ctrlKey) 
+			alert("Ctrl+a");
+}
+//'key': 'A',
+// 'code': 'KeyA',
+// 'charCode': 65,
+// 'keyCode': 65,
+// 'which': 65,
+// 'shiftKey': true
+function KeySend() {
+  var k = new KeyboardEvent("keydown", {'key': 'a', 'ctrlKey': true, 'cancelable': true, 'bubbles': true});
+  document.dispatchEvent(k);
+}
+//document.click = KeyPress;
+
+//function sendKey() {
+
+	document.addEventListener('click', () => {
+			const event = new KeyboardEvent('keydown', {'key': 'A', 'code': 'KeyA', 'ctrlKey': true, 'cancelable': true, 'bubbles': true});
+
+			document.dispatchEvent(event);
+	});
+//}*/
+
+</script>
+
+</body>
+</html>

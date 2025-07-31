@@ -1,0 +1,26 @@
+import java.util.function.Consumer;
+
+public class Book {
+	String name;
+	String author;
+	double price;
+	
+	public Book(String name, String author, double price) {
+		this.name = name;
+		this.author = author;
+		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		return 	author + ", " + name + ", " + price;
+	}
+}
+public class LambdaWithConsumer {
+	public static void main(String[] args) {
+		Consumer doIt = x -> System.out.println(x);
+		doIt.accept(55555);	
+		doIt.accept("Строка");
+		doIt.accept(new Book("Капитанская дочка", "Пушкин", 545));
+	}
+}

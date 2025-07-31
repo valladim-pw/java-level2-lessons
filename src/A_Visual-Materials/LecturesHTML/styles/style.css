@@ -596,7 +596,7 @@ i.material-icons.info-symbol {
 }
 .user-info img {
 	width: 38px;
-	box-shadow: 2px 2px 1px 3px #bbd4fb;
+	box-shadow: 1px 1px 1px 2px #bbd4fb;
 	border-radius: 5px;
 }
 .first-info {

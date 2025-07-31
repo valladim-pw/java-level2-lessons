@@ -316,10 +316,18 @@ function setOpenWinAttr() {
 	</div>
 */
 
+let githubWin;
+
 function openWin(resource) {
+	let specs = "toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700";
 	
-	window.open(resource,"_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=700, height=700");
-	
+	if (githubWin) {
+		
+		githubWin.close();
+		githubWin = window.open(resource, "_blank", specs);
+		
+	} else
+	  githubWin = window.open(resource, "_blank", specs);
 }
 
 /*
@@ -374,6 +382,10 @@ async function copyCode(event) {
 	
 	let x = await fetch(file);
 	let copy_text = await x.text();
+	arrClass = copy_text.match("public class");
+	
+	if (Array.isArray(arrClass) && arrClass.length !== 0)						
+		copy_text = copy_text.replaceAll("public class", "class");
 	
 	navigator.clipboard.writeText(copy_text);
 	
@@ -387,7 +399,7 @@ async function copyCode(event) {
 		let guide_choice = copy_msg.children[1];
 		let msg_alert = copy_msg.children[2];
 		let select = msg_alert.querySelector("select");
-		let a = e.parentElement.querySelector(".link-test");
+		//let a = e.parentElement.querySelector(".link-test");
 		
 		closeAllSettings();
 		
@@ -406,7 +418,7 @@ async function copyCode(event) {
 				setTimeout(() => startWithGuide(msg_copy), 2000);					
 			
 			if (select.value == "guide-no" || select.value == "guide-no-all")
-				setTimeout(() => startWithoutGuide(a, msg_copy), 2000);	
+				setTimeout(() => startWithoutGuide(msg_copy), 2000);	
 		}
 	} else {
 		
@@ -416,13 +428,27 @@ async function copyCode(event) {
 				
 }
 
+let myWindow;
+
+function openW3Schools() {
+	
+	let dir = "https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld";
+	
+	if (myWindow) {
+		myWindow.close();
+		myWindow = window.open(dir, "myWindow");
+	} else
+	  myWindow = window.open(dir, "myWindow");
+}
+
 function startWithGuide(msg) {	
 	openGuide();
 	addClass(msg, "msg-hide");
 }
 
-function startWithoutGuide(anchor, msg) {	
-	anchor.click();
+function startWithoutGuide(msg) {	
+	//anchor.click();
+	openW3Schools();
 	addClass(msg, "msg-hide");
 }
 

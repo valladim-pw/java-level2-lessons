@@ -1,0 +1,9 @@
+import java.util.function.*;
+
+public class LambdaWithUnaryOperator {
+	public static void main(String[] args) {
+		UnaryOperator<Integer> square = x -> x * x;
+		System.out.println(square.apply(5));
+		System.out.println(square.apply(-5));
+	}
+}

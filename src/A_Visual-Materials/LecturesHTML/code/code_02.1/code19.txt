@@ -1,0 +1,8 @@
+import java.util.function.Consumer;
+
+public class LambdaWithConsumer {
+	public static void main(String[] args) {
+		Consumer<Integer> doIt = x -> System.out.println(x);
+		doIt.accept(55555);		
+	}
+}

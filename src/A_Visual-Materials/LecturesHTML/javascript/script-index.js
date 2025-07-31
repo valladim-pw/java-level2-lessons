@@ -1285,15 +1285,20 @@ function closeGuide() {
   Функция для перехода на ресурс w3schools.com
 */
 
-function openW3Schools(event) {
-	closeGuide();
-	let e = event.target;
-	let w3s_link = e.parentElement.querySelector("A");
-	
-	w3s_link.click();
-	//setTimeout(closeGuide, 0);
-}
+let myWindow;
 
+function openW3Schools() {
+	
+	closeGuide();
+	
+	let dir = "https://www.w3schools.com/java/tryjava.asp?filename=demo_helloworld";
+	
+	if (myWindow) {
+		myWindow.close();
+		myWindow = window.open(dir, "myWindow");
+	} else
+	  myWindow = window.open(dir, "myWindow");
+}
 
 /* 
 - Функции регулировки скрытия -появления меню и панели с заголовком в дектопном и мобильном вариантах 

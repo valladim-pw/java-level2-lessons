@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.function.*;
+
+public class Book {
+	String name;
+	String author;
+	double price;
+	
+	public Book(String name, String author, double price) {
+		this.name = name;
+		this.author = author;
+		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		return 	author + ", " + name + ", " + price;
+	}
+}
+
+public class OperatorDoubleColon {
+	static boolean isEven(Integer i1) {
+		return i1 % 2 == 0;
+	}
+	public static void main(String[] args) {
+		Predicate<Integer> predicate = OperatorDoubleColon::isEven;
+		//аналогично лямбда-выражению
+		//Predicate<Integer> predicate = x -> isEven(x);
+		System.out.println(predicate.test(1000));
+		
+		Consumer<Book> b = System.out::println;
+		b.accept(new Book("Капитанская дочка", "Пушкин", 545));	
+		
+	}
+}

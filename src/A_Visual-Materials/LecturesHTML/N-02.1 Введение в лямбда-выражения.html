@@ -15,13 +15,169 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-	<style >
-	</style>
-</head>
-<body onload="setOpenWinAttr(); insertLabel(); bothLeftRight();">
-<div class="container-fluid p-3">
-	<div class="head-buttons" id="header">		
-		<p>Кнопками можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%).</p>
+	<script>
+			/* 
+		Вспомогательные функции для упрощения преобразований классов элементов средствами Javascript
+		*/
+		function hasClass(el, attr) {
+			let x = el.classList.contains(attr);
+			if (x)
+				return true;
+			return false;
+		}
+		function addClass(el, attr) {
+			let list = el.classList;
+			list.add(attr);
+		}
+		function removeClass(el, attr) {
+			let list = el.classList;
+			list.remove(attr);
+		}
+		/*
+		Fetch API Вставка файлов с кодом 
+		*/
+		
+		let code = ["code02.txt", "code03.txt", "code05.txt", "code06.txt", "copy09.txt", "code10.txt", "code11.txt", "code12.txt", "code14.txt", "code15.txt",
+		"code18.txt", "code19.txt", "code20.txt", "code21.txt", "code22.txt", "code23.txt", "code25.txt", "code26.txt"]; 
+		
+		let dir = "./code/code_02.1/";			
+
+		for (let c in code) {
+			let file = dir + code[c];			
+			getContent(file);
+		}
+		
+		 
+		async function getContent(file) {
+			let ext = file.substr(file.lastIndexOf(".") + 1);
+			let x = await fetch(file);
+			let txt = await x.text();	
+			let code_wraps = document.getElementsByClassName("code-wrap");
+			let arrTab, arrSign;
+			
+			for (let i = 0; i < code_wraps.length; i++) {
+				let code_wrap = code_wraps[i];
+				let but_copy = code_wrap.previousElementSibling.previousElementSibling;				
+				let a = code_wrap.parentElement.querySelector(".link-test");
+				let id = code_wrap.getAttribute("id");
+				let code_tag = code_wrap.querySelector("code");
+				let pos = file.search(id);		
+				if (pos != -1) {
+					if (ext == "txt") {
+						arrTab = txt.match(/\t/g);
+						arrSign = txt.match(/</g);								
+						
+						if (Array.isArray(arrSign) && arrSign.length !== 0)						
+							txt = txt.replaceAll("<", "&lt;");
+							
+						if (Array.isArray(arrTab) && arrTab.length !== 0)
+							txt = txt.replaceAll("\t", " ");														
+						else							
+							txt = txt.replace(/^( *)/gm, (_, spaces) => spaces.replace(/  /g, " "));// если вместо \t используется два пробела,  функция заменяет каждые два пробела в начале строки на один
+						
+						let msg_class = "<div class=\"copy-msg msg-test\">";
+						let msg_class_right = "<div class=\"copy-msg msg-test msg-right\">";
+						let msg_class_left = "<div class=\"copy-msg msg-test msg-left\">";
+						
+						let msg_content =	"<span class=\"guide-choice msg-hide\">" +
+					    "<span class=\"choice-click\">Нажмите <i class=\"material-icons icon-setting\">settings</i></span><span class=\"choice-click choice-opt\"> для выбора варианта запуска кода</span></span>" +
+						"<span class=\"msg-alert msg-hide\">" +
+						"<p class=\"setting-choice\">Настройка процесса запуска кода<i class=\"material-icons but-gif setting-close msg-hide\" onclick=\"closeSettings(event)\">clear</i></p>" +
+						"<select class=\"guide-cases\" onchange=\"changeSelect(event)\">" +
+						"<option value=\"no-choice\" disabled selected hidden>Выберите вариант</option>" +						
+						"<option value=\"guide-yes\">Предпоказ инструкции (по-умолчанию)</option>" +
+						"<option value=\"guide-no\">Не показывать инструкцию (эта лекция)</option>" +		
+						"<option value=\"guide-no-all\">Не показывать инструкцию (все лекции)</option>" +
+						"<option value=\"clear-all\">Очистить настройки</option>" +
+						"</select></span>" +
+						"</div>";
+						let msg_copy = "<span class=\"msg-copy msg-hide\">Скопировано в буфер обмена</span>";
+						let msg_copy_right = "<span class=\"msg-copy msg-hide msg-right\">Скопировано в буфер обмена</span>";
+						let msg_copy_left = "<span class=\"msg-copy msg-hide msg-left\">Скопировано в буфер обмена</span>";						
+						
+						let copy_msg_run = msg_class + msg_copy + msg_content;
+						let copy_msg_run_right = msg_class_right + msg_copy_right + msg_content;
+						let copy_msg_run_left = msg_class_left + msg_copy_left + msg_content;
+						
+						let copy_msg = "<span class=\"copy-msg msg-hide\">Скопировано в буфер обмена</span>";
+						let copy_msg_right = "<span class=\"copy-msg msg-right msg-hide\">Скопировано в буфер обмена</span>";
+						let copy_msg_left = "<span class=\"copy-msg msg-left msg-hide\">Скопировано в буфер обмена</span>";
+						
+						let btn_copy = "<i class=\"material-icons but-gif but-copy\" onclick=\"copyCode(event)\">content_copy</i>";
+						let btn_copy_test = "<i class=\"material-icons but-gif but-copy but-test\" onclick=\"copyCode(event); clickCounter();\">content_copy</i>";
+						let btn_test_setting = "<i class=\"material-icons but-gif but-setting but-test\" onclick=\"openSettings(event);\">settings</i>";
+						
+						let btn_copy_right = "<i class=\"material-icons but-gif but-copy right50\" onclick=\"copyCode(event)\" >content_copy</i>";
+						let btn_copy_right_test = "<i class=\"material-icons but-gif but-copy right50 but-test\" onclick=\"copyCode(event); clickCounter();\">content_copy</i>";
+						let btn_right_test_setting = "<i class=\"material-icons but-gif right50 but-setting but-test\" onclick=\"openSettings(event);\">settings</i>";				
+						
+						if (id.search("a") != -1) {
+							
+							if (hasClass(code_wrap, "code-test"))							
+									code_wrap.insertAdjacentHTML("beforebegin", btn_right_test_setting + btn_copy_right_test + copy_msg_run_left);								
+							else								
+								code_wrap.insertAdjacentHTML("beforebegin", btn_copy_right + copy_msg_left);
+						
+						}	else if (id.search("b") != -1) {
+							
+							if (hasClass(code_wrap, "code-test"))								
+									code_wrap.insertAdjacentHTML("beforebegin", btn_test_setting + btn_copy_test + copy_msg_run_right);								
+							else
+								code_wrap.insertAdjacentHTML("beforebegin", btn_copy + copy_msg_right);
+						
+						}	else {
+						
+							if (hasClass(code_wrap, "code-test"))							
+									code_wrap.insertAdjacentHTML("beforebegin", btn_test_setting + btn_copy_test + copy_msg_run);								
+							else
+								code_wrap.insertAdjacentHTML("beforebegin", btn_copy + copy_msg);
+						}
+						code_tag.innerHTML = txt;
+						
+					}	else if (ext == "gif") {
+						
+						code_wrap.innerHTML = "<i class=\"material-icons but-gif pause-gif\" onclick=\"pauseGif(event)\">pause_circle_outline</i>" +
+						"<i class=\"material-icons but-gif start-gif\" onclick=\"startGif(event)\">play_circle_outline</i>" + 
+						"<img class='code-img' src='" + file + "'/>";	
+					
+					} else
+						code_wrap.innerHTML = "<img class='code-img' src='" + file + "'/>";
+				}						
+			}				
+		}
+	/*
+	Функция для установки id для каждой страницы 
+	*/
+
+	function setPageId() {
+		let page_id_elem = document.querySelector(".page_id");
+		
+		let page_id = dir.substring(dir.indexOf("_") + 1, dir.lastIndexOf("/"));		
+		
+		if (page_id_elem == null)				
+			document.body.insertAdjacentHTML("afterbegin", "<div id=\"" + page_id + "\" class=\"page-id\"></div>");			
+	}
+	</script>	
+	<script src="javascript/highlight.min.js"></script>
+	<script src="javascript/highlightjs-line-numbers.js"></script>  
+</head>	
+<body onload="setPageId(); setOpenWinAttr(); insertLabel(); bothLeftRight(); setTimeout(() => setCode(true), 1000); setTimeout(loadWithStorageValues, 2000);">
+<div class="container-fluid p-3">  
+	<div class="user-info-wrap">		
+		<div class="info-wrap">
+			<p class="user-info info-but-run">
+			    <i class="material-icons info-symbol">info_outline</i>
+    			<span class="info-content first-info">Кнопкой</span> 
+    			<img src="images/run-button.png"/>
+    			<span class="info-content second-info"> можно скопировать и запустить код онлайн в браузере</span>
+			</p>
+			<p class="user-info info-but-zoom" >
+			    <i class="material-icons info-symbol">info_outline</i>
+			    <span class="info-content">Кнопками ниже можно регулировать размер колонок L(левая) и R(правая) от 100% до 0% с шагом 10% (по умолчанию 50%/50%)</span>
+		    </p>
+		</div>
+	</div>
+	<div class="head-buttons" id="header">
 		<div class="but-wrap">
 			<div class="back-fix"></div>
 		  <div class="but100-wrap left">
@@ -57,6 +213,9 @@
 		</div>
 		<div class="column ">
 			<img src="images/images_02.1/02.1.2.png">
+			<div id="code02" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_1LoopExample.java">
 			LoopExample.java</a><i class="fa fa-github"></i></i></br>	
@@ -64,6 +223,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.3.png">
+			<div id="code03" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 				* В традиционном программировании мы оперируем с данными внутри цикла.</br>
 				* Возможность использовать лямбда-выражения появилась начиная с JDK-8.</br>
@@ -83,6 +245,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.5.png">
+			<div id="code05" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>				
 				* До лямбда-выражений уже был способ передачи поведения через анонимные классы как в примере выше.</p>
 			<p>
@@ -92,6 +257,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.6.png">
+			<div id="code06" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 				* С появлением лямбда-выражений способ передачи поведения стал гораздо компактнее .</p>
 			<p>
@@ -111,6 +279,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.9.png">
+			<div id="copy09" class="code-wrap code-null"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
 			Book.java</a><i class="fa fa-github"></i></i></br>
@@ -118,6 +289,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.10.png">
+			<div id="code10" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
 			Book.java</a><i class="fa fa-github"></i></i></br>
@@ -125,6 +299,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.11.png">
+			<div id="code11" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
 			Book.java</a><i class="fa fa-github"></i></i></br>
@@ -132,6 +309,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.12.png">
+			<div id="code12" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
 			Book.java</a><i class="fa fa-github"></i></i></br>
@@ -143,6 +323,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.14.png">
+			<div id="code14" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
 			Book.java</a><i class="fa fa-github"></i></i></br>
@@ -150,6 +333,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.15.png">
+			<div id="code15" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/Book.java">
 			Book.java</a><i class="fa fa-github"></i></i></br>
@@ -165,6 +351,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.18.png">
+			<div id="code18" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_5LambdaWithPredicate.java">
 			LambdaWithPredicate.java</a><i class="fa fa-github"></i></i></br>
@@ -172,6 +361,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.19.png">
+			<div id="code19" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_6LambdaWithConsumer.java">
 			LambdaWithConsumer.java</a><i class="fa fa-github"></i></i></br>
@@ -179,6 +371,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.20.png">
+			<div id="code20" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_6LambdaWithConsumer.java">
 			LambdaWithConsumer.java</a><i class="fa fa-github"></i></i></br>
@@ -186,6 +381,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.21.png">
+			<div id="code21" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_7LambdaWithFunction.java">
 			LambdaWithFunction.java</a><i class="fa fa-github"></i></i></br>
@@ -193,6 +391,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.22.png">
+			<div id="code22" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_8LambdaWithSupplier.java">
 			LambdaWithSupplier.java</a><i class="fa fa-github"></i></i></br>
@@ -200,6 +401,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.23.png">
+			<div id="code23" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_9LambdaWithUnaryOperator.java">
 			LambdaWithUnaryOperator.java</a><i class="fa fa-github"></i></i></br>
@@ -211,6 +415,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.25.png">
+			<div id="code25" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_10OperatorDoubleColon.java">
 			OperatorDoubleColon.java</a><i class="fa fa-github"></i></i></br>
@@ -218,6 +425,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_02.1/02.1.26.png">
+			<div id="code26" class="code-wrap code-null code-test"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less02_Lambda_Recursion/_1_IntroToLambdaExpressions/_10OperatorDoubleColon.java">
 			OperatorDoubleColon.java</a><i class="fa fa-github"></i></i></br>

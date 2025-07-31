@@ -1,8 +1,6 @@
-package Less02_Lambda_Recursion._1_IntroToLambdaExpressions;
-
 import java.util.*;
 
-public class _4TreeSetWithCustomComparatorLambda {
+public class TreeSetWithCustomComparatorLambda {
 	public static void main(String[] args) {
 		TreeSet<Integer> treeSet = new TreeSet<>((o1, o2) ->  Integer.compare(Math.abs(o1), Math.abs(o2)));
 		
