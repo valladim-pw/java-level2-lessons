@@ -1,0 +1,10 @@
+import java.util.function.*;
+
+public class LambdaWithBinaryOperator {
+	public static void main(String[] args) {
+		BinaryOperator<Integer> mod = (x1, x2) -> x1 % x2;
+		mod.apply(5, 16);
+		System.out.println(mod.apply(16, 5));
+		System.out.println(mod.apply(5, 16));
+	}
+}

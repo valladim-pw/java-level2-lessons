@@ -1,0 +1,45 @@
+import java.util.Arrays;
+
+public class NonSafeGeneric {
+	private Object[] items;
+	private int count;
+	
+	public NonSafeGeneric(){
+		items = new Object[10];
+		count = 0;
+	}
+	
+	static class A {
+		public A() {}
+		
+		@Override
+		public String toString() {
+			return 	"class A";
+		}
+	}
+	
+	public void add(Object item) {		
+		items[count++] = item;
+	}
+	
+	public  Object get(int idx) {		
+		return items[idx];
+	}
+	
+	@Override
+	public String toString() {
+		return 	"items=" + Arrays.toString(items);
+	}
+	
+	public static void main(String[] args) {
+		NonSafeGeneric nsg = new NonSafeGeneric();
+		String first = "Hello";
+		nsg.add(first);
+		Integer val = 10;
+		nsg.add(val);
+		A a = new A();
+		nsg.add(a);		
+		
+		System.out.println(nsg.toString());
+	}
+}

@@ -1,0 +1,36 @@
+class People {
+	private int age;
+	private String name;
+
+	public People(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "age=" + age +	", name=" + name;
+	}
+	
+}
+
+public class GenericApp<T> {
+	private T[] elementData;
+	
+	public T get(int i) {
+		throw new UnsupportedOperationException();
+	}
+	
+	public void add(T t) {
+	
+	}
+	
+	public static void main(String[] args) {
+		GenericApp<People> g1 = new GenericApp<>();
+		GenericApp<String> g2 = new GenericApp<>();
+		System.out.println(g1.getClass().getName());
+		System.out.println(g2.getClass().getName());
+		
+		System.out.println(g1.getClass().equals(g2.getClass()));
+	}
+}

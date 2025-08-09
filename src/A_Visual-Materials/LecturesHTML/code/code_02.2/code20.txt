@@ -1,0 +1,12 @@
+import java.util.List;
+import java.util.Optional;
+
+public class StreamReduceBinaryOperatorSumWithOptional {
+	public static void main(String[] args) {
+		List<Integer> list = List.of(1, 2, 3, 4, 5);
+		Optional<Integer> oSum = list.stream().reduce((a, x) -> a + x);
+		int sum = oSum.orElse(0);
+		
+		System.out.println("Сумма всех элементов: " + sum);
+	}
+}

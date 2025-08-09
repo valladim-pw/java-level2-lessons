@@ -1,0 +1,173 @@
+public class BArray<T> {
+	
+	T[] array;
+	int size;
+	int block;
+	
+	public BArray(int initSize, int blockSize) {
+		size = 0;
+		array = (T[])new Object[initSize];
+		block = blockSize;
+	}
+	
+	void copyData(T[] src, T[] dst) {
+		for(int i = 0; i < src.length; i++) {
+			dst[i] = src[i];
+		}
+	}
+	
+	public T get(int index) {
+		return array[index];
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public void add(T item) {
+		if(size == array.length) {
+			T[] newArray = (T[])new Object[array.length + block];
+			copyData(array, newArray);
+			newArray[array.length] = item;
+			array = newArray;
+		}
+		array[size++] = item;		
+	}
+	
+}
+public class EList {
+	static class ListItem {
+		
+		private ListItem next;
+		
+		void setNext(ListItem item) {
+			next = item;
+		}
+		public ListItem getNext() {
+			return  next;
+		}
+	}
+	private ListItem head;
+	private ListItem tail;
+	
+	public ListItem getHead() {
+		return  head;
+	}
+	public void add(ListItem item) {
+		if(head == null) {
+			head = item;
+			tail = item;
+		} else {
+			tail.setNext(item);
+			tail = item;
+		}
+	}
+}
+public class Test_EList {
+	// Расширяем под Integer
+	public static class IntItem extends EList.ListItem{
+		int num;
+		public IntItem(int num) {
+			this.num = num;
+		}
+	}
+	// Расширяем под String
+	public static class StrItem extends EList.ListItem{
+		String str;
+		StrItem(String str) {
+			this.str = str;
+		}
+	}	
+	
+}
+public class OList<T> {
+	public class ListItem<T> {
+// Элемент списка
+		private T item;
+// Указатель (ссылка) на следующий элемент
+		private ListItem<T> next;
+		
+		ListItem(T item) {
+			this.item = item;
+		}
+		T getItem() {
+			return  item;
+		}
+		void setNext(ListItem<T> item) {
+			next = item;
+		}
+		public ListItem<T> getNext() {
+			return  next;
+		}
+	}
+	private ListItem<T> head;
+	private ListItem<T> tail;
+	
+	public ListItem<T> getHead() {
+		return  head;
+	}
+	public void add(T item) {
+		ListItem<T> li = new ListItem<T>(item);
+		if(head == null) {
+			head = li;
+			tail = li;
+		} else {
+			tail.setNext(li);
+			tail = li;
+		}
+	}
+}
+public class TimeTest {
+	static final int ITERATIONS = 10_000_000;
+	
+	static void testAdd() {
+		long t1 = System.currentTimeMillis();
+		BArray<Integer> ba = new BArray<>(5000000, 5000000);
+		for(int i = 0; i < ITERATIONS; i++)
+			ba.add(i);
+		
+		long t2 = System.currentTimeMillis();
+		OList<Integer> ol = new OList<>();
+		for(int i = 0; i < ITERATIONS; i++) {
+			ol.add(i);
+		}
+		
+		long t3 = System.currentTimeMillis();
+		EList el = new EList();
+		for(int i = 0; i < ITERATIONS; i++) {
+			el.add(new Test_EList.IntItem(i));
+		}
+		long t4 = System.currentTimeMillis();
+		System.out.println("---- Test Add ----");
+		System.out.println("BArray: " + (t2 - t1));
+		System.out.println("OList: " + (t3 - t2));
+		System.out.println("EList: " + (t4 - t3));
+		
+		testGet(ba, ol, el);
+	}
+	
+	static void testGet(BArray<Integer> ba, OList<Integer> ol, EList el) {
+		long t1 = System.currentTimeMillis();
+		for(int i = 0; i < ITERATIONS; i++)
+			ba.get(i);
+		
+		long t2 = System.currentTimeMillis();
+		OList<Integer>.ListItem<Integer> current = ol.getHead();
+		while(current != null)
+			current = current.getNext();
+		
+		long t3 = System.currentTimeMillis();
+		Test_EList.IntItem current2 = (Test_EList.IntItem) el.getHead();
+		while(current2 != null)
+			current2 = (Test_EList.IntItem) current2.getNext();
+		long t4 = System.currentTimeMillis();
+		System.out.println("---- Test Get ----");
+		System.out.println("BArray: " + (t2 - t1));
+		System.out.println("OList: " + (t3 - t2));
+		System.out.println("EList: " + (t4 - t3));
+	}
+	
+	public static void main(String[] args) {
+		testAdd();
+	}
+}

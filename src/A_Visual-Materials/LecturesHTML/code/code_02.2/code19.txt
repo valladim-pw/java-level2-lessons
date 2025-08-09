@@ -1,0 +1,10 @@
+import java.util.List;
+
+public class StreamReduceBinaryOperatorSum {
+	public static void main(String[] args) {
+		List<Integer> list = List.of(1, 2, 3, 4, 5);
+		int sum = list.stream().reduce(0, (a, x) -> a + x);
+		
+		System.out.println("Сумма всех элементов: " + sum);
+	}
+}

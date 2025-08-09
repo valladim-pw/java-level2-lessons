@@ -1,0 +1,15 @@
+import java.util.List;
+
+public class StreamReduceBinaryOperatorSumByStep {
+	public static void main(String[] args) {
+		List<Integer> list = List.of(1, 2, 3, 4, 5);
+		int sum = list.stream().reduce(
+						(a, x) -> {
+							System.out.println("a: " + a + ", x: " + x);
+							return a + x;
+						}
+		).orElse(0);
+		
+		System.out.println("Сумма всех элементов: " + sum);
+	}
+}

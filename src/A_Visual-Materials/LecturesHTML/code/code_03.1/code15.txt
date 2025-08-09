@@ -1,0 +1,17 @@
+class MyMath {
+	public static <T> T getMiddle(T... args) {
+		return args[args.length / 2];
+	}
+	public static void say() {
+		System.out.println("dasdsadas");
+	}
+	public static void main(String[] args) {
+		
+		int a = MyMath.<Integer>getMiddle(12, 3, 6, 8, 11, 9);
+		System.out.println(a);
+		String s = MyMath.<String>getMiddle("12w", "3f", "6y", "h8", "n11");
+		System.out.println(s);
+		say();
+	}
+}
+

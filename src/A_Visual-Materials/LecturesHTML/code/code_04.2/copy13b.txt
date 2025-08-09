@@ -1,0 +1,18 @@
+"C:\Program Files\Java\jdk-15.0.2\bin\java.exe" 
+
+CHashTable(5)------------
+basket 0: [{key: 15, value: i=15}, {key: 10, value: i=10}, {key: 5, value: i=5}, {key: 0, value: i=0}]
+basket 1: [{key: 16, value: i=16}, {key: 11, value: i=11}, {key: 6, value: i=6}, {key: 1, value: i=1}]
+basket 2: [{key: 17, value: i=17}, {key: 12, value: i=12}, {key: 7, value: i=7}, {key: 2, value: i=2}]
+basket 3: [{key: 18, value: i=18}, {key: 13, value: i=13}, {key: 8, value: i=8}, {key: 3, value: i=3}]
+basket 4: [{key: 19, value: i=19}, {key: 14, value: i=14}, {key: 9, value: i=9}, {key: 4, value: i=4}]
+CHashTable(7)------------
+basket 0: [{key: 14, value: i=14}, {key: 7, value: i=7}, {key: 0, value: i=0}]
+basket 1: [{key: 15, value: i=15}, {key: 8, value: i=8}, {key: 1, value: i=1}]
+basket 2: [{key: 16, value: i=16}, {key: 9, value: i=9}, {key: 2, value: i=2}]
+basket 3: [{key: 17, value: i=17}, {key: 10, value: i=10}, {key: 3, value: i=3}]
+basket 4: [{key: 18, value: i=18}, {key: 11, value: i=11}, {key: 4, value: i=4}]
+basket 5: [{key: 19, value: i=19}, {key: 12, value: i=12}, {key: 5, value: i=5}]
+basket 6: [{key: 13, value: i=13}, {key: 6, value: i=6}]
+
+Process finished with exit code 0

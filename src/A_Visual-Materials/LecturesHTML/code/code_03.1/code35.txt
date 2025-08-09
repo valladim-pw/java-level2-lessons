@@ -1,0 +1,16 @@
+import java.util.List;
+
+public class WildcardGenerics {	
+	
+	public static void wildPrint(List<?> items) {
+		System.out.println(items);
+	}	
+	
+	public static void main(String[] args) {
+		List<String> strings = List.of("A", "B", "C", "D");
+		List<Integer> ints = List.of(4, 3, 7, 11);
+		wildPrint(strings);
+		wildPrint(ints);		
+		
+	}
+}

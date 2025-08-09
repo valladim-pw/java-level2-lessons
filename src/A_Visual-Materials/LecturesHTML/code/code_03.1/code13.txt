@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class GenericInterfaceAndMethod<K, E> {
+	
+	K index;
+	E item;
+	
+	public GenericInterfaceAndMethod(){}
+	
+	public GenericInterfaceAndMethod(K key, E item) {
+		index = key;
+		this.item = item;
+	}
+	
+	public void add(K index, E item){}
+	
+	public void delete(K index){}
+	
+	public E get(K index){
+		throw new UnsupportedOperationException();
+	}
+	
+	@Override
+	public String toString() {
+		return index.getClass().getSimpleName() + " " + item.getClass().getSimpleName();
+	}
+	
+	public static void main(String[] args) {
+		GenericInterfaceAndMethod<String, String> gtm = new GenericInterfaceAndMethod("1L", "Hello");
+		System.out.println(gtm);
+		GenericInterfaceAndMethod<Integer, String> gtm2 = new GenericInterfaceAndMethod(10, "Hello");
+		System.out.println(gtm2);	
+		
+	}
+}

@@ -1,0 +1,19 @@
+public class OptimizedPower {
+
+	public static double power(double val, int pow) {
+		switch(pow) {
+			case 0 : return 1;
+			case 1 : return val;
+			default : {
+				double val_halfPower = power(val, pow / 2);
+				if(pow % 2 == 1)
+					return val * val_halfPower * val_halfPower;
+				else
+					return val_halfPower * val_halfPower;
+			}
+		}
+	}
+	public static void main(String[] args) {
+		System.out.println(power(2,1000));		
+	}
+}
