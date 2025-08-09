@@ -12,12 +12,13 @@ public class _19LambdaWithFunctionCompose {
 		
 		Function<Double, Double> mod = x -> squareRoot.apply(square.apply(x));
 		System.out.println(mod.apply(-5.0));
+				
 		System.out.println("-----------------------------");
 		
 		Function<Double, Double> mod2 = x -> square.andThen(squareRoot).apply(x);
-		System.out.println(mod2.apply(-3.0));
-		
+		System.out.println("square.andThen(squareRoot).apply(-3.0): " + mod2.apply(-3.0));
+				
 		Function<Double, Double> mod3 = x -> squareRoot.compose(square).apply(x);
-		System.out.println(mod2.apply(-22.0));
+		System.out.println("squareRoot.compose(square).apply(-22.0): " + mod2.apply(-22.0));
 	}
 }

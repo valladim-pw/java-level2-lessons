@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>00.1 Динамические массивы</title>
-	<base target="_parent">
+	<base target="_blank">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
@@ -12,21 +12,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/valladim-pw/java-level2-lessons@master/src/A_Visual-Materials/styles/style.css">-->
 	<link rel="stylesheet" href="styles/style.css">
-	<link rel="stylesheet" href="styles/mobile-style.css">
-	<style>
-	#demo {
-        position: fixed;
-        top: 100px;
-        left: 50%;
-        padding: 5px;
-        z-index: 15;
-        background: yellow;
-        font-size: 10px;
-        height: 30%;
-        width:200px;
-        overflow: auto;
-	}
-	</style>
+	<link rel="stylesheet" href="styles/mobile-style.css">	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>	
 	<script>
@@ -51,7 +37,7 @@
 		Fetch API Вставка файлов с кодом 
 		*/
 		
-		let code = ["code09.txt", "code14.txt", "code15.txt", "code18.txt", "code19.txt", "code25a.txt", "code25b.txt"]; 
+		let code = ["code09.txt", "copy13.txt", "code14.txt", "code15.txt", "code18.txt", "code19.txt", "code25a.txt", "code25b.txt"]; 
 		
 		let dir = "./code/code_00.1/";			
 
@@ -327,6 +313,9 @@
 		</div>
 		<div class="column">
 			<img src="images/images_00.1/00.1.13.png">
+			<div id="copy13" class="code-wrap code-null"> 
+				<pre><code class="hljs language-java"></code></pre>
+			</div>
 			<p>
 			* В блочном динамическом массиве в методе	<b>add(int item)</b> добавление элементов происходит с небольшими изменениями:</br>
 			1 - проверяется соответствие свойства size фактической длине массива:</br> 

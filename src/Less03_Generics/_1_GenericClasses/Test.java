@@ -1,5 +1,6 @@
 package Less03_Generics._1_GenericClasses;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,9 +11,17 @@ public class Test<T> {
 		arr[value1] = arr[value2];
 		arr[value2] = tmp;
 	}
+	@SuppressWarnings("unchecked")
 	public static<T> List<T> arrToList(T...args) {
-		return Arrays.asList(args);
+		List<T> list = new ArrayList<>();
+		//T[]elementData = (T[])new Object[args.length];
+		for (int i = 0; i < args.length; i++) {
+			list.add(args[i]);
+		}
+		
+		return list; //Arrays.asList(args);
 	}
+	
 	public static void main(String[] args) {
 		Integer[] arr1 = new Integer[]{1, 2, 3, 4};
 		reverse(arr1,arr1.length - 1, arr1.length - 2);

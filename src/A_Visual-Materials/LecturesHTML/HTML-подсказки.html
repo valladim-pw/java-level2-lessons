@@ -290,12 +290,13 @@ let ext = ".html";
 картинка 03.3.10. - номер 10
 вставки будут или "code10.txt", или "gif10.gif", или "img10.png"
 Если в одной картинке две вставки, тогда "code10a.txt" и "code10b.txt" либо "code10a.txt" и "gif10b.gif"
+ 
 
 !!! Обязательно - id элемента, оборачивающего вставку в html должен совпадать с названием файла (без расширения)
-файл "code01.txt" - <div id="code01" class="code-wrap">
-файл "code10.txt" - <div id="code10" class="code-wrap">
-файл "gif10.gif" - <div id="gif10" class="code-wrap">
-файл "img03.png" - <div id="img03" class="code-wrap">
+файл "copy01.txt" - <div id="copy01" class="code-wrap"> - если предполагается только копирование кода
+файл "code05.txt" - <div id="code05" class="code-wrap"> - если предполагается копирование и запуск кода
+файл "gif10.gif" - <div id="gif10" class="code-wrap"> - для gif
+файл "img03.png" - <div id="img03" class="code-wrap"> - для картинки с любым расширением (png, jpg и др.)
 
 !!! Обязательно - все названия файлов вставок на странице лекции должны быть в составе 
 массива в скрипте внутри <head> лекции, желательно отсортированы по номерам в названии (но не критично)
@@ -443,7 +444,7 @@ javascript/script.js
 		<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
 		<img src="images/images_08.1/08.1.11.png">
 !!! Добавляем в тег класс "code-null"
-		<div id="code11" class="code-wrap code-null"> 
+		<div id="copy11" class="code-wrap code-null"> 
 			<pre><code class="hljs language-java"></code></pre>
 		</div>
 		
@@ -469,11 +470,22 @@ javascript/script.js
 в котором можно запустить скопированный код,
 также откроется еще одно малое окно с инструкцией как запустить код (оно автоматически закрывается через установленное в коде время)
 javascript/script.js?, function openW3Schools(event)
-		<div id="code14" class="code-wrap code-null"> 
+		<div id="code14" class="code-wrap code-null code-test"> 
 			<pre><code class="hljs language-java"></code></pre>
-		</div>	
+		</div>
+		<div id="code14" class="code-wrap code-test"> 
+			<pre><code class="hljs language-java"></code></pre>
+		</div>
+ 5.3.4. Рамка с кодом с полной высотой (т.е. в высоту картинки с отступами сверху и снизу)
+  добавляем класс "h-full"
+		<div id="copy14" class="code-wrap h-full"> 
+			<pre><code class="hljs language-java"></code></pre>
+		</div>
+		<div id="code14" class="code-wrap code-test h-full"> 
+			<pre><code class="hljs language-java"></code></pre>
+		</div>
 	
- 5.3.4. Две рамки с кодом одинакового размера:	
+ 5.3.5. Две рамки с кодом одинакового размера:	
 	<div class="column">
 		<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
 		<img src="images/images_08.1/08.1.11.png">
@@ -490,7 +502,7 @@ javascript/script.js?, function openW3Schools(event)
 		...............
 		</p>
 	</div>
- 5.3.5. Одна рамка с кодом во всю ширину картинки:	
+ 5.3.6. Одна рамка с кодом во всю ширину картинки:	
 	<div class="column">
 		<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
 		<img src="images/images_08.1/08.1.11.png">
@@ -501,7 +513,7 @@ javascript/script.js?, function openW3Schools(event)
 		...............
 		</p>
 	</div>
- 5.3.6. Одна рамка определенной ширины и с определнным положением:	
+ 5.3.7. Одна рамка определенной ширины и с определнным положением:	
 	<div class="column">
 		<span class="badge bg-primary">Рис.11&nbsp;<i class="material-icons">&#xe5db;</i></span>
 		<img src="images/images_08.1/08.1.11.png">
@@ -534,7 +546,7 @@ Process finished with exit code 0
 
 в текстовый файл, например "code05.txt"	
 
-- Добавляется в лекцию теми же способами, что и код (5.3.4, 5.3.5, 5.3.6)
+- Добавляется в лекцию теми же способами, что и код (5.3.5, 5.3.6, 5.3.7)
 
 - !!!Отличается только тем, что в классе обертки добавляется класс "console"
 <img src="images/images_08.1/08.1.07.png">
@@ -545,7 +557,7 @@ Process finished with exit code 0
 
 - Результат копируется из командной строки в текстовый файл, например "code05.txt"	
 
-- Добавляется в лекцию теми же способами, что и код (5.3.4, 5.3.5, 5.3.6)
+- Добавляется в лекцию теми же способами, что и код (5.3.5, 5.3.6, 5.3.7)
 
 - !!!Отличается тем, что в классе обертки помимо класса "console" добавляется класс "shell"
 
@@ -562,7 +574,7 @@ Process finished with exit code 0
 рамка в 1/2 ширины картинки - холст 843 Х 750 картинка ширина макс. 820, высота макс. 730
 
 
-- gif лучше добавлять при data-pos="030" (см.5.3.6) - рамка в 2/3 ширины картинки посередине
+- gif лучше добавлять при data-pos="030" (см.5.3.7) - рамка в 2/3 ширины картинки посередине
 
 Размеры отдельной картинки-кадра gif при обработке в PickPick:
 холст - 1000 Х 556
@@ -576,7 +588,7 @@ Process finished with exit code 0
 В ней в папках для каждой картинки складываются картинки-кадры, из которых
 можно изготовить на указанном сайте gif.
 
-- Добавляется в лекцию gif теми же способами, что и код (5.3.4, 5.3.5, 5.3.6)
+- Добавляется в лекцию gif теми же способами, что и код (5.3.5, 5.3.6, 5.3.7)
 Отличие в id, id="gif01" - файл соответственно gif01.gif
 также не забываем добавить название файла в массив (5.2)
 	

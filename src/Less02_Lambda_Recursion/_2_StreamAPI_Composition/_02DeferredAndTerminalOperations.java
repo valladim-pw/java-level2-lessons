@@ -16,7 +16,7 @@ public class _02DeferredAndTerminalOperations {
 				new Book("Мертвые души", "Гоголь", 842),
 				new Book("Облако в штанах", "Маяковский", 495)
 		));
-		long num = list.stream().filter(x -> x.author.contains("о")).count();
+		long num = list.stream().filter(x -> x.author.contains("а")).count();
 		System.out.println("Отобрано книг: " + num);
 	}
 }

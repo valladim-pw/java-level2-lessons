@@ -3,12 +3,11 @@ package Less02_Lambda_Recursion._2_StreamAPI_Composition;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
+//import java.util.function.Predicate;
+//import java.util.stream.Stream;
 
 
 public class _05StreamMinAndMax {
-	
 	
 	public static void main(String[] args) {
 		List<Book> list = new ArrayList<>(List.of(

@@ -1,13 +1,10 @@
 package Less02_Lambda_Recursion._2_StreamAPI_Composition;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.Optional;
 
 
 public class _06StreamMaxWithOptional {
-	
 	
 	public static void main(String[] args) {
 		List<Book> list = new ArrayList<>(List.of(

@@ -1,6 +1,6 @@
 package Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._2ElementsList;
 
-import Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._2ElementsList.EList.ListItem;
+//import Less04_HashTable_List_Deque_Stack._1_List_Deque_Stack._2ElementsList.EList.ListItem;
 
 public class Test_EList {
 	// Расширяем под Integer

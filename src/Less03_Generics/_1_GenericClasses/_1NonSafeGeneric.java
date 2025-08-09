@@ -21,12 +21,12 @@ public class _1NonSafeGeneric {
 	}
 	
 	public void add(Object item) {
-		System.out.println(count);
+		//System.out.println(count);
 		items[count++] = item;
 	}
 	
 	public  Object get(int idx) {
-		System.out.println(items[idx]);
+		//System.out.println(items[idx]);
 		return items[idx];
 	}
 	
@@ -44,13 +44,13 @@ public class _1NonSafeGeneric {
 		A a = new A();
 		nsg.add(a);
 		//ClassCastException это Runtime Exception
-		//String result = (String) nsg.get(1);
-		if(nsg.get(1) instanceof String) {
-			String result = (String) nsg.get(1);
-		}
-		if(nsg.get(2) instanceof A) {
-			A result = (A) nsg.get(2);
-		}
+		String result = (String) nsg.get(1);
+//		if(nsg.get(1) instanceof String) {
+//			String result = (String) nsg.get(1);
+//		}
+//		if(nsg.get(2) instanceof A) {
+//			A result = (A) nsg.get(2);
+//		}
 		
 		System.out.println(nsg.toString());
 	}

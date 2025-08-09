@@ -323,11 +323,12 @@ function openWin(resource) {
 	
 	if (githubWin) {
 		
+		githubWin.focus();
 		githubWin.close();
-		githubWin = window.open(resource, "_blank", specs);
+		githubWin = window.open(resource, "githubWin", specs);
 		
 	} else
-	  githubWin = window.open(resource, "_blank", specs);
+	  githubWin = window.open(resource, "githubWin", specs);
 }
 
 /*
@@ -384,7 +385,7 @@ async function copyCode(event) {
 	let copy_text = await x.text();
 	arrClass = copy_text.match("public class");
 	
-	if (Array.isArray(arrClass) && arrClass.length !== 0)						
+	if (Array.isArray(arrClass) && arrClass.length !== 0 && !code_id.includes("copy"))						
 		copy_text = copy_text.replaceAll("public class", "class");
 	
 	navigator.clipboard.writeText(copy_text);
@@ -764,12 +765,26 @@ function setCode(init) {
 				let pre = code_wrap.querySelector("pre");
 				let width_part = (width - indent_half) / code_wraps.length;
 				
-				if (!hasClass(code_wrap, "code-null"))
-					code_wrap.style.height = (img_h - (indent_v + 2)) + "px";
-				else
+				if (!hasClass(code_wrap, "code-null")) {
+					
+					if (hasClass(code_wrap, "h-full")) {
+						
+						code_wrap.style.height = (img_h - margin) + "px";
+						code_wrap.style.top = (badge_h + margin + border + indent_half) + "px";
+					
+					} else {
+						
+						code_wrap.style.height = (img_h - (indent_v + 2)) + "px";
+						code_wrap.style.top = offset_top + "px";
+					}
+						
+				} else {
 					code_wrap.style.height = 0 + "px";
+					code_wrap.style.top = offset_top + "px";
+				}
+					
 				
-				code_wrap.style.top = offset_top + "px";
+				
 				
 				if (but_msg != null) {
 					but_msg.style.top = ((badge_h + margin + border) + img_h / 1.6) + "px";

@@ -1,6 +1,6 @@
 package Less04_HashTable_List_Deque_Stack._2_HashTables._2ChainHashTable;
 
-import java.util.Arrays;
+import java.util.LinkedList;
 
 public class CHashTable<T> {
 	class CHashItem<T> {
@@ -29,23 +29,42 @@ public class CHashTable<T> {
 			return next;
 		}
 		
-//		@Override
-//		public String toString() {
-//			return "key: " + key + ", item: " + item;
-//		}
+		@Override
+		public String toString() {
+			return "{key: " + key + ", value: " + item + "}";
+		}
+	}
+	
+	class CHashItemList<T> extends LinkedList<T> {
+		public int index;
+		
+		CHashItemList() {
+			super();
+		}
+		
+		CHashItemList(int index) {
+			this();
+			this.index = index;
+		}
+		
+		int getIndex() {
+			return index;
+		}
+		
+		@Override
+		public String toString() {
+			LinkedList<T> list = new LinkedList<>(this);
+			return "basket " + index + ": " + list;
+		}
 	}
 	CHashItem<T>[] table;
-	
-	int number;
-	
-//	@Override
-//	public String toString() {
-//		return Arrays.toString(table);
-//	}
-	
+	LinkedList<CHashItem<T>> copyList;
+	int capacity;
+
 	CHashTable(int n) {
-		this.number = n;
+		this.capacity = n;
 		table = new CHashItem[n];
+		copyList = new LinkedList<>();
 	}
 	
 	public int getHash(int key) {
@@ -57,9 +76,10 @@ public class CHashTable<T> {
 		CHashItem<T> li = new CHashItem<>(key, item);
 		CHashItem<T> head = table[index];
 		table[index] = li;
-		//System.out.println("key: "+index+" item: "+li.getItem());
+		
 		if(head != null)
 			li.setNext(head);
+		copyList.add(li);
 	}
 	
 	T get(int key) {
@@ -73,13 +93,44 @@ public class CHashTable<T> {
 		} while(current != null);
 		return null;
 	}
-	public static void main(String[] args) {
-			CHashTable<String> table = new CHashTable<>(5);
-			for(int i = 0; i < 20; i++) {
-				table.add(i, "i=" + i);
-			}
-		//System.out.println(table.toString());
-			for(int i = 0; i < 20; i++)
-				System.out.println(table.get(i));
+	
+	public void displayTable() {
+		CHashItemList<CHashItem<T>>[] pTable = new CHashItemList[capacity];
+		for (int i = 0; i < pTable.length; i++) {
+			pTable[i] = new CHashItemList<>(i);
+			pTable[i].add(null);
 		}
+		
+		CHashItem<T> item = null;
+		int index = 0;
+		
+		for (int i = 0; i < copyList.size(); i++) {
+			item = copyList.get(i);
+			index = getHash(item.getKey());
+			for (int j = 0; j < pTable.length; j++) {
+				if (pTable[j].getIndex() == index) {
+					if (pTable[j].get(0) == null)
+						pTable[j].set(0, item);
+					else
+						pTable[j].add(0, item);
+				}
+			}
+		}
+		System.out.println("CHashTable(" + capacity + ")------------");
+		for (CHashItemList<CHashItem<T>> value : pTable) {
+			System.out.println(value);
+		}
+	}
+	public static void main(String[] args) {
+		CHashTable<String> table = new CHashTable<>(5);
+		for(int i = 0; i < 20; i++) {
+			table.add(i, "i=" + i);
+		}
+		table.displayTable();
+		CHashTable<String> table2 = new CHashTable<>(7);
+		for(int i = 0; i < 20; i++) {
+			table2.add(i, "i=" + i);
+		}
+		table2.displayTable();
+	}
 }

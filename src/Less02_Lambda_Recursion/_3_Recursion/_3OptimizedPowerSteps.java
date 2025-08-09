@@ -1,7 +1,7 @@
 package Less02_Lambda_Recursion._3_Recursion;
 
 public class _3OptimizedPowerSteps {
-/*
+
 	public static double power(double val, int pow) {
 		switch(pow) {
 			case 0 : return 1;
@@ -15,7 +15,7 @@ public class _3OptimizedPowerSteps {
 			}
 		}
 	}
-*/
+/*
 	public static double power(double val, int pow) {
 		System.out.println("Прямой ход, power = " + pow);
 		double result = 0;
@@ -32,9 +32,10 @@ public class _3OptimizedPowerSteps {
 		}
 		System.out.println("Обратный ход, power = " + pow + ", result = " + result);
 		return result;
-	}
+	}*/
 	
 	public static void main(String[] args) {
+		System.out.println(power(2,1000));
 		power(2,1000);
 	}
 }

@@ -1,7 +1,7 @@
 package Less02_Lambda_Recursion._2_StreamAPI_Composition;
 
 import java.util.*;
-import java.util.function.*;
+//import java.util.function.*;
 
 public class _08StreamReduceBinaryOperatorMax {
 	public static void main(String[] args) {
