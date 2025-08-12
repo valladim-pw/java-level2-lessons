@@ -1,15 +1,17 @@
 package Less04_HashTable_List_Deque_Stack._3_BinaryHeap;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
-public class BinaryHeapMax2<T extends Comparable<T>> {
+public class BinaryHeapMax3<T extends Comparable<T>> {
 	
 	public static int count;
 	public static int pow;
 	private List<T> list;
 	public LinkedList<Integer> plist;
 	
-	BinaryHeapMax2() {
+	BinaryHeapMax3() {
 		list = new ArrayList<>();
 		plist = new LinkedList<>();
 		count = 0;
@@ -24,9 +26,9 @@ public class BinaryHeapMax2<T extends Comparable<T>> {
 			pow++;
 		list.add(item);
 		plist.add(pow);
-		//System.out.println("LEVEL " + pow + " >>> add value \""
-						                  // + item + "\": \n" + list);
-		//printHeap(3);
+		System.out.println("LEVEL " + pow + " >>> add value \""
+						                   + item + "\": \n" + list);
+		printHeap(3);
 		shiftUp();
 	}
 	private void swap(int i, int j) {
@@ -42,9 +44,9 @@ public class BinaryHeapMax2<T extends Comparable<T>> {
 			swap(i, parent);
 			i = parent;
 			parent = (i - 1) / 2;
-			//System.out.println("shiftUp-> value \""
-         //+ list.get(i) + "\" to Level-" + c  + ": \n" + list);
-			//printHeap(3);
+			System.out.println("shiftUp-> value \""
+         + list.get(i) + "\" to Level-" + c  + ": \n" + list);
+			printHeap(3);
 			c--;
 		}
 	}
@@ -59,7 +61,7 @@ public class BinaryHeapMax2<T extends Comparable<T>> {
 	
 	public void printHeap(int offset) {
 		BinaryHeapPrinter printer = new BinaryHeapPrinter();
-		System.out.println("--New Binary Heap---------------------------");
+		//System.out.println("--New Binary Heap---------------------------");
 		System.out.println("");
 		printer.print(offset);
 		System.out.println("");

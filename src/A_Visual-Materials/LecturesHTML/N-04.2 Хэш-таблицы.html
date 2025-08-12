@@ -70,10 +70,13 @@
 						if (Array.isArray(arrSign) && arrSign.length !== 0)						
 							txt = txt.replaceAll("<", "&lt;");
 							
-						if (Array.isArray(arrTab) && arrTab.length !== 0)
-							txt = txt.replaceAll("\t", " ");														
-						else							
-							txt = txt.replace(/^( *)/gm, (_, spaces) => spaces.replace(/  /g, " "));// если вместо \t используется два пробела,  функция заменяет каждые два пробела в начале строки на один
+						if (!hasClass(code_wrap, "console")) {
+							
+							if (Array.isArray(arrTab) && arrTab.length !== 0)
+								txt = txt.replaceAll("\t", " ");														
+							else							
+								txt = txt.replace(/^( *)/gm, (_, spaces) => spaces.replace(/  /g, " "));// если вместо \t используется два пробела,  функция заменяет каждые два пробела в начале строки на один						
+						}
 						
 						let msg_class = "<div class=\"copy-msg msg-test\">";
 						let msg_class_right = "<div class=\"copy-msg msg-test msg-right\">";
@@ -311,18 +314,15 @@
 			</div>
 			<p>
 			* Реализация хэш-таблицы с прямой адресацией.</br>
-			* В реализацию добавлен метод <i>displayTable()</i> который позволяет более наглядно увидеть устройство хэш-таблицы.</br>
+			* В реализацию добавлен класс <i>CHashItemList</i> расширяющий связный список, который аккумулирует значения с одинаковыми хэшами и 
+			использующий этот класс метод <i>displayTable()</i> который позволяет более наглядно увидеть устройство хэш-таблицы.</br>
 			* На консоли выводятся варианты с разными размерами таблицы, которые определяют количество ячеек (или <b>basket - корзина</b>).</br>
 			* В каждой корзине хранятся связанные списки значений с одинаковыми хэшами, вычисленными хэш-функцией</b>.</br>
 			Эти списки наглядно демонстрируют как выглядят коллизии.
 			</p>
 			<p>			
 			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_2_HashTables/_2ChainHashTable/CHashTable.java">
-			CHashTable.java</a><i class="fa fa-github"></i></i></p>
-			<p>			
-			* <i class="github-wrap"><a class="github" href="https://github.com/valladim-pw/java-level2-lessons/blob/master/src/Less04_HashTable_List_Deque_Stack/_2_HashTables/_2ChainHashTable/TestCHashTable.java">
-			TestCHashTable.java</a><i class="fa fa-github"></i></i></br>
-			</p>
+			CHashTable.java</a><i class="fa fa-github"></i></i></p>			
 		</div>
 		<div class="column">
 			<span class="badge bg-primary">Рис.14&nbsp;<i class="material-icons">&#xe5db;</i></span>

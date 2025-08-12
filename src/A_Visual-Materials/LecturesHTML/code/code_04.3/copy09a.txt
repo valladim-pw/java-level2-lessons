@@ -1,0 +1,18 @@
+public class TestHeap {
+	public static void main(String[] args) {
+		BinaryHeapMax2<Integer> heapI = new BinaryHeapMax2<>();
+		
+		for (int i = 0; i < 13; i++) {
+			heapI.add(i);			
+		}		
+		heapI.printHeap(3);
+		
+		String str = "БУМАГОПРЯДИЛЬНЫЙ";
+		BinaryHeapMax2<String> heapS = new BinaryHeapMax2<>();
+		
+		for (int i = 0; i < str.length(); i++) {
+			heapS.add(Character.toString(str.charAt(i)));
+		}
+		heapS.printHeap(3);
+	}
+}

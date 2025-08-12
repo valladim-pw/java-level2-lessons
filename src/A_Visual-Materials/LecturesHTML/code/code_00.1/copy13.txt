@@ -1,0 +1,39 @@
+import java.util.Arrays;
+
+public class BIntArray {
+	
+	int[] array;
+	int size;
+	int block;
+	
+	public BIntArray(int initSize, int blockSize) {
+		size = 0;
+		array = new int[initSize];
+		block = blockSize;
+	}
+	
+	void copyData(int[] src, int[] dst) {
+		for(int i = 0; i < src.length; i++) {
+			dst[i] = src[i];
+		}
+	}
+	
+	public int get(int index) {
+		return array[index];
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public void add(int item) {
+		if(size == array.length) { // 1
+			int[] newArray = new int[array.length + block]; // 2
+			copyData(array, newArray);
+			newArray[array.length] = item;
+			array = newArray;
+		}
+		array[size++] = item;	// 3
+	}
+	
+}

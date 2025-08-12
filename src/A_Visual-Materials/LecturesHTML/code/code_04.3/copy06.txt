@@ -1,5 +1,3 @@
-package Less04_HashTable_List_Deque_Stack._3_BinaryHeap;
-
 import java.util.*;
 
 public class BinaryHeapMax<T extends Comparable<T>> {
@@ -40,4 +38,3 @@ public class BinaryHeapMax<T extends Comparable<T>> {
 		return list.toString();
 	}
 }
-
